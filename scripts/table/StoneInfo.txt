@@ -1,0 +1,54 @@
+1	Fiery Gem	878	1	1	ItemHint_LieYanS	F6D243
+2	Furious Gem	879	2,3,7,9	1	ItemHint_ZhiYanS	F6D243
+3	Explosive Gem	880	4	1	ItemHint_HuoYaoS	F6D243
+4	Lustrious Gem	881	1,2,3,4,7,9,23	1	ItemHint_MaNaoS	F6D243
+5	Glowing Gem	882	11,22,27	2	ItemHint_HanYu	F6D243
+6	Shining Gem	883	11,22,27	2	ItemHint_YueZhiX	F6D243
+7	Shadow Gem	884	1,2,3,4,7,9,24	2	ItemHint_ShuiLingS	F6D243
+8	Spirit Gem	887	1,2,3,4,7,9,24	4	ItemHint_ShengGuangS	F6D243
+9	Yellow Jade	1100	20	2	ItemHint_HuangYu	FFA500
+10	Red Jade	1101	20	2	ItemHint_ChiYu	FFA500
+11	Green Jade	1102	20	2	ItemHint_QingYu	FFA500
+12	Chiatan's Aura	1103	20	1	ItemHint_XTLingGuang	FFA500
+13	Lock's Hit	1104	23	1	ItemHint_LKBiZhong	FFA500
+14	Bing's Dodging	1105	24	2	ItemHint_BBDuoShan	FFA500
+15	Feng's Defense	1106	22	2	ItemHint_FFDiYu	FFA500
+16	Shark's Strengthening	1107	22,11,0	4	ItemHint_XKQiangHua	FFA500
+17	Eye of Black Dragon	0864	1,2,3,4,7,9	1	ItemHint_LongZhiTong	E14DF7
+18	Soul of Black Dragon	0865	11,22,27	2	ItemHint_LongZhiHun	E14DF7
+19	Heart of Black Dragon	0866	23,24	2	ItemHint_LongZhiXin	E14DF7
+20	Broken Gem of the Wind	6817	24	4	ItemHint_HLS	FFA500
+21	Cracked Gem of the Wind	6818	24	4	ItemHint_HYS	FFA500
+22	Chipped Gem of the Wind	6819	24	4	ItemHint_HJS	FFA500
+23	Gem of the Wind	0860	24	4	ItemHint_FengLingS	EB4E68
+24	Great Gem of the Wind	1869	24	4	ItemHint_GGW	EB4E68
+25	Azrael's Dance	1112	24	4	ItemHint_SSxuanwu	FFA500
+26	Broken Gem of Striking	6820	23	4	ItemHint_BLS	FFA500
+27	Cracked Gem of Striking	6821	23	4	ItemHint_BYS	FFA500
+28	Chipped Gem of Striking	6822	23	4	ItemHint_BJS	FFA500
+29	Gem of Striking	0861	23	4	ItemHint_YingYanS	EB4E68
+30	Great Gem of Striking	1867	23	4	ItemHint_GGOS	EB4E68
+31	Azrael's Aggregation	1111	1,2,3	1	ItemHint_SSningju	FFA500
+32	Broken Gem of Colossus	6823	11,22,27	4	ItemHint_CLS	FFA500
+33	Cracked Gem of Colossus	6824	11,22,27	4	ItemHint_CYS	FFA500
+34	Chipped Gem of Colossus	6825	11,22,27	4	ItemHint_CJS	FFA500
+35	Gem of Colossus	0862	11,22,27	4	ItemHint_YanVitS	EB4E68
+36	Great Gem of Colossus	1868	11,22,27	4	ItemHint_GGC	EB4E68
+37	Undead Azrael	1109	22,27,0	2	ItemHint_SSbusi	FFA500
+38	Broken Gem of Rage	6826	1,2,3	4	ItemHint_ZLS	FFA500
+39	Cracked Gem of Rage	6827	1,2,3	4	ItemHint_ZYS	FFA500
+40	Chipped Gem of Rage	6828	1,2,3	4	ItemHint_ZJS	FFA500
+41	Gem of Rage	863	1,2,3,4,7,9	4	ItemHint_YanStrS	FFFB88
+42	Great Gem of Rage	1865	1,2,3,4,7,9	4	ItemHint_GGR	FFFA78
+43	Azrael's Glare	1108	1,2,3	1	ItemHint_SShuiyao	FFA500
+44	Broken Gem of Soul	6829	1,2,3	4	ItemHint_QLS	FFA500
+45	Cracked Gem of Soul	6830	1,2,3	4	ItemHint_QYS	FFA500
+46	Chipped Gem of Soul	6831	1,2,3	4	ItemHint_QJS	FFA500
+47	Gem of Soul	1012	1,2,3	4	ItemHint_GaNaZhiShen	EB4E68
+48	Great Gem of Soul	1866	1,2,3	4	ItemHint_GGS	EB4E68
+49	Azrael's Light	1110	1,2,3	1	ItemHint_SSguangmang	FFA500
+50	Golden Rock	7288	23,0,0	4	ItemHint_JinYanS	FFA500
+51	Lumber Rock	7289	23,0,0	4	ItemHint_MuYanS	FFA500
+52	Water Rock	7290	23,0,0	4	ItemHint_ShuiYanS	FFA500
+53	Fire Rock	7291	23,0,0	4	ItemHint_HuoYanS	FFA500
+54	Earth Rock	7292	23,0,0	4	ItemHint_TuYanS	FFA500

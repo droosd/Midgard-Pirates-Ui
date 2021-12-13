@@ -1,0 +1,89 @@
+-----------------------------------------------------------------------
+-- Ranking UI
+-----------------------------------------------------------------------
+frmRanking = UI_CreateForm("frmRanking", FALSE, 414, 462, 0, 100, TRUE, FALSE)
+UI_ShowForm(frmRanking, FALSE)
+UI_AddFormToTemplete(frmRanking, 1)
+UI_SetIsDrag(frmRanking, TRUE)
+
+imgBackground = UI_CreateCompent(frmRanking, IMAGE_TYPE, "imgBackground", 414, 462, 0, 0)
+UI_LoadImage(imgBackground, "texture/ui/NUI/rank.png", NORMAL, 414, 462, 0, 0)
+
+-- Close Ranking
+btnClose = UI_CreateCompent(frmRanking, BUTTON_TYPE, "btnClose", 14, 14, 398, 4)
+UI_LoadButtonImage(btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE)
+UI_SetButtonModalResult(btnClose, BUTTON_CLOSE)
+
+-- Title
+labTitle = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labTitle", 400, 150, (0 + (414 / 2) - math.ceil((string.len('Global Ranking') * 6) / 2)), 5)
+UI_SetCaption(labTitle, "Global Ranking")
+UI_SetTextColor(labTitle, COLOR_BLACK)
+UI_SetLabelExFont(labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+-- Name
+labRankName = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labRankName", 45, 10, 80, 60)
+UI_SetTextColor(labRankName, COLOR_PURPLE)
+UI_SetLabelExFont(labRankName, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+-- Job
+labRankJob = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labRankJob", 45, 10, 80, 78)
+UI_SetTextColor(labRankJob, COLOR_PURPLE)
+UI_SetLabelExFont(labRankJob, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+-- Guild
+labRankGuid = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labRankGuid", 45, 10, 80, 96)
+UI_SetTextColor(labRankGuid, COLOR_PURPLE)
+UI_SetLabelExFont(labRankGuid, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+-- Level
+labRankLevel  = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labRankLevel", 45, 10, 80, 114)
+UI_SetTextColor(labRankLevel, COLOR_PURPLE)
+UI_SetLabelExFont(labRankLevel, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+
+-- 3D Character
+ui3dplayer = UI_CreateCompent( frmRanking, UI3D_COMPENT, "ui3dplayer", 0, 0, 96, 210 )
+
+-- Medal of Honor Information.
+-- Arena Ranking (might use as a general ranking).
+labArenaRankingShow  = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labArenaRankingShow", 26, 8, 160, 320)
+UI_SetCaption(labArenaRankingShow, "0")
+UI_SetTextColor(labArenaRankingShow, COLOR_PURPLE)
+UI_SetLabelExFont(labArenaRankingShow, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+labArenaBWShow  = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labArenaBWShow", 26, 8, 160, 340)
+UI_SetCaption(labArenaBWShow, "0")
+UI_SetTextColor(labArenaBWShow, COLOR_PURPLE)
+UI_SetLabelExFont(labArenaBWShow, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+labArenaKDShow  = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labArenaKDShow", 26, 8, 160, 362)
+UI_SetCaption(labArenaKDShow, "0")
+UI_SetTextColor(labArenaKDShow, COLOR_PURPLE)
+UI_SetLabelExFont(labArenaKDShow, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+labHonorPointShow = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labHonorPointShow", 26, 8, 160, 380)
+UI_SetCaption(labHonorPointShow, "0")
+UI_SetTextColor(labHonorPointShow, COLOR_PURPLE)
+UI_SetLabelExFont(labHonorPointShow, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+
+-- Chaos Argent Information.
+labChaosRankingShow  = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labChaosRankingShow", 26, 8, 160, 180)  -- +> -< | -Cima & +Baixo
+UI_SetCaption(labChaosRankingShow, "Unknown")
+UI_SetTextColor(labChaosRankingShow, COLOR_PURPLE)
+UI_SetLabelExFont(labChaosRankingShow, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+labChaosVictoryShow  = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labChaosVictoryShow", 26, 8, 160, 200)
+UI_SetCaption(labChaosVictoryShow, "0")
+UI_SetTextColor(labChaosVictoryShow, COLOR_PURPLE)
+UI_SetLabelExFont(labChaosVictoryShow, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+labChaosKDShow  = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labChaosKDShow", 26, 8, 160, 220)
+UI_SetCaption(labChaosKDShow, "0")
+UI_SetTextColor(labChaosKDShow, COLOR_PURPLE)
+UI_SetLabelExFont(labChaosKDShow, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+labChaosPointShow  = UI_CreateCompent(frmRanking, LABELEX_TYPE, "labChaosPointShow", 26, 8, 160, 240)
+UI_SetCaption(labChaosPointShow, "0")
+UI_SetTextColor(labChaosPointShow, COLOR_PURPLE)
+UI_SetLabelExFont(labChaosPointShow, DEFAULT_FONT, TRUE, COLOR_WHITE)
