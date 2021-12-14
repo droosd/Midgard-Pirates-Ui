@@ -53,26 +53,27 @@ labLoad= UI_CreateCompent( frmLoading, LABELEX_TYPE, "labLoad", 52, 13, 450, 523
 UI_SetCaption( labLoad, "Loading..." )
 UI_SetTextColor( labLoad, COLOR_WHITE )
 --UI_SetLabelExFont( labLoad, DEFAULT_FONT, TRUE, COLOR_WHITE)
------------------------------------------------------------------------
--- 定义连接服务器表单
------------------------------------------------------------------------	
--- 创建连接服务器表单
-frmConnect = UI_CreateForm( "frmConnect", FALSE, 198, 72, 396, 80, FALSE, FALSE )
-UI_LoadFormImage( frmConnect, "texture/ui/SysBotton2.dds", 198, 72, 0, 111, "", 0, 0 )
+
+-------------------------
+-- Please wait loading --
+-------------------------
+-- Main image
+frmConnect = UI_CreateForm( "frmConnect", FALSE, 193, 48, 396, 80, FALSE, FALSE )
+UI_LoadFormImage( frmConnect, "texture/ui/NUI/loading.png", 193, 48, 0, 0, "", 0, 0 )
 --UI_FormSetHotKey( frmConnect, ALT_KEY, HOTKEY_L ) 
 UI_SetFormStyle( frmConnect, 1 )
 UI_AddFormToTemplete( frmConnect, FORM_SWITCH_SCENE )
 UI_FormSetIsEscClose( frmConnect, FALSE )
 
---创建连接信息
-labConnect = UI_CreateCompent( frmConnect, LABELEX_TYPE, "labConnect", 52, 13, 70, 24 )
-UI_SetCaption( labConnect, "Please wait…" )
-UI_SetTextColor( labConnect, COLOR_BLACK )
-UI_SetLabelExFont( labConnect, DEFAULT_FONT, TRUE, COLOR_WHITE )
+--Please wait text
+--labConnect = UI_CreateCompent( frmConnect, LABELEX_TYPE, "labConnect", 52, 13, 70, 24 )
+--UI_SetCaption( labConnect, "Please wait…" )
+--UI_SetTextColor( labConnect, COLOR_BLACK )
+--UI_SetLabelExFont( labConnect, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---创建loading进度
-imgLoading = UI_CreateCompent( frmConnect, IMAGE_FLASH_TYPE, "imgLoading", 135, 8, 20, 51 )
-UI_LoadScaleImage( imgLoading, "texture/ui/SysBotton2.dds", 0, 26, 8, 20, 185, 1.0, 1.0 )
+-- loading progress
+imgLoading = UI_CreateCompent( frmConnect, IMAGE_FLASH_TYPE, "imgLoading", 136, 12, 28, 22 )
+UI_LoadScaleImage( imgLoading, "texture/ui/NUI/loading.png", 0, 100, 12, 28, 64, 1.0, 1.0 )
 
 
 
