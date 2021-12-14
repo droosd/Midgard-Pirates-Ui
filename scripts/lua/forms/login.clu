@@ -871,16 +871,10 @@ UI_FormSetIsEscClose(frmPathLogo, FALSE)
 imgPathLogo = UI_CreateCompent(frmPathLogo, IMAGE_TYPE,"imgPathLogo", 256, 129, 0, 0)
 --UI_LoadImage( imgPathLogo, "texture/ui/PathLogo.tga", NORMAL, 256,129, 0, 0)
 
------------------------------------------------------------------------
---								     --
---		创建角色流程修改 2006.08.08 by Leo	             --
---								     --
------------------------------------------------------------------------	
-
------------------------------------------------------------------------
--- 定义欢迎界面   该界面仅在当前帐号内无角色时出现
------------------------------------------------------------------------	
-frmWelcomeNotice = UI_CreateForm("frmWelcomeNotice", TRUE, 500, 170, 0 , 0, TRUE,TRUE)
+--------------------
+-- Welcome notice --
+--------------------
+frmWelcomeNotice = UI_CreateForm("frmWelcomeNotice", TRUE, 514, 188, 0 , 0, TRUE,TRUE)
 UI_ShowForm(frmWelcomeNotice, FALSE )
 UI_SetIsDrag(frmWelcomeNotice, FALSE)
 UI_FormSetIsEscClose(frmWelcomeNotice, FALSE)
@@ -889,25 +883,24 @@ UI_AddFormToTemplete( frmWelcomeNotice, FORM_SELECT )
 
 --UI_FormSetHotKey( frmWelcomeNotice, ALT_KEY, HOTKEY_Z ) 
 
-imgWelcomeNotice1 = UI_CreateCompent(frmWelcomeNotice, IMAGE_TYPE,"imgWelcomeNotice1", 256, 170, 0, 0)
-UI_LoadImage( imgWelcomeNotice1, "texture/ui/newshelp/login_out_01.tga", NORMAL, 256,170, 0, 0)
+imgWelcomeNotice1 = UI_CreateCompent(frmWelcomeNotice, IMAGE_TYPE,"imgWelcomeNotice1", 514, 188, 0, 0)
+UI_LoadImage( imgWelcomeNotice1, "texture/ui/NUI/frmWelcomeNotice.png", NORMAL, 514, 188, 0, 0)
+-- Opacity (default is 220)
 UI_SetImageAlpha(imgWelcomeNotice1,220)
 
 imgWelcomeNotice2 = UI_CreateCompent(frmWelcomeNotice, IMAGE_TYPE,"imgWelcomeNotice2", 244, 170, 256, 0)
-UI_LoadImage( imgWelcomeNotice2, "texture/ui/newshelp/login_out_02.tga", NORMAL, 244,170, 0, 0)
-UI_SetImageAlpha(imgWelcomeNotice2,220)
 
-labTitle = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
+labTitle = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labTitle", 400, 150, 220, 8 )
 UI_SetCaption( labTitle, "Newbie Guide")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
-labText1  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText1", 400, 150, 20, 25 )
-labText2  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText2", 400, 150, 20, 45 )
-labText3  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText3", 400, 150, 20, 65 )
-labText4  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText4", 400, 150, 20, 85 )
-labText5  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText5", 400, 150, 20, 105 )
-labText6  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText6", 400, 150, 20, 125 )
+labText1  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText1", 400, 150, 20, 40 )
+labText2  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText2", 400, 150, 20, 60 )
+labText3  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText3", 400, 150, 20, 80 )
+labText4  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText4", 400, 150, 20, 100 )
+labText5  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText5", 400, 150, 20, 120 )
+labText6  = UI_CreateCompent( frmWelcomeNotice, LABELEX_TYPE, "labText6", 400, 150, 20, 140 )
 UI_SetCaption( labText1, "Dear player, you can now enter the fantasy world of Tales of Pirates")
 UI_SetCaption( labText2,"Please select the \"Create\" button to make your first character.")
 UI_SetCaption( labText3,"You will be guided you through to allow you to familiarize with the game background")
@@ -927,8 +920,8 @@ UI_SetLabelExFont( labText5, DEFAULT_FONT, TRUE, COLOR_WHITE )
 UI_SetTextColor( labText6, COLOR_BLACK )
 UI_SetLabelExFont( labText6, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-btnYes = UI_CreateCompent( frmWelcomeNotice, BUTTON_TYPE, "btnYes", 41, 19, 230, 145 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+btnYes = UI_CreateCompent( frmWelcomeNotice, BUTTON_TYPE, "btnYes", 52, 17, 230, 155 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/frmWelcomeNotice.png", 52, 17, 1, 200, TRUE )
 
 -----------------------------------------------------------------------
 -- 定义首次创建角色成功提示界面   该界面仅在该帐号走完第一个角色的创建流程后显示
