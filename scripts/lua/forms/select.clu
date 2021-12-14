@@ -1,7 +1,6 @@
- -----------------------------------------------------------------------
--- 定义选择角色表单
------------------------------------------------------------------------
--- 创建选择角色表单
+------------------------------------
+-- Define the selection role form --
+------------------------------------
 frmSelect = UI_CreateForm( "frmSelect", FALSE, 407, 36, 200, 200, TRUE, FALSE )
 UI_ShowForm( frmSelect, TRUE )
 UI_AddFormToTemplete( frmSelect, FORM_SELECT )
@@ -9,32 +8,33 @@ UI_AddFormToTemplete( frmSelect, FORM_SELECT )
 UI_FormSetIsEscClose( frmSelect, FALSE )
 UI_SetFormStyle( frmSelect, 2 )
 
--- 加载背景图片
-imgSelect = UI_CreateCompent( frmSelect, IMAGE_TYPE, "imgSelect",407, 36, -40, 0 )
-UI_LoadImage( imgSelect, "texture/ui/corsairs/a001.png", NORMAL, 407, 36, 0, 129 )
+-- Main image
+imgSelect = UI_CreateCompent( frmSelect, IMAGE_TYPE, "imgSelect",379, 40, 20, 0 )
+UI_LoadImage( imgSelect, "texture/ui/NUI/a001.png", NORMAL, 379, 40, 0, 0 )
 
-btnChangePass = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnChangePass", 66, 21, 269, 8 )
-UI_LoadButtonImage( btnChangePass, "texture/ui/corsairs/a001.png", 66, 21, 162, 165, FALSE )
+-- Change password
+btnChangePass = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnChangePass", 56, 19, 335, 10 )
+UI_LoadButtonImage( btnChangePass, "texture/ui/NUI/a001.png", 56, 19, 196, 48, FALSE )
 
 -- Create
-btnCreate = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnCreate", 46, 22, -16, 7 )
-UI_LoadButtonImage( btnCreate, "texture/ui/select4.tga", 46, 22, 92, 113, FALSE )
+btnCreate = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnCreate", 56, 19, 35, 10 )
+UI_LoadButtonImage( btnCreate, "texture/ui/NUI/a001.png", 56, 19, 19, 48, FALSE )
 
 -- Delete
-btnDel = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnDel", 46, 22, 35, 7 )
-UI_LoadButtonImage( btnDel, "texture/ui/select4.tga", 46, 22, 138, 113, FALSE )
+btnDel = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnDel", 56, 19, 95, 10 )
+UI_LoadButtonImage( btnDel, "texture/ui/NUI/a001.png", 56, 19, 78, 48, FALSE )
 
--- Accept
-btnYes = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnYes", 46, 22, 86, 7 )
-UI_LoadButtonImage( btnYes, "texture/ui/select4.tga", 46, 22, 184, 113, FALSE )
+-- Enter
+btnYes = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnYes", 56, 19, 155, 10 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/a001.png", 56, 19, 137, 48, FALSE )
 
--- Back
-btnNo = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnNo", 46, 22, 137, 7 )
-UI_LoadButtonImage( btnNo, "texture/ui/select4.tga", 46, 22, 0, 203, TRUE )
+-- Exit
+btnNo = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnNo", 56, 19, 215, 10 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/a001.png", 56, 19, 3, 193, TRUE )
 
 -- Edit
-btnAlter = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnAlter", 66, 21, 198 , 8 )
-UI_LoadButtonImage( btnAlter, "texture/ui/corsairs/a001.png", 66, 21, 96, 165, FALSE )
+btnAlter = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnAlter", 56, 19, 275 , 10 )
+UI_LoadButtonImage( btnAlter, "texture/ui/NUI/a001.png", 56, 19, 255, 48, FALSE )
 
 -----------------------------------------------------------------------
 -- 定义退出表单
