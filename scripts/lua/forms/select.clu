@@ -758,70 +758,55 @@ UI_ButtonSetHint(btnPrevStep,"Previous")
 
 
 
-----------------------------------------------------------------
--- Change Password | Coded by Billy, GUI by Foxseiz
-----------------------------------------------------------------
+---------------------------------------------------------------
+-- Change Password | Coded by Billy, Original GUI by Foxseiz --
+---------------------------------------------------------------
 
-frmUpdPas = UI_CreateForm( "frmUpdPas", TRUE, 250, 170, 0 , 0, TRUE, TRUE )
+frmUpdPas = UI_CreateForm( "frmUpdPas", TRUE, 245, 153, 0 , 0, TRUE, TRUE )
 UI_ShowForm( frmUpdPas, FALSE )
 UI_AddFormToTemplete( frmUpdPas, FORM_SELECT )
 UI_SetIsDrag( frmUpdPas, TRUE )
 UI_FormSetIsEscClose( frmUpdPas, TRUE)
 UI_SetFormStyle(frmUpdPas,1)
 
-imgBackground = UI_CreateCompent( frmUpdPas, IMAGE_TYPE, "imgBackground", 230, 148, 0, 0 )
-UI_LoadImage( imgBackground, "texture/ui/corsairs/changepw.png", NORMAL, 230, 148, 0, 0 )
+imgBackground = UI_CreateCompent( frmUpdPas, IMAGE_TYPE, "imgBackground", 245, 153, 0, 0 )
+UI_LoadImage( imgBackground, "texture/ui/NUI/frmUpdPas.png", NORMAL, 245, 153, 0, 0 )
 
 -- Title Bar Password Label
-labTiPass = UI_CreateCompent( frmUpdPas, LABELEX_TYPE, "labTiPass", 95, 12, 10, 6 )
+labTiPass = UI_CreateCompent( frmUpdPas, LABELEX_TYPE, "labTiPass", 95, 12, 80, 6 )
 UI_SetCaption( labTiPass, "Change Password" )
-UI_SetTextColor( labTiPass, COLOR_BLACK )
-UI_SetLabelExFont( labTiPass, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTiPass, COLOR_WHITE )
+UI_SetLabelExFont( labTiPass, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
--- Password Label
-labPass = UI_CreateCompent( frmUpdPas, LABELEX_TYPE, "labPass", 95, 13, 10, 50 )
-UI_SetCaption( labPass, "New Password" )
-UI_SetTextColor( labPass, COLOR_BLACK )
-UI_SetLabelExFont( labPass, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-edtPassword = UI_CreateCompent( frmUpdPas, EDIT_TYPE, "edtPassword", 80, 12, 116, 50 )
-UI_SetTextColor( edtPassword, COLOR_BLACK )
+--New password
+edtPassword = UI_CreateCompent( frmUpdPas, EDIT_TYPE, "edtPassword", 117, 21, 118, 47 )
+UI_SetTextColor( edtPassword, COLOR_WHITE )
 UI_SetEditMaxNum( edtPassword, 20 )
 UI_SetEditMaxNumVisible( edtPassword, 12 )
 UI_SetCaption(edtPassword,"")
 
--- Password 2 Label
-labPass2 = UI_CreateCompent( frmUpdPas, LABELEX_TYPE, "labPass2", 95, 13, 10, 75 )
-UI_SetCaption( labPass2, "Confirm Password" )
-UI_SetTextColor( labPass2, COLOR_BLACK )
-UI_SetLabelExFont( labPass2, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-edtPassword2 = UI_CreateCompent( frmUpdPas, EDIT_TYPE, "edtPassword2", 80, 12, 116, 75 )
+-- Cofirm Password
+edtPassword2 = UI_CreateCompent( frmUpdPas, EDIT_TYPE, "edtPassword2", 117, 21, 118, 72 )
 UI_SetTextColor( edtPassword2, COLOR_BLACK )
 UI_SetEditMaxNum( edtPassword2, 20 )
 UI_SetEditMaxNumVisible( edtPassword2, 12 )
 UI_SetCaption(edtPassword2,"")
 
--- PIN Label
-labPIN = UI_CreateCompent( frmUpdPas, LABELEX_TYPE, "labPIN", 95, 13, 10, 100 )
-UI_SetCaption( labPIN, "Confirm PIN" )
-UI_SetTextColor( labPIN, COLOR_BLACK )
-UI_SetLabelExFont( labPIN, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-confirmPIN = UI_CreateCompent( frmUpdPas, EDIT_TYPE, "confirmPIN", 80, 12, 116, 100 )
+-- PIN Password
+confirmPIN = UI_CreateCompent( frmUpdPas, EDIT_TYPE, "confirmPIN", 117, 21, 118, 97 )
 UI_SetTextColor( confirmPIN, COLOR_BLACK )
 UI_SetEditMaxNum( confirmPIN, 20 )
 UI_SetEditMaxNumVisible( confirmPIN, 12 )
 UI_SetCaption(confirmPIN,"")
 
 -- Confirm Button
-btnChangePassConf = UI_CreateCompent( frmUpdPas, BUTTON_TYPE, "btnChangePassConf", 41, 19, 60, 126 )
-UI_LoadButtonImage( btnChangePassConf, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+btnChangePassConf = UI_CreateCompent( frmUpdPas, BUTTON_TYPE, "btnChangePassConf", 52, 17, 60, 126 )
+UI_LoadButtonImage( btnChangePassConf, "texture/ui/NUI/frmUpdPas.png", 52, 17, 1, 209, TRUE )
 UI_SetButtonModalResult( btnChangePassConf, BUTTON_CLOSE )
 
 -- Cancel Button
-btnCancel = UI_CreateCompent( frmUpdPas, BUTTON_TYPE, "btnCancel", 41, 19, 130, 126 )
-UI_LoadButtonImage( btnCancel, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+btnCancel = UI_CreateCompent( frmUpdPas, BUTTON_TYPE, "btnCancel", 52, 17, 130, 126 )
+UI_LoadButtonImage( btnCancel, "texture/ui/NUI/frmUpdPas.png", 52, 17, 1, 191, TRUE )
 UI_SetButtonModalResult( btnCancel, BUTTON_CLOSE )
 
 
