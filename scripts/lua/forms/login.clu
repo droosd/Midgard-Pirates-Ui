@@ -812,9 +812,9 @@ UI_LoadButtonImage( btnNum0, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 0, TRU
 btnClear = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnClear", 52, 17, 51, 98 )
 UI_LoadButtonImage( btnClear, "texture/new/KeyboardNum.png", 52, 17, 0, 191, TRUE )
 
------------------------------------------------------------------------
--- 定义二次密码介绍窗体
------------------------------------------------------------------------	
+-----------------------------------
+-- Double password reminder text --
+-----------------------------------
 frmDoublePwdInfo =  UI_CreateForm("frmDoublePwdInfo", TRUE, 378, 129, 200, 329, TRUE,TRUE)
 UI_ShowForm(frmDoublePwdInfo, TRUE )
 UI_AddFormToTemplete( frmDoublePwdInfo, FORM_SELECT )
@@ -823,18 +823,18 @@ UI_SetIsDrag(frmDoublePwdInfo, FALSE)
 --UI_FormSetHotKey( frmDoublePwdInfo, ALT_KEY, HOTKEY_Z ) 
 
 imgWelcomeNotice1 = UI_CreateCompent(frmDoublePwdInfo, IMAGE_TYPE,"imgWelcomeNotice1", 256, 122, 0, 0)
-UI_LoadImage( imgWelcomeNotice1, "texture/ui/Keyboard1.tga", NORMAL, 256,122, 0, 0)
+UI_LoadImage( imgWelcomeNotice1, "texture/ui/NUI/frmDoublePwdInfo.png", NORMAL, 256,122, 0, 0)
 UI_SetImageAlpha(imgWelcomeNotice1,220)
 
 imgWelcomeNotice2 = UI_CreateCompent(frmDoublePwdInfo, IMAGE_TYPE,"imgWelcomeNotice2", 122, 122, 256, 0)
-UI_LoadImage( imgWelcomeNotice2, "texture/ui/Keyboard1.tga", NORMAL, 122,122, 69, 123)
+UI_LoadImage( imgWelcomeNotice2, "texture/ui/NUI/frmDoublePwdInfo.png", NORMAL, 122,122, 0, 123)
 UI_SetImageAlpha(imgWelcomeNotice2,220)
 
-labText1  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText1", 400, 150, 10, 5 )
-labText2  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText2", 400, 150, 10, 25 )
-labText3  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText3", 400, 150, 10, 45 )
-labText4  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText4", 400, 150, 10, 65 )
-labText5  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText5", 400, 150, 10, 85 )
+labText1  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText1", 400, 150, 15, 10 )
+labText2  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText2", 400, 150, 15, 30 )
+labText3  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText3", 400, 150, 15, 50 )
+labText4  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText4", 400, 150, 15, 70 )
+labText5  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText5", 400, 150, 15, 90 )
 --labText6  = UI_CreateCompent( frmDoublePwdInfo, LABELEX_TYPE, "labText6", 400, 150, 10, 105 )
 UI_SetCaption( labText1, "Dear player, you have not create a security code.")
 UI_SetCaption( labText2, "Please select a security code to keep your account safe.")
@@ -854,7 +854,6 @@ UI_SetTextColor( labText5, COLOR_BLACK )
 UI_SetLabelExFont( labText5, DEFAULT_FONT, TRUE, COLOR_WHITE )
 --UI_SetTextColor( labText6, COLOR_BLACK )
 --UI_SetLabelExFont( labText6, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
 
 -----------------------------------------------------------------------
 -- 定义版本Logo界面
