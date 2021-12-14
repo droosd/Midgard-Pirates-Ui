@@ -729,11 +729,10 @@ UI_SetTextColor( edtDoublePwdAlterNewRetry, COLOR_WHITE )
 UI_SetEditMaxNum( edtDoublePwdAlterNewRetry, 12 )
 UI_SetEditMaxNumVisible(edtDoublePwdAlterNewRetry,12)
 
------------------------------------------------------------------------
--- 定义二次密码显示窗体
------------------------------------------------------------------------	
--- 创建 二次密码显示窗体
-frmDoublePwd = UI_CreateForm("frmDoublePwd", TRUE, 247, 129, 200, 200, TRUE, TRUE)
+----------------------------
+-- Delete double password --
+----------------------------
+frmDoublePwd = UI_CreateForm("frmDoublePwd", TRUE, 245, 130, 200, 200, TRUE, TRUE)
 UI_ShowForm( frmDoublePwd, FALSE )
 --UI_SetFormStyle( frmDoublePwd, 2 )
 UI_AddFormToTemplete( frmDoublePwd, FORM_SELECT )
@@ -743,33 +742,30 @@ UI_FormSetIsEscClose( frmDoublePwd, TRUE)
 UI_FormSetEnterButton(frmDoublePwd,btnYes)
 --UI_FormSetHotKey( frmDoublePwd, ALT_KEY, HOTKEY_Z )
 
--- 加载背景图片
-imgDoublePwd = UI_CreateCompent(frmDoublePwd, IMAGE_TYPE,"imgDoublePwd", 247, 129, 0, 0)
-UI_LoadImage( imgDoublePwd, "texture/ui/a003.tga", NORMAL, 247, 129, 0, 0)
---title
-labTitle = UI_CreateCompent( frmDoublePwd, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
-UI_SetCaption( labTitle, "Enter security code")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
---加载label
-lab1 = UI_CreateCompent( frmDoublePwd, LABELEX_TYPE, "lab1", 210, 11, 16, 46)
-UI_SetCaption( lab1, "Enter security code" )
-UI_SetTextColor( lab1,COLOR_BLACK )
-UI_SetLabelExFont( lab1, DEFAULT_FONT, TRUE, COLOR_WHITE )
+-- Main image
+imgDoublePwd = UI_CreateCompent(frmDoublePwd, IMAGE_TYPE,"imgDoublePwd", 245, 130, 0, 0)
+UI_LoadImage( imgDoublePwd, "texture/ui/NUI/a003.png", NORMAL, 245, 130, 0, 0)
 
--- 加载密码显示框
-edtDoublePwd = UI_CreateCompent(frmDoublePwd, EDIT_TYPE,"edtDoublePwd", 66, 14, 137, 44)
+--title
+labTitle = UI_CreateCompent( frmDoublePwd, LABELEX_TYPE, "labTitle", 400, 150, 70, 5 )
+UI_SetCaption( labTitle, "Enter security code")
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
+
+-- Enter double password
+edtDoublePwd = UI_CreateCompent(frmDoublePwd, EDIT_TYPE,"edtDoublePwd", 66, 14, 100, 47)
+UI_SetTextColor( edtDoublePwd, COLOR_WHITE )
 UI_SetIsKeyFocus(edtDoublePwd,FALSE)
 UI_SetEditMaxNum(edtDoublePwd, 12 )
 UI_SetEditMaxNumVisible(edtDoublePwd,12)
 
--- 加载确定按钮
-btnYes = UI_CreateCompent( frmDoublePwd, BUTTON_TYPE, "btnYes", 41, 19, 130, 107 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+-- Confirm button
+btnYes = UI_CreateCompent( frmDoublePwd, BUTTON_TYPE, "btnYes", 52, 17, 100, 95 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/a003.png", 52, 17, 1, 209, TRUE )
 
---加载取消按钮
-btnClear = UI_CreateCompent( frmDoublePwd, BUTTON_TYPE, "btnClear", 41, 19, 175, 107 )
-UI_LoadButtonImage( btnClear, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+-- Cancel button
+btnClear = UI_CreateCompent( frmDoublePwd, BUTTON_TYPE, "btnClear", 52, 17, 160, 95 )
+UI_LoadButtonImage( btnClear, "texture/ui/NUI/a003.png", 52, 17, 1, 191, TRUE )
 
 
 -----------------------------------------------------------------------
