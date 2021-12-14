@@ -193,54 +193,58 @@ UI_SetSize( id, 11, 9 )
 btnNo = UI_CreateCompent( frmServer, BUTTON_TYPE, "btnNo", 41, 19, 185, 263 )
 UI_LoadButtonImage( btnNo, "texture/ui/SystemBotton3.tga", 41, 19, 0, 152, TRUE )
 UI_SetAlpha(btnNo,210)
------------------------------------------------------------------------
--- Login Form
------------------------------------------------------------------------
-frmAccount = UI_CreateForm( "frmAccount", FALSE, 185, 101, 310, 340, FALSE, FALSE )
+
+----------------
+-- Login Form --
+----------------
+frmAccount = UI_CreateForm( "frmAccount", FALSE, 306, 135, 310, 340, FALSE, FALSE )
 UI_AddFormToTemplete( frmAccount, FORM_LOGIN )
 UI_SetFormStyle( frmAccount, 2 )
 UI_FormSetIsEscClose( frmAccount, FALSE )
 
 imgLogo1 = UI_CreateCompent( frmAccount, IMAGE_TYPE, "imgLogo1", 256, 256, -117, -197 )
-
 imgLogo2 = UI_CreateCompent( frmAccount, IMAGE_TYPE, "imgLogo2", 256, 256, 139, -173 )
 
-imgAccout = UI_CreateCompent( frmAccount, IMAGE_TYPE, "imgAccout", 185, 101, 0, 0 )
-UI_LoadImage( imgAccout, "texture/ui/sure.bmp", NORMAL, 185, 101, 0, 0 )
-UI_SetImageAlpha(imgAccout,235)
+-- Main image
+imgAccout = UI_CreateCompent( frmAccount, IMAGE_TYPE, "imgAccout", 306, 135, 0, 0 )
+UI_LoadImage( imgAccout, "texture/ui/NUI/frmAccount.png", NORMAL, 306, 135, 0, 0 )
+-- Opacity (default is 235)
+UI_SetImageAlpha(imgAccout,250)
 
-labTitle = UI_CreateCompent( frmAccount, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
-UI_SetCaption( labTitle, "Account Login")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+-- Title
+--labTitle = UI_CreateCompent( frmAccount, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
+--UI_SetCaption( labTitle, "Account Login")
+--UI_SetTextColor( labTitle, COLOR_BLACK )
+--UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-labID = UI_CreateCompent( frmAccount, LABELEX_TYPE, "labID", 23, 11, 28, 32 )
-UI_SetCaption( labID, "Account" )
-UI_SetTextColor( labID, COLOR_BLACK )
-UI_SetLabelExFont( labID, DEFAULT_FONT, TRUE, COLOR_WHITE )
+--labID = UI_CreateCompent( frmAccount, LABELEX_TYPE, "labID", 23, 11, 28, 32 )
+--UI_SetCaption( labID, "Account" )
+--UI_SetTextColor( labID, COLOR_BLACK )
+--UI_SetLabelExFont( labID, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-labPass = UI_CreateCompent( frmAccount, LABELEX_TYPE, "labPass", 23, 11, 22, 54 )
-UI_SetCaption( labPass, "Password" )
-UI_SetTextColor( labPass, COLOR_BLACK )
-UI_SetLabelExFont( labPass, DEFAULT_FONT, TRUE, COLOR_WHITE )
+--labPass = UI_CreateCompent( frmAccount, LABELEX_TYPE, "labPass", 23, 11, 22, 54 )
+--UI_SetCaption( labPass, "Password" )
+--UI_SetTextColor( labPass, COLOR_BLACK )
+--UI_SetLabelExFont( labPass, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-imgID = UI_CreateCompent( frmAccount, IMAGE_TYPE, "imgID", 87, 18, 70, 28 )
-UI_LoadImage( imgID, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
-imgPass = UI_CreateCompent( frmAccount, IMAGE_TYPE, "imgPass", 87, 18, 70, 50 )
-UI_LoadImage( imgPass, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
+--imgID = UI_CreateCompent( frmAccount, IMAGE_TYPE, "imgID", 87, 18, 70, 28 )
+--UI_LoadImage( imgID, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
+--imgPass = UI_CreateCompent( frmAccount, IMAGE_TYPE, "imgPass", 87, 18, 70, 50 )
+--UI_LoadImage( imgPass, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
 
-chkID = UI_CreateCompent( frmAccount, CHECK_TYPE, "chkID", 10, 10, 161, 32 )
+-- Remember username
+chkID = UI_CreateCompent( frmAccount, CHECK_TYPE, "chkID", 10, 10, 275, 48 )
 UI_LoadImage( chkID, "texture/ui/QQ2.tga", UNCHECKED, 10, 10, 40, 231 )
 UI_LoadImage( chkID, "texture/ui/QQ2.tga", CHECKED, 10, 10, 52, 231 )
 UI_SetHint( chkID, "Remember ID" )
 
 -- Login Button
-btnYes = UI_CreateCompent( frmAccount, BUTTON_TYPE, "btnYes", 41, 19, 84, 78 )
-UI_LoadButtonImage( btnYes, "texture/ui/corsairs/coButtons.png", 41, 19, 0, 57, TRUE )
+btnYes = UI_CreateCompent( frmAccount, BUTTON_TYPE, "btnYes", 52, 17, 80, 105 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/frmAccount.png", 52, 17, 1, 158, TRUE )
 
 -- Exit Button
-btnNo = UI_CreateCompent( frmAccount, BUTTON_TYPE, "btnNo", 41, 19, 129, 78 )
-UI_LoadButtonImage( btnNo, "texture/ui/corsairs/coButtons.png", 41, 19, 0, 76, TRUE )
+btnNo = UI_CreateCompent( frmAccount, BUTTON_TYPE, "btnNo", 52, 17, 135, 105 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmAccount.png", 52, 17, 1, 178, TRUE )
 
 labYes = UI_CreateCompent( frmAccount, LABELEX_TYPE, "labYes", 42, 10, 107, 155 )
 UI_SetCaption( labYes, "" )
@@ -253,24 +257,24 @@ UI_SetTextColor( labNo, COLOR_WHITE )
 UI_SetLabelExFont( labNo, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 
---º”‘ÿ’ ∫≈∫Õ√‹¬Î ‰»ÎøÚ
-edtID = UI_CreateCompent( frmAccount, EDIT_TYPE, "edtID", 80, 12, 76, 32 )
-UI_SetTextColor( edtID, COLOR_BLACK )
+-- Username
+edtID = UI_CreateCompent( frmAccount, EDIT_TYPE, "edtID", 139, 22, 134, 46 )
+UI_SetTextColor( edtID, COLOR_WHITE )
 UI_SetEditMaxNum( edtID, 20 )
 UI_SetEditMaxNumVisible( edtID, 12 )
-
-edtPassword = UI_CreateCompent( frmAccount, EDIT_TYPE, "edtPassword", 80, 12, 76, 54 )
-UI_SetTextColor( edtPassword, COLOR_BLACK )
+-- Password
+edtPassword = UI_CreateCompent( frmAccount, EDIT_TYPE, "edtPassword", 139, 22, 134, 78 )
+UI_SetTextColor( edtPassword, COLOR_WHITE )
 UI_SetEditMaxNum( edtPassword, 20 )
 UI_SetEditMaxNumVisible( edtPassword, 12 )
 
 -- Register Button
-btnKeyboard = UI_CreateCompent( frmAccount, BUTTON_TYPE, "btnKeyboard", 41, 19, 39, 78 )
-UI_LoadButtonImage( btnKeyboard, "texture/ui/corsairs/coButtons.png", 41, 19, 0, 38, TRUE )
+btnKeyboard = UI_CreateCompent( frmAccount, BUTTON_TYPE, "btnKeyboard", 52, 17, 190, 105 )
+UI_LoadButtonImage( btnKeyboard, "texture/ui/NUI/frmAccount.png", 52, 17, 1, 215, TRUE )
 --UI_LoadImage( btnKeyboard, "texture/ui/corsairs/coButtons.png", 0, 41, 19, 0, 38, )
 --UI_LoadImage( btnKeyboard, "texture/ui/corsairs/coButtons.png", 2, 41, 19, 41, 38, )
 --UI_LoadImage( btnKeyboard, "texture/ui/corsairs/coButtons.png", 1, 41, 19, 82, 38, )
-	
+
 --btnRegister = UI_CreateCompent( frmAccount, BUTTON_TYPE, "btnRegister", 57, 17, 21, 79 )
 --UI_LoadButtonImage( btnRegister, "texture/ui/Keyboard4.tga", 57, 17, 197, 85, FALSE )
 
@@ -301,43 +305,44 @@ UI_SetCaption( labYes, "" )
 UI_SetTextColor( labYes, COLOR_WHITE )
 UI_SetLabelExFont( labYes, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
------------------------------------------------------------------------
--- Coded by Billy | GUI by Foxseiz
------------------------------------------------------------------------
+----------------------------------------------------------
+-- Register -- Coded by Billy | Original GUI by Foxseiz --
+----------------------------------------------------------
 
-frmRegister = UI_CreateForm( "frmRegister", FALSE, 268, 170, 310, 160, FALSE, FALSE )
+frmRegister = UI_CreateForm( "frmRegister", FALSE, 272, 177, 310, 160, FALSE, FALSE )
 UI_AddFormToTemplete( frmRegister, FORM_LOGIN )
 UI_SetFormStyle( frmRegister, 2 )
 UI_FormSetIsEscClose( frmRegister, FALSE )
 
-imgAccout = UI_CreateCompent( frmRegister, IMAGE_TYPE, "imgAccout", 268, 170, 0, 0 )
-UI_LoadImage( imgAccout, "texture/ui/corsairs/register.png", NORMAL, 268, 170, 0, 0 )
-UI_SetImageAlpha(imgAccout,235)
+imgAccout = UI_CreateCompent( frmRegister, IMAGE_TYPE, "imgAccout", 272, 177, 0, 0 )
+UI_LoadImage( imgAccout, "texture/ui/NUI/frmAccount.png", NORMAL, 272, 177, 226, 172 )
+-- Opacity (default is 235)
+UI_SetImageAlpha(imgAccout,250)
 
 labTitle = UI_CreateCompent( frmRegister, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
-UI_SetCaption( labTitle, "Account Registration")
+--UI_SetCaption( labTitle, "Account Registration")
 UI_SetTextColor( labTitle, COLOR_BLACK )
 UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-labID = UI_CreateCompent( frmRegister, LABELEX_TYPE, "labID", 23, 11, 18, 50 )
-UI_SetCaption( labID, "Account" )
-UI_SetTextColor( labID, COLOR_BLACK )
-UI_SetLabelExFont( labID, DEFAULT_FONT, TRUE, COLOR_WHITE )
+--labID = UI_CreateCompent( frmRegister, LABELEX_TYPE, "labID", 23, 11, 18, 50 )
+--UI_SetCaption( labID, "Account" )
+--UI_SetTextColor( labID, COLOR_BLACK )
+--UI_SetLabelExFont( labID, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-labPass = UI_CreateCompent( frmRegister, LABELEX_TYPE, "labPass", 23, 11, 18, 74 )
-UI_SetCaption( labPass, "Password" )
-UI_SetTextColor( labPass, COLOR_BLACK )
-UI_SetLabelExFont( labPass, DEFAULT_FONT, TRUE, COLOR_WHITE )
+--labPass = UI_CreateCompent( frmRegister, LABELEX_TYPE, "labPass", 23, 11, 18, 74 )
+--UI_SetCaption( labPass, "Password" )
+--UI_SetTextColor( labPass, COLOR_BLACK )
+--UI_SetLabelExFont( labPass, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-labPass2 = UI_CreateCompent( frmRegister, LABELEX_TYPE, "labPass2", 23, 11, 18, 98 )
-UI_SetCaption( labPass2, "Re-Password" )
-UI_SetTextColor( labPass2, COLOR_BLACK )
-UI_SetLabelExFont( labPass2, DEFAULT_FONT, TRUE, COLOR_WHITE )
+--labPass2 = UI_CreateCompent( frmRegister, LABELEX_TYPE, "labPass2", 23, 11, 18, 98 )
+--UI_SetCaption( labPass2, "Re-Password" )
+--UI_SetTextColor( labPass2, COLOR_BLACK )
+--UI_SetLabelExFont( labPass2, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-labEmail = UI_CreateCompent( frmRegister, LABELEX_TYPE, "labEmail", 23, 11, 18, 122 )
-UI_SetCaption( labEmail, "Email" )
-UI_SetTextColor( labEmail, COLOR_BLACK )
-UI_SetLabelExFont( labEmail, DEFAULT_FONT, TRUE, COLOR_WHITE )
+--labEmail = UI_CreateCompent( frmRegister, LABELEX_TYPE, "labEmail", 23, 11, 18, 122 )
+--UI_SetCaption( labEmail, "Email" )
+--UI_SetTextColor( labEmail, COLOR_BLACK )
+--UI_SetLabelExFont( labEmail, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 -- IMAGES FOR FIELD
 -- imgID = UI_CreateCompent( frmRegister, IMAGE_TYPE, "imgID", 87, 18, 70, 28 )
@@ -352,11 +357,12 @@ UI_SetLabelExFont( labEmail, DEFAULT_FONT, TRUE, COLOR_WHITE )
 -- imgEmail = UI_CreateCompent( frmRegister, IMAGE_TYPE, "imgEmail", 87, 18, 70, 94 )
 -- UI_LoadImage( imgEmail, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
 
-btnRegYes = UI_CreateCompent( frmRegister, BUTTON_TYPE, "btnRegYes", 41, 19, 82, 148 )
-UI_LoadButtonImage( btnRegYes, "texture/ui/corsairs/coButtons.png", 41, 19, 0, 152, TRUE )
-
-btnRegNo = UI_CreateCompent( frmRegister, BUTTON_TYPE, "btnRegNo", 41, 19, 148, 148 )
-UI_LoadButtonImage( btnRegNo, "texture/ui/corsairs/coButtons.png", 41, 19, 0, 133, TRUE )
+-- Confirm button
+btnRegYes = UI_CreateCompent( frmRegister, BUTTON_TYPE, "btnRegYes", 52, 17, 82, 150 )
+UI_LoadButtonImage( btnRegYes, "texture/ui/NUI/frmAccount.png", 52, 17, 1, 196, TRUE )
+-- Cancel button
+btnRegNo = UI_CreateCompent( frmRegister, BUTTON_TYPE, "btnRegNo", 52, 17, 148, 150 )
+UI_LoadButtonImage( btnRegNo, "texture/ui/NUI/frmAccount.png", 52, 17, 1, 178, TRUE )
 
 -- YES/NO BUTTONS
 labYes = UI_CreateCompent( frmRegister, LABELEX_TYPE, "labYes", 42, 10, 107, 155 )
@@ -370,23 +376,24 @@ UI_SetTextColor( labNo, COLOR_WHITE )
 UI_SetLabelExFont( labNo, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 -- TYPING BOXES
-edtRegID = UI_CreateCompent( frmRegister, EDIT_TYPE, "edtRegID", 130, 12, 120, 51 )
-UI_SetTextColor( edtRegID, COLOR_BLACK )
+-- Username
+edtRegID = UI_CreateCompent( frmRegister, EDIT_TYPE, "edtRegID", 139, 22, 120, 47 )
+UI_SetTextColor( edtRegID, COLOR_WHITE )
 UI_SetEditMaxNum( edtRegID, 20 )
 UI_SetEditMaxNumVisible( edtRegID, 12 )
-
-edtRegPassword = UI_CreateCompent( frmRegister, EDIT_TYPE, "edtRegPassword", 130, 12, 120, 75 )
-UI_SetTextColor( edtRegPassword, COLOR_BLACK )
+-- Password
+edtRegPassword = UI_CreateCompent( frmRegister, EDIT_TYPE, "edtRegPassword", 139, 22, 120, 75 )
+UI_SetTextColor( edtRegPassword, COLOR_WHITE )
 UI_SetEditMaxNum( edtRegPassword, 20 )
 UI_SetEditMaxNumVisible( edtRegPassword, 12 )
-
-edtRegPassword2 = UI_CreateCompent( frmRegister, EDIT_TYPE, "edtRegPassword2", 130, 12, 120, 99 )
-UI_SetTextColor( edtRegPassword2, COLOR_BLACK )
+-- Re-Password
+edtRegPassword2 = UI_CreateCompent( frmRegister, EDIT_TYPE, "edtRegPassword2", 139, 22, 120, 101 )
+UI_SetTextColor( edtRegPassword2, COLOR_WHITE )
 UI_SetEditMaxNum( edtRegPassword2, 20 )
 UI_SetEditMaxNumVisible( edtRegPassword2, 12 )
-
-edtRegEmail = UI_CreateCompent( frmRegister, EDIT_TYPE, "edtRegEmail", 130, 12, 120, 123 )
-UI_SetTextColor( edtRegEmail, COLOR_BLACK )
+-- Email
+edtRegEmail = UI_CreateCompent( frmRegister, EDIT_TYPE, "edtRegEmail", 139, 22, 120, 128 )
+UI_SetTextColor( edtRegEmail, COLOR_WHITE )
 UI_SetEditMaxNum( edtRegEmail, 254 )
 UI_SetEditMaxNumVisible( edtRegEmail, 12 )
 
