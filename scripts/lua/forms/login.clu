@@ -680,11 +680,10 @@ UI_SetEditMaxNumVisible(edtDoublePwdCreateRetry,12)
 --UI_SetLabelExFont( labID, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 
------------------------------------------------------------------------
--- 定义二次密码修改窗体
------------------------------------------------------------------------	
--- 创建 二次密码修改窗体
-frmDoublePwdAlter = UI_CreateForm("frmDoublePwdAlter", TRUE, 247, 129, 200, 200, TRUE, TRUE)
+------------------------
+-- Edit Security Code --
+------------------------
+frmDoublePwdAlter = UI_CreateForm("frmDoublePwdAlter", TRUE, 245, 153, 200, 200, TRUE, TRUE)
 UI_ShowForm(frmDoublePwdAlter, FALSE)
 --UI_SetFormStyle( frmDoublePwdAlter, 2 )
 UI_SetIsDrag(frmDoublePwdAlter, FALSE)
@@ -694,45 +693,39 @@ UI_FormSetIsEscClose(frmDoublePwdAlter, TRUE)
 UI_FormSetEnterButton(frmDoublePwdAlter,btnYes)
 --UI_FormSetHotKey( frmDoublePwdAlter, ALT_KEY, HOTKEY_C )
 
--- 加载背景图片
-imgDoublePwdAlter = UI_CreateCompent(frmDoublePwdAlter, IMAGE_TYPE,"imgDoublePwdAlter", 247, 129, 0, 0)
-UI_LoadImage( imgDoublePwdAlter, "texture/ui/a002.tga", NORMAL, 247, 129, 0, 0)
+-- Main Image
+imgDoublePwdAlter = UI_CreateCompent(frmDoublePwdAlter, IMAGE_TYPE,"imgDoublePwdAlter", 245, 153, 0, 0)
+UI_LoadImage( imgDoublePwdAlter, "texture/ui/NUI/frmDoublePwdAlter.png", NORMAL, 245, 153, 0, 0)
 
--- 加载确定按钮
-btnYes = UI_CreateCompent( frmDoublePwdAlter, BUTTON_TYPE, "btnYes", 41, 19, 130, 107 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+-- Confirm button
+btnYes = UI_CreateCompent( frmDoublePwdAlter, BUTTON_TYPE, "btnYes", 52, 17, 100, 125 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/frmDoublePwdAlter.png", 52, 17, 1, 209, TRUE )
 
---加载取消按钮
-btnClear = UI_CreateCompent( frmDoublePwdAlter, BUTTON_TYPE, "btnClear", 41, 19, 175, 107 )
-UI_LoadButtonImage( btnClear, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+-- Cancel button
+btnClear = UI_CreateCompent( frmDoublePwdAlter, BUTTON_TYPE, "btnClear", 52, 17, 165, 125 )
+UI_LoadButtonImage( btnClear, "texture/ui/NUI/frmDoublePwdAlter.png", 52, 17, 1, 191, TRUE )
 
 --title
-labTitle = UI_CreateCompent( frmDoublePwdAlter, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
+labTitle = UI_CreateCompent( frmDoublePwdAlter, LABELEX_TYPE, "labTitle", 400, 150, 65, 10 )
 UI_SetCaption( labTitle, "Edit security code")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
--- 加载密码显示框
-lab1 = UI_CreateCompent( frmDoublePwdAlter, LABELEX_TYPE, "lab1", 210, 11, 16, 32)
-UI_SetCaption( lab1, "Enter old code" )
-UI_SetTextColor( lab1,COLOR_BLACK )
-UI_SetLabelExFont( lab1, DEFAULT_FONT, TRUE, COLOR_WHITE )
-edtDoublePwdAlterOld = UI_CreateCompent(frmDoublePwdAlter, EDIT_TYPE,"edtDoublePwdAlterOld", 66, 14, 137, 34)
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK)
+
+-- Old Code
+edtDoublePwdAlterOld = UI_CreateCompent(frmDoublePwdAlter, EDIT_TYPE,"edtDoublePwdAlterOld", 117, 21, 120, 47)
+UI_SetTextColor( edtDoublePwdAlterOld, COLOR_WHITE )
 UI_SetEditMaxNum( edtDoublePwdAlterOld, 12 )
 UI_SetEditMaxNumVisible(edtDoublePwdAlterOld,12)
 
-lab2 = UI_CreateCompent( frmDoublePwdAlter, LABELEX_TYPE, "lab2", 210, 11, 16, 56)
-UI_SetCaption( lab2, "Enter new code" )
-UI_SetTextColor( lab2,COLOR_BLACK )
-UI_SetLabelExFont( lab2, DEFAULT_FONT, TRUE, COLOR_WHITE )
-edtDoublePwdAlterNew = UI_CreateCompent(frmDoublePwdAlter, EDIT_TYPE,"edtDoublePwdAlterNew", 66, 14, 137, 58)
+-- New Code
+edtDoublePwdAlterNew = UI_CreateCompent(frmDoublePwdAlter, EDIT_TYPE,"edtDoublePwdAlterNew", 117, 21, 120, 73)
+UI_SetTextColor( edtDoublePwdAlterNew, COLOR_WHITE )
 UI_SetEditMaxNum( edtDoublePwdAlterNew, 12 )
 UI_SetEditMaxNumVisible(edtDoublePwdAlterNew,12)
-lab3 = UI_CreateCompent( frmDoublePwdAlter, LABELEX_TYPE, "lab3", 210, 11, 16, 80)
-UI_SetCaption( lab3, "Re-enter" )
-UI_SetTextColor( lab3,COLOR_BLACK )
-UI_SetLabelExFont( lab3, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-edtDoublePwdAlterNewRetry = UI_CreateCompent(frmDoublePwdAlter, EDIT_TYPE,"edtDoublePwdAlterNewRetry" ,66, 14, 137, 82)
+-- Re-enter new code
+edtDoublePwdAlterNewRetry = UI_CreateCompent(frmDoublePwdAlter, EDIT_TYPE,"edtDoublePwdAlterNewRetry" ,117, 21, 120, 99)
+UI_SetTextColor( edtDoublePwdAlterNewRetry, COLOR_WHITE )
 UI_SetEditMaxNum( edtDoublePwdAlterNewRetry, 12 )
 UI_SetEditMaxNumVisible(edtDoublePwdAlterNewRetry,12)
 
