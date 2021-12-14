@@ -768,11 +768,10 @@ btnClear = UI_CreateCompent( frmDoublePwd, BUTTON_TYPE, "btnClear", 52, 17, 160,
 UI_LoadButtonImage( btnClear, "texture/ui/NUI/a003.png", 52, 17, 1, 191, TRUE )
 
 
------------------------------------------------------------------------
--- 定义二次密码输入软键盘窗体
------------------------------------------------------------------------	
--- 创建 二次密码输入软键盘界面
-frmDoublePwdInput = UI_CreateForm("frmDoublePwdInput", TRUE, 131, 129, 392, 300, TRUE,TRUE)
+---------------------------
+-- Double password input --
+---------------------------
+frmDoublePwdInput = UI_CreateForm("frmDoublePwdInput", TRUE, 130, 130, 392, 300, TRUE,TRUE)
 UI_ShowForm(frmDoublePwdInput, FALSE )
 UI_AddAllFormTemplete( frmDoublePwdInput)
 UI_SetIsDrag(frmDoublePwdInput, FALSE)
@@ -780,35 +779,44 @@ UI_FormSetIsEscClose(frmDoublePwdInput, TRUE)
 
 --UI_FormSetHotKey( frmDoublePwdInput, ALT_KEY, HOTKEY_X ) 
 
--- 加载背景图片
-imgDoublePwdInput = UI_CreateCompent(frmDoublePwdInput, IMAGE_TYPE,"imgDoublePwdInput", 131, 129, 0, 0)
-UI_LoadImage( imgDoublePwdInput, "texture/ui/a004.tga", NORMAL, 131,129, 0, 0)
+-- main image
+imgDoublePwdInput = UI_CreateCompent(frmDoublePwdInput, IMAGE_TYPE,"imgDoublePwdInput", 130, 130, 0, 0)
+UI_LoadImage( imgDoublePwdInput, "texture/ui/NUI/a004.png", NORMAL, 130, 130, 0, 0)
 
--- 加载数字按钮图片
-btnNum1 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum1", 27, 17, 17, 26 )
-UI_LoadButtonImage( btnNum1, "texture/ui/Keyboard2.tga", 27, 17, 108, 17, TRUE )
+-- number image
+btnNum1 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum1", 27, 16, 17, 26 )
+UI_LoadButtonImage( btnNum1, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 17, TRUE )
+
 btnNum2 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum2", 27, 17, 51, 26 )
-UI_LoadButtonImage( btnNum2, "texture/ui/Keyboard2.tga", 27, 17, 0, 102, TRUE )
-btnNum3 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum3", 27, 17, 85, 26 )
-UI_LoadButtonImage( btnNum3, "texture/ui/Keyboard2.tga", 27, 17, 108, 102, TRUE )
-btnNum4 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum4", 27, 17, 17, 50 )
-UI_LoadButtonImage( btnNum4, "texture/ui/Keyboard2.tga", 27, 17, 0, 187, TRUE )
-btnNum5 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum5", 27, 17, 51, 50 )
-UI_LoadButtonImage( btnNum5, "texture/ui/Keyboard2.tga", 27, 17, 108, 187, TRUE )
-btnNum6 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum6", 27, 17, 85, 50 )
-UI_LoadButtonImage( btnNum6, "texture/ui/Keyboard3.tga", 27, 17, 0, 17, TRUE )
-btnNum7 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum7", 27, 17, 17, 74 )
-UI_LoadButtonImage( btnNum7, "texture/ui/Keyboard3.tga", 27, 17, 108, 17, TRUE )
-btnNum8 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum8", 27, 17, 51, 74 )
-UI_LoadButtonImage( btnNum8, "texture/ui/Keyboard3.tga", 27, 17, 0, 102, TRUE )
-btnNum9 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum9", 27, 17, 85, 74 )
-UI_LoadButtonImage( btnNum9, "texture/ui/Keyboard3.tga", 27, 17, 108, 102, TRUE )
-btnNum0 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum0", 27, 17, 17, 98 )
-UI_LoadButtonImage( btnNum0, "texture/ui/Keyboard3.tga", 27, 17, 0, 187, TRUE )
+UI_LoadButtonImage( btnNum2, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 34, TRUE )
 
---加载清除按钮
-btnClear = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnClear", 61, 17, 51, 98 )
-UI_LoadButtonImage( btnClear, "texture/ui/a002.tga", 54, 17, 0, 129, TRUE )
+btnNum3 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum3", 27, 17, 85, 26 )
+UI_LoadButtonImage( btnNum3, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 51, TRUE )
+
+btnNum4 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum4", 27, 17, 17, 50 )
+UI_LoadButtonImage( btnNum4, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 68, TRUE )
+
+btnNum5 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum5", 27, 17, 51, 50 )
+UI_LoadButtonImage( btnNum5, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 85, TRUE )
+
+btnNum6 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum6", 27, 17, 85, 50 )
+UI_LoadButtonImage( btnNum6, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 102, TRUE )
+
+btnNum7 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum7", 27, 17, 17, 74 )
+UI_LoadButtonImage( btnNum7, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 119, TRUE )
+
+btnNum8 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum8", 27, 17, 51, 74 )
+UI_LoadButtonImage( btnNum8, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 136, TRUE )
+
+btnNum9 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum9", 27, 16, 85, 74 )
+UI_LoadButtonImage( btnNum9, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 153, TRUE )
+
+btnNum0 = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnNum0", 27, 17, 17, 98 )
+UI_LoadButtonImage( btnNum0, "texture/ui/NUI/KeyboardNum.png", 27, 16, 0, 0, TRUE )
+
+-- Clear button
+btnClear = UI_CreateCompent( frmDoublePwdInput, BUTTON_TYPE, "btnClear", 52, 17, 51, 98 )
+UI_LoadButtonImage( btnClear, "texture/new/KeyboardNum.png", 52, 17, 0, 191, TRUE )
 
 -----------------------------------------------------------------------
 -- 定义二次密码介绍窗体
