@@ -36,31 +36,22 @@ UI_LoadButtonImage( btnNo, "texture/ui/NUI/a001.png", 56, 19, 3, 193, TRUE )
 btnAlter = UI_CreateCompent( frmSelect, BUTTON_TYPE, "btnAlter", 56, 19, 275 , 10 )
 UI_LoadButtonImage( btnAlter, "texture/ui/NUI/a001.png", 56, 19, 255, 48, FALSE )
 
------------------------------------------------------------------------
--- 定义退出表单
------------------------------------------------------------------------
--- 创建选择角色表单
+-----------------------------
+-- Select race exit button --
+-----------------------------
 frmQuit = UI_CreateForm( "frmQuit", FALSE, 98, 36, 380, 507, TRUE, FALSE )
 UI_ShowForm( frmQuit, TRUE )
 UI_AddFormToTemplete( frmQuit, FORM_CREATE_CHA )
 UI_SetFormStyleEx( frmQuit, 7, 0, 2 )
 UI_FormSetIsEscClose( frmQuit, FALSE )
 
--- 加载背景图片
-imgQuit = UI_CreateCompent( frmQuit, IMAGE_TYPE, "imgQuit", 98, 36, 0, 0 )
-UI_LoadImage( imgQuit, "texture/ui/ShipBuildD.tga", NORMAL, 98, 36, 0, 179 )
 
--- 加载logo图片
---imgLogo = UI_CreateCompent( frmQuit, IMAGE_TYPE, "imgLogo", 242, 115, -312, -510 )
---UI_LoadImage( imgLogo, "texture/ui/logot.tga", NORMAL, 242, 115, 0, 0 )
-
-
---定义退出按钮
-btnNo = UI_CreateCompent( frmQuit, BUTTON_TYPE, "btnNo", 46, 22, 26, 7 )
-UI_LoadButtonImage( btnNo, "texture/ui/select4.tga", 46, 22, 0, 203, TRUE )
+--Quit Button
+btnNo = UI_CreateCompent( frmQuit, BUTTON_TYPE, "btnNo", 52, 17, 21, 7 )
+UI_LoadButtonImage( btnNo, "texture/new/frmCharInfo.png", 52, 17, 634, 345, TRUE )
 
 imgBack = UI_CreateCompent( frmQuit, IMAGE_TYPE, "imgBack", 1198, 768, -380, -675 )
-UI_LoadImage( imgBack, "texture/ui/select4.tga", NORMAL, 1, 1, 232, 1 )
+--UI_LoadImage( imgBack, "texture/ui/select4.tga", NORMAL, 1, 1, 232, 1 )
 
 -----------------------------------------------------------------------
 -- 定义创建角色表单
