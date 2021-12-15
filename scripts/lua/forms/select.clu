@@ -221,15 +221,9 @@ UI_LoadButtonImage( btnNo, "texture/ui/select4.tga", 46, 22, 0, 203, TRUE )
 
 
 
------------------------------------------------------------------------
---								     --
---		创建角色流程修改 2006.08.08 by Leo	             --
---								     --
------------------------------------------------------------------------	
-
------------------------------------------------------------------------
--- 定义角色初步介绍界面  该界面仅在进入创建角色界面时显示
------------------------------------------------------------------------	
+----------------------------
+-- Character Introduction -- 
+----------------------------
 frmRoleInfo = UI_CreateForm("frmRoleInfo", TRUE, 600, 450, 50 , 450, TRUE,TRUE)
 UI_ShowForm(frmRoleInfo, FALSE )
 UI_SetIsDrag(frmRoleInfo, FALSE)
@@ -239,33 +233,33 @@ UI_AddFormToTemplete( frmRoleInfo, FORM_CREATE_CHA )
 
 --UI_FormSetHotKey( frmRoleInfo, ALT_KEY, HOTKEY_Z ) 
 
---加载背景图片
-imgRoleInfo1 = UI_CreateCompent(frmRoleInfo, IMAGE_TYPE,"imgRoleInfo1", 256, 256, 0, 0)
-UI_LoadImage( imgRoleInfo1, "texture/ui/newshelp/create_role_info_01.tga", NORMAL, 256,256, 0, 0)
+--Main image
+imgRoleInfo1 = UI_CreateCompent(frmRoleInfo, IMAGE_TYPE,"imgRoleInfo1", 589, 449, 0, 0)
+UI_LoadImage( imgRoleInfo1, "texture/new/frmCharInfo.png", NORMAL, 589, 449, 0, 0)
 
 imgRoleInfo2 = UI_CreateCompent(frmRoleInfo, IMAGE_TYPE,"imgRoleInfo2", 256, 256, 256, 0)
-UI_LoadImage( imgRoleInfo2, "texture/ui/newshelp/create_role_info_02.tga", NORMAL, 256,256, 0, 0)
+--UI_LoadImage( imgRoleInfo2, "texture/ui/newshelp/create_role_info_02.tga", NORMAL, 256,256, 0, 0)
 
 imgRoleInfo3 = UI_CreateCompent(frmRoleInfo, IMAGE_TYPE,"imgRoleInfo3", 88, 256, 512, 0)
-UI_LoadImage( imgRoleInfo3, "texture/ui/newshelp/create_role_info_05.tga", NORMAL, 88,256, 0, 0)
+--UI_LoadImage( imgRoleInfo3, "texture/ui/newshelp/create_role_info_05.tga", NORMAL, 88,256, 0, 0)
 
 imgRoleInfo4 = UI_CreateCompent(frmRoleInfo, IMAGE_TYPE,"imgRoleInfo4", 256, 194, 0, 256)
-UI_LoadImage( imgRoleInfo4, "texture/ui/newshelp/create_role_info_03.tga", NORMAL, 256,194, 0, 0)
+--UI_LoadImage( imgRoleInfo4, "texture/ui/newshelp/create_role_info_03.tga", NORMAL, 256,194, 0, 0)
 
 imgRoleInfo5 = UI_CreateCompent(frmRoleInfo, IMAGE_TYPE,"imgRoleInfo5", 256, 194, 256, 256)
-UI_LoadImage( imgRoleInfo5, "texture/ui/newshelp/create_role_info_04.tga", NORMAL, 256,194, 0, 0)
+--UI_LoadImage( imgRoleInfo5, "texture/ui/newshelp/create_role_info_04.tga", NORMAL, 256,194, 0, 0)
 
 imgRoleInfo6 = UI_CreateCompent(frmRoleInfo, IMAGE_TYPE,"imgRoleInfo6", 88, 194, 512, 256)
-UI_LoadImage( imgRoleInfo6, "texture/ui/newshelp/create_role_info_05.tga", NORMAL, 88,194, 88, 0)
+--UI_LoadImage( imgRoleInfo6, "texture/ui/newshelp/create_role_info_05.tga", NORMAL, 88,194, 88, 0)
 
-labTitle = UI_CreateCompent( frmRoleInfo, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
+labTitle = UI_CreateCompent( frmRoleInfo, LABELEX_TYPE, "labTitle", 400, 150, 240, 3 )
 UI_SetCaption( labTitle, "Character Introduction")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载下一步按钮
-btnNextStep = UI_CreateCompent(frmRoleInfo, BUTTON_TYPE,"btnNextStep", 229, 39, 178, 400)
-UI_LoadButtonImage( btnNextStep,"texture/ui/newshelp/create_role_info_button.tga", 229, 39, 0, 0, FALSE )
+--Start button
+btnNextStep = UI_CreateCompent(frmRoleInfo, BUTTON_TYPE,"btnNextStep", 52, 17, 270, 370)
+UI_LoadButtonImage( btnNextStep,"texture/new/frmCharInfo.png", 52, 17, 634, 244, FALSE )
 
 -------------------------------------------------------------------------
 -- 定义蓝琦转职路线介绍界面    该界面仅在进入创建角色界面后选择蓝琦后显示
