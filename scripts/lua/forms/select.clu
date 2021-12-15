@@ -252,9 +252,9 @@ UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 btnNextStep = UI_CreateCompent(frmRoleInfo, BUTTON_TYPE,"btnNextStep", 52, 17, 270, 370)
 UI_LoadButtonImage( btnNextStep,"texture/ui/NUI/frmCharInfo.png", 52, 17, 634, 244, FALSE )
 
--------------------------------------------------------------------------
--- 定义蓝琦转职路线介绍界面    该界面仅在进入创建角色界面后选择蓝琦后显示
--------------------------------------------------------------------------
+---------------------------
+-- lance available class --
+---------------------------
 frmLanchInfo = UI_CreateForm("frmLanchInfo", TRUE, 600, 500, 50 , 450, TRUE,TRUE)
 UI_ShowForm(frmLanchInfo, FALSE )
 UI_SetIsDrag(frmLanchInfo, FALSE)
@@ -264,96 +264,25 @@ UI_AddFormToTemplete( frmLanchInfo, FORM_CREATE_CHA )
 
 --UI_FormSetHotKey( frmLanchInfo, ALT_KEY, HOTKEY_X ) 
 
---加载背景
-imgLanchInfo1 = UI_CreateCompent(frmLanchInfo, IMAGE_TYPE,"imgLanchInfo1", 256, 256, 0, 0)
-UI_LoadImage( imgLanchInfo1, "texture/ui/newshelp/frmLanch01.tga", NORMAL, 256,256, 0, 0)
+-- Main image
+imgLanchInfo1 = UI_CreateCompent(frmLanchInfo, IMAGE_TYPE,"imgLanchInfo1", 508, 447, 0, 0)
+UI_LoadImage( imgLanchInfo1, "texture/ui/NUI/frmLanchInfo.png", NORMAL, 508, 447, 0, 0)
 
-imgLanchInfo2 = UI_CreateCompent(frmLanchInfo, IMAGE_TYPE,"imgLanchInfo2", 256, 256, 256, 0)
-UI_LoadImage( imgLanchInfo2, "texture/ui/newshelp/frmLanch02.tga", NORMAL, 256, 256, 0, 0)
-
-imgLanchInfo3 = UI_CreateCompent(frmLanchInfo, IMAGE_TYPE,"imgLanchInfo3", 256, 194, 0, 256)
-UI_LoadImage( imgLanchInfo3, "texture/ui/newshelp/frmLanch03.tga", NORMAL, 256, 194, 0, 0)
-
-imgLanchInfo4 = UI_CreateCompent(frmLanchInfo, IMAGE_TYPE,"imgLanchInfo4", 256, 194, 256, 256)
-UI_LoadImage( imgLanchInfo4, "texture/ui/newshelp/frmLanch04.tga", NORMAL, 256, 194, 0, 0)
-
-imgLanchInfo5 = UI_CreateCompent(frmLanchInfo, IMAGE_TYPE,"imgLanchInfo5", 88, 256, 512, 0)
-UI_LoadImage( imgLanchInfo5, "texture/ui/newshelp/frmLanch05.tga", NORMAL, 88,256, 0, 0)
-
-imgLanchInfo6 = UI_CreateCompent(frmLanchInfo, IMAGE_TYPE,"imgLanchInfo6", 88, 194, 512, 256)
-UI_LoadImage( imgLanchInfo6, "texture/ui/newshelp/frmLanch05.tga", NORMAL, 88,194, 88, 0)
-
-labTitle = UI_CreateCompent( frmLanchInfo, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
+-- Title
+labTitle = UI_CreateCompent( frmLanchInfo, LABELEX_TYPE, "labTitle", 400, 150, 200, 5 )
 UI_SetCaption( labTitle, "Available class for Lance")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载按钮区
-btnViewPlayer_1 = UI_CreateCompent(frmLanchInfo, BUTTON_TYPE,"btnViewPlayer_1", 76, 96, 72, 174)
-UI_ButtonSetHint(btnViewPlayer_1,"Lance Newbie")
-
-labTitle1 = UI_CreateCompent( frmLanchInfo, LABELEX_TYPE, "labTitle1", 400, 150, 77, 274 )
-UI_SetCaption( labTitle1, "Lance Newbie")
-UI_SetTextColor( labTitle1, COLOR_BLACK )
-UI_SetLabelExFont( labTitle1, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-
-btnViewPlayer_2 = UI_CreateCompent(frmLanchInfo, BUTTON_TYPE,"btnViewPlayer_2", 76, 96, 251, 51)
-UI_ButtonSetHint(btnViewPlayer_2,"Lance Swordsman")
-
-labTitle2 = UI_CreateCompent( frmLanchInfo, LABELEX_TYPE, "labTitle2", 400, 150, 256, 151 )
-UI_SetCaption( labTitle2, "Lance Swordsman")
-UI_SetTextColor( labTitle2, COLOR_BLACK )
-UI_SetLabelExFont( labTitle2, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_3 = UI_CreateCompent(frmLanchInfo, BUTTON_TYPE,"btnViewPlayer_3", 76, 96, 251, 174)
-UI_ButtonSetHint(btnViewPlayer_3,"Lance Hunter")
-
-labTitle3 = UI_CreateCompent( frmLanchInfo, LABELEX_TYPE, "labTitle3", 400, 150, 256, 274 )
-UI_SetCaption( labTitle3, "Lance Hunter")
-UI_SetTextColor( labTitle3, COLOR_BLACK )
-UI_SetLabelExFont( labTitle3, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_4 = UI_CreateCompent(frmLanchInfo, BUTTON_TYPE,"btnViewPlayer_4", 76, 96, 251, 301)
-UI_ButtonSetHint(btnViewPlayer_4,"Lance Explorer")
-
-labTitle4 = UI_CreateCompent( frmLanchInfo, LABELEX_TYPE, "labTitle4", 400, 150, 256, 402 )
-UI_SetCaption( labTitle4, "Lance Explorer")
-UI_SetTextColor( labTitle4, COLOR_BLACK )
-UI_SetLabelExFont( labTitle4, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_5 = UI_CreateCompent(frmLanchInfo, BUTTON_TYPE,"btnViewPlayer_5", 76, 96, 434, 41)
-UI_ButtonSetHint(btnViewPlayer_5,"Lance Crusader")
-
-labTitle5 = UI_CreateCompent( frmLanchInfo, LABELEX_TYPE, "labTitle5", 400, 150, 439, 151 )
-UI_SetCaption( labTitle5, "Lance Crusader")
-UI_SetTextColor( labTitle5, COLOR_BLACK )
-UI_SetLabelExFont( labTitle5, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_6 = UI_CreateCompent(frmLanchInfo, BUTTON_TYPE,"btnViewPlayer_6", 76, 96, 434, 174)
-UI_ButtonSetHint(btnViewPlayer_6,"Lance Sharpshooter")
-
-labTitle6 = UI_CreateCompent( frmLanchInfo, LABELEX_TYPE, "labTitle6", 400, 150, 439, 274 )
-UI_SetCaption( labTitle6, "Lance Sharpshooter")
-UI_SetTextColor( labTitle6, COLOR_BLACK )
-UI_SetLabelExFont( labTitle6, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_7 = UI_CreateCompent(frmLanchInfo, BUTTON_TYPE,"btnViewPlayer_7", 76, 96, 434, 301)
-UI_ButtonSetHint(btnViewPlayer_7,"Lance Voyager")
-
-labTitle7 = UI_CreateCompent( frmLanchInfo, LABELEX_TYPE, "labTitle7", 400, 150, 439, 402 )
-UI_SetCaption( labTitle7, "Lance Voyager")
-UI_SetTextColor( labTitle7, COLOR_BLACK )
-UI_SetLabelExFont( labTitle7, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnNextStep = UI_CreateCompent(frmLanchInfo, BUTTON_TYPE,"btnNextStep", 100, 41, 252, 468)
-UI_LoadButtonImage( btnNextStep, "texture/ui/newshelp/buton_next_prev.tga", 100, 41, 0, 0, FALSE )
+-- Next button
+btnNextStep = UI_CreateCompent(frmLanchInfo, BUTTON_TYPE,"btnNextStep", 52, 17, 226, 425)
+UI_LoadButtonImage( btnNextStep, "texture/ui/NUI/frmLanchInfo.png", 52, 17, 523, 371, FALSE )
 UI_ButtonSetHint(btnNextStep,"Next")
 
 
--------------------------------------------------------------------------
--- 定义卡西斯转职路线介绍界面    该界面仅在进入创建角色界面后选择卡西斯后显示
--------------------------------------------------------------------------
+---------------------------------
+-- available class for carsise --
+---------------------------------
 frmCaxiusInfo = UI_CreateForm("frmCaxiusInfo", TRUE, 600, 500, 50 , 450, TRUE,TRUE)
 UI_ShowForm(frmCaxiusInfo, FALSE )
 UI_SetIsDrag(frmCaxiusInfo, FALSE)
@@ -363,62 +292,24 @@ UI_AddFormToTemplete( frmCaxiusInfo, FORM_CREATE_CHA )
 
 --UI_FormSetHotKey( frmCaxiusInfo, ALT_KEY, HOTKEY_X ) 
 
---加载背景区
-imgLanchInfo1 = UI_CreateCompent(frmCaxiusInfo, IMAGE_TYPE,"imgLanchInfo1", 256, 256, 0, 0)
-UI_LoadImage( imgLanchInfo1, "texture/ui/newshelp/frmCaxius01.tga", NORMAL, 256,256, 0, 0)
+-- Main image
+imgLanchInfo1 = UI_CreateCompent(frmCaxiusInfo, IMAGE_TYPE,"imgLanchInfo1", 508, 447, 0, 0)
+UI_LoadImage( imgLanchInfo1, "texture/ui/NUI/frmCaxiusInfo.png", NORMAL, 508, 447, 0, 0)
 
-imgLanchInfo2 = UI_CreateCompent(frmCaxiusInfo, IMAGE_TYPE,"imgLanchInfo2", 256, 256, 256, 0)
-UI_LoadImage( imgLanchInfo2, "texture/ui/newshelp/frmCaxius02.tga", NORMAL, 256, 256, 0, 0)
-
-imgLanchInfo3 = UI_CreateCompent(frmCaxiusInfo, IMAGE_TYPE,"imgLanchInfo3", 256, 194, 0, 256)
-UI_LoadImage( imgLanchInfo3, "texture/ui/newshelp/frmCaxius03.tga", NORMAL, 256, 194, 0, 0)
-
-imgLanchInfo4 = UI_CreateCompent(frmCaxiusInfo, IMAGE_TYPE,"imgLanchInfo4", 256, 194, 256, 256)
-UI_LoadImage( imgLanchInfo4, "texture/ui/newshelp/frmCaxius04.tga", NORMAL, 256, 194, 0, 0)
-
-imgLanchInfo5 = UI_CreateCompent(frmCaxiusInfo, IMAGE_TYPE,"imgLanchInfo5", 88, 256, 512, 0)
-UI_LoadImage( imgLanchInfo5, "texture/ui/newshelp/frmCaxius05.tga", NORMAL, 88,256, 0, 0)
-
-imgLanchInfo6 = UI_CreateCompent(frmCaxiusInfo, IMAGE_TYPE,"imgLanchInfo6", 88, 194, 512, 256)
-UI_LoadImage( imgLanchInfo6, "texture/ui/newshelp/frmCaxius05.tga", NORMAL, 88,194, 88, 0)
-
-labTitle = UI_CreateCompent( frmCaxiusInfo, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
+-- Title
+labTitle = UI_CreateCompent( frmCaxiusInfo, LABELEX_TYPE, "labTitle", 400, 150, 200, 5 )
 UI_SetCaption( labTitle, "Available class for Carsise")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载按钮区
-btnViewPlayer_8 = UI_CreateCompent(frmCaxiusInfo, BUTTON_TYPE,"btnViewPlayer_8", 76, 96, 72, 174)
-UI_ButtonSetHint(btnViewPlayer_8,"Carsise Newbie")
-
-labTitle8 = UI_CreateCompent( frmCaxiusInfo, LABELEX_TYPE, "labTitle8", 400, 150, 77, 274 )
-UI_SetCaption( labTitle8, "Carsise Newbie")
-UI_SetTextColor( labTitle8, COLOR_BLACK )
-UI_SetLabelExFont( labTitle8, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_9 = UI_CreateCompent(frmCaxiusInfo, BUTTON_TYPE,"btnViewPlayer_9", 76, 96, 251, 174)
-UI_ButtonSetHint(btnViewPlayer_9,"Carsise Swordsman")
-
-labTitle9 = UI_CreateCompent( frmCaxiusInfo, LABELEX_TYPE, "labTitle9", 400, 150, 256, 274 )
-UI_SetCaption( labTitle9, "Carsise Swordsman")
-UI_SetTextColor( labTitle9, COLOR_BLACK )
-UI_SetLabelExFont( labTitle9, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_10 = UI_CreateCompent(frmCaxiusInfo, BUTTON_TYPE,"btnViewPlayer_10", 76, 96, 433, 174)
-UI_ButtonSetHint(btnViewPlayer_10,"Carsise Champion")
-
-labTitle10 = UI_CreateCompent( frmCaxiusInfo, LABELEX_TYPE, "labTitle10", 400, 150, 438, 274 )
-UI_SetCaption( labTitle10, "Carsise Champion")
-UI_SetTextColor( labTitle10, COLOR_BLACK )
-UI_SetLabelExFont( labTitle10, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnNextStep = UI_CreateCompent(frmCaxiusInfo, BUTTON_TYPE,"btnNextStep", 100, 41, 252, 468)
-UI_LoadButtonImage( btnNextStep, "texture/ui/newshelp/buton_next_prev.tga", 100, 41, 0, 0, FALSE )
+-- Next button
+btnNextStep = UI_CreateCompent(frmCaxiusInfo, BUTTON_TYPE,"btnNextStep", 52, 17, 226, 425)
+UI_LoadButtonImage( btnNextStep, "texture/ui/NUI/frmCaxiusInfo.png", 52, 17, 523, 371, FALSE )
 UI_ButtonSetHint(btnNextStep,"Next")
 
--------------------------------------------------------------------------
--- 定义菲利而转职路线介绍界面    该界面仅在进入创建角色界面后选择菲利而后显示
--------------------------------------------------------------------------
+-----------------------------
+-- phyllis available class --
+-----------------------------
 frmFelierInfo = UI_CreateForm("frmFelierInfo", TRUE, 600, 500, 50 , 450, TRUE,TRUE)
 UI_ShowForm(frmFelierInfo, FALSE )
 UI_SetIsDrag(frmFelierInfo, FALSE)
@@ -428,103 +319,25 @@ UI_AddFormToTemplete( frmFelierInfo, FORM_CREATE_CHA )
 
 --UI_FormSetHotKey( frmFelierInfo, ALT_KEY, HOTKEY_X ) 
 
---加载背景图片
-imgFelierInfo1 = UI_CreateCompent(frmFelierInfo, IMAGE_TYPE,"imgFelierInfo1", 256, 256, 0, 0)
-UI_LoadImage( imgFelierInfo1, "texture/ui/newshelp/frmFelier01.tga", NORMAL, 256,256, 0, 0)
+-- Main image
+imgFelierInfo1 = UI_CreateCompent(frmFelierInfo, IMAGE_TYPE,"imgFelierInfo1", 508, 447, 0, 0)
+UI_LoadImage( imgFelierInfo1, "texture/ui/NUI/frmFelierInfo.png", NORMAL, 508, 447, 0, 0)
 
-imgFelierInfo2 = UI_CreateCompent(frmFelierInfo, IMAGE_TYPE,"imgFelierInfo2", 256, 256, 256, 0)
-UI_LoadImage( imgFelierInfo2, "texture/ui/newshelp/frmFelier02.tga", NORMAL, 256, 256, 0, 0)
-
-imgFelierInfo3 = UI_CreateCompent(frmFelierInfo, IMAGE_TYPE,"imgFelierInfo3", 256, 194, 0, 256)
-UI_LoadImage( imgFelierInfo3, "texture/ui/newshelp/frmFelier03.tga", NORMAL, 256, 194, 0, 0)
-
-imgFelierInfo4 = UI_CreateCompent(frmFelierInfo, IMAGE_TYPE,"imgFelierInfo4", 256, 194, 256, 256)
-UI_LoadImage( imgFelierInfo4, "texture/ui/newshelp/frmFelier04.tga", NORMAL, 256, 194, 0, 0)
-
-imgFelierInfo5 = UI_CreateCompent(frmFelierInfo, IMAGE_TYPE,"imgFelierInfo5", 88, 256, 512, 0)
-UI_LoadImage( imgFelierInfo5, "texture/ui/newshelp/frmFelier05.tga", NORMAL, 88,256, 0, 0)
-
-imgFelierInfo6 = UI_CreateCompent(frmFelierInfo, IMAGE_TYPE,"imgFelierInfo6", 88, 194, 512, 256)
-UI_LoadImage( imgFelierInfo6, "texture/ui/newshelp/frmFelier05.tga", NORMAL, 88,194, 88, 0)
-
-labTitle = UI_CreateCompent( frmFelierInfo, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
+-- Title
+labTitle = UI_CreateCompent( frmFelierInfo, LABELEX_TYPE, "labTitle", 400, 150, 200, 5 )
 UI_SetCaption( labTitle, "Available class for Phyllis")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载按钮区
-btnViewPlayer_11 = UI_CreateCompent(frmFelierInfo, BUTTON_TYPE,"btnViewPlayer_11", 76, 96, 72, 174)
-UI_ButtonSetHint(btnViewPlayer_11,"Phyllis Newbie")
-
-labTitle11 = UI_CreateCompent( frmFelierInfo, LABELEX_TYPE, "labTitle11", 400, 150, 77, 274 )
-UI_SetCaption( labTitle11, "Phyllis Newbie")
-UI_SetTextColor( labTitle11, COLOR_BLACK )
-UI_SetLabelExFont( labTitle11, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_12 = UI_CreateCompent(frmFelierInfo, BUTTON_TYPE,"btnViewPlayer_12", 76, 96, 251, 51)
-UI_ButtonSetHint(btnViewPlayer_12,"Phyllis Hunter")
-
-labTitle12 = UI_CreateCompent( frmFelierInfo, LABELEX_TYPE, "labTitle12", 400, 150, 256, 151 )
-UI_SetCaption( labTitle12, "Phyllis Hunter")
-UI_SetTextColor( labTitle12, COLOR_BLACK )
-UI_SetLabelExFont( labTitle12, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_13 = UI_CreateCompent(frmFelierInfo, BUTTON_TYPE,"btnViewPlayer_13", 76, 96, 251, 174)
-UI_ButtonSetHint(btnViewPlayer_13,"Phyllis Herbalist")
-
-labTitle13 = UI_CreateCompent( frmFelierInfo, LABELEX_TYPE, "labTitle13", 400, 150, 256, 274 )
-UI_SetCaption( labTitle13, "Phyllis Herbalist")
-UI_SetTextColor( labTitle13, COLOR_BLACK )
-UI_SetLabelExFont( labTitle13, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_14 = UI_CreateCompent(frmFelierInfo, BUTTON_TYPE,"btnViewPlayer_14", 76, 96, 251, 301)
-UI_ButtonSetHint(btnViewPlayer_14,"Phyllis Explorer")
-
-labTitle14 = UI_CreateCompent( frmFelierInfo, LABELEX_TYPE, "labTitle14", 400, 150, 256, 401 )
-UI_SetCaption( labTitle14, "Phyllis Explorer")
-UI_SetTextColor( labTitle14, COLOR_BLACK )
-UI_SetLabelExFont( labTitle14, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_15 = UI_CreateCompent(frmFelierInfo, BUTTON_TYPE,"btnViewPlayer_15", 76, 96, 434, 31)
-UI_ButtonSetHint(btnViewPlayer_15,"Phyllis Sharpshooter")
-
-labTitle15 = UI_CreateCompent( frmFelierInfo, LABELEX_TYPE, "labTitle15", 400, 150, 435, 111 )
-UI_SetCaption( labTitle15, "Phyllis Sharpshooter")
-UI_SetTextColor( labTitle15, COLOR_WHITE )
-UI_SetLabelExFont( labTitle15, DEFAULT_FONT, TRUE, COLOR_BLACK )
-
-btnViewPlayer_16 = UI_CreateCompent(frmFelierInfo, BUTTON_TYPE,"btnViewPlayer_16", 76, 96, 433, 135)
-UI_ButtonSetHint(btnViewPlayer_16,"Phyllis Cleric")
-
-labTitle16 = UI_CreateCompent( frmFelierInfo, LABELEX_TYPE, "labTitle16", 400, 150, 435, 215 )
-UI_SetCaption( labTitle16, "Phyllis Cleric")
-UI_SetTextColor( labTitle16, COLOR_WHITE )
-UI_SetLabelExFont( labTitle16, DEFAULT_FONT, TRUE, COLOR_BLACK )
-
-btnViewPlayer_17 = UI_CreateCompent(frmFelierInfo, BUTTON_TYPE,"btnViewPlayer_17", 76, 96, 434, 239)
-UI_ButtonSetHint(btnViewPlayer_17,"Phyllis Seal Master")
-
-labTitle17 = UI_CreateCompent( frmFelierInfo, LABELEX_TYPE, "labTitle17", 400, 150, 435, 319 )
-UI_SetCaption( labTitle17, "Phyllis Seal Master")
-UI_SetTextColor( labTitle17, COLOR_WHITE )
-UI_SetLabelExFont( labTitle17, DEFAULT_FONT, TRUE, COLOR_BLACK )
-
-btnViewPlayer_18 = UI_CreateCompent(frmFelierInfo, BUTTON_TYPE,"btnViewPlayer_18", 76, 96, 434, 345)
-UI_ButtonSetHint(btnViewPlayer_18,"Phyllis Voyager")
-
-labTitle18 = UI_CreateCompent( frmFelierInfo, LABELEX_TYPE, "labTitle18", 400, 150, 435, 425 )
-UI_SetCaption( labTitle18, "Phyllis Voyager")
-UI_SetTextColor( labTitle18, COLOR_WHITE)
-UI_SetLabelExFont( labTitle18, DEFAULT_FONT, TRUE, COLOR_BLACK )
-
-btnNextStep = UI_CreateCompent(frmFelierInfo, BUTTON_TYPE,"btnNextStep", 100, 41, 252, 468)
-UI_LoadButtonImage( btnNextStep, "texture/ui/newshelp/buton_next_prev.tga", 100, 41, 0, 0, FALSE )
+-- Next button
+btnNextStep = UI_CreateCompent(frmFelierInfo, BUTTON_TYPE,"btnNextStep", 52, 17, 226, 425)
+UI_LoadButtonImage( btnNextStep, "texture/ui/NUI/frmFelierInfo.png", 52, 17, 523, 371, FALSE )
 UI_ButtonSetHint(btnNextStep,"Next")
 
 
--------------------------------------------------------------------------
--- 定义艾米转职路线介绍界面    该界面仅在进入创建角色界面后选择艾米后显示
--------------------------------------------------------------------------
+-------------------------
+-- ami available class --
+-------------------------
 frmAimiInfo = UI_CreateForm("frmAimiInfo", TRUE, 600, 500, 50 , 450, TRUE,TRUE)
 UI_ShowForm(frmAimiInfo, FALSE )
 UI_SetIsDrag(frmAimiInfo, FALSE)
@@ -534,81 +347,19 @@ UI_AddFormToTemplete( frmAimiInfo, FORM_CREATE_CHA )
 
 --UI_FormSetHotKey( frmAimiInfo, ALT_KEY, HOTKEY_X ) 
 
---加载背景
-imgAimiInfo1 = UI_CreateCompent(frmAimiInfo, IMAGE_TYPE,"imgAimiInfo1", 256, 256, 0, 0)
-UI_LoadImage( imgAimiInfo1, "texture/ui/newshelp/frmAimi01.tga", NORMAL, 256,256, 0, 0)
+-- Main Image
+imgAimiInfo1 = UI_CreateCompent(frmAimiInfo, IMAGE_TYPE,"imgAimiInfo1", 508, 447, 0, 0)
+UI_LoadImage( imgAimiInfo1, "texture/ui/NUI/frmAimiInfo.png", NORMAL, 508, 447, 0, 0)
 
-imgAimiInfo2 = UI_CreateCompent(frmAimiInfo, IMAGE_TYPE,"imgAimiInfo2", 256, 256, 256, 0)
-UI_LoadImage( imgAimiInfo2, "texture/ui/newshelp/frmAimi02.tga", NORMAL, 256, 256, 0, 0)
-
-imgAimiInfo3 = UI_CreateCompent(frmAimiInfo, IMAGE_TYPE,"imgAimiInfo3", 256, 194, 0, 256)
-UI_LoadImage( imgAimiInfo3, "texture/ui/newshelp/frmAimi03.tga", NORMAL, 256, 194, 0, 0)
-
-imgAimiInfo4 = UI_CreateCompent(frmAimiInfo, IMAGE_TYPE,"imgAimiInfo4", 256, 194, 256, 256)
-UI_LoadImage( imgAimiInfo4, "texture/ui/newshelp/frmAimi04.tga", NORMAL, 256, 194, 0, 0)
-
-imgAimiInfo5 = UI_CreateCompent(frmAimiInfo, IMAGE_TYPE,"imgAimiInfo5", 88, 256, 512, 0)
-UI_LoadImage( imgAimiInfo5, "texture/ui/newshelp/frmAimi05.tga", NORMAL, 88,256, 0, 0)
-
-imgAimiInfo6 = UI_CreateCompent(frmAimiInfo, IMAGE_TYPE,"imgAimiInfo6", 88, 194, 512, 256)
-UI_LoadImage( imgAimiInfo6, "texture/ui/newshelp/frmAimi05.tga", NORMAL, 88,194, 88, 0)
-
-labTitle = UI_CreateCompent( frmAimiInfo, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
+--  Title
+labTitle = UI_CreateCompent( frmAimiInfo, LABELEX_TYPE, "labTitle", 400, 150, 200, 5 )
 UI_SetCaption( labTitle, "Available class for Ami")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITEW )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK)
 
---加载按钮区
-btnViewPlayer_19 = UI_CreateCompent(frmAimiInfo, BUTTON_TYPE,"btnViewPlayer_19", 76, 96, 72, 174)
-UI_ButtonSetHint(btnViewPlayer_19,"Ami Newbie")
-
-labTitle19 = UI_CreateCompent( frmAimiInfo, LABELEX_TYPE, "labTitle19", 400, 150, 77, 274 )
-UI_SetCaption( labTitle19, "Ami Newbie")
-UI_SetTextColor( labTitle19, COLOR_BLACK )
-UI_SetLabelExFont( labTitle19, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_20 = UI_CreateCompent(frmAimiInfo, BUTTON_TYPE,"btnViewPlayer_20", 76, 96, 251, 96)
-UI_ButtonSetHint(btnViewPlayer_20,"Ami Herbalist")
-
-labTitle20 = UI_CreateCompent( frmAimiInfo, LABELEX_TYPE, "labTitle20", 400, 150, 255, 196 )
-UI_SetCaption( labTitle20, "Ami Herbalist")
-UI_SetTextColor( labTitle20, COLOR_BLACK )
-UI_SetLabelExFont( labTitle20, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_21 = UI_CreateCompent(frmAimiInfo, BUTTON_TYPE,"btnViewPlayer_21", 76, 96, 251, 252)
-UI_ButtonSetHint(btnViewPlayer_21,"Ami Explorer")
-
-labTitle21 = UI_CreateCompent( frmAimiInfo, LABELEX_TYPE, "labTitle21", 400, 150, 255, 352 )
-UI_SetCaption( labTitle21, "Ami Explorer")
-UI_SetTextColor( labTitle21, COLOR_BLACK )
-UI_SetLabelExFont( labTitle21, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_22 = UI_CreateCompent(frmAimiInfo, BUTTON_TYPE,"btnViewPlayer_22", 76, 96, 434, 51)
-UI_ButtonSetHint(btnViewPlayer_22,"Ami Cleric")
-
-labTitle22 = UI_CreateCompent( frmAimiInfo, LABELEX_TYPE, "labTitle22", 400, 150, 439, 151 )
-UI_SetCaption( labTitle22, "Ami Cleric")
-UI_SetTextColor( labTitle22, COLOR_BLACK )
-UI_SetLabelExFont( labTitle22, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_23 = UI_CreateCompent(frmAimiInfo, BUTTON_TYPE,"btnViewPlayer_23", 76, 96, 433, 174)
-UI_ButtonSetHint(btnViewPlayer_23,"Ami Seal Master")
-
-labTitle23 = UI_CreateCompent( frmAimiInfo, LABELEX_TYPE, "labTitle23", 400, 150, 439, 274 )
-UI_SetCaption( labTitle23, "Ami Seal Master")
-UI_SetTextColor( labTitle23, COLOR_BLACK )
-UI_SetLabelExFont( labTitle23, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnViewPlayer_24 = UI_CreateCompent(frmAimiInfo, BUTTON_TYPE,"btnViewPlayer_24", 76, 96, 434, 301)
-UI_ButtonSetHint(btnViewPlayer_24,"Ami Voyager")
-
-labTitle24 = UI_CreateCompent( frmAimiInfo, LABELEX_TYPE, "labTitle24", 400, 150, 439, 401 )
-UI_SetCaption( labTitle24, "Ami Voyager")
-UI_SetTextColor( labTitle24, COLOR_BLACK )
-UI_SetLabelExFont( labTitle24, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
-btnNextStep = UI_CreateCompent(frmAimiInfo, BUTTON_TYPE,"btnNextStep", 100, 41, 252, 468)
-UI_LoadButtonImage( btnNextStep, "texture/ui/newshelp/buton_next_prev.tga", 100, 41, 0, 0, FALSE )
+-- Next button
+btnNextStep = UI_CreateCompent(frmAimiInfo, BUTTON_TYPE,"btnNextStep", 52, 17, 226, 425)
+UI_LoadButtonImage( btnNextStep, "texture/ui/NUI/frmAimiInfo.png", 52, 17, 523, 371, FALSE )
 UI_ButtonSetHint(btnNextStep,"Next")
 
 
