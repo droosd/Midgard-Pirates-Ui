@@ -53,93 +53,82 @@ UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmCharInfo.png", 52, 17, 634, 345, T
 imgBack = UI_CreateCompent( frmQuit, IMAGE_TYPE, "imgBack", 1198, 768, -380, -675 )
 --UI_LoadImage( imgBack, "texture/ui/select4.tga", NORMAL, 1, 1, 232, 1 )
 
------------------------------------------------------------------------
--- 定义创建角色表单
------------------------------------------------------------------------
--- 创建创建角色表单
-frmFound = UI_CreateForm( "frmFound", FALSE, 454, 373, 173, 112, TRUE, FALSE )
+-----------------
+-- Select race --
+-----------------
+frmFound = UI_CreateForm( "frmFound", FALSE, 621, 348, 173, 112, TRUE, FALSE )
 UI_ShowForm( frmFound, TRUE )
 UI_AddFormToTemplete( frmFound, FORM_CREATE_CHA )
 --UI_AddFormToTemplete( frmFound, 1 )
 UI_FormSetIsEscClose( frmFound, FALSE )
 --UI_FormSetHotKey( frmFound, ALT_KEY, HOTKEY_I )
 
--- 加载logo图片
---imgLogo = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgLogo", 242, 115, -134, -98 )
---UI_LoadImage( imgLogo, "texture/ui/logot.tga", NORMAL, 242, 115, 0, 0 )
 
---imgBack = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgBack", 1198, 768, -173, -112 )
---UI_LoadImage( imgBack, "texture/ui/select4.tga", NORMAL, 1, 1, 232, 1 )
+-- Main image
+imgFoundTop = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgFoundTop", 621, 348, 0, 0 )
+UI_LoadImage( imgFoundTop, "texture/ui/NUI/frmCharCreate.png", NORMAL, 621, 348, 0, 0 )
 
--- 加载背景图片
-imgFoundTop = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgFoundTop", 256, 256, 0, 0 )
-UI_LoadImage( imgFoundTop, "texture/ui/select1.tga", NORMAL, 256, 256, 0, 0 )
-imgFoundDown = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgFoundDown", 256, 117, 0, 256 )
-UI_LoadImage( imgFoundDown, "texture/ui/select3.tga", NORMAL, 256, 117, 0, 0 )
-imgFoundTopR = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgFoundTopR", 198, 256, 256, 0 )
-UI_LoadImage( imgFoundTopR, "texture/ui/select2.tga", NORMAL, 198, 256, 0, 0 )
-imgFoundDownR = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgFoundDownR", 198, 117, 256, 256 )
-UI_LoadImage( imgFoundDownR, "texture/ui/select3.tga", NORMAL, 198, 117, 0, 117 )
 
---创建描述
-memChaDescribe  = UI_CreateCompent( frmFound, MEMO_TYPE, "memChaDescribe", 162, 154, 286, 29 )
+-- Race description
+memChaDescribe  = UI_CreateCompent( frmFound, MEMO_TYPE, "memChaDescribe", 162, 154, 20, 90 )
 UI_SetTextColor( memChaDescribe, COLOR_BLACK )
 UI_SetLabelExFont( memChaDescribe, DEFAULT_FONT, TRUE, COLOR_WHITE )
 UI_SetMemoMaxNumPerRow( memChaDescribe, 24 )
 UI_SetMemoPageShowNum( memChaDescribe, 7 )
 
 
---创建姓名输入框
-edtName = UI_CreateCompent( frmFound, EDIT_TYPE, "edtName", 117, 12, 310, 198 )
-UI_SetTextColor( edtName, COLOR_BLACK )
+-- Name
+edtName = UI_CreateCompent( frmFound, EDIT_TYPE, "edtName", 117, 12, 465, 116 )
+UI_SetTextColor( edtName, COLOR_WHITE )
 UI_SetEditMaxNum( edtName, 16 )
 UI_SetEditMaxNumVisible( edtName, 16 )
 
---创建体型，发型，脸型
-labHairShow = UI_CreateCompent( frmFound, LABELEX_TYPE, "labHairShow", 65, 12, 341, 242 )
+-- Hair
+labHairShow = UI_CreateCompent( frmFound, LABELEX_TYPE, "labHairShow", 65, 12, 499, 167 )
 UI_SetCaption( labHairShow, "Long Hair" )
-UI_SetTextColor( labHairShow, COLOR_BLACK )
-UI_SetLabelExFont( labHairShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
-labFaceShow = UI_CreateCompent( frmFound, LABELEX_TYPE, "labFaceShow", 65, 12, 341, 284 )
+UI_SetTextColor( labHairShow, COLOR_WHITE )
+UI_SetLabelExFont( labHairShow, DEFAULT_FONT, TRUE, COLOR_BLACK )
+
+-- Face
+labFaceShow = UI_CreateCompent( frmFound, LABELEX_TYPE, "labFaceShow", 65, 12, 503, 219 )
 UI_SetCaption( labFaceShow, "Nightmare" )
-UI_SetTextColor( labFaceShow, COLOR_BLACK )
-UI_SetLabelExFont( labFaceShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labFaceShow, COLOR_WHITE )
+UI_SetLabelExFont( labFaceShow, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 
---加载向左按钮
-btnLeftHair = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnLeftHair", 40, 24, 282, 234 )
-UI_LoadButtonImage( btnLeftHair, "texture/ui/select4.tga", 40, 24, 110, 24, TRUE )
+-- Button left
+btnLeftHair = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnLeftHair", 15, 14, 463, 169 )
+UI_LoadButtonImage( btnLeftHair, "texture/ui/NUI/frmCharCreate.png", 15, 14, 142, 373, TRUE )
 
-btnLeftFace = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnLeftFace", 40, 24, 282, 277 )
-UI_LoadButtonImage( btnLeftFace, "texture/ui/select4.tga", 40, 24, 110, 24, TRUE )
+btnLeftFace = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnLeftFace", 15, 14, 463, 221 )
+UI_LoadButtonImage( btnLeftFace, "texture/ui/NUI/frmCharCreate.png", 15, 14, 142, 373, TRUE )
 
-btnLeft3d = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnLeft3d", 32, 38, 28, 291 )
-UI_LoadButtonImage( btnLeft3d, "texture/ui/select4.tga", 32, 38, 0, 38, TRUE )
-
-
-
---加载向右按钮
-
-btnRightHair = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnRightHair", 40, 24, 393, 234 )
-UI_LoadButtonImage( btnRightHair, "texture/ui/select4.tga", 40, 24, 110, 0, TRUE )
-
-btnRightFace = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnRightFace", 40, 24, 393, 277 )
-UI_LoadButtonImage( btnRightFace, "texture/ui/select4.tga", 40, 24, 110, 0, TRUE )
-
-btnRight3d = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnRight3d", 32, 38, 204, 291 )
-UI_LoadButtonImage( btnRight3d, "texture/ui/select4.tga",  32, 38, 0, 0, TRUE )
-
---创建3D角色
-ui3dCreateCha = UI_CreateCompent( frmFound, UI3D_COMPENT, "ui3dCreateCha", 160, 300, 52, 35 )
+btnLeft3d = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnLeft3d", 32, 38, 208, 264 )
+UI_LoadButtonImage( btnLeft3d, "texture/ui/NUI/select4.tga", 32, 38, 0, 38, TRUE )
 
 
---加载确定按钮
-btnYes = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnYes", 46, 22, 303, 319 )
-UI_LoadButtonImage( btnYes, "texture/ui/select4.tga", 46, 22, 0, 113, FALSE )
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnNo", 46, 22, 376, 319 )
-UI_LoadButtonImage( btnNo, "texture/ui/select4.tga", 46, 22, 46, 113, FALSE )
+-- Button right
+btnRightHair = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnRightHair", 15, 14, 565, 169 )
+UI_LoadButtonImage( btnRightHair, "texture/ui/NUI/frmCharCreate.png", 15, 14, 142, 391, TRUE )
+
+btnRightFace = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnRightFace", 15, 14, 565, 221 )
+UI_LoadButtonImage( btnRightFace, "texture/ui/NUI/frmCharCreate.png", 15, 14, 142, 391, TRUE )
+
+btnRight3d = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnRight3d", 32, 38, 380, 264 )
+UI_LoadButtonImage( btnRight3d, "texture/ui/NUI/select4.tga",  32, 38, 0, 0, TRUE )
+
+-- 3D
+ui3dCreateCha = UI_CreateCompent( frmFound, UI3D_COMPENT, "ui3dCreateCha", 160, 300, 230, 50 )
+
+
+-- Accept button
+btnYes = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnYes", 52, 17, 467, 269 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/frmCharCreate.png", 52, 17, 1, 362, FALSE )
+
+-- Back button
+btnNo = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnNo", 52, 17, 527, 269 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmCharCreate.png", 52, 17, 65, 362, FALSE )
 
 
 
