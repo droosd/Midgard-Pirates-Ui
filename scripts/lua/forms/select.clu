@@ -48,7 +48,7 @@ UI_FormSetIsEscClose( frmQuit, FALSE )
 
 --Quit Button
 btnNo = UI_CreateCompent( frmQuit, BUTTON_TYPE, "btnNo", 52, 17, 21, 7 )
-UI_LoadButtonImage( btnNo, "texture/new/frmCharInfo.png", 52, 17, 634, 345, TRUE )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmCharInfo.png", 52, 17, 634, 345, TRUE )
 
 imgBack = UI_CreateCompent( frmQuit, IMAGE_TYPE, "imgBack", 1198, 768, -380, -675 )
 --UI_LoadImage( imgBack, "texture/ui/select4.tga", NORMAL, 1, 1, 232, 1 )
@@ -226,7 +226,7 @@ UI_AddFormToTemplete( frmRoleInfo, FORM_CREATE_CHA )
 
 --Main image
 imgRoleInfo1 = UI_CreateCompent(frmRoleInfo, IMAGE_TYPE,"imgRoleInfo1", 589, 449, 0, 0)
-UI_LoadImage( imgRoleInfo1, "texture/new/frmCharInfo.png", NORMAL, 589, 449, 0, 0)
+UI_LoadImage( imgRoleInfo1, "texture/ui/NUI/frmCharInfo.png", NORMAL, 589, 449, 0, 0)
 
 imgRoleInfo2 = UI_CreateCompent(frmRoleInfo, IMAGE_TYPE,"imgRoleInfo2", 256, 256, 256, 0)
 --UI_LoadImage( imgRoleInfo2, "texture/ui/newshelp/create_role_info_02.tga", NORMAL, 256,256, 0, 0)
@@ -250,7 +250,7 @@ UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 --Start button
 btnNextStep = UI_CreateCompent(frmRoleInfo, BUTTON_TYPE,"btnNextStep", 52, 17, 270, 370)
-UI_LoadButtonImage( btnNextStep,"texture/new/frmCharInfo.png", 52, 17, 634, 244, FALSE )
+UI_LoadButtonImage( btnNextStep,"texture/ui/NUI/frmCharInfo.png", 52, 17, 634, 244, FALSE )
 
 -------------------------------------------------------------------------
 -- 定义蓝琦转职路线介绍界面    该界面仅在进入创建角色界面后选择蓝琦后显示
