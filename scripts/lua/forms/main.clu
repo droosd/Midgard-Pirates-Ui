@@ -1586,10 +1586,10 @@ btnForgeNo = UI_CreateCompent( frmSpiritMarry, BUTTON_TYPE, "btnForgeNo", 52, 17
 UI_LoadButtonImage( btnForgeNo, "texture/ui/NUI/frmSpiritMarry.png", 52, 17, 66, 437, FALSE )
 UI_SetButtonModalResult( btnForgeNo, BUTTON_CLOSE )
 
------------------------------------------------------------------------
--- 定义装备提纯面板  2006.8.29 by Leo
------------------------------------------------------------------------
-frmEquipPurify = UI_CreateForm( "frmEquipPurify", FALSE, 226, 255, 0, 0, TRUE, FALSE )
+-----------------------------------
+-- Gem extraction / Item upgrade --
+-----------------------------------
+frmEquipPurify = UI_CreateForm( "frmEquipPurify", FALSE, 229, 255, 0, 0, TRUE, FALSE )
 UI_ShowForm( frmEquipPurify, FALSE )
 UI_AddFormToTemplete( frmEquipPurify, FORM_MAIN )
 UI_FormSetIsEscClose( frmEquipPurify, TRUE )
@@ -1598,102 +1598,104 @@ UI_SetFormStyle( frmEquipPurify,1)
 
 --UI_FormSetHotKey( frmEquipPurify, ALT_KEY, HOTKEY_X )
 
---加载背景图片
-imgBakTop = UI_CreateCompent( frmEquipPurify, IMAGE_TYPE, "imgBakTop", 226, 255, 0, 0 )
-UI_LoadImage( imgBakTop, "texture/ui/EquipPurify.tga", NORMAL, 226, 255, 0, 0 )
+-- Main image
+imgBakTop = UI_CreateCompent( frmEquipPurify, IMAGE_TYPE, "imgBakTop", 229, 210, 0, 0 )
+UI_LoadImage( imgBakTop, "texture/ui/NUI/frmEquipPurify.png", NORMAL, 229, 210, 0, 0 )
 
 --title
 labTitle1 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labTitle1", 49, 14, 7, 3 )
 UI_SetCaption( labTitle1, "Purification")
-UI_SetTextColor( labTitle1, COLOR_BLACK )
-UI_SetLabelExFont( labTitle1, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle1, COLOR_WHITE )
+UI_SetLabelExFont( labTitle1, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 labTitle2 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labTitle2", 49, 14, 7, 3 )
 UI_SetCaption( labTitle2, "Coral recharge")
-UI_SetTextColor( labTitle2, COLOR_BLACK )
-UI_SetLabelExFont( labTitle2, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle2, COLOR_WHITE )
+UI_SetLabelExFont( labTitle2, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 labTitle3 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labTitle3", 49, 14, 7, 3 )
 UI_SetCaption( labTitle3, "Gem purification")
-UI_SetTextColor( labTitle3, COLOR_BLACK )
-UI_SetLabelExFont( labTitle3, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle3, COLOR_WHITE )
+UI_SetLabelExFont( labTitle3, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 labTitle4 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labTitle4", 49, 14, 7, 3 )
 UI_SetCaption( labTitle4, "Repair Lifeskill tools")
-UI_SetTextColor( labTitle4, COLOR_BLACK )
-UI_SetLabelExFont( labTitle4, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle4, COLOR_WHITE )
+UI_SetLabelExFont( labTitle4, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建command栏
-cmdEquipOne = UI_CreateCompent( frmEquipPurify, COMMAND_ONE_TYPE, "cmdEquipOne", 32, 32, 46, 65 )	-- 另一把武器
+-- Item 1
+cmdEquipOne = UI_CreateCompent( frmEquipPurify, COMMAND_ONE_TYPE, "cmdEquipOne", 32, 32, 56, 80 )	-- 另一把武器
 
---设置装备提纯lab左
-labHintleft1 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintleft1", 112, 14, 40, 110 )
+-- Main
+labHintleft1 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintleft1", 112, 14, 40, 115 )
 UI_SetCaption( labHintleft1, "Main")
-UI_SetTextColor( labHintleft1, COLOR_BLACK )
-UI_SetLabelExFont( labHintleft1, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHintleft1, COLOR_WHITE )
+UI_SetLabelExFont( labHintleft1, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---设置贝壳充电lab左
-labHintleft2 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintleft2", 112, 14,40, 110 )
+-- Conch
+labHintleft2 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintleft2", 112, 14,40, 115 )
 UI_SetCaption( labHintleft2, "Conch")
-UI_SetTextColor( labHintleft2, COLOR_BLACK )
-UI_SetLabelExFont( labHintleft2, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHintleft2, COLOR_WHITE )
+UI_SetLabelExFont( labHintleft2, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---道具分解lab左
-labHintleft3 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintleft3", 112, 14, 40, 110 )
+-- Equipment
+labHintleft3 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintleft3", 112, 14, 40, 115 )
 UI_SetCaption( labHintleft3, "Equipment")
-UI_SetTextColor( labHintleft3, COLOR_BLACK )
-UI_SetLabelExFont( labHintleft3, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHintleft3, COLOR_WHITE )
+UI_SetLabelExFont( labHintleft3, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---修理破锅lab左
-labHintleft4 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintleft4", 112, 14, 40, 110 )
+-- Life skill tool
+labHintleft4 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintleft4", 112, 14, 40, 115 )
 UI_SetCaption( labHintleft4, "Lifeskill tool")
-UI_SetTextColor( labHintleft4, COLOR_BLACK )
-UI_SetLabelExFont( labHintleft4, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHintleft4, COLOR_WHITE )
+UI_SetLabelExFont( labHintleft4, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
-cmdEquipTwo = UI_CreateCompent( frmEquipPurify, COMMAND_ONE_TYPE, "cmdEquipTwo", 32, 32, 146, 65 )	-- 要提纯的武器
+-- Item 2
+cmdEquipTwo = UI_CreateCompent( frmEquipPurify, COMMAND_ONE_TYPE, "cmdEquipTwo", 32, 32, 138, 80 )	-- 要提纯的武器
 
---设置装备提纯lab右
-labHintright1 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintright1", 112, 14, 144, 110 )
+-- Catalyst
+labHintright1 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintright1", 112, 14, 144, 115 )
 UI_SetCaption( labHintright1, "Catalyst")
-UI_SetTextColor( labHintright1, COLOR_BLACK )
-UI_SetLabelExFont( labHintright1, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHintright1, COLOR_WHITE )
+UI_SetLabelExFont( labHintright1, DEFAULT_FONT, TRUE, COLOR_BLACK)
 
---设置贝壳充电lab右
-labHintright2 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintright2", 112, 14, 144, 110 )
+-- Battery
+labHintright2 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintright2", 112, 14, 144, 115 )
 UI_SetCaption( labHintright2, "Battery")
-UI_SetTextColor( labHintright2, COLOR_BLACK )
-UI_SetLabelExFont( labHintright2, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHintright2, COLOR_WHITE )
+UI_SetLabelExFont( labHintright2, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---道具分解lab右
-labHintright3 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintright3", 112, 14,144, 110 )
+-- Plier 
+labHintright3 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintright3", 112, 14,144, 115 )
 UI_SetCaption( labHintright3, "Pliers")
-UI_SetTextColor( labHintright3, COLOR_BLACK )
-UI_SetLabelExFont( labHintright3, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHintright3, COLOR_WHITE )
+UI_SetLabelExFont( labHintright3, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---修理破锅lab右
-labHintright4 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintright4", 112, 14,144, 110 )
+-- Repair Tool
+labHintright4 = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labHintright4", 112, 14,144, 115 )
 UI_SetCaption( labHintright4, "Repair Tool")
-UI_SetTextColor( labHintright4, COLOR_BLACK )
-UI_SetLabelExFont( labHintright4, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHintright4, COLOR_WHITE )
+UI_SetLabelExFont( labHintright4, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---设置金钱显示label
-labMoneyShow = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labMoneyShow", 112, 14, 64, 148 )
+-- Cost
+labMoneyShow = UI_CreateCompent( frmEquipPurify, LABELEX_TYPE, "labMoneyShow", 112, 14, 84, 147 )
 UI_SetCaption( labMoneyShow, "")
-UI_SetTextColor( labMoneyShow, COLOR_BLACK )
-UI_SetLabelExFont( labMoneyShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labMoneyShow, COLOR_WHITE )
+UI_SetLabelExFont( labMoneyShow, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmEquipPurify, BUTTON_TYPE, "btnClose", 14, 14, 206, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmEquipPurify, BUTTON_TYPE, "btnClose", 19, 20, 215, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmNPCtrade.png", 19, 20, 1, 429, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
---加载确定取消按钮
-btnForgeNo = UI_CreateCompent( frmEquipPurify, BUTTON_TYPE, "btnForgeNo", 41, 19, 135, 220 )
-UI_LoadButtonImage( btnForgeNo, "texture/ui/PublicC.tga", 41, 19, 0, 20 ,TRUE )
+-- Cancel button
+btnForgeNo = UI_CreateCompent( frmEquipPurify, BUTTON_TYPE, "btnForgeNo", 52, 17, 135, 170 )
+UI_LoadButtonImage( btnForgeNo, "texture/ui/NUI/frmEquipPurify.png", 52, 17, 6, 233 ,TRUE ) 
 UI_SetButtonModalResult( btnForgeNo, BUTTON_CLOSE )
 
-btnForgeYes = UI_CreateCompent( frmEquipPurify, BUTTON_TYPE, "btnForgeYes", 41, 19, 52, 220 )
-UI_LoadButtonImage( btnForgeYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+-- Confirm button
+btnForgeYes = UI_CreateCompent( frmEquipPurify, BUTTON_TYPE, "btnForgeYes", 52, 17, 52, 170 )
+UI_LoadButtonImage( btnForgeYes, "texture/ui/NUI/frmEquipPurify.png", 52, 17, 6, 215, TRUE )
 
 -----------------------------------------------------------------------
 -- 定义精灵老虎机面板  2006.8.29 by Leo
