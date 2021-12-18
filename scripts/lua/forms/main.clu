@@ -2394,60 +2394,50 @@ btnClose = UI_CreateCompent( frmBreak, BUTTON_TYPE, "btnClose", 19, 20, 290, -5 
 UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmBreak.png", 19, 20, 120, 509, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
---------------------------------------------------------------------
--- 定义铸造面板  2006.10.24 by Leo
------------------------------------------------------------------------
+--------------
+-- Crafting --
+--------------
 frmFound = UI_CreateForm( "frmFound", FALSE, 305, 480, 0, 0, TRUE, FALSE )
 UI_ShowForm( frmFound, FALSE )
 UI_AddFormToTemplete( frmFound, FORM_MAIN )
 UI_FormSetIsEscClose( frmFound, TRUE )
 UI_SetIsDrag( frmFound,TRUE)
 UI_SetFormStyle( frmFound,2)
-
 --UI_FormSetHotKey( frmFound, ALT_KEY, HOTKEY_Z )
 
---加载背景图片
-imgBakTopLeft = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgBakTopLeft", 256, 256, 0, 0 )
-UI_LoadImage( imgBakTopLeft, "texture/ui/Found1.tga", NORMAL, 256, 256, 0, 0 )
+-- Main image
+imgBakTopLeft = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgBakTopLeft", 305, 480, 0, 0 )
+UI_LoadImage( imgBakTopLeft, "texture/ui/NUI/frmFound.png", NORMAL, 305, 480, 0, 0 )
 
-imgBakTopRight = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgBakTopRight", 49, 256, 256, 0 )
-UI_LoadImage( imgBakTopRight, "texture/ui/Found3.tga", NORMAL, 49, 256, 0, 0 )
-
-imgBakBottomLeft = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgBakBottomLeft", 256, 224, 0, 256 )
-UI_LoadImage( imgBakBottomLeft, "texture/ui/Found2.tga", NORMAL, 256, 224, 0, 0 )
-
-imgBakBottomRight = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgBakBottomRight", 49, 224, 256, 256 )
-UI_LoadImage( imgBakBottomRight, "texture/ui/Found3.tga", NORMAL, 49, 224, 49, 0 )
-
---定义title
-labTitle = UI_CreateCompent( frmFound, LABELEX_TYPE, "labTitle", 49, 14, 7, 3 )
+-- Title
+labTitle = UI_CreateCompent( frmFound, LABELEX_TYPE, "labTitle", 49, 14, 130, 5 )
 UI_SetCaption( labTitle, "Crafting")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---定义Command
---第一行
+-- Item slot
 cmdItemBase5 = UI_CreateCompent( frmFound, COMMAND_ONE_TYPE, "cmdItemBase5", 32, 32, 136, 79 )
 UI_SetHint(cmdItemBase5,"Ingredient 2")
---第二行
+
 cmdItemBase4 = UI_CreateCompent( frmFound, COMMAND_ONE_TYPE, "cmdItemBase4", 32, 32, 51, 168 )
 UI_SetHint(cmdItemBase4,"Material 1")
+
 cmdItemBase7 = UI_CreateCompent( frmFound, COMMAND_ONE_TYPE, "cmdItemBase7", 32, 32, 136, 167 )
 UI_SetHint(cmdItemBase7,"Product")
+
 cmdItemBase6 = UI_CreateCompent( frmFound, COMMAND_ONE_TYPE, "cmdItemBase6", 32, 32, 220, 168 )
 UI_SetHint(cmdItemBase6,"Ingredient 3")
 
---第三行
 cmdItemBase3 = UI_CreateCompent( frmFound, COMMAND_ONE_TYPE, "cmdItemBase3", 32, 32, 136, 233 )
 UI_SetHint(cmdItemBase3,"Tool")
---第四行
+
 cmdItemBase1 = UI_CreateCompent( frmFound, COMMAND_ONE_TYPE, "cmdItemBase1", 32, 32, 92, 290 )
 UI_SetHint(cmdItemBase1,"Fairy")
+
 cmdItemBase2 = UI_CreateCompent( frmFound, COMMAND_ONE_TYPE, "cmdItemBase2", 32, 32, 179, 290 )
 UI_SetHint(cmdItemBase2,"Blueprint")
 
---定义色子区
---定义第一个色子
+-- Dice
 imgShaiZi1_1 = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgShaiZi1_1", 32, 32, 24, 388 )
 UI_LoadImage( imgShaiZi1_1, "texture/ui/Progress.tga", NORMAL, 36, 36, 0, 182 )
 -- UI_SetIsShow(imgShaiZi1_1,FALSE)
@@ -2471,7 +2461,7 @@ UI_SetIsShow(imgShaiZi1_5,FALSE)
 imgShaiZi1_6 = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgShaiZi1_6", 32, 32, 24, 388 )
 UI_LoadImage( imgShaiZi1_6, "texture/ui/Progress.tga", NORMAL, 36, 36, 180, 182 )
 UI_SetIsShow(imgShaiZi1_6,FALSE)
---定义第二个色子
+
 imgShaiZi2_1 = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgShaiZi2_1", 32, 32, 61, 388 )
 UI_LoadImage( imgShaiZi2_1, "texture/ui/Progress.tga", NORMAL, 36, 36, 0, 182 )
 -- UI_SetIsShow(imgShaiZi2_1,FALSE)
@@ -2496,7 +2486,6 @@ imgShaiZi2_6 = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgShaiZi2_6", 32, 32, 6
 UI_LoadImage( imgShaiZi2_6, "texture/ui/Progress.tga", NORMAL, 36, 36, 180, 182 )
 UI_SetIsShow(imgShaiZi2_6,FALSE)
 
---定义第三个色子
 imgShaiZi3_1 = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgShaiZi3_1", 32, 32, 98, 388 )
 UI_LoadImage( imgShaiZi3_1, "texture/ui/Progress.tga", NORMAL, 36, 36, 0, 182 )
 -- UI_SetIsShow(imgShaiZi3_1,FALSE)
@@ -2521,44 +2510,25 @@ imgShaiZi3_6 = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgShaiZi3_6", 32, 32, 9
 UI_LoadImage( imgShaiZi3_6, "texture/ui/Progress.tga", NORMAL, 36, 36, 180, 182 )
 UI_SetIsShow(imgShaiZi3_6,FALSE)
 
---加载大按钮
-btnBigBig = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnBigBig", 47, 26, 170, 391 )
-UI_LoadButtonImage( btnBigBig, "texture/ui/Progress.tga", 47, 26, 0, 78, FALSE )
+-- Big button
+btnBigBig = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnBigBig", 52, 17, 170, 396 )
+UI_LoadButtonImage( btnBigBig, "texture/ui/NUI/frmFound.png", 52, 17, 210, 525, FALSE )
 
-labInput = UI_CreateCompent( frmFound, LABELEX_TYPE, "labInput", 49, 14, 185, 398 )
-UI_SetCaption( labInput, "Big")
-UI_SetTextColor( labInput, COLOR_BLACK )
-UI_SetLabelExFont( labInput, DEFAULT_FONT, TRUE, COLOR_WHITE )
+-- Small button
+btnSmallSmall = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnSmallSmall", 52, 17, 227, 396 )
+UI_LoadButtonImage( btnSmallSmall, "texture/ui/NUI/frmFound.png", 52, 17, 264, 525, FALSE )
 
---加载小按钮
-btnSmallSmall = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnSmallSmall", 47, 26, 227, 391 )
-UI_LoadButtonImage( btnSmallSmall, "texture/ui/Progress.tga", 47, 26, 0, 78, FALSE )
+-- Progress bar
+proFound = UI_CreateCompent( frmFound, PROGRESS_TYPE, "proFound", 278, 13, 14, 348 )
+UI_LoadImage( proFound, "texture/ui/NUI/frmFound.png", PROGRESS_PROGRESS, 156, 13, 5, 560 )
 
-labInput = UI_CreateCompent( frmFound, LABELEX_TYPE, "labInput", 49, 14, 235, 398 )
-UI_SetCaption( labInput, "Small")
-UI_SetTextColor( labInput, COLOR_BLACK )
-UI_SetLabelExFont( labInput, DEFAULT_FONT, TRUE, COLOR_WHITE )
+-- Start button
+btnForgeYes = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnForgeYes", 52, 17, 124, 439 )
+UI_LoadButtonImage( btnForgeYes, "texture/ui/NUI/frmFound.png", 52, 17, 4, 484, FALSE )
 
---定义进度条外框
-imgFoundFrame = UI_CreateCompent( frmFound, IMAGE_TYPE, "imgFoundFrame", 278, 13, 13, 352 )
-UI_LoadImage( imgFoundFrame, "texture/ui/Progress.tga", NORMAL, 157, 13, 0, 52 )
-
---定义进度条
-proFound = UI_CreateCompent( frmFound, PROGRESS_TYPE, "proFound", 278, 13, 13, 352 )
-UI_LoadImage( proFound, "texture/ui/Progress.tga", PROGRESS_PROGRESS, 157, 13, 0, 65 )
-
---定义提交按钮
-btnForgeYes = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnForgeYes", 57, 26, 124, 439 )
-UI_LoadButtonImage( btnForgeYes, "texture/ui/Progress.tga", 57, 26, 47, 78, FALSE )
-
-labInput = UI_CreateCompent( frmFound, LABELEX_TYPE, "labInput", 49, 14, 140, 446 )
-UI_SetCaption( labInput, "Start")
-UI_SetTextColor( labInput, COLOR_BLACK )
-UI_SetLabelExFont( labInput, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
---定义关闭按钮
-btnClose = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnClose", 14, 14, 285, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close botton
+btnClose = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnClose", 19, 20, 290, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmFound.png", 19, 20, 120, 509, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
 -----------------------------------------------------------------------
