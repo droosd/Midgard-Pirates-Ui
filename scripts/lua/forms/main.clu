@@ -2343,9 +2343,9 @@ btnClose = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnClose", 14, 14, 285, 3
 UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
------------------------------------------------------------------------
--- 定义分解面板  2006.10.24 by Leo
------------------------------------------------------------------------
+-------------
+-- Analyze --
+-------------
 frmBreak = UI_CreateForm( "frmBreak", FALSE, 305, 480, 0, 0, TRUE, FALSE )
 UI_ShowForm( frmBreak, FALSE )
 UI_AddFormToTemplete( frmBreak, FORM_MAIN )
@@ -2355,87 +2355,64 @@ UI_SetFormStyle( frmBreak,2)
 
 --UI_FormSetHotKey( frmBreak, ALT_KEY, HOTKEY_Z )
 
---加载背景图片
-imgBakTopLeft = UI_CreateCompent( frmBreak, IMAGE_TYPE, "imgBakTopLeft", 256, 256, 0, 0 )
-UI_LoadImage( imgBakTopLeft, "texture/ui/Break1.tga", NORMAL, 256, 256, 0, 0 )
+-- Main image
+imgBakTopLeft = UI_CreateCompent( frmBreak, IMAGE_TYPE, "imgBakTopLeft", 305, 480, 0, 0 )
+UI_LoadImage( imgBakTopLeft, "texture/ui/NUI/frmBreak.png", NORMAL, 305, 480, 0, 0 )
 
-imgBakTopRight = UI_CreateCompent( frmBreak, IMAGE_TYPE, "imgBakTopRight", 49, 256, 256, 0 )
-UI_LoadImage( imgBakTopRight, "texture/ui/Break3.tga", NORMAL, 49, 256, 0, 0 )
-
-imgBakBottomLeft = UI_CreateCompent( frmBreak, IMAGE_TYPE, "imgBakBottomLeft", 256, 224, 0, 256 )
-UI_LoadImage( imgBakBottomLeft, "texture/ui/Break2.tga", NORMAL, 256, 224, 0, 0 )
-
-imgBakBottomRight = UI_CreateCompent( frmBreak, IMAGE_TYPE, "imgBakBottomRight", 49, 224, 256, 256 )
-UI_LoadImage( imgBakBottomRight, "texture/ui/Break3.tga", NORMAL, 49, 224, 49, 0 )
-
---定义title
-labTitle = UI_CreateCompent( frmBreak, LABELEX_TYPE, "labTitle", 49, 14, 7, 3 )
+-- Title
+labTitle = UI_CreateCompent( frmBreak, LABELEX_TYPE, "labTitle", 49, 14, 140, 5 )
 UI_SetCaption( labTitle, "Analyze")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---定义Command
---第一行
+-- Item slot
 cmdItemBase4 = UI_CreateCompent( frmBreak, COMMAND_ONE_TYPE, "cmdItemBase4", 32, 32, 135, 43 )
 UI_SetHint(cmdItemBase4,"Catalyst")
---第二行
+
 cmdItemBase3 = UI_CreateCompent( frmBreak, COMMAND_ONE_TYPE, "cmdItemBase3", 32, 32, 135, 137 )
 UI_SetHint(cmdItemBase3,"Ingredients")
---第三行
+
 cmdItemBase2 = UI_CreateCompent( frmBreak, COMMAND_ONE_TYPE, "cmdItemBase2", 32, 32, 135, 226 )
 UI_SetHint(cmdItemBase2,"Tool")
---第四行
+
 cmdItemBase1 = UI_CreateCompent( frmBreak, COMMAND_ONE_TYPE, "cmdItemBase1", 32, 32, 134, 318 )
 UI_SetHint(cmdItemBase1,"Fairy")
 
 --定义进度条外框
 imgBreakFrame = UI_CreateCompent( frmBreak, IMAGE_TYPE, "imgBreakFrame", 278, 13, 13, 369 )
-UI_LoadImage( imgBreakFrame, "texture/ui/Progress.tga", NORMAL, 157, 13, 0, 52 )
+--UI_LoadImage( imgBreakFrame, "texture/ui/Progress.tga", NORMAL, 157, 13, 0, 52 )
 
 --定义进度条
-proBreak = UI_CreateCompent( frmBreak, PROGRESS_TYPE, "proBreak", 278, 13, 13, 369 )
-UI_LoadImage( proBreak, "texture/ui/Progress.tga", PROGRESS_PROGRESS, 157, 13, 0, 65)
+proBreak = UI_CreateCompent( frmBreak, PROGRESS_TYPE, "proBreak", 278, 13, 14, 370 )
+UI_LoadImage( proBreak, "texture/ui/NUI/frmBreak.png", PROGRESS_PROGRESS, 156, 13, 5, 560)
 
 --定义遮罩
 imgBreakOver = UI_CreateCompent( frmBreak, IMAGE_TYPE, "imgBreakOver", 110, 25,170, 395 )
-UI_LoadImage( imgBreakOver, "texture/ui/Break2.tga", NORMAL, 90, 15, 30, 150 )
+--UI_LoadImage( imgBreakOver, "texture/ui/Break2.tga", NORMAL, 90, 15, 30, 150 )
 
---定义数字显示区左
+--Random number left side
 labNumOutputLeft = UI_CreateCompent( frmBreak, LABELEX_TYPE, "labNumOutputLeft", 10, 145, 31, 402 )
 UI_SetCaption( labNumOutputLeft, "")
-UI_SetTextColor( labNumOutputLeft, COLOR_YELLOW )
-UI_SetLabelExFont( labNumOutputLeft, FONT20, FALSE, COLOR_YELLOW )
+UI_SetTextColor( labNumOutputLeft, COLOR_BLACK )
+UI_SetLabelExFont( labNumOutputLeft, FONT20, FALSE, COLOR_WHITEW)
 
---定义数字显示区右
+-- Random number right side
 labNumOutputRight = UI_CreateCompent( frmBreak, LABELEX_TYPE, "labNumOutputRight", 10, 145, 179, 402 )
 UI_SetCaption( labNumOutputRight, "")
-UI_SetTextColor( labNumOutputRight, COLOR_YELLOW )
-UI_SetLabelExFont( labNumOutputRight, FONT20, FALSE, COLOR_YELLOW )
+UI_SetTextColor( labNumOutputRight, COLOR_BLACK)
+UI_SetLabelExFont( labNumOutputRight, FONT20, FALSE, COLOR_WHITE)
 
---定义数值选择区
---......
+-- Start Button
+btnForgeYes = UI_CreateCompent( frmBreak, BUTTON_TYPE, "btnForgeYes", 52, 17, 43, 446 )
+UI_LoadButtonImage( btnForgeYes, "texture/ui/NUI/frmBreak.png", 52, 17, 4, 484, FALSE )
 
---定义提交按钮
-btnForgeYes = UI_CreateCompent( frmBreak, BUTTON_TYPE, "btnForgeYes", 57, 26, 43, 441 )
-UI_LoadButtonImage( btnForgeYes, "texture/ui/Progress.tga", 57, 26, 47, 78, FALSE )
+-- Stop button
+btnForgeNo = UI_CreateCompent( frmBreak, BUTTON_TYPE, "btnForgeNo", 52, 17, 196, 446 )
+UI_LoadButtonImage( btnForgeNo, "texture/ui/NUI/frmBreak.png", 52, 17, 59, 484, FALSE )
 
-labInput = UI_CreateCompent( frmBreak, LABELEX_TYPE, "labInput", 49, 14, 59, 448 )
-UI_SetCaption( labInput, "Start")
-UI_SetTextColor( labInput, COLOR_BLACK )
-UI_SetLabelExFont( labInput, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
---定义取消按钮
-btnForgeNo = UI_CreateCompent( frmBreak, BUTTON_TYPE, "btnForgeNo", 57, 26, 196, 441 )
-UI_LoadButtonImage( btnForgeNo, "texture/ui/Progress.tga", 57, 26, 47, 78, FALSE )
-
-labInput = UI_CreateCompent( frmBreak, LABELEX_TYPE, "labInput", 49, 14, 212, 448 )
-UI_SetCaption( labInput, "Stop")
-UI_SetTextColor( labInput, COLOR_BLACK )
-UI_SetLabelExFont( labInput, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
---定义关闭按钮
-btnClose = UI_CreateCompent( frmBreak, BUTTON_TYPE, "btnClose", 14, 14, 285, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmBreak, BUTTON_TYPE, "btnClose", 19, 20, 290, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmBreak.png", 19, 20, 120, 509, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
 --------------------------------------------------------------------
