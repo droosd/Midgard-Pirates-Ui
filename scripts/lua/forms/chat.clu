@@ -239,28 +239,26 @@ UI_MenuLoadSelect( BlockedRight, "texture/ui/SystemBotton3.tga", 79, 13, 25, 227
 
 -- 增加菜单
 UI_MenuAddText( BlockedRight, "Delete" )
------------------------------------------------------------------------
--- 定义对话框
------------------------------------------------------------------------
--- 创建对话框表单
-frmChat = UI_CreateForm( "frmChat", FALSE, 377, 274, 232, 163, TRUE, FALSE )
+
+------------------
+-- Send Message --
+------------------
+frmChat = UI_CreateForm( "frmChat", FALSE, 380, 248, 232, 163, TRUE, FALSE )
 --UI_FormSetHotKey( frmChat, ALT_KEY, HOTKEY_C )
 UI_ShowForm( frmChat, FALSE )
 UI_AddFormToTemplete( frmChat, 1 )
 UI_SetIsDrag( frmChat, TRUE )
 --UI_FormSetIsEscClose( frmChat, FALSE )
 
--- 加载背景图片
-imgChatTL = UI_CreateCompent( frmChat, IMAGE_TYPE, "imgChatTL", 256, 256, 0, 0 )
-UI_LoadImage( imgChatTL, "texture/ui/Talk1.tga", NORMAL, 256, 256, 0, 0 )
+-- Main image
+imgChatTL = UI_CreateCompent( frmChat, IMAGE_TYPE, "imgChatTL", 380, 248, 0, 0 )
+UI_LoadImage( imgChatTL, "texture/ui/NUI/frmChat.png", NORMAL, 380, 248, 0, 0 )
 
-imgChatTR = UI_CreateCompent( frmChat, IMAGE_TYPE, "imgChatTR", 121, 256, 256, 0 )
-UI_LoadImage( imgChatTR, "texture/ui/speak2.tga", NORMAL, 121, 256, 0, 0 )
---title
-labTitle = UI_CreateCompent( frmChat, LABELEX_TYPE, "labTitle", 60, 14, 10, 4 )
+-- Title
+labTitle = UI_CreateCompent( frmChat, LABELEX_TYPE, "labTitle", 60, 14, 150, 4 )
 UI_SetCaption( labTitle, "Dialogue")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 --创建对方名字
 --labName = UI_CreateCompent( frmChat, LABELEX_TYPE, "labName", 96, 11, 7, 4 )
@@ -268,30 +266,28 @@ UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
 --UI_SetTextColor( labName, COLOR_BLACK )
 --UI_SetLabelExFont( labName, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---加载会话名称及人数
+-- Name
 labName1 = UI_CreateCompent( frmChat, LABELEX_TYPE, "labName1", 96, 11, 52, 27 )
 UI_SetCaption( labName1, "012345678901234567890123456789" )
-UI_SetTextColor( labName1, COLOR_BLACK )
-UI_SetLabelExFont( labName1, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labName1, COLOR_WHITE )
+UI_SetLabelExFont( labName1, DEFAULT_FONT, TRUE, COLOR_BLACK)
 
+-- Close button
+btnClose = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnClose", 19, 20, 338, 3 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmChat.png", 19, 20, 8, 326, TRUE )
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnClose", 14, 14, 355, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Minimize button
+btnMin = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnMin", 19, 20, 315, 3 )
+UI_LoadButtonImage( btnMin, "texture/ui/NUI/frmChat.png", 19, 20, 91, 326, TRUE )
 
-
---创建最小化按钮
-btnMin = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnMin", 14, 14, 342, 3 )
-UI_LoadButtonImage( btnMin, "texture/ui/PublicC.tga", 14, 14, 2, 75, TRUE )
-
---创建发送按钮
-btnSend = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnSend", 53, 19, 207, 177 )
-UI_LoadButtonImage( btnSend, "texture/ui/Quest1.tga", 53, 19, 20, 218, TRUE )
+-- Send Button
+btnSend = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnSend", 52, 17, 210, 174 )
+UI_LoadButtonImage( btnSend, "texture/ui/NUI/frmChat.png", 52, 17, 2, 299, TRUE )
 UI_SetHint( btnSend, "Alt+X to send message" )
 
 
---加载对话输入框
-edtChat = UI_CreateCompent( frmChat, EDIT_TYPE, "edtChat", 246, 51, 14, 198 )
+-- Chat textbox
+edtChat = UI_CreateCompent( frmChat, EDIT_TYPE, "edtChat", 246, 51, 14, 196 )
 UI_SetTextColor( edtChat, COLOR_BLACK )
 UI_SetEditMaxNum( edtChat, 64 )
 UI_SetEditMaxNumVisible( edtChat, 64 )
@@ -299,8 +295,8 @@ UI_SetEditCursorColor( edtChat, COLOR_BLACK )
 
 UI_SetEditEnterButton( edtChat,btnSend )
 
--- 聊天显示区
-memChat = UI_CreateCompent( frmChat, RICHMEMO_TYPE, "memChat", 254, 120, 14, 55 )
+-- Chat Member
+memChat = UI_CreateCompent( frmChat, RICHMEMO_TYPE, "memChat", 254, 120, 16, 55 )
 --memList = UI_GetList( memChat )
 --UI_SetListRowHeight( memList, 18 )
 --UI_SetMargin( memChat, 2, 2, 2, 2 )
@@ -311,24 +307,24 @@ memChat = UI_CreateCompent( frmChat, RICHMEMO_TYPE, "memChat", 254, 120, 14, 55 
 --UI_SetMemoPageShowNum( memChat, 6 )
 --UI_SetMemoRowHeight( memChat , 21 )
 
---获得滚动条
+-- Screen background
 scrollid = UI_GetScroll( memChat )
 UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_LoadImage( scrollid, "texture/ui/NUI/frmFriendList.png", COMPENT_BACK, 11, 1, 110, 468 )
 
---加载向上按钮
+-- Scroll Up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/frmFriendList.png", 11, 9, 122, 479, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NUI/frmFriendList.png", COMPENT_BACK, 11, 43, 99, 457 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/frmFriendList.png", 11, 9, 122, 479, TRUE )
 UI_SetSize( id, 11, 9 )
 
 --加载多人对话list
@@ -356,35 +352,35 @@ id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
 UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
 UI_SetSize( id, 11, 9 )
 
---创建参与者
-labParty = UI_CreateCompent( frmChat, LABELEX_TYPE, "labParty", 96, 11, 280, 36 )
+-- Member count
+labParty = UI_CreateCompent( frmChat, LABELEX_TYPE, "labParty", 96, 11, 280, 34 )
 UI_SetCaption( labParty, "Members (36)" )
-UI_SetTextColor( labParty, COLOR_BLACK )
-UI_SetLabelExFont( labParty, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labParty, COLOR_WHITE )
+UI_SetLabelExFont( labParty, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建表情按钮
-btnBrow = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnBrow", 16, 16, 51, 179 )
-UI_LoadButtonImage( btnBrow, "texture/ui/SysBotton2.dds", 16, 16, 119, 212, TRUE )
+-- Emoticon button
+btnBrow = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnBrow", 19, 18, 37, 173 )
+UI_LoadButtonImage( btnBrow, "texture/ui/NUI/frmChat.png", 19, 18, 4, 255, TRUE )
 UI_SetHint( btnBrow, "Emoticon" )
 
---创建清屏按钮
-btnClean = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnClean", 16, 16, 19, 179 )
-UI_LoadButtonImage( btnClean, "texture/ui/SysBotton2.dds", 16, 16, 119, 193, TRUE )
+-- Clear Screen button
+btnClean = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnClean", 19, 18, 14, 173 )
+UI_LoadButtonImage( btnClean, "texture/ui/NUI/frmChat.png", 19, 18, 90, 274, TRUE )
 UI_SetHint( btnClean, "Clear Screen" )
 
---创建对话记录按钮
-btnChat = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnChat", 16, 16, 84, 179 )
-UI_LoadButtonImage( btnChat, "texture/ui/SystemBotton3.tga", 16, 16, 73, 197, TRUE )
+-- Send Message log button
+btnChat = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnChat", 19, 18, 60, 173 )
+UI_LoadButtonImage( btnChat, "texture/ui/NUI/frmChat.png", 19, 18, 4, 274, TRUE )
 UI_SetHint( btnChat, "Save message log" )
 
---创建退出当前会话按钮
-btnQuit = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnQuit", 13, 15, 120, 179 )
-UI_LoadButtonImage( btnQuit, "texture/ui/SystemBotton3.tga", 13, 15, 73, 212, TRUE )
+-- Exit conversation button
+btnQuit = UI_CreateCompent( frmChat, BUTTON_TYPE, "btnQuit", 19, 18, 83, 173 )
+UI_LoadButtonImage( btnQuit, "texture/ui/NUI/frmChat.png", 19, 18, 90, 255, TRUE )
 UI_SetHint( btnQuit, "Exit conversation" )
 
---表情表格
-grdFace = UI_CreateCompent( frmChat, GRID_TYPE, "grdFace", 142, 170, 293, -170 ) 
-UI_LoadImage( grdFace,  "texture/ui/QQ.dds", NORMAL, 142, 170, 0, 0 )
+-- Emoticons
+grdFace = UI_CreateCompent( frmChat, GRID_TYPE, "grdFace", 151, 178, 293, -170 ) 
+UI_LoadImage( grdFace,  "texture/ui/NUI/chat.png", NORMAL, 151, 178, 0, 39 )
 UI_SetGridUnitSize( grdFace, 20, 20 )
 UI_SetIsShow( grdFace, FALSE )
 UI_SetMargin( grdFace, 11, 5, 5, 5 )
