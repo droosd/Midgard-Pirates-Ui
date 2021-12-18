@@ -2531,89 +2531,69 @@ btnClose = UI_CreateCompent( frmFound, BUTTON_TYPE, "btnClose", 19, 20, 290, -5 
 UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmFound.png", 19, 20, 120, 509, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
------------------------------------------------------------------------
--- 定义烹饪面板  2006.10.24 by Leo
------------------------------------------------------------------------
+-------------
+-- Cooking --
+-------------
 frmCooking = UI_CreateForm( "frmCooking", FALSE, 305, 480, 0, 0, TRUE, FALSE )
 UI_ShowForm( frmCooking, FALSE )
 UI_AddFormToTemplete( frmCooking, FORM_MAIN )
 UI_FormSetIsEscClose( frmCooking, TRUE )
 UI_SetIsDrag( frmCooking,TRUE)
 UI_SetFormStyle( frmCooking,2)
-
 --UI_FormSetHotKey( frmCooking, ALT_KEY, HOTKEY_Z )
 
---加载背景图片
-imgBakTopLeft = UI_CreateCompent( frmCooking, IMAGE_TYPE, "imgBakTopLeft", 256, 256, 0, 0 )
-UI_LoadImage( imgBakTopLeft, "texture/ui/Cooking1.tga", NORMAL, 256, 256, 0, 0 )
+-- Main image
+imgBakTopLeft = UI_CreateCompent( frmCooking, IMAGE_TYPE, "imgBakTopLeft", 305, 480, 0, 0 )
+UI_LoadImage( imgBakTopLeft, "texture/ui/NUI/frmCooking.png", NORMAL, 305, 480, 0, 0 )
 
-imgBakTopRight = UI_CreateCompent( frmCooking, IMAGE_TYPE, "imgBakTopRight", 49, 256, 256, 0 )
-UI_LoadImage( imgBakTopRight, "texture/ui/Cooking3.tga", NORMAL, 49, 256, 0, 0 )
-
-imgBakBottomLeft = UI_CreateCompent( frmCooking, IMAGE_TYPE, "imgBakBottomLeft", 256, 224, 0, 256 )
-UI_LoadImage( imgBakBottomLeft, "texture/ui/Cooking2.tga", NORMAL, 256, 224, 0, 0 )
-
-imgBakBottomRight = UI_CreateCompent( frmCooking, IMAGE_TYPE, "imgBakBottomRight", 49, 224, 256, 256 )
-UI_LoadImage( imgBakBottomRight, "texture/ui/Cooking3.tga", NORMAL, 49, 224, 49, 0 )
-
---定义title
-labTitle = UI_CreateCompent( frmCooking, LABELEX_TYPE, "labTitle", 49, 14, 7, 3 )
+-- Title
+labTitle = UI_CreateCompent( frmCooking, LABELEX_TYPE, "labTitle", 49, 14, 140, 4 )
 UI_SetCaption( labTitle, "Cooking")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK)
 
---定义Command
---第一行
+-- Cooking items
 cmdItemBase5 = UI_CreateCompent( frmCooking, COMMAND_ONE_TYPE, "cmdItemBase5", 32, 32, 134, 54 )
 UI_SetHint(cmdItemBase5,"Material 2")
---第二行
+
 cmdItemBase4 = UI_CreateCompent( frmCooking, COMMAND_ONE_TYPE, "cmdItemBase4", 32, 32, 41, 149 )
 UI_SetHint(cmdItemBase4,"Material 1")
-cmdItemBase7 = UI_CreateCompent( frmCooking, COMMAND_ONE_TYPE, "cmdItemBase7", 32, 32, 136, 149 )
-cmdItemBase6 = UI_CreateCompent( frmCooking, COMMAND_ONE_TYPE, "cmdItemBase6", 32, 32, 230, 149 )
+
+cmdItemBase7 = UI_CreateCompent( frmCooking, COMMAND_ONE_TYPE, "cmdItemBase7", 32, 32, 139, 149 )
+
+cmdItemBase6 = UI_CreateCompent( frmCooking, COMMAND_ONE_TYPE, "cmdItemBase6", 32, 32, 231, 149 )
 UI_SetHint(cmdItemBase6,"Material 3")
 
---第三行
-cmdItemBase3 = UI_CreateCompent( frmCooking, COMMAND_ONE_TYPE, "cmdItemBase3", 32, 32,	84, 249 )
+cmdItemBase3 = UI_CreateCompent( frmCooking, COMMAND_ONE_TYPE, "cmdItemBase3", 32, 32,	83, 249 )
 UI_SetHint(cmdItemBase3,"Tool")
+
 cmdItemBase2 = UI_CreateCompent( frmCooking, COMMAND_ONE_TYPE, "cmdItemBase2", 32, 32, 194, 249 )
 UI_SetHint(cmdItemBase2,"Blueprint")
---第四行
+
 cmdItemBase1 = UI_CreateCompent( frmCooking, COMMAND_ONE_TYPE, "cmdItemBase1", 32, 32, 136, 326 )
 UI_SetHint(cmdItemBase1,"Fairy")
 
 imgCookingOver = UI_CreateCompent( frmCooking, IMAGE_TYPE, "imgCookingOver", 240, 10, 15, 411 )
-UI_LoadImage( imgCookingOver, "texture/ui/Cooking2.tga", NORMAL, 14,10,100, 155 )
+--UI_LoadImage( imgCookingOver, "texture/ui/Cooking2.tga", NORMAL, 14,10,100, 155 )
 
---定义进度条外框
 imgCookingFrame = UI_CreateCompent( frmCooking, IMAGE_TYPE, "imgCookingFrame", 217, 13, 43, 426 )
-UI_LoadImage( imgCookingFrame, "texture/ui/Progress.tga", NORMAL, 157, 13, 0, 52 )
+--UI_LoadImage( imgCookingFrame, "texture/ui/Progress.tga", NORMAL, 157, 13, 0, 52 )
 
---定义进度条
-proCooking = UI_CreateCompent( frmCooking, PROGRESS_TYPE, "proCooking", 217, 13,43, 426 )
-UI_LoadImage( proCooking, "texture/ui/Progress.tga", PROGRESS_PROGRESS, 157, 13, 0, 0 )
+-- Progress bar
+proCooking = UI_CreateCompent( frmCooking, PROGRESS_TYPE, "proCooking", 156, 13, 74, 453 )
+UI_LoadImage( proCooking, "texture/ui/NUI/frmCooking.png", PROGRESS_PROGRESS, 156, 13, 5, 560 )
 
---定义提交按钮
-btnForgeYes = UI_CreateCompent( frmCooking, BUTTON_TYPE, "btnForgeYes", 57, 26, 40, 385)
-UI_LoadButtonImage( btnForgeYes, "texture/ui/Progress.tga", 57, 26, 47, 78, FALSE )
+-- Start button
+btnForgeYes = UI_CreateCompent( frmCooking, BUTTON_TYPE, "btnForgeYes", 52, 17, 40, 410)
+UI_LoadButtonImage( btnForgeYes, "texture/ui/NUI/frmCooking.png", 52, 17, 4, 486, FALSE )
 
-labInput = UI_CreateCompent( frmCooking, LABELEX_TYPE, "labInput", 49, 14, 56, 392 )
-UI_SetCaption( labInput, "Start")
-UI_SetTextColor( labInput, COLOR_BLACK )
-UI_SetLabelExFont( labInput, DEFAULT_FONT, TRUE, COLOR_WHITE )
+-- Stop button
+btnForgeNo = UI_CreateCompent( frmCooking, BUTTON_TYPE, "btnForgeNo", 52, 17, 207, 410)
+UI_LoadButtonImage( btnForgeNo, "texture/ui/NUI/frmCooking.png", 52, 17, 59, 486, FALSE )
 
---定义取消按钮
-btnForgeNo = UI_CreateCompent( frmCooking, BUTTON_TYPE, "btnForgeNo", 57, 26, 207, 385)
-UI_LoadButtonImage( btnForgeNo, "texture/ui/Progress.tga", 57, 26, 47, 78, FALSE )
-
-labInput = UI_CreateCompent( frmCooking, LABELEX_TYPE, "labInput", 49, 14, 223, 392 )
-UI_SetCaption( labInput, "Stop")
-UI_SetTextColor( labInput, COLOR_BLACK )
-UI_SetLabelExFont( labInput, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
---定义关闭按钮
-btnClose = UI_CreateCompent( frmCooking, BUTTON_TYPE, "btnClose", 14, 14, 285, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmCooking, BUTTON_TYPE, "btnClose", 19, 20, 290, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmCooking.png", 19, 20, 120, 511, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
 
