@@ -1992,40 +1992,24 @@ UI_SetTextColor( labLastshow2, COLOR_BLACK )
 UI_SetLabelExFont( labLastshow2, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 
------------------------------------------------------------------------
--- 定义反斗白银城统计面板  2006.10.16 by Leo
------------------------------------------------------------------------
+-------------------
+-- Chaos Ranking --
+-------------------
 frmPKSilver = UI_CreateForm( "frmPKSilver", FALSE, 548, 386, 0, 0, TRUE, FALSE )
 UI_ShowForm( frmPKSilver, FALSE )
 UI_AddFormToTemplete( frmPKSilver, FORM_MAIN )
 UI_FormSetIsEscClose( frmPKSilver, TRUE )
 UI_SetIsDrag( frmPKSilver,TRUE)
 UI_SetFormStyle( frmPKSilver,2)
-
 --UI_FormSetHotKey( frmPKSilver, ALT_KEY, HOTKEY_Z )
 
---加载背景图片
-imgBackGround1 = UI_CreateCompent( frmPKSilver, IMAGE_TYPE, "imgBackGround1", 256, 256, 0, 0 )
-UI_LoadImage( imgBackGround1, "texture/ui/fighting1.tga", NORMAL, 256,256, 0, 0 )
+-- Main image
+imgBackGround1 = UI_CreateCompent( frmPKSilver, IMAGE_TYPE, "imgBackGround1", 548, 386, 0, 0 )
+UI_LoadImage( imgBackGround1, "texture/ui/NUI/frmPKSilver.png", NORMAL, 548, 386, 0, 0 )
 
-imgBackGround2 = UI_CreateCompent( frmPKSilver, IMAGE_TYPE, "imgBackGround2", 256, 256, 256, 0 )
-UI_LoadImage( imgBackGround2, "texture/ui/fighting2.tga", NORMAL, 256,256, 0, 0 )
-
-imgBackGround3 = UI_CreateCompent( frmPKSilver, IMAGE_TYPE, "imgBackGround3", 46, 256, 512, 0 )
-UI_LoadImage( imgBackGround3, "texture/ui/fighting5.tga", NORMAL, 46, 256, 0, 0 )
-
-imgBackGround4 = UI_CreateCompent( frmPKSilver, IMAGE_TYPE, "imgBackGround4", 256, 130, 0, 256 )
-UI_LoadImage( imgBackGround4, "texture/ui/fighting3.tga", NORMAL, 256,130, 0, 0 )
-
-imgBackGround5 = UI_CreateCompent( frmPKSilver, IMAGE_TYPE, "imgBackGround5", 256, 130, 256, 256 )
-UI_LoadImage( imgBackGround5, "texture/ui/fighting4.tga", NORMAL, 256,130, 0, 0 )
-
-imgBackGround6 = UI_CreateCompent( frmPKSilver, IMAGE_TYPE, "imgBackGround6", 46, 130, 512, 256 )
-UI_LoadImage( imgBackGround6, "texture/ui/fighting5.tga", NORMAL, 46,130, 46, 0 )
-
---创建关闭按钮
-btnClose = UI_CreateCompent( frmPKSilver, BUTTON_TYPE, "btnClose", 14, 14, 531, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- CLose button
+btnClose = UI_CreateCompent( frmPKSilver, BUTTON_TYPE, "btnClose", 19, 20, 535, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmPKSilver.png", 19, 20, 7, 397, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
 --创建结果表单
@@ -2097,6 +2081,7 @@ end
 	UI_SetCaption( labNotice2, "To receive hidden powers of the full set based on ranking on this list")
 	UI_SetTextColor( labNotice2, COLOR_BLACK )
 	UI_SetLabelExFont( labNotice2, DEFAULT_FONT, TRUE, COLOR_WHITE )
+	
 -----------------------------------------------------------------------
 -- 定义组队面板  2006.10.17 by Leo
 -----------------------------------------------------------------------
