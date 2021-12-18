@@ -595,10 +595,9 @@ UI_LoadButtonImage( btnShineYes, "texture/ui/forge3.tga", 41, 19, 0, 63, TRUE )
 btnShineNo = UI_CreateCompent( frmNPCshine, BUTTON_TYPE, "btnShineNo", 41, 19, 146, 190 )
 UI_LoadButtonImage( btnShineNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 
------------------------------------------------------------------------
--- 定义NPC合成
------------------------------------------------------------------------	
---- 创建NPC对话表单
+----------------------------------
+-- Gem combine and Item upgrade --
+----------------------------------
 frmMakeEquip = UI_CreateForm( "frmMakeEquip", FALSE, 226, 440, 240, 70, TRUE, FALSE )
 UI_ShowForm( frmMakeEquip, TRUE )
 UI_AddFormToTemplete( frmMakeEquip, FORM_MAIN )
@@ -606,12 +605,10 @@ UI_AddFormToTemplete( frmMakeEquip, FORM_MAIN )
 UI_SetFormStyle( frmMakeEquip, 2 )---左右居中
 UI_SetIsDrag( frmMakeEquip, TRUE )
 
+-- Main image
+imgBakTop = UI_CreateCompent( frmMakeEquip, IMAGE_TYPE, "imgBakTop", 226, 440, 0, 0 )
+UI_LoadImage( imgBakTop, "texture/ui/NUI/frmMakeEquip.png", NORMAL, 226, 440, 0, 0 ) 
 
--- 加载背景图片
-imgBakTop = UI_CreateCompent( frmMakeEquip, IMAGE_TYPE, "imgBakTop", 226, 256, 0, 0 )
-UI_LoadImage( imgBakTop, "texture/ui/makeequip1.tga", NORMAL, 226, 256, 0, 0 ) 
-imgBakDown = UI_CreateCompent( frmMakeEquip, IMAGE_TYPE, "imgBakDown", 226, 184, 0, 256 )
-UI_LoadImage( imgBakDown, "texture/ui/makeequip2.tga", NORMAL, 226, 184, 0, 0 )
 
 --title
 --labTitle = UI_CreateCompent( frmMakeEquip, LABELEX_TYPE, "labTitle", 400, 150, 87, 6 )
@@ -619,13 +616,13 @@ UI_LoadImage( imgBakDown, "texture/ui/makeequip2.tga", NORMAL, 226, 184, 0, 0 )
 --UI_SetTextColor( labTitle, COLOR_BLACK )
 --UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmMakeEquip, BUTTON_TYPE, "btnClose", 14, 14, 205, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmMakeEquip, BUTTON_TYPE, "btnClose", 19, 20, 210, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmMakeEquip.png", 19, 20, 1, 445, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
---合成需求和结果程序用栏
-cmdRouLeau = UI_CreateCompent( frmMakeEquip, COMMAND_ONE_TYPE, "cmdRouLeau", 32, 32, 97, 67 )	-- 卷轴
+-- Item slot
+cmdRouLeau = UI_CreateCompent( frmMakeEquip, COMMAND_ONE_TYPE, "cmdRouLeau", 32, 32, 97, 141 )	-- 卷轴
 cmdItem0 = UI_CreateCompent( frmMakeEquip, COMMAND_ONE_TYPE, "cmdItem0", 32, 32, 25, 122 )	-- 原料1
 cmdItem1 = UI_CreateCompent( frmMakeEquip, COMMAND_ONE_TYPE, "cmdItem1", 32, 32, 172, 122 )	-- 原料2
 cmdItem2 = UI_CreateCompent( frmMakeEquip, COMMAND_ONE_TYPE, "cmdItem2", 32, 32, 49, 207 )	-- 原料3
@@ -638,11 +635,18 @@ UI_SetHint( cmdItem2, "Ingredient 3" )
 UI_SetHint( cmdItem3, "Ingredient 4" )
 UI_SetHint( cmdRouLeau, "Scroll" )
 
---创建合成所需金币显示
-labForgeGold = UI_CreateCompent( frmMakeEquip, LABELEX_TYPE, "labForgeGold", 112, 12, 50, 386 )
+-- Cost
+labForgeGold = UI_CreateCompent( frmMakeEquip, LABELEX_TYPE, "labForgeGold", 112, 12, 80, 385 )
 UI_SetCaption( labForgeGold, "" )
-UI_SetTextColor( labForgeGold, COLOR_BLACK )
-UI_SetLabelExFont( labForgeGold, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labForgeGold, COLOR_WHITE)
+UI_SetLabelExFont( labForgeGold, DEFAULT_FONT, TRUE, COLOR_BLACK)
+
+labForgePersent = UI_CreateCompent( frmMakeEquip, LABELEX_TYPE, "labForgePersent", 40, 13, 94, 257 )
+UI_SetCaption( labForgePersent, "" )
+UI_SetTextColor( labForgePersent, COLOR_BLACK )
+UI_SetLabelExFont( labForgePersent, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetAlign( labForgePersent, caWidthCenter )
+UI_SetHint( labForgePersent, "Persent success" )
 
 --创建物品属性显示
 memForgeItemState = UI_CreateCompent( frmMakeEquip, MEMO_TYPE, "memForgeItemState", 180, 77, 24, 286 )
@@ -661,12 +665,14 @@ UI_AddListText( lstForgeItemState, "" )
 UI_AddListText( lstForgeItemState, "" )
 UI_AddListText( lstForgeItemState, "" )
 
---加载合成，取消按钮
-btnForgeYes = UI_CreateCompent( frmMakeEquip, BUTTON_TYPE, "btnForgeYes", 41, 19, 52, 411 )
-UI_LoadButtonImage( btnForgeYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+-- COnfirm button
+btnForgeYes = UI_CreateCompent( frmMakeEquip, BUTTON_TYPE, "btnForgeYes", 52, 17, 52, 411 )
+UI_LoadButtonImage( btnForgeYes, "texture/ui/NUI/frmMakeEquip.png", 52, 17, 10, 473, TRUE )
 
-btnForgeNo = UI_CreateCompent( frmMakeEquip, BUTTON_TYPE, "btnForgeNo", 41, 19, 135, 411 )
-UI_LoadButtonImage( btnForgeNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )UI_SetButtonModalResult( btnForgeNo, BUTTON_CLOSE )
+-- Cancel Button
+btnForgeNo = UI_CreateCompent( frmMakeEquip, BUTTON_TYPE, "btnForgeNo", 52, 17, 135, 411 )
+UI_LoadButtonImage( btnForgeNo, "texture/ui/NUI/frmMakeEquip.png", 52, 17,10, 491, TRUE )
+UI_SetButtonModalResult( btnForgeNo, BUTTON_CLOSE )
 
 
 ----------------
