@@ -2230,117 +2230,96 @@ end
 	UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
 	UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
------------------------------------------------------------------------
--- 定义制造面板  2006.10.19 by Leo
------------------------------------------------------------------------
+-------------------
+-- Manufacturing --
+-------------------
 frmCompose = UI_CreateForm( "frmCompose", FALSE, 305, 480, 0, 0, TRUE, FALSE )
 UI_ShowForm( frmCompose, FALSE )
 UI_AddFormToTemplete( frmCompose, FORM_MAIN )
 UI_FormSetIsEscClose( frmCompose, TRUE )
 UI_SetIsDrag( frmCompose,TRUE)
 UI_SetFormStyle( frmCompose,2)
-
 --UI_FormSetHotKey( frmCompose, ALT_KEY, HOTKEY_Z )
 
---加载背景图片
-imgBakTopLeft = UI_CreateCompent( frmCompose, IMAGE_TYPE, "imgBakTopLeft", 256, 256, 0, 0 )
-UI_LoadImage( imgBakTopLeft, "texture/ui/Compose1.tga", NORMAL, 256, 256, 0, 0 )
+-- Main image
+imgBakTopLeft = UI_CreateCompent( frmCompose, IMAGE_TYPE, "imgBakTopLeft", 305, 480, 0, 0 )
+UI_LoadImage( imgBakTopLeft, "texture/ui/NUI/frmCompose.png", NORMAL, 305, 480, 0, 0 )
 
-imgBakTopRight = UI_CreateCompent( frmCompose, IMAGE_TYPE, "imgBakTopRight", 49, 256, 256, 0 )
-UI_LoadImage( imgBakTopRight, "texture/ui/Compose3.tga", NORMAL, 49, 256, 0, 0 )
-
-imgBakBottomLeft = UI_CreateCompent( frmCompose, IMAGE_TYPE, "imgBakBottomLeft", 256, 224, 0, 256 )
-UI_LoadImage( imgBakBottomLeft, "texture/ui/Compose2.tga", NORMAL, 256, 224, 0, 0 )
-
-imgBakBottomRight = UI_CreateCompent( frmCompose, IMAGE_TYPE, "imgBakBottomRight", 49, 224, 256, 256 )
-UI_LoadImage( imgBakBottomRight, "texture/ui/Compose3.tga", NORMAL, 49, 224, 49, 0 )
-
-imgCover = UI_CreateCompent( frmCompose, IMAGE_TYPE, "imgCover", 181, 23, 26, 434 )
-UI_LoadImage( imgCover, "texture/ui/Compose2.tga", NORMAL, 30, 23, 26, 146)
-
---定义title
-labTitle = UI_CreateCompent( frmCompose, LABELEX_TYPE, "labTitle", 49, 14, 7, 3 )
+-- Title
+labTitle = UI_CreateCompent( frmCompose, LABELEX_TYPE, "labTitle", 49, 14, 120, 4 )
 UI_SetCaption( labTitle, "Manufacturing")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---定义Command
---第一行
+-- Manufacturing items
 cmdItemBase4 = UI_CreateCompent( frmCompose, COMMAND_ONE_TYPE, "cmdItemBase4", 32, 32, 46, 87 )
 UI_SetHint(cmdItemBase4,"Material 1")
 
---第二行
 cmdItemBase7 = UI_CreateCompent( frmCompose, COMMAND_ONE_TYPE, "cmdItemBase7", 32, 32, 142, 143 )
 UI_SetHint(cmdItemBase7,"Product")
 
---第三行
 cmdItemBase5 = UI_CreateCompent( frmCompose, COMMAND_ONE_TYPE, "cmdItemBase5", 32, 32, 47, 205 )
 UI_SetHint(cmdItemBase5,"Ingredient 2")
+
 cmdItemBase6 = UI_CreateCompent( frmCompose, COMMAND_ONE_TYPE, "cmdItemBase6", 32, 32, 229, 205 )
 UI_SetHint(cmdItemBase6,"Ingredient 3")
---第四行
+
 cmdItemBase3 = UI_CreateCompent( frmCompose, COMMAND_ONE_TYPE, "cmdItemBase3", 32, 32, 101, 246 )
 UI_SetHint(cmdItemBase3,"Tool")
+
 cmdItemBase2 = UI_CreateCompent( frmCompose, COMMAND_ONE_TYPE, "cmdItemBase2", 32, 32, 179, 246 )
 UI_SetHint(cmdItemBase2,"Blueprint")
---第五行
+
 cmdItemBase1 = UI_CreateCompent( frmCompose, COMMAND_ONE_TYPE, "cmdItemBase1", 32, 32, 142, 319 )
 UI_SetHint(cmdItemBase1,"Fairy")
 
---定义英文字母显示区域
+-- Random Alphabet
 labCharOutput = UI_CreateCompent( frmCompose, LABELEX_TYPE, "labCharOutput", 49, 14, 54, 414 )
 UI_SetCaption( labCharOutput, "ABCDEFGH")
-UI_SetTextColor( labCharOutput, COLOR_YELLOW)
+UI_SetTextColor( labCharOutput, COLOR_BLACK)
 UI_SetLabelExFont( labCharOutput, FONT28, FALSE, COLOR_WHITE )
 
 --定义进度条外框
 imgComposeFrame = UI_CreateCompent( frmCompose, IMAGE_TYPE, "imgComposeFrame", 278, 13, 13, 369 )
-UI_LoadImage( imgComposeFrame, "texture/ui/Progress.tga", NORMAL, 157, 13, 0, 52 )
+--UI_LoadImage( imgComposeFrame, "texture/ui/Progress.tga", NORMAL, 157, 13, 0, 52 )
 
---定义进度条
-proCompose = UI_CreateCompent( frmCompose, PROGRESS_TYPE, "proCompose", 278, 13, 13, 369 )
-UI_LoadImage( proCompose, "texture/ui/Progress.tga", PROGRESS_PROGRESS, 157, 13, 0, 65 )
+-- Progress bar
+proCompose = UI_CreateCompent( frmCompose, PROGRESS_TYPE, "proCompose", 278, 13, 14, 370 )
+UI_LoadImage( proCompose, "texture/ui/NUI/frmCompose.png", PROGRESS_PROGRESS, 156, 13, 5, 560 )
 
---定义数量输入框
-labNumInput = UI_CreateCompent( frmCompose, LABELEX_TYPE, "labNumInput", 49, 14, 41, 318 )
+-- Quantity
+labNumInput = UI_CreateCompent( frmCompose, LABELEX_TYPE, "labNumInput", 49, 14, 39, 318 )
 UI_SetCaption( labNumInput, "Quantity")
 UI_SetTextColor( labNumInput, COLOR_RED )
 UI_SetLabelExFont( labNumInput, DEFAULT_FONT, FALSE, COLOR_WHITE )
 
---设置左箭头
-btnLeftPage = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnLeftPage", 13, 13, 22, 335 )
-UI_LoadButtonImage( btnLeftPage, "texture/ui/SystemBotton3.tga", 13, 13, 0, 197, TRUE )
+-- Button left
+btnLeftPage = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnLeftPage", 14, 14, 22, 335 )
+UI_LoadButtonImage( btnLeftPage, "texture/ui/NUI/frmCompose.png", 14, 14, 233, 491, TRUE )
 
---设置输入框
+-- Quantity number
 edtNumInput = UI_CreateCompent(frmCompose, EDIT_TYPE,"edtNumInput", 49, 14, 42, 335)
 UI_SetEditMaxNum(edtNumInput, 8 )
 UI_SetEditMaxNumVisible(edtNumInput,8)
 UI_SetIsKeyFocus(edtNumInput,FALSE)
---设置右箭头
-btnRightPage = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnRightPage", 13, 13,  97, 335 )
-UI_LoadButtonImage( btnRightPage, "texture/ui/SystemBotton3.tga", 13, 13, 0, 211, TRUE )
+UI_SetTextColor( edtNumInput, COLOR_WHITE)
+UI_SetLabelExFont( edtNumInput, DEFAULT_FONT, FALSE, COLOR_BLACK )
 
---定义提交按钮
-btnForgeYes = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnForgeYes", 57, 26, 230, 389 )
-UI_LoadButtonImage( btnForgeYes, "texture/ui/Progress.tga", 57, 26, 47, 78, FALSE )
+-- Button right
+btnRightPage = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnRightPage", 14, 14,  97, 335 )
+UI_LoadButtonImage( btnRightPage, "texture/ui/NUI/frmCompose.png", 14, 14, 233, 506, TRUE )
 
-labInput = UI_CreateCompent( frmCompose, LABELEX_TYPE, "labInput", 49, 14, 246, 396 )
-UI_SetCaption( labInput, "Start")
-UI_SetTextColor( labInput, COLOR_BLACK )
-UI_SetLabelExFont( labInput, DEFAULT_FONT, TRUE, COLOR_WHITE )
+-- Start button
+btnForgeYes = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnForgeYes", 52, 17, 230, 389 )
+UI_LoadButtonImage( btnForgeYes, "texture/ui/NUI/frmCompose.png", 52, 17, 4, 486, FALSE )
 
---定义取消按钮
-btnForgeNo = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnForgeNo", 57, 26, 230, 441 )
-UI_LoadButtonImage( btnForgeNo, "texture/ui/Progress.tga", 57, 26, 47, 78, FALSE )
+-- Stop button
+btnForgeNo = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnForgeNo", 52, 17, 230, 441 )
+UI_LoadButtonImage( btnForgeNo, "texture/ui/NUI/frmCompose.png", 52, 17, 59, 486, FALSE )
 
-labInput = UI_CreateCompent( frmCompose, LABELEX_TYPE, "labInput", 49, 14, 246, 448 )
-UI_SetCaption( labInput, "Stop")
-UI_SetTextColor( labInput, COLOR_BLACK )
-UI_SetLabelExFont( labInput, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
---定义关闭按钮
-btnClose = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnClose", 14, 14, 285, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmCompose, BUTTON_TYPE, "btnClose", 19, 20, 290, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmCompose.png", 19, 20, 120, 511, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
 -------------
