@@ -905,9 +905,9 @@ UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
 btnNo = UI_CreateCompent( frmTeamPK, BUTTON_TYPE, "btnNo", 41, 19, 279, 382 )
 UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 
--------------------------------------------------------------------------------------------------
--- frmDetail
--------------------------------------------------------------------------------------------------
+-----------------
+-- Target info --
+-----------------
 frmTargetInfo = UI_CreateForm( "frmTargetInfo", FALSE, 166, 33 + 17, 200, 4, TRUE, FALSE )
 UI_ShowForm( frmTargetInfo, TRUE )
 UI_SetIsDrag( frmTargetInfo, TRUE )
@@ -915,12 +915,12 @@ UI_AddFormToTemplete( frmTargetInfo, FORM_MAIN )
 UI_FormSetIsEscClose( frmTargetInfo, FALSE )
 
 -- Target UI
-imgTargetInfo = UI_CreateCompent( frmTargetInfo, IMAGE_TYPE, "imgTargetInfo", 166, 33, 0, 2 )
-UI_LoadImage( imgTargetInfo, "texture/ui/corsairs/targetForm.tga", NORMAL, 166, 33, 0, 2 )
+imgTargetInfo = UI_CreateCompent( frmTargetInfo, IMAGE_TYPE, "imgTargetInfo", 146, 40, 0, 0 )
+UI_LoadImage( imgTargetInfo, "texture/ui/NUI/frmDetail.png", NORMAL, 146, 40, 6, 123 )
 
 -- Target HP
-frmTargetInfoHP = UI_CreateCompent( frmTargetInfo, PROGRESS_TYPE, "frmTargetInfoHP", 111, 8, 51, 21 )
-UI_LoadScaleImage( frmTargetInfoHP, "texture/ui/corsairs/new3.tga", PROGRESS_PROGRESS, 111, 8, 0, 129, 1.0, 1.0 )
+frmTargetInfoHP = UI_CreateCompent( frmTargetInfo, PROGRESS_TYPE, "frmTargetInfoHP", 77, 5, 60, 19 )
+UI_LoadScaleImage( frmTargetInfoHP, "texture/ui/NUI/frmDetail.png", PROGRESS_PROGRESS, 77, 5, 40, 204, 1.0, 1.0 )
 UI_SetHint( frmTargetInfoHP, "HP" )
 
 -- Target Name
@@ -928,20 +928,20 @@ frmTargetInfoName = UI_CreateCompent( frmTargetInfo, LABELEX_TYPE, "frmTargetInf
 UI_SetTextColor( frmTargetInfoName, COLOR_WHITE )
 UI_SetLabelExFont( frmTargetInfoName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
--- Target Level
-labTargetLv = UI_CreateCompent( frmTargetInfo, LABELEX_TYPE, "labTargetLv", 14, 9, 36, 6 )
+-- Player Level
+labTargetLv = UI_CreateCompent( frmTargetInfo, LABELEX_TYPE, "labTargetLv", 14, 9, 36, 4 )
 UI_SetTextColor( labTargetLv, COLOR_WHITE )
 UI_SetLabelExFont( labTargetLv, DEFAULT_FONT, TRUE, COLOR_BLACK )
 UI_SetCaption( labLv, "99" )
 
--- Target Mob Img
-imgTargetIcon = UI_CreateCompent( frmTargetInfo, IMAGE_TYPE, "imgTargetIcon", 28, 28, 5, 5 )
+d3dTarget = UI_CreateCompent( frmTargetInfo, UI3D_COMPENT_TYPE, "d3dTarget", 30, 30, 6, 6 )
 
--- Button Drop Info
-btnDropListShow = UI_CreateCompent( frmTargetInfo, BUTTON_TYPE, "btnDropListShow", 41, 13, 125,36 )
-UI_LoadButtonImage( btnDropListShow, "texture/ui/corsairs/frmMobInfoDropC.png", 67, 18, 0, 444, TRUE )
-UI_SetHint( btnDropListShow, "Show monster info" )
-UI_SetIsShow(btnDropListShow, TRUE)
+btnDropListShow = UI_CreateCompent( frmTargetInfo, BUTTON_TYPE, "btnDropListShow", 52, 17, 93,42 )
+UI_LoadImage( btnDropListShow, "texture/ui/NUI/dopButtons.png", 0, 52, 17, 0, 18 )
+UI_LoadImage( btnDropListShow, "texture/ui/NUI/dopButtons.png", 1, 52, 17, 0, 0 )
+UI_LoadImage( btnDropListShow, "texture/ui/NUI/dopButtons.png", 2, 52, 17, 0, 0 )
+UI_SetHint( btnDropListShow, "Show drop list" )
+UI_SetIsShow(btnDropListShow,FALSE)
 
 ---------------
 -- Drop Form --
