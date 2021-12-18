@@ -132,11 +132,10 @@ UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmCharCreate.png", 52, 17, 65, 362, 
 
 
 
------------------------------------------------------------------------
--- 定义选择城市表单
------------------------------------------------------------------------
--- 创建选择城市表单
-frmCity = UI_CreateForm( "frmCity", FALSE, 461, 385, 173, 112, TRUE, FALSE )
+-----------------------
+-- Select birth city --
+-----------------------
+frmCity = UI_CreateForm( "frmCity", FALSE, 464, 395, 173, 112, TRUE, FALSE )
 UI_ShowForm( frmCity, TRUE )
 UI_AddFormToTemplete( frmCity, FORM_CREATE_CHA )
 UI_AddFormToTemplete( frmCity, 1 )
@@ -144,61 +143,53 @@ UI_FormSetIsEscClose( frmCity, FALSE )
 --UI_FormSetHotKey( frmCity, ALT_KEY, HOTKEY_V )
 
 
--- 加载背景图片
-imgCity00 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity00", 256, 256, 0, 0 )
-UI_LoadImage( imgCity00, "texture/ui/s1.tga", NORMAL, 256, 256, 0, 0 )
+-- Main image
+imgCity00 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity00", 464, 395, 0, 0 )
+UI_LoadImage( imgCity00, "texture/ui/NUI/frmMapSelect.png", NORMAL, 464, 395, 0, 0 )
 imgCity01 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity01", 203, 256, 256, 0 )
-UI_LoadImage( imgCity01, "texture/ui/s2.tga", NORMAL, 203, 256, 0, 0 )
+UI_LoadImage( imgCity01, "", NORMAL, 203, 256, 0, 0 )
 imgCity02 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity02", 256, 129, 0, 256 )
-UI_LoadImage( imgCity02, "texture/ui/s3.tga", NORMAL, 256, 129, 0, 0 )
+UI_LoadImage( imgCity02, "", NORMAL, 256, 129, 0, 0 )
 imgCity03 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity03", 203, 129, 256, 256 )
-UI_LoadImage( imgCity03, "texture/ui/s4.tga", NORMAL, 203, 129, 0, 0 )
+UI_LoadImage( imgCity03, "", NORMAL, 203, 129, 0, 0 )
 
---白银城
+-- Argent City
 imgCity1 = UI_CreateCompent( frmCity, BUTTON_TYPE, "imgCity1", 157, 198, 8, 157 )
-
-imgCity10 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity10", 256, 256, 0, 0 )
-UI_LoadImage( imgCity10, "texture/ui/s5.tga", NORMAL, 256, 256, 0, 0 )
+imgCity10 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity10", 464, 395, 0, 0 )
+UI_LoadImage( imgCity10, "texture/ui/NIU/imgCity1.png", NORMAL, 464, 395, 0, 0 )
 imgCity11 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity11", 203, 256, 256, 0 )
-UI_LoadImage( imgCity11, "texture/ui/s6.tga", NORMAL, 203, 256, 0, 0 )
+UI_LoadImage( imgCity11, "", NORMAL, 203, 256, 0, 0 )
 imgCity12 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity12", 256, 129, 0, 256 )
-UI_LoadImage( imgCity12, "texture/ui/s7.tga", NORMAL, 256, 129, 0, 0 )
+UI_LoadImage( imgCity12, "", NORMAL, 256, 129, 0, 0 )
 imgCity13 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity13", 203, 129, 256, 256 )
-UI_LoadImage( imgCity13, "texture/ui/s8.tga", NORMAL, 203, 129, 0, 0 )
+UI_LoadImage( imgCity13, "", NORMAL, 203, 129, 0, 0 )
 
---沙岚城
+-- Shaitan
 imgCity2 = UI_CreateCompent( frmCity, BUTTON_TYPE, "imgCity2", 226, 152, 218, 244 )
-
-imgCity20= UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity20", 256, 256, 0, 0 )
-UI_LoadImage( imgCity20, "texture/ui/s9.tga", NORMAL, 256, 256, 0, 0 )
+imgCity20= UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity20", 464, 395, 0, 0 )
+UI_LoadImage( imgCity20, "texture/ui/NUI/imgCity2.png", NORMAL, 464, 395, 0, 0 )
 imgCity21 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity21", 203, 256, 256, 0 )
-UI_LoadImage( imgCity21, "texture/ui/s10.tga", NORMAL, 203, 256, 0, 0 )
+UI_LoadImage( imgCity21, "", NORMAL, 203, 256, 0, 0 )
 imgCity22 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity22", 256, 129, 0, 256 )
-UI_LoadImage( imgCity22, "texture/ui/s11.tga", NORMAL, 256, 129, 0, 0 )
+UI_LoadImage( imgCity22, "", NORMAL, 256, 129, 0, 0 )
 imgCity23 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity23", 203, 129, 256, 256 )
-UI_LoadImage( imgCity23, "texture/ui/s12.tga", NORMAL, 203, 129, 0, 0 )
+UI_LoadImage( imgCity23, "", NORMAL, 203, 129, 0, 0 )
 
---冰狼堡
+-- Icicle
 imgCity3 = UI_CreateCompent( frmCity, BUTTON_TYPE, "imgCity3", 391, 92, 52, 61 )
-
-imgCity30 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity30", 256, 256, 0, 0 )
-UI_LoadImage( imgCity30, "texture/ui/s13.tga", NORMAL, 256, 256, 0, 0 )
+imgCity30 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity30", 464, 395, 0, 0 )
+UI_LoadImage( imgCity30, "texture/ui/NUI/imgCity3.png", NORMAL, 464, 395, 0, 0 )
 imgCity31 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity31", 203, 256, 256, 0 )
-UI_LoadImage( imgCity31, "texture/ui/s14.tga", NORMAL, 203, 256, 0, 0 )
+UI_LoadImage( imgCity31, "", NORMAL, 203, 256, 0, 0 )
 imgCity32 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity32", 256, 129, 0, 256 )
-UI_LoadImage( imgCity32, "texture/ui/s15.tga", NORMAL, 256, 129, 0, 0 )
+UI_LoadImage( imgCity32, "", NORMAL, 256, 129, 0, 0 )
 imgCity33 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity33", 203, 129, 256, 256 )
-UI_LoadImage( imgCity33, "texture/ui/s16.tga", NORMAL, 203, 129, 0, 0 )
+UI_LoadImage( imgCity33, "", NORMAL, 203, 129, 0, 0 )
 
 
--- 加载推出按钮图片
-imgQuit = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgQuit", 98, 36, 180, 390 )
-UI_LoadImage( imgQuit, "texture/ui/ShipBuildD.tga", NORMAL, 98, 36, 0, 179 )
-
---定义退出按钮
-btnNo = UI_CreateCompent( frmCity, BUTTON_TYPE, "btnNo", 46, 22, 206, 397 )
-UI_LoadButtonImage( btnNo, "texture/ui/select4.tga", 46, 22, 0, 203, TRUE )
-
+--Exit button
+btnNo = UI_CreateCompent( frmCity, BUTTON_TYPE, "btnNo", 52, 17, 206, 397 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/imgCity3.png", 52, 17, 9, 429, TRUE )
 
 
 ----------------------------
