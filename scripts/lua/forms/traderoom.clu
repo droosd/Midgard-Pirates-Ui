@@ -1,7 +1,6 @@
------------------------------------------------------------------------
--- 定义交易
------------------------------------------------------------------------
---创建交易面板
+------------------
+-- Sea commerce --
+------------------
 frmSeaTrade = UI_CreateForm( "frmSeaTrade", FALSE, 382, 384, 200, 200, TRUE, FALSE )
 --UI_FormSetHotKey(frmSeaTrade, ALT_KEY, HOTKEY_W )
 UI_ShowForm( frmSeaTrade, FALSE )
@@ -9,30 +8,13 @@ UI_AddFormToTemplete( frmSeaTrade, 1 )
 UI_SetIsDrag(frmSeaTrade, TRUE )
 
 
--- 加载背景图片
-imgTradeTop = UI_CreateCompent( frmSeaTrade, IMAGE_TYPE, "imgTradeTop", 256, 216, 0, 0 )
-UI_LoadImage( imgTradeTop, "texture/ui/trade1.tga", NORMAL, 256, 216, 0, 0 )
+-- Main image
+imgTradeTop = UI_CreateCompent( frmSeaTrade, IMAGE_TYPE, "imgTradeTop", 382, 216, 0, 0 )
+UI_LoadImage( imgTradeTop, "texture/ui/NUI/frmSeaTrade.png", NORMAL, 382, 216, 0, 0 )
 
-imgTradeDown = UI_CreateCompent( frmSeaTrade, IMAGE_TYPE, "imgTradeDown", 126, 216, 256, 0 )
-UI_LoadImage( imgTradeDown, "texture/ui/trade2.tga", NORMAL, 126, 216, 0, 0 )
-
-imgTradePL = UI_CreateCompent( frmSeaTrade, IMAGE_TYPE, "imgTradePL", 256, 168, 0, 216 )
---UI_LoadImage( imgTradePL, "texture/ui/shipR2.tga", NORMAL, 256, 168, 0, 0 )
-
-imgTradePR = UI_CreateCompent( frmSeaTrade, IMAGE_TYPE, "imgTradePR", 126, 168, 256, 216 )
---UI_LoadImage( imgTradePR, "texture/ui/shipR.tga", NORMAL, 126, 168, 0, 0 )
-
---创建向右按钮
-btnRight = UI_CreateCompent( frmSeaTrade, BUTTON_TYPE, "btnRight", 15, 39, 350, 59 )
---UI_LoadButtonImage( btnRight, "texture/ui/SysBotton4.tga", 15, 39, 165, 0, TRUE )
-
---创建向左按钮
-btnLeft = UI_CreateCompent( frmSeaTrade, BUTTON_TYPE, "btnLeft", 15, 39, 15, 59 )
---UI_LoadButtonImage( btnLeft, "texture/ui/SysBotton4.tga", 15, 39, 165, 39, TRUE )
-
---创建关闭按钮
-btnClose = UI_CreateCompent( frmSeaTrade, BUTTON_TYPE, "btnClose", 14, 14, 362, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmSeaTrade, BUTTON_TYPE, "btnClose", 19, 20, 370, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmSeaTrade.png", 19, 20, 1, 429, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
 
@@ -75,58 +57,58 @@ UI_SetTextColor( labMen3, COLOR_BLACK )
 UI_SetLabelExFont( labMen3, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 
---创建出售物品表
+-- Item grid sell
 grdItemSale = UI_CreateCompent( frmSeaTrade, GOODS_GRID_TYPE, "grdItemSale", 364, 148, 6, 10 ) 
 UI_SetGridSpace( grdItemSale, 20, 5 )
 UI_SetGridContent( grdItemSale, 6, 4 )
 UI_SetGridUnitSize( grdItemSale, 68, 68 )
 UI_SetMargin( grdItemSale, 10, 0, 0, 0 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( grdItemSale )
 UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 1, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+--Scroll bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---创建收购物品表
+-- Item buy grid
 grdItemBuy = UI_CreateCompent( frmSeaTrade, GOODS_GRID_TYPE, "grdItemBuy", 364, 148, 6, 10 ) 
 UI_SetGridSpace( grdItemBuy, 20, 5 )
 UI_SetGridContent( grdItemBuy, 6, 4 )
 UI_SetGridUnitSize( grdItemBuy, 68, 68 )
 UI_SetMargin( grdItemBuy, 10, 0, 0, 0 )
 
---获得滚动条
-scrollid = UI_GetScroll( grdItemBuy )
+-- Scroll background
+scrollid = UI_GetScroll( trvMission )
 UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 1, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+--Scroll bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 
@@ -134,22 +116,22 @@ UI_SetSize( id, 11, 9 )
 pgeTrade = UI_CreateCompent( frmSeaTrade, PAGE_TYPE, "pgeTrade", 359, 152, 11, 58 )
 UI_SetPageButton( pgeTrade, PAGE_BUTTON_CUSTOM, 69, 41 )
 
---出售物品
+-- Buy tab
 Itemsale = UI_CreatePageItem( pgeTrade )
 ttlSale = UI_GetPageItemObj( Itemsale, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlSale, "texture/ui/trade3.tga", PAGE_ITEM_TITLE_NORMAL, 69, 35, 69, 0 )
-UI_LoadImage( ttlSale, "texture/ui/trade3.tga", PAGE_ITEM_TITLE_ACTIVE, 69, 35, 0, 41 )
-UI_SetPos( ttlSale, 16, -25 )
-UI_SetSize( ttlSale, 69, 35 )
+UI_LoadImage( ttlSale, "texture/ui/NUI/frmSeaTrade.png", PAGE_ITEM_TITLE_NORMAL, 72, 19, 82, 514 )
+UI_LoadImage( ttlSale, "texture/ui/NUI/frmSeaTrade.png", PAGE_ITEM_TITLE_ACTIVE, 72, 19, 82, 490 )
+UI_SetPos( ttlSale, 19, -19 )
+UI_SetSize( ttlSale, 72, 19 )
 UI_AddCompent( Itemsale, grdItemSale )
 
---收购物品
+-- Sell tab
 Itembuy = UI_CreatePageItem( pgeTrade )
 ttlBuy = UI_GetPageItemObj( Itembuy, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlBuy, "texture/ui/trade3.tga", PAGE_ITEM_TITLE_NORMAL, 69, 35, 69, 41 )
-UI_LoadImage( ttlBuy, "texture/ui/trade3.tga", PAGE_ITEM_TITLE_ACTIVE, 69, 35, 0, 0 )
-UI_SetPos( ttlBuy, 85, -25 )
-UI_SetSize( ttlBuy, 69, 35 )
+UI_LoadImage( ttlBuy, "texture/ui/NUI/frmSeaTrade.png", PAGE_ITEM_TITLE_NORMAL, 72, 19, 162, 514 )
+UI_LoadImage( ttlBuy, "texture/ui/NUI/frmSeaTrade.png", PAGE_ITEM_TITLE_ACTIVE, 72, 19, 162, 490 )
+UI_SetPos( ttlBuy, 99, -19 )
+UI_SetSize( ttlBuy, 72, 19 )
 UI_AddCompent( Itembuy, grdItemBuy )
 
 
