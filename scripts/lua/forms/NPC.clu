@@ -459,10 +459,9 @@ UI_SetTextColor( labNo, COLOR_WHITE )
 UI_SetLabelExFont( labNo, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 
------------------------------------------------------------------------
--- 定义NPC精练
------------------------------------------------------------------------	
---- 创建NPC对话表单
+-----------
+-- Forge --
+-----------
 frmNPCforge = UI_CreateForm( "frmNPCforge", FALSE, 407, 275, 240, 70, TRUE, FALSE )
 UI_ShowForm( frmNPCforge, TRUE )
 UI_AddFormToTemplete( frmNPCforge, FORM_MAIN )
@@ -471,28 +470,18 @@ UI_SetFormStyle( frmNPCforge, 2 )---左右居中
 UI_SetIsDrag( frmNPCforge, TRUE )
 --UI_SetAlpha( frmNPCforge, 200 )
 
--- 加载背景图片
-imgBakTopLeft = UI_CreateCompent( frmNPCforge, IMAGE_TYPE, "imgBakTopLeft", 256, 256, 0, 0 )
-UI_LoadImage( imgBakTopLeft, "texture/ui/forge1.tga", NORMAL, 256, 256, 0, 0 )
-imgBakTopRight = UI_CreateCompent( frmNPCforge, IMAGE_TYPE, "imgBakTopRight", 151, 256, 256, 0 )
-UI_LoadImage( imgBakTopRight, "texture/ui/forge2.tga", NORMAL, 151, 256, 0, 0 )
-imgBakDownLeft = UI_CreateCompent( frmNPCforge, IMAGE_TYPE, "imgBakDownLeft", 256, 18, 0, 256 )
-UI_LoadImage( imgBakDownLeft, "texture/ui/forge3.tga", NORMAL, 256, 18, 0, 0 )
-imgBakDownRight = UI_CreateCompent( frmNPCforge, IMAGE_TYPE, "imgBakDownRight", 151, 18, 256, 256 )
-UI_LoadImage( imgBakDownRight, "texture/ui/forge3.tga", NORMAL, 151, 18, 105, 18 )
+-- Main image
+imgBakTopLeft = UI_CreateCompent( frmNPCforge, IMAGE_TYPE, "imgBakTopLeft", 407, 275, 0, 0 )
+UI_LoadImage( imgBakTopLeft, "texture/ui/NUI/frmNPCforge.png", NORMAL, 407, 275, 0, 0 )
+
+-- Close button
+btnClose = UI_CreateCompent( frmNPCforge, BUTTON_TYPE, "btnClose", 19, 20, 390, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmNPCforge.png", 19, 20, 18, 358, TRUE )
+UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
+
 
 imgMillingTitle = UI_CreateCompent( frmNPCforge, IMAGE_TYPE, "imgMillingTitle", 53, 20, 180, 0 )
-UI_LoadImage( imgMillingTitle, "texture/ui/forge3.tga", NORMAL, 53, 20, 164, 44 )
-
---labTitle = UI_CreateCompent( frmNPCforge, LABELEX_TYPE, "labTitle", 400, 150, 182, 4 )
---UI_SetCaption( labTitle, "Item Forging")
---UI_SetTextColor( labTitle, COLOR_BLACK )
---UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
---创建关闭按钮
-btnClose = UI_CreateCompent( frmNPCforge, BUTTON_TYPE, "btnClose", 14, 14, 386, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
-UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
+--UI_LoadImage( imgMillingTitle, "texture/ui/forge3.tga", NORMAL, 53, 20, 164, 44 )
 
 --精炼需求和结果程序用栏
 cmdForgeItem1 = UI_CreateCompent( frmNPCforge, COMMAND_ONE_TYPE, "cmdForgeItem1", 32, 32, 20, 100 )	-- 原料1
@@ -502,17 +491,17 @@ UI_SetHint( cmdForgeItem0, "Forge item" )
 UI_SetHint( cmdForgeItem1, "Attribute Gem" )
 UI_SetHint( cmdForgeItem2, "Refining Gem" )
 
---创建精练所需金币显示
-labForgeGold = UI_CreateCompent( frmNPCforge, LABELEX_TYPE, "labForgeGold", 140, 12, 55, 247 )
+-- Cost
+labForgeGold = UI_CreateCompent( frmNPCforge, LABELEX_TYPE, "labForgeGold", 140, 12, 40, 240 )
 UI_SetCaption( labForgeGold, "" )
-UI_SetTextColor( labForgeGold, COLOR_BLACK )
-UI_SetLabelExFont( labForgeGold, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labForgeGold, COLOR_WHITE )
+UI_SetLabelExFont( labForgeGold, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建精炼进度
-proNPCforge = UI_CreateCompent( frmNPCforge, PROGRESS_TYPE, "proNPCforge", 354, 8, 25, 210 )
-UI_LoadImage( proNPCforge, "texture/ui/forge3.tga", PROGRESS_PROGRESS, 192, 8, 0, 36 )
+-- Progress bar
+proNPCforge = UI_CreateCompent( frmNPCforge, PROGRESS_TYPE, "proNPCforge", 362, 13, 22, 207 )
+UI_LoadImage( proNPCforge, "texture/ui/NUI/frmNPCforge.png", PROGRESS_PROGRESS, 362, 13, 20, 282 )
 
---创建物品属性显示
+-- Forge info
 memForgeItemState = UI_CreateCompent( frmNPCforge, MEMO_TYPE, "memForgeItemState", 294, 124, 82, 54 )
 UI_SetTextColor( memForgeItemState, COLOR_BLACK )
 UI_SetMemoMaxNumPerRow( memForgeItemState, 24 )
@@ -532,15 +521,17 @@ UI_AddListText( lstForgeItemState, "" )
 UI_AddListText( lstForgeItemState, "" )
 UI_AddListText( lstForgeItemState, "" )
 
---加载精炼，取消按钮
-btnForgeYes = UI_CreateCompent( frmNPCforge, BUTTON_TYPE, "btnForgeYes", 41, 19, 249, 241 )
-UI_LoadButtonImage( btnForgeYes, "texture/ui/forge3.tga", 41, 19, 0, 63, TRUE )
+-- Forge button
+btnForgeYes = UI_CreateCompent( frmNPCforge, BUTTON_TYPE, "btnForgeYes", 52, 17, 249, 241 )
+UI_LoadButtonImage( btnForgeYes, "texture/ui/NUI/frmNPCforge.png", 52, 17, 16, 311, TRUE )
 
-btnMillingYes = UI_CreateCompent( frmNPCforge, BUTTON_TYPE, "btnMillingYes", 41, 19, 249, 241 )
-UI_LoadButtonImage( btnMillingYes, "texture/ui/forge3.tga", 41, 19, 0, 44, TRUE )
+-- Fusion button
+btnMillingYes = UI_CreateCompent( frmNPCforge, BUTTON_TYPE, "btnMillingYes", 52, 17, 249, 241 )
+UI_LoadButtonImage( btnMillingYes, "texture/ui/NUI/frmNPCforge.png", 52, 17, 17, 386, TRUE )
 
-btnForgeNo = UI_CreateCompent( frmNPCforge, BUTTON_TYPE, "btnForgeNo", 41, 19, 316, 241 )
-UI_LoadButtonImage( btnForgeNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+-- Cancel button
+btnForgeNo = UI_CreateCompent( frmNPCforge, BUTTON_TYPE, "btnForgeNo", 52, 17, 316, 241 )
+UI_LoadButtonImage( btnForgeNo, "texture/ui/NUI/frmNPCforge.png", 52, 17, 16, 329, TRUE )
 UI_SetButtonModalResult( btnForgeNo, BUTTON_CLOSE )
 
 -----------------------------------------------------------------------
