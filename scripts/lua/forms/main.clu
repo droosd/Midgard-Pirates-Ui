@@ -1530,65 +1530,62 @@ UI_SetHint(btnRemoveAll,"Remove All Items")
 
 
 
------------------------------------------------------------------------
--- 定义精灵结婚面板  2006.8.29 by Leo
------------------------------------------------------------------------
+---------------
+-- Pet Marry --
+---------------
 frmSpiritMarry = UI_CreateForm( "frmSpiritMarry", FALSE, 226, 426, 0, 0, TRUE, FALSE )
 UI_ShowForm( frmSpiritMarry, FALSE )
 UI_AddFormToTemplete( frmSpiritMarry, FORM_MAIN )
 UI_FormSetIsEscClose( frmSpiritMarry, TRUE )
 UI_SetIsDrag( frmSpiritMarry,TRUE)
 UI_SetFormStyle( frmSpiritMarry,1)
-
 --UI_FormSetHotKey( frmSpiritMarry, ALT_KEY, HOTKEY_Z )
 
---加载背景图片
-imgBakTop = UI_CreateCompent( frmSpiritMarry, IMAGE_TYPE, "imgBakTop", 226, 256, 0, 0 )
-UI_LoadImage( imgBakTop, "texture/ui/marry1.tga", NORMAL, 226, 256, 0, 0 )
+-- Main image
+imgBakTop = UI_CreateCompent( frmSpiritMarry, IMAGE_TYPE, "imgBakTop",226, 426, 0, 0 )
+UI_LoadImage( imgBakTop, "texture/ui/NUI/frmSpiritMarry.png", NORMAL, 226, 426, 0, 0 )
 
-imgBakButtom = UI_CreateCompent( frmSpiritMarry, IMAGE_TYPE, "imgBakButtom", 226, 170, 0, 256 )
-UI_LoadImage( imgBakButtom, "texture/ui/marry2.tga", NORMAL, 226, 170, 0, 0 )
-
---定义title
-labTitle = UI_CreateCompent( frmSpiritMarry, LABELEX_TYPE, "labTitle", 49, 14, 7, 3 )
+-- Title
+labTitle = UI_CreateCompent( frmSpiritMarry, LABELEX_TYPE, "labTitle", 49, 14, 70, 4 )
 UI_SetCaption( labTitle, "Fairy Marriage")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE)
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建command栏
-cmdSpiritOne = UI_CreateCompent( frmSpiritMarry, COMMAND_ONE_TYPE, "cmdSpiritOne", 32, 32, 52, 196 )	-- 结婚精灵一
-cmdSpiritTwo = UI_CreateCompent( frmSpiritMarry, COMMAND_ONE_TYPE, "cmdSpiritTwo", 32, 32, 138, 196 )	-- 结婚精灵二
+-- Fairy slot
+cmdSpiritOne = UI_CreateCompent( frmSpiritMarry, COMMAND_ONE_TYPE, "cmdSpiritOne", 32, 32, 98, 196 )	-- 结婚精灵一
+--cmdSpiritTwo = UI_CreateCompent( frmSpiritMarry, COMMAND_ONE_TYPE, "cmdSpiritTwo", 32, 32, 198, 196 )	-- 结婚精灵二
 cmdSpiritItem = UI_CreateCompent( frmSpiritMarry, COMMAND_ONE_TYPE, "cmdSpiritItem", 32, 32, 96, 264 )	-- 产出精灵
 
---设置tag供程序调用
 UI_SetTag( cmdSpiritOne, enumSPIRIT_ONE )
-UI_SetTag( cmdSpiritTwo, enumSPIRIT_TWO )
+--UI_SetTag( cmdSpiritTwo, enumSPIRIT_TWO )
 UI_SetTag( cmdSpiritItem, enumSPIRIT_OUT )
 
---设置labal
+-- Label
 labNotice = UI_CreateCompent( frmSpiritMarry, LABELEX_TYPE, "labNotice", 112, 14, 18, 384 )
 UI_SetCaption( labNotice, "Demonic Fruit has bonus effect!")
 UI_SetTextColor( labNotice, COLOR_RED )
-UI_SetLabelExFont( labNotice, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetLabelExFont( labNotice, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---设置金钱显示label
-labMoneyShow = UI_CreateCompent( frmSpiritMarry, LABELEX_TYPE, "labMoneyShow", 112, 14, 68, 334 )
+-- Cost
+labMoneyShow = UI_CreateCompent( frmSpiritMarry, LABELEX_TYPE, "labMoneyShow", 112, 14, 82, 334 )
 UI_SetCaption( labMoneyShow, "$$$")
-UI_SetTextColor( labMoneyShow, COLOR_BLACK )
-UI_SetLabelExFont( labMoneyShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labMoneyShow, COLOR_WHITE )
+UI_SetLabelExFont( labMoneyShow, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmSpiritMarry, BUTTON_TYPE, "btnClose", 14, 14, 206, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmSpiritMarry, BUTTON_TYPE, "btnClose", 19, 20, 210, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmSpiritMarry.png", 19, 20, 120, 509, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
---加载确定取消按钮
-btnForgeYes = UI_CreateCompent( frmSpiritMarry, BUTTON_TYPE, "btnForgeYes", 50, 44, 22, 275 )
-UI_LoadButtonImage( btnForgeYes, "texture/ui/marryyesno.tga", 60, 53, 0, 0, FALSE )
+-- Yes button
+btnForgeYes = UI_CreateCompent( frmSpiritMarry, BUTTON_TYPE, "btnForgeYes", 52, 17, 22, 275 )
+UI_LoadButtonImage( btnForgeYes, "texture/ui/NUI/frmSpiritMarry.png", 52, 17, 9, 437, FALSE )
 
-btnForgeNo = UI_CreateCompent( frmSpiritMarry, BUTTON_TYPE, "btnForgeNo", 50, 44, 150, 275)
-UI_LoadButtonImage( btnForgeNo, "texture/ui/marryyesno.tga", 60, 53, 60, 0, FALSE )
+-- No button
+btnForgeNo = UI_CreateCompent( frmSpiritMarry, BUTTON_TYPE, "btnForgeNo", 52, 17, 150, 275)
+UI_LoadButtonImage( btnForgeNo, "texture/ui/NUI/frmSpiritMarry.png", 52, 17, 66, 437, FALSE )
 UI_SetButtonModalResult( btnForgeNo, BUTTON_CLOSE )
+
 -----------------------------------------------------------------------
 -- 定义装备提纯面板  2006.8.29 by Leo
 -----------------------------------------------------------------------
