@@ -1,7 +1,6 @@
------------------------------------------------------------------------
--- Player Item Trade | GUI by Foxseiz
------------------------------------------------------------------------	
--- 创建玩家间交易表单
+-----------------------
+-- Player Item Trade --
+-----------------------
 frmPlayertrade = UI_CreateForm( "frmPlayertrade", FALSE, 198, 466, 240, 468, TRUE, FALSE )
 --UI_FormSetHotKey( frmPlayertrade, ALT_KEY, HOTKEY_T )
 UI_ShowForm( frmPlayertrade, TRUE )
@@ -10,46 +9,32 @@ UI_AddFormToTemplete( frmPlayertrade, FORM_MAIN )
 UI_SetFormStyle( frmPlayertrade, 1 )---左右居中
 UI_FormSetIsEscClose( frmPlayertrade, FALSE )
 
--- 加载背景图片
-imgBakTop = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgBakTop", 198, 466, 0, 0 )
-UI_LoadImage( imgBakTop, "texture/ui/corsairs/trade.png", NORMAL, 198, 466, 0, 0 )
+-- Main image
+imgBakTop = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgBakTop", 198, 471, 0, 0 )
+UI_LoadImage( imgBakTop, "texture/ui/NUI/trade.png", NORMAL, 198, 471, 0, 1 )
 
-
-
---创建关闭按钮
-btnClose = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnClose", 14, 14, 177, 1 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnClose", 19, 20, 185, -4 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/trade.png", 19, 20, 360, 404, TRUE )
 
 -- 加载界面title
 labTitle = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
 UI_LoadImage( imgBakTitle, "texture/ui/word.dds", NORMAL, 48, 13, 36, 29 )
 
---加载对方的道具几个字
--- imgOtherItem = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgOtherItem", 90, 13, 6, 28 )
--- UI_LoadImage( imgOtherItem, "texture/ui/SysBotton1.dds", NORMAL, 90, 13, 12, 226 )
-
---加载对方姓名显示
-labPlayertradeName = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labPlayertradeName", 95, 11, 90, 29 )
+-- Player name
+labPlayertradeName = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labPlayertradeName", 95, 11, 90, 45 )
 UI_SetCaption( labPlayertradeName, "Wuwuwuw…Ah…Tatatata" )
-UI_SetTextColor( labPlayertradeName, COLOR_BLACK )
-UI_SetLabelExFont( labPlayertradeName, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labPlayertradeName, COLOR_WHITE )
+UI_SetLabelExFont( labPlayertradeName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 -- Grid Other
-grdBuy = UI_CreateCompent( frmPlayertrade, GOODS_GRID_TYPE, "grdBuy", 184, 121, 7, 46 ) 
-UI_LoadImage( grdBuy,  "texture/ui/sure.dds", NORMAL, 184, 121, 0, 119 )
+grdBuy = UI_CreateCompent( frmPlayertrade, GOODS_GRID_TYPE, "grdBuy", 157, 119, 20, 65 ) 
+UI_LoadImage( grdBuy,  "texture/ui/NUI/trade.png", NORMAL, 157, 119, 204, 2 )
 UI_SetGridSpace( grdBuy, 4, 4 )
 UI_SetGridContent( grdBuy, 3, 4 )
 UI_SetGridUnitSize( grdBuy, 32, 32 )
-UI_SetMargin( grdBuy, 21, 10, 0, 3 )
+UI_SetMargin( grdBuy, 8, 7, 0, 3 )
 UI_SetIsEnabled( grdBuy, FALSE )
-
--- Other Gold Label
--- imgOtherGold = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgOtherGold", 90, 13, 6, 172 + 8 )
--- UI_LoadImage( imgOtherGold, "texture/ui/SysBotton1.dds", NORMAL, 90, 13, 14, 240 )
-
--- Other Gold Box
-imgOtherGoldBak = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgOtherGoldBak", 87, 18, 79, 169 + 8 )
-UI_LoadImage( imgOtherGoldBak, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
 
 -- Other Gold
 labOtherGold = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labOtherGold", 47, 11, 88, 174 + 8 )
@@ -57,115 +42,66 @@ UI_SetCaption( labOtherGold, "0" )
 UI_SetTextColor( labOtherGold, COLOR_WHITE )
 UI_SetLabelExFont( labOtherGold, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
--- Other Gold Icon
-imgOtherGoldBak = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgOtherGoldBak", 26, 26, 167, 167 + 8)
-UI_LoadImage( imgOtherGoldBak, "texture/ui/corsairs/trade.png", NORMAL, 26, 26, 202, 0 )
 
 -- Other IMP Label
--- imgOtherIMP = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgOtherIMP", 90, 13, 6, 172 + 36 )
--- UI_LoadImage( imgOtherIMP, "texture/ui/SysBotton1.dds", NORMAL, 90, 13, 14, 240 )
-
--- Other IMP Box
-imgOtherIMPBak = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgOtherIMPBak", 87, 18, 79, 169 + 36 )
-UI_LoadImage( imgOtherIMPBak, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
-
--- Other IMP Label
-labOtherIMP = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labOtherIMP", 47, 11, 88, 174 + 36 )
+labOtherIMP = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labOtherIMP", 47, 11, 40, 174 + 38 )
 UI_SetCaption( labOtherIMP, "0" )
 UI_SetTextColor( labOtherIMP, COLOR_WHITE )
 UI_SetLabelExFont( labOtherIMP, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
--- Other IMP Icon
-imgOtherGoldBak = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgOtherGoldBak", 26, 26, 167, 167 + 36)
-UI_LoadImage( imgOtherGoldBak, "texture/ui/corsairs/trade.png", NORMAL, 26, 26, 202, 26 )
-
--- Trade / Confirm Indicators
--- Trade Items Label
--- imgMineItem = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgMineItem", 90, 13, 6, 202 + 30 )
--- UI_LoadImage( imgMineItem, "texture/ui/SysBotton1.dds", NORMAL, 90, 13, 116, 212 )
-
--- Confirm Label
-labOtherYes = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labOtherYes", 23, 11, 79, 203 + 30 )
-UI_SetCaption( labOtherYes, "Confirm" )
-UI_SetTextColor( labOtherYes, COLOR_BLACK )
-UI_SetLabelExFont( labOtherYes, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
 -- Confirm Indicator
-chkYes = UI_CreateCompent( frmPlayertrade, CHECK_TYPE, "chkYes", 11, 12, 124, 202 + 30)
+chkYes = UI_CreateCompent( frmPlayertrade, CHECK_TYPE, "chkYes",  11, 12, 118, 220 + 23)
 UI_LoadImage( chkYes, "texture/ui/PublicC.tga", UNCHECKED, 11, 12, 227, 47 )
 UI_LoadImage( chkYes, "texture/ui/PublicC.tga", CHECKED, 11, 12, 214, 47 )
 UI_SetIsEnabled( chkYes, FALSE )
 
--- Trade Label
-labOtherTrade = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labOtherTrade", 23, 11, 136, 203 + 30 )
-UI_SetCaption( labOtherTrade, "Trade" )
-UI_SetTextColor( labOtherTrade, COLOR_WHITE )
-UI_SetLabelExFont( labOtherTrade, DEFAULT_FONT, TRUE, COLOR_BLACK )
-
 -- Trade Indicator
-chkTrade = UI_CreateCompent( frmPlayertrade, CHECK_TYPE, "chkTrade", 11, 12, 168, 202 + 30 )
+chkTrade = UI_CreateCompent( frmPlayertrade, CHECK_TYPE, "chkTrade", 11, 12, 165, 220 + 23)
 UI_LoadImage( chkTrade, "texture/ui/PublicC.tga", UNCHECKED, 11, 12, 227, 47 )
 UI_LoadImage( chkTrade, "texture/ui/PublicC.tga", CHECKED, 11, 12, 214, 47 )
 UI_SetIsEnabled( chkTrade, FALSE )
 
-
 -- Grid
-grdSale = UI_CreateCompent( frmPlayertrade, GOODS_GRID_TYPE, "grdSale", 184, 121, 11 - 4, 220 + 36 ) 
-UI_LoadImage( grdSale,  "texture/ui/sure.dds", NORMAL, 184, 121, 0, 119 )
+grdSale = UI_CreateCompent( frmPlayertrade, GOODS_GRID_TYPE, "grdSale", 157, 119, 20, 267 ) 
+UI_LoadImage( grdSale,  "texture/ui/NUI/trade.png", NORMAL, 157, 119, 204, 2 )
 UI_SetGridSpace( grdSale, 4, 4 )
 UI_SetGridContent( grdSale, 3, 4 )
 UI_SetGridUnitSize( grdSale, 32, 32 )
-UI_SetMargin( grdSale, 21, 10, 0, 3 )
-
--- Gold Label
--- imgMineGold = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgMineGold", 90, 13, 6, 347 + 43 )
--- UI_LoadImage( imgMineGold, "texture/ui/SysBotton1.dds", NORMAL, 90, 13, 117, 226 )
-
--- Gold Box
-imgMineGoldBak = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgMineGoldBak", 87, 18, 79, 344 + 43 )
-UI_LoadImage( imgMineGoldBak, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
+UI_SetMargin( grdSale, 8, 7, 0, 3 )
 
 -- Gold
-labSelfGold = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labSelfGold", 47, 11, 88, 349 + 43 )
+labSelfGold = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labSelfGold", 47, 11, 40, 349 + 46 )
 UI_SetCaption( labSelfGold, "0" )
 UI_SetTextColor( labSelfGold, COLOR_WHITE )
 UI_SetLabelExFont( labSelfGold, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 -- Gold Button
-btnGold = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnGold", 26, 26, 167, 341 + 43 )
-UI_LoadButtonImage( btnGold, "texture/ui/corsairs/trade.png", 26, 26, 202, 0, TRUE )
+btnGold = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnGold", 20, 20, 165, 394 )
+UI_LoadButtonImage( btnGold, "texture/ui/NUI/trade.png", 20, 20, 208, 404, TRUE )
 UI_SetHint( btnGold, "Click here to input gold for trade" )
 
--- IMP Label
--- imgMineIMP = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgMineIMP", 90, 13, 6, 347 + 71 )
--- UI_LoadImage( imgMineIMP, "texture/ui/SysBotton1.dds", NORMAL, 90, 13, 117, 226 )
-
--- IMP Box
-imgMineIMPBak = UI_CreateCompent( frmPlayertrade, IMAGE_TYPE, "imgMineIMPBak", 87, 18, 79, 344 + 71 )
-UI_LoadImage( imgMineIMPBak, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
-
 -- IMP
-labSelfIMP = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labSelfIMP", 47, 11, 88, 349 + 71 )
+labSelfIMP = UI_CreateCompent( frmPlayertrade, LABELEX_TYPE, "labSelfIMP", 47, 11, 40, 349 + 68 )
 UI_SetCaption( labSelfIMP, "0" )
 UI_SetTextColor( labSelfIMP, COLOR_WHITE )
 UI_SetLabelExFont( labSelfIMP, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 -- IMP Button
-btnIMP = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnIMP", 26, 26, 167, 341 + 71 )
-UI_LoadButtonImage( btnIMP, "texture/ui/corsairs/trade.png", 26, 26, 202, 26, TRUE )
+btnIMP = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnIMP", 20, 20, 165, 416 )
+UI_LoadButtonImage( btnIMP, "texture/ui/NUI/trade.png", 20, 20, 208, 427, TRUE )
 UI_SetHint( btnIMP, "Click here to input IMP for trade" )
 
 -- Confirm Button
-btnYes = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnYes", 41, 19, 55, 368 + 72 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+btnYes = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnYes", 52, 17, 10, 368 + 72 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/trade.png", 52, 17, 357, 444, TRUE )
 
 -- Trade Button
-btnTrade = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnTrade", 41, 19, 102, 368 + 72 )
-UI_LoadButtonImage( btnTrade, "texture/ui/PublicC.tga", 41, 19, 0, 40, TRUE )
+btnTrade = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnTrade", 52, 17, 70, 368 + 72 )
+UI_LoadButtonImage( btnTrade, "texture/ui/NUI/trade.png", 52, 17, 357, 482, TRUE )
 
 -- Cancel Button
-btnNo = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnNo", 41, 19, 149, 368 + 72 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+btnNo = UI_CreateCompent( frmPlayertrade, BUTTON_TYPE, "btnNo", 52, 17, 130, 368 + 72 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/trade.png", 52, 17, 357, 463, TRUE )
 
 
 
