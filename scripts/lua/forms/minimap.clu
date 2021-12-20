@@ -85,60 +85,59 @@ UI_SetHint( btnOpenStore, "Accessing Item Mall" )
 --	btnteam = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnteam", 48, 19, 87, 178 )
 --	UI_LoadButtonImage( btnteam, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
 
------------------------------------------------------------------------
--- 定义雷达
------------------------------------------------------------------------	
--- 创建雷达表单
-frmSearch = UI_CreateForm( "frmSearch", FALSE, 212, 129, 300, 200, TRUE, FALSE )
+-----------
+-- Radar --
+-----------
+frmSearch = UI_CreateForm( "frmSearch", FALSE, 245, 125, 300, 200, TRUE, FALSE )
 UI_ShowForm( frmSearch, FALSE )
 UI_AddFormToTemplete( frmSearch, FORM_MAIN )
 UI_FormSetIsEscClose( frmSearch, FALSE )
 UI_FormSetHotKey( frmSearch, ALT_KEY, HOTKEY_R )
 UI_SetIsDrag( frmSearch, TRUE )
 
---加载图片
-imgSearch = UI_CreateCompent( frmSearch, IMAGE_TYPE, "imgSearch", 212, 129, 0, 0 )
-UI_LoadImage( imgSearch, "texture/ui/search.tga", NORMAL, 212, 129, 0, 0 )
+-- Main image
+imgSearch = UI_CreateCompent( frmSearch, IMAGE_TYPE, "imgSearch", 245, 125, 0, 0 )
+UI_LoadImage( imgSearch, "texture/ui/NUI/frmSearch.png", NORMAL, 245, 125, 0, 0 )
 
---创建关闭按钮
+-- close button
 btnClose = UI_CreateCompent( frmSearch, BUTTON_TYPE, "btnClose", 14, 14, 194, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+--UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
---加载坐标输入框
-edtLeft = UI_CreateCompent( frmSearch, EDIT_TYPE, "edtLeft", 45, 11, 94, 70 )
-UI_SetTextColor( edtLeft, COLOR_BLACK )
+-- Coordinates
+edtLeft = UI_CreateCompent( frmSearch, EDIT_TYPE, "edtLeft", 45, 11, 96, 70 )
+UI_SetTextColor( edtLeft, COLOR_WHITE )
 UI_SetEditMaxNum( edtLeft, 4 )
 UI_SetEditMaxNumVisible( edtLeft, 4 )
 
-edtRight = UI_CreateCompent( frmSearch, EDIT_TYPE, "edtRight", 25, 11, 145, 70 )
-UI_SetTextColor( edtRight, COLOR_BLACK )
+edtRight = UI_CreateCompent( frmSearch, EDIT_TYPE, "edtRight", 25, 11, 156, 70 )
+UI_SetTextColor( edtRight, COLOR_WHITE )
 UI_SetEditMaxNum( edtRight, 4 )
 UI_SetEditMaxNumVisible( edtRight, 4 )
 
 
---加载确定按钮
-btnYes = UI_CreateCompent( frmSearch, BUTTON_TYPE, "btnYes", 41, 19, 54, 102 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+-- Confirm button
+btnYes = UI_CreateCompent( frmSearch, BUTTON_TYPE, "btnYes", 52, 17, 54, 102 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/frmSearch.png", 52, 17, 6, 233, TRUE )
 UI_SetEditEnterButton( edtRight, btnYes )
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmSearch, BUTTON_TYPE, "btnNo", 41, 19, 102, 102 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+-- Cancel button
+btnNo = UI_CreateCompent( frmSearch, BUTTON_TYPE, "btnNo", 52, 17, 115, 102 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmSearch.png", 52, 17, 6, 216, TRUE )
 UI_SetButtonModalResult( btnNo, BUTTON_CLOSE )
 
 
---创建地图选择列表
-cboMap  = UI_CreateCompent( frmSearch, COMBO_TYPE, "cboMap", 98, 20, 88, 38 )
+-- Map Name
+cboMap  = UI_CreateCompent( frmSearch, COMBO_TYPE, "cboMap", 116, 22, 93, 37 )
 UI_ComboSetStyle( cboMap, TRUE )
-UI_LoadComboImage( cboMap, "", 81, 20, 106, 39, "texture/ui/search.tga", 1, 1, 130, 140, FALSE )
-UI_ComboSetTextColor( cboMap, COLOR_BLACK )
+UI_LoadComboImage( cboMap, "", 81, 20, 106, 39, "texture/ui/NUI/frmSearch.png", 1, 1, 130, 140, FALSE )
+UI_ComboSetTextColor( cboMap, COLOR_WHITE)
 lstMap = UI_GetList( cboMap )
-UI_SetListFontColor( lstMap, COLOR_BLACK, COLOR_BLACK )
+UI_SetListFontColor( lstMap, COLOR_WHITE, COLOR_BLACK)
 UI_SetSize( lstMap, 51, 60 )
 UI_SetMargin( lstMap, 16,6,16,0 )
 UI_SetListRowHeight( lstMap, 18 )
-UI_LoadImage( lstMap, "texture/ui/search.tga", COMPENT_BACK, 51, 60, 0, 133 )
+UI_LoadImage( lstMap, "texture/ui/NUI/frmSearch.png", COMPENT_BACK, 51, 60, 0, 133 )
 UI_AddListText( lstMap, "Ascaron" )
 UI_AddListText( lstMap, "Magical Ocean" )
 UI_AddListText( lstMap, "Deep Blue" )
