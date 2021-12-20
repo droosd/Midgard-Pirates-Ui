@@ -899,10 +899,9 @@ UI_AddListText( lstHelpList,"Advancement II")
 
 
 
------------------------------------------------------------------------
--- 定义商城系统界面  2006.8.21 by Leo
------------------------------------------------------------------------
---创建商城主界面
+-----------------
+-- InGame Mall --
+-----------------
 frmStore = UI_CreateForm( "frmStore", FALSE, 600, 550, 0, 0, TRUE, FALSE )
 UI_ShowForm( frmStore, FALSE )
 UI_AddFormToTemplete( frmStore, FORM_MAIN )
@@ -912,56 +911,27 @@ UI_SetFormStyle( frmStore,1)
 
 --UI_FormSetHotKey( frmStore, ALT_KEY, HOTKEY_Z )
 
---加载商城背景
-imgBackGround1 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround1", 256, 256, 0, 0 )
-UI_LoadImage( imgBackGround1, "texture/ui/store1.tga", NORMAL, 256,256, 0, 0 )
+--Main image
+imgBackGround1 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround1", 600, 550, 0, 0 )
+UI_LoadImage( imgBackGround1, "texture/ui/NUI/ingamemall.png", NORMAL, 600, 550, 0, 0 )
 
-imgBackGround2 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround2", 256, 256, 256, 0 )
-UI_LoadImage( imgBackGround2, "texture/ui/store2.tga", NORMAL, 256,256, 0, 0 )
-
-imgBackGround3 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround3", 88, 256, 512, 0 )
-UI_LoadImage( imgBackGround3, "texture/ui/store5.tga", NORMAL, 88,256, 0, 0 )
-
-imgBackGround4 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround4", 256, 256, 0, 256 )
-UI_LoadImage( imgBackGround4, "texture/ui/store3.tga", NORMAL, 256,256, 0, 0 )
-
-imgBackGround5 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround5", 256, 256, 256, 256 )
-UI_LoadImage( imgBackGround5, "texture/ui/store4.tga", NORMAL, 256,256, 0, 0 )
-
-imgBackGround5 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround5", 256, 5, 256, 507 )
-UI_LoadImage( imgBackGround5, "texture/ui/store3.tga", NORMAL, 5,5, 189, 251 )
-
-imgBackGround6 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround6", 88, 256, 512, 256 )
-UI_LoadImage( imgBackGround6, "texture/ui/store5.tga", NORMAL, 88,256, 88, 0 )
-
-imgBackGround7 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround7", 256, 38, 0, 512 )
-UI_LoadImage( imgBackGround7, "texture/ui/store6.tga", NORMAL, 255,38, 0, 0 )
-
-imgBackGround8 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround8", 256, 38, 256, 512 )
-UI_LoadImage( imgBackGround8, "texture/ui/store6.tga", NORMAL, 255,38, 0, 38 )
-
-imgBackGround9 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround9", 88, 38, 512, 512 )
-UI_LoadImage( imgBackGround9, "texture/ui/store6.tga", NORMAL, 88,38, 0, 76 )
-
---搜索挡板临时用
 imgblack = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgblack", 550, 17, 42, 29 )
-UI_LoadImage( imgblack, "texture/ui/store1.tga", NORMAL, 5,17, 27, 29 )
+--UI_LoadImage( imgblack, "texture/ui/store1.tga", NORMAL, 5,17, 27, 29 )
 
 --title
 labTitle = UI_CreateCompent( frmStore, LABELEX_TYPE, "labTitle", 10, 150, 7 ,3  )
 		UI_SetCaption( labTitle, "Item Mall")
-		UI_SetTextColor( labTitle, COLOR_BLACK )
-		UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+		UI_SetTextColor( labTitle, COLOR_WHITE )
+		UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 --Notice
-		labNotice = UI_CreateCompent( frmStore, LABELEX_TYPE, "labNotice", 10, 150, 48 ,29  )
+		labNotice = UI_CreateCompent( frmStore, LABELEX_TYPE, "labNotice", 10, 150, 48 ,34  )
 		UI_SetCaption( labNotice, "Welcome to the InGame Item Mall: We have many items that will help you in your journeys!")
 		UI_SetTextColor( labNotice, COLOR_RED )
 		UI_SetLabelExFont( labNotice, DEFAULT_FONT, FALSE, COLOR_WHITE )
 
---内置商城--begin
-	--创建左方目录树
-	trvStore = UI_CreateCompent( frmStore, TREE_TYPE, "trvStore", 142, 370, 6, 56)
+
+	trvStore = UI_CreateCompent( frmStore, TREE_TYPE, "trvStore", 142, 370, 6, 68)
 
 	itemid = UI_CreateNoteGraphItem( "texture/ui/store6.tga", 127, 20, 30, 114, 0, "Item Mall", 5 , 2 )
 	gridid = UI_CreateGridNode( trvStore, itemid, 1, 32, 32, -1 )
@@ -982,22 +952,22 @@ labTitle = UI_CreateCompent( frmStore, LABELEX_TYPE, "labTitle", 10, 150, 7 ,3  
 --	UI_SetLabelExFont( labBeVIP, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 		--兑换按钮
-	btnReceiveMoney = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnReceiveMoney", 64, 19, 293, 67 )
-	UI_LoadButtonImage( btnReceiveMoney, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
+	--btnReceiveMoney = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnReceiveMoney", 64, 19, 293, 67 )
+	--UI_LoadButtonImage( btnReceiveMoney, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
 
-	labReceiveMoney = UI_CreateCompent( frmStore, LABELEX_TYPE, "labReceiveMoney", 400, 150, 301, 71 )
-	UI_SetCaption( labReceiveMoney, "Redeem Crystal")
-	UI_SetTextColor( labReceiveMoney, COLOR_BLACK )
-	UI_SetLabelExFont( labReceiveMoney, DEFAULT_FONT, TRUE, COLOR_WHITE )
+	--labReceiveMoney = UI_CreateCompent( frmStore, LABELEX_TYPE, "labReceiveMoney", 400, 150, 301, 71 )
+	--UI_SetCaption( labReceiveMoney, "Redeem Crystal")
+	--UI_SetTextColor( labReceiveMoney, COLOR_BLACK )
+	--UI_SetLabelExFont( labReceiveMoney, DEFAULT_FONT, TRUE, COLOR_WHITE )
 	
 	--摩豆兑换按钮
-	btnReceiveMoDou= UI_CreateCompent( frmStore, BUTTON_TYPE, "btnReceiveMoDou", 64, 19, 368, 67 )
-	UI_LoadButtonImage( btnReceiveMoDou, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
+	--btnReceiveMoDou= UI_CreateCompent( frmStore, BUTTON_TYPE, "btnReceiveMoDou", 64, 19, 368, 67 )
+	--UI_LoadButtonImage( btnReceiveMoDou, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
 
-	labReceiveMoDou= UI_CreateCompent( frmStore, LABELEX_TYPE, "labReceiveMoDou", 400, 150, 376, 71 )
-	UI_SetCaption( labReceiveMoDou, "Top Up Point")
-	UI_SetTextColor( labReceiveMoDou, COLOR_BLACK )
-	UI_SetLabelExFont( labReceiveMoDou, DEFAULT_FONT, TRUE, COLOR_WHITE )
+	--labReceiveMoDou= UI_CreateCompent( frmStore, LABELEX_TYPE, "labReceiveMoDou", 400, 150, 376, 71 )
+	--UI_SetCaption( labReceiveMoDou, "Top Up Point")
+	--UI_SetTextColor( labReceiveMoDou, COLOR_BLACK )
+	--UI_SetLabelExFont( labReceiveMoDou, DEFAULT_FONT, TRUE, COLOR_WHITE )
 	
 --	labNotice = UI_CreateCompent( frmStore, LABELEX_TYPE, "labNotice", 10, 150, 190,100  )
 --	UI_SetCaption( labNotice, "Register for Platinium Member")
@@ -1075,24 +1045,24 @@ labTitle = UI_CreateCompent( frmStore, LABELEX_TYPE, "labTitle", 10, 150, 7 ,3  
 --	UI_SetLabelExFont( labNotice, DEFAULT_FONT, FALSE, COLOR_WHITE )
 	
 	labNotice = UI_CreateCompent( frmStore, LABELEX_TYPE, "labNotice", 10, 150, 190 ,100  )
-	UI_SetCaption( labNotice, "Crystal Replenishment")
+	--UI_SetCaption( labNotice, "Crystal Replenishment")
 	UI_SetTextColor( labNotice, COLOR_RED )
 	UI_SetLabelExFont( labNotice, DEFAULT_FONT, FALSE, COLOR_WHITE )
 	
 	labNotice = UI_CreateCompent( frmStore, LABELEX_TYPE, "labNotice", 10, 150, 190 ,120  )
-	UI_SetCaption( labNotice, "Purchase of items here requires Crystal.You can exchange crystal")
+	--UI_SetCaption( labNotice, "Purchase of items here requires Crystal.You can exchange crystal")
 	UI_SetTextColor( labNotice, COLOR_BLACK )
 	UI_SetLabelExFont( labNotice, DEFAULT_FONT, FALSE, COLOR_WHITE )
 	
 	labNotice = UI_CreateCompent( frmStore, LABELEX_TYPE, "labNotice", 10, 150, 190 ,140  )
-	UI_SetCaption( labNotice, "with item mall points. Exchange ratio 1:1.")
+	--UI_SetCaption( labNotice, "with item mall points. Exchange ratio 1:1.")
 	UI_SetTextColor( labNotice, COLOR_BLACK )
 	UI_SetLabelExFont( labNotice, DEFAULT_FONT, FALSE, COLOR_WHITE )
 	--帮助中心
 
 	--白色挡板
 	imgBackGround10 = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBackGround10", 405, 440, 182, 60 )
-	UI_LoadImage( imgBackGround10, "texture/ui/store1.tga", NORMAL, 20,20, 30, 70 )
+	--UI_LoadImage( imgBackGround10, "texture/ui/store1.tga", NORMAL, 20,20, 30, 70 )
 
 	--帮助中心显示memo
 	memStoreHelp  = UI_CreateCompent( frmStore, MEMO_TYPE, "memStoreHelp", 397, 430, 190, 67 )
@@ -1188,7 +1158,7 @@ labTitle = UI_CreateCompent( frmStore, LABELEX_TYPE, "labTitle", 10, 150, 7 ,3  
 			UI_SetAlpha(btnBlue[i],0)
 			
 			imgWhite = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgWhite_"..i, boxSizeX, boxSizeY, posX, posY )
-			UI_LoadImage( imgWhite, "texture/ui/corsairs/storeg.tga",NORMAL, boxSizeX ,boxSizeY, 0, 0 )
+			UI_LoadImage( imgWhite, "texture/ui/NUI/ingamemall.png",NORMAL, boxSizeX ,boxSizeY, 2, 746 )
 			UI_SetAlpha(imgWhite,200)
 
 			imgBlue[i] = UI_CreateCompent( frmStore, IMAGE_TYPE, "imgBlue_"..i, boxSizeX, boxSizeY, posX, posY )
@@ -1200,7 +1170,7 @@ labTitle = UI_CreateCompent( frmStore, LABELEX_TYPE, "labTitle", 10, 150, 7 ,3  
 			--icon
 			local iconSize = 32
 			imgSquare[i] =  UI_CreateCompent( frmStore, IMAGE_TYPE, "imgSquare_"..i, iconSize, iconSize, posX + 8, posY+8 )
-			UI_LoadImage( imgSquare[i], "texture/ui/store6.tga",NORMAL, 36 ,36, 157, 76 )
+			UI_LoadImage( imgSquare[i], "texture/ui/NUI/ingamemall.png",NORMAL, 32 ,32, 5,710 )
 			cmdStore[i] = UI_CreateCompent( frmStore, COMMAND_ONE_TYPE, "cmdStore_"..i, iconSize, iconSize, posX+10, posY+10 )	
 			
 			--pack name
@@ -1299,7 +1269,7 @@ labTitle = UI_CreateCompent( frmStore, LABELEX_TYPE, "labTitle", 10, 150, 7 ,3  
 	
 	--设置左箭头
 	btnLeftPage = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnLeftPage", 13, 13, 505, 485 )
-	UI_LoadButtonImage( btnLeftPage, "texture/ui/SystemBotton3.tga", 13, 13, 0, 197, TRUE )
+	UI_LoadButtonImage( btnLeftPage, "texture/ui/NUI/ingamemall.png", 13, 13, 243, 571, TRUE )
 	UI_SetIsShow(btnLeftPage,FALSE)
 
 	--设置页数显示
@@ -1311,55 +1281,51 @@ labTitle = UI_CreateCompent( frmStore, LABELEX_TYPE, "labTitle", 10, 150, 7 ,3  
 
 	--设置右箭头
 	btnRightPage = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnRightPage", 13, 13, 555, 485 )
-	UI_LoadButtonImage( btnRightPage, "texture/ui/SystemBotton3.tga", 13, 13, 0, 211, TRUE )
+	UI_LoadButtonImage( btnRightPage, "texture/ui/NUI/ingamemall.png", 13, 13, 243, 586, TRUE )
 	UI_SetIsShow(btnRightPage,FALSE)
 
-	--交易按钮
-	btnTrade = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnTrade", 48, 19, 200, 480 )
-	UI_LoadButtonImage( btnTrade, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
+	-- Buy button
+	btnTrade = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnTrade", 52, 17, 200, 480 )
+	UI_LoadButtonImage( btnTrade, "texture/ui/NUI/ingamemall.png", 52, 17, 54, 567, FALSE )
 
 	labTrade = UI_CreateCompent( frmStore, LABELEX_TYPE, "labTrade", 400, 150, 216, 484 )
-	UI_SetCaption( labTrade, "Buy")
+	--UI_SetCaption( labTrade, "Buy")
 	UI_SetTextColor( labTrade, COLOR_BLACK )
 	UI_SetLabelExFont( labTrade, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-	--试穿按钮
-	btnTryon = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnTryon", 48, 19, 260, 480 )
-	UI_LoadButtonImage( btnTryon, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
+	-- Try button
+	btnTryon = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnTryon", 52, 17, 260, 480 )
+	UI_LoadButtonImage( btnTryon, "texture/ui/NUI/ingamemall.png", 52, 17, 0, 567, FALSE )
 
 	labTryon = UI_CreateCompent( frmStore, LABELEX_TYPE, "labTryon", 400, 150, 276, 484 )
-	UI_SetCaption( labTryon, "Try")
+	--UI_SetCaption( labTryon, "Try")
 	UI_SetTextColor( labTryon, COLOR_BLACK )
 	UI_SetLabelExFont( labTryon, DEFAULT_FONT, TRUE, COLOR_WHITE )
 	
-	--查看详细信息按钮
-	btnViewAll = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnViewAll", 68, 19, 320, 480 )
-	UI_LoadButtonImage( btnViewAll, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
+	-- Check button
+	btnViewAll = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnViewAll", 52, 17, 320, 480 )
+	UI_LoadButtonImage( btnViewAll, "texture/ui/NUI/ingamemall.png", 52, 17, 53, 638, FALSE )
 
 	labViewAll = UI_CreateCompent( frmStore, LABELEX_TYPE, "labViewAll", 400, 150, 340, 484 )
-	UI_SetCaption( labViewAll, "Check")
+	--UI_SetCaption( labViewAll, "Check")
 	UI_SetTextColor( labViewAll, COLOR_BLACK )
 	UI_SetLabelExFont( labViewAll, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-	--关闭按钮II
-	btnCloseall = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnCloseall", 68, 19, 400, 480 )
-	UI_LoadButtonImage( btnCloseall, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
+	-- Close button
+	btnCloseall = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnCloseall", 52, 17, 400, 480 )
+	UI_LoadButtonImage( btnCloseall, "texture/ui/NUI/ingamemall.png", 52, 17, 0, 638, FALSE )
 	UI_SetButtonModalResult( btnCloseall, BUTTON_CLOSE )
-	
-	labCloseAll = UI_CreateCompent( frmStore, LABELEX_TYPE, "labCloseAll", 400, 150, 405, 484 )
-	UI_SetCaption( labCloseAll, "Close Mall")
-	UI_SetTextColor( labCloseAll, COLOR_BLACK )
-	UI_SetLabelExFont( labCloseAll, DEFAULT_FONT, TRUE, COLOR_WHITE )
+
 	
 	--创建关闭按钮
-	btnClose = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnClose", 14, 14, 570, 3 )
-	UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
-	UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
+	--btnClose = UI_CreateCompent( frmStore, BUTTON_TYPE, "btnClose", 14, 14, 570, 3 )
+	--UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+	--UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
------------------------------------------------------------------------
--- 定义查看详细面板  2006.10.11 by Leo
------------------------------------------------------------------------
-frmViewAll = UI_CreateForm( "frmViewAll", FALSE, 250, 184, 100, 100, TRUE, FALSE )
+----------------------
+-- Check department --
+----------------------
+frmViewAll = UI_CreateForm( "frmViewAll", FALSE, 254, 187, 100, 100, TRUE, FALSE )
 UI_ShowForm( frmViewAll, FALSE )
 UI_AddFormToTemplete( frmViewAll, FORM_MAIN )
 UI_FormSetIsEscClose( frmViewAll, FALSE )
@@ -1367,58 +1333,54 @@ UI_SetFormStyle(frmViewAll,1)
 
 --UI_FormSetHotKey( frmViewAll, ALT_KEY, HOTKEY_Z )
 
-imgBackGround1 = UI_CreateCompent( frmViewAll, IMAGE_TYPE, "imgBackGround1", 250, 85, 0, 0 )
-UI_LoadImage( imgBackGround1, "texture/ui/player1.tga", NORMAL, 171,85, 0, 0 )
+imgBackGround1 = UI_CreateCompent( frmViewAll, IMAGE_TYPE, "imgBackGround1", 254, 187, 0, 0 )
+UI_LoadImage( imgBackGround1, "texture/ui/NUI/ingamemall.png", NORMAL, 254, 187, 481, 712 )
 
-imgBackGround2 = UI_CreateCompent( frmViewAll, IMAGE_TYPE, "imgBackGround2", 250, 29, 0, 155 )
-UI_LoadImage( imgBackGround2, "texture/ui/player2.tga", NORMAL, 171,29, 0, 23)
 
-imgBackGround3 = UI_CreateCompent( frmViewAll, IMAGE_TYPE, "imgBackGround3", 250, 70, 0, 85 )
-UI_LoadImage( imgBackGround3, "texture/ui/player1.tga", NORMAL, 171,2, 0, 85)
-
---定义title
+-- Title
 labTitle = UI_CreateCompent(  frmViewAll, LABELEX_TYPE, "labTitle", 49, 14, 7, 3 )
 UI_SetCaption( labTitle, "Investigate")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 --定义icon img背景框框
 	local imgSquareViewAll = {}
 	local cmdSquareIcon = {}
 	
 	for i=0 , 5 , 1 do
-		imgSquareViewAll[i] = UI_CreateCompent( frmViewAll, IMAGE_TYPE, "imgSquareViewAll_"..i, 36, 36, i*40+7, 30 )
-		UI_LoadImage( imgSquareViewAll[i], "texture/ui/store6.tga",NORMAL, 36 ,36, 157, 76 )
+		imgSquareViewAll[i] = UI_CreateCompent( frmViewAll, IMAGE_TYPE, "imgSquareViewAll_"..i, 32, 32, i*40+12, 34 )
+		UI_LoadImage( imgSquareViewAll[i], "texture/ui/NUI/ingamemall.png",NORMAL, 32 ,32, 5, 710 )
 
-		cmdSquareIcon[i] = UI_CreateCompent( frmViewAll, COMMAND_ONE_TYPE, "cmdSquareIcon_"..i, 32, 32, i*40+7, 31 )	
+		cmdSquareIcon[i] = UI_CreateCompent( frmViewAll, COMMAND_ONE_TYPE, "cmdSquareIcon_"..i, 32, 32, i*40+12, 35 )	
 	end
 
 	memViewAll  = UI_CreateCompent( frmViewAll, MEMO_TYPE, "memViewAll", 220, 100, 12, 70)
 	UI_SetCaption( memViewAll, "400" )
 	UI_SetTextColor( memViewAll, COLOR_BLACK )
-	UI_SetLabelExFont( memViewAll, DEFAULT_FONT, TRUE, COLOR_WHITE )
+	UI_SetLabelExFont( memViewAll, DEFAULT_FONT, TRUE, COLOR_WHITE)
 	UI_SetMemoPageShowNum( memViewAll, 4 )
 	UI_SetMemoMaxNumPerRow( memViewAll, 38 )
 	
-	btnReBack = UI_CreateCompent( frmViewAll, BUTTON_TYPE, "btnReBack", 48, 19,185, 151 )
-	UI_LoadButtonImage( btnReBack, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
+	-- return button
+	btnReBack = UI_CreateCompent( frmViewAll, BUTTON_TYPE, "btnReBack", 52, 17,185, 151 )
+	UI_LoadButtonImage( btnReBack, "texture/ui/NUI/ingamemall.png", 52, 17, 162, 567, FALSE )
 	UI_SetButtonModalResult( btnReBack, BUTTON_CLOSE )
 	
 	labReBack = UI_CreateCompent( frmViewAll, LABELEX_TYPE, "labReBack", 400, 15, 192, 155 )
-	UI_SetCaption( labReBack, "Return")
+	--UI_SetCaption( labReBack, "Return")
 	UI_SetTextColor( labReBack, COLOR_BLACK )
 	UI_SetLabelExFont( labReBack, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 
 	--创建关闭按钮
-	btnClose = UI_CreateCompent( frmViewAll, BUTTON_TYPE, "btnClose", 14, 14, 230, 3 )
-	UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
-	UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
+	--btnClose = UI_CreateCompent( frmViewAll, BUTTON_TYPE, "btnClose", 14, 14, 230, 3 )
+	--UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+	--UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 	
 
------------------------------------------------------------------------
--- 定义试穿面板  2006.10.11 by Leo
------------------------------------------------------------------------
+------------------
+--  Try apparel --
+------------------
 frmTryon = UI_CreateForm( "frmTryon", FALSE, 200, 318, 0, 0, TRUE, FALSE )
 UI_ShowForm( frmTryon, FALSE )
 UI_AddFormToTemplete( frmTryon, FORM_MAIN )
@@ -1427,33 +1389,31 @@ UI_SetIsDrag( frmTryon,FALSE)
 
 --UI_FormSetHotKey( frmTryon, ALT_KEY, HOTKEY_Z )
 
-imgBackGround1 = UI_CreateCompent( frmTryon, IMAGE_TYPE, "imgBackGround1", 200, 265, 0, 0 )
-UI_LoadImage( imgBackGround1, "texture/ui/player1.tga", NORMAL, 171,256, 0, 0 )
+imgBackGround1 = UI_CreateCompent( frmTryon, IMAGE_TYPE, "imgBackGround1", 175, 311, 0, 0 )
+UI_LoadImage( imgBackGround1, "texture/ui/NUI/ingamemall.png", NORMAL, 175, 311, 701, 0 )
 
-imgBackGround2 = UI_CreateCompent( frmTryon, IMAGE_TYPE, "imgBackGround2", 200, 53, 0, 265 )
-UI_LoadImage( imgBackGround2, "texture/ui/player2.tga", NORMAL, 171,51, 0, 0 )
 
 labTitle = UI_CreateCompent( frmTryon, LABELEX_TYPE, "labTitle", 10, 150, 7 ,3  )
 UI_SetCaption( labTitle, "Try")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 --创建3D角色
-ui3dplayer = UI_CreateCompent( frmTryon, UI3D_COMPENT, "ui3dplayer", 120, 240, 40, 30 )
+ui3dplayer = UI_CreateCompent( frmTryon, UI3D_COMPENT, "ui3dplayer", 120, 240, 20, 30 )
 
 --创建左右旋转按钮
 btnTurnleft3d = UI_CreateCompent( frmTryon, BUTTON_TYPE, "btnTurnleft3d", 32, 38, 34, 264 )
 UI_LoadButtonImage( btnTurnleft3d, "texture/ui/select4.tga", 32, 38, 0, 38, TRUE )
 
-btnTurnright3d = UI_CreateCompent( frmTryon, BUTTON_TYPE, "btnTurnright3d", 32, 38, 134, 264 )
+btnTurnright3d = UI_CreateCompent( frmTryon, BUTTON_TYPE, "btnTurnright3d", 32, 38, 110, 264 )
 UI_LoadButtonImage( btnTurnright3d, "texture/ui/select4.tga",  32, 38, 0, 0, TRUE )
 
---创建清空按钮
-	btnClearAll = UI_CreateCompent( frmTryon, BUTTON_TYPE, "btnClearAll", 68, 19, 66, 30)
-	UI_LoadButtonImage( btnClearAll, "texture/ui/store8.tga", 48, 19, 0, 76, FALSE )
+	-- Clear button
+	btnClearAll = UI_CreateCompent( frmTryon, BUTTON_TYPE, "btnClearAll", 52, 17, 61, 30)
+	UI_LoadButtonImage( btnClearAll, "texture/ui/NUI/ingamemall.png", 52, 17, 108, 567, FALSE )
 
 	labClearAll = UI_CreateCompent( frmTryon, LABELEX_TYPE, "labClearAll", 400, 150, 85, 34 )
-	UI_SetCaption( labClearAll, "Clear")
+	--UI_SetCaption( labClearAll, "Clear")
 	UI_SetTextColor( labClearAll, COLOR_BLACK )
 	UI_SetLabelExFont( labClearAll, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
