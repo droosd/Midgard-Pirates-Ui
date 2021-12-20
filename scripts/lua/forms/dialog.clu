@@ -158,53 +158,52 @@ UI_SetButtonModalResult( btnYes, BUTTON_YES )
 UI_SetAlign( btnYes, caWidthCenter )
 UI_FormSetEnterButton( frmError, btnYes )
 
------------------------------------------------------------------------
--- 定义密码输入表单
------------------------------------------------------------------------
--- 创建密码输入
+----------------------------
+-- Guild disband password --
+----------------------------
 frmPass = UI_CreateForm( "frmPass", FALSE, 185, 101, 310, 410, FALSE, FALSE )
 UI_AddFormToTemplete( frmPass, FORM_DIALOG )
 UI_SetFormStyle( frmPass, 2 )
 --UI_FormSetHotKey( frmPass, ALT_KEY, 75 ) 
 UI_FormSetIsEscClose( frmPass, FALSE )
 
--- 加载背景图片
-imgAccout = UI_CreateCompent( frmPass, IMAGE_TYPE, "imgAccout", 185, 101, 0, 0 )
-UI_LoadImage( imgAccout, "texture/ui/sure.bmp", NORMAL, 185, 101, 0, 0 )
+-- Main image
+imgAccout = UI_CreateCompent( frmPass, IMAGE_TYPE, "imgAccout", 245, 130, 0, 0 )
+UI_LoadImage( imgAccout, "texture/ui/NUI/a003.png", NORMAL, 245, 130, 0, 0 )
 
---创建title
-labTitle = UI_CreateCompent( frmPass, LABELEX_TYPE, "labTitle", 49, 11, 7, 4 )
+-- Title
+labTitle = UI_CreateCompent( frmPass, LABELEX_TYPE, "labTitle", 49, 11, 90, 4 )
 UI_SetCaption( labTitle, "Input password" )
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建密码两个字
-labPass = UI_CreateCompent( frmPass, LABELEX_TYPE, "labPass", 23, 11, 23, 44 )
-UI_SetCaption( labPass, "Password" )
-UI_SetTextColor( labPass, COLOR_BLACK )
-UI_SetLabelExFont( labPass, DEFAULT_FONT, TRUE, COLOR_WHITE )
+-- Password
+labPass = UI_CreateCompent( frmPass, LABELEX_TYPE, "labPass", 23, 11, 95, 44 )
+--UI_SetCaption( labPass, "Password" )
+--UI_SetTextColor( labPass, COLOR_WHITE )
+--UI_SetLabelExFont( labPass, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 
 --密码背景
 imgPass = UI_CreateCompent( frmPass, IMAGE_TYPE, "imgPass", 87, 18, 70, 40 )
-UI_LoadImage( imgPass, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
+--UI_LoadImage( imgPass, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
 
---加载确定，取消按钮
-btnYes = UI_CreateCompent( frmPass, BUTTON_TYPE, "btnYes", 41, 19, 84, 78 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+--Confim button
+btnYes = UI_CreateCompent( frmPass, BUTTON_TYPE, "btnYes", 52, 17, 84, 78 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/a003.png", 52, 17, 1, 209, TRUE )
 
-btnNo = UI_CreateCompent( frmPass, BUTTON_TYPE, "btnNo", 41, 19, 129, 78 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+-- Cancel button
+btnNo = UI_CreateCompent( frmPass, BUTTON_TYPE, "btnNo", 52, 17, 140, 78 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/a003.png", 52, 17, 1, 191, TRUE )
 
 
---加载密码输入框
-edtPassword = UI_CreateCompent( frmPass, EDIT_TYPE, "edtPassword", 87, 12, 76, 44 )
-UI_SetTextColor( edtPassword, COLOR_BLACK )
+-- Password
+edtPassword = UI_CreateCompent( frmPass, EDIT_TYPE, "edtPassword", 87, 12, 95, 47 )
+UI_SetTextColor( edtPassword, COLOR_WHITE )
 UI_SetEditMaxNum( edtPassword, 12 )
 UI_SetEditMaxNumVisible( edtPassword, 12 )
 UI_SetButtonModalResult( btnYes, BUTTON_YES )
 UI_SetButtonModalResult( btnNo, BUTTON_NO )
-
 UI_SetEditEnterButton( edtPassword, btnYes )
 
 
