@@ -310,9 +310,9 @@ UI_SetHint( cmdShieldApp, "Shield Apparel" )
 UI_SetTag( cmdShieldApp, 33 ) 
 
 
------------------------------------------------------------------------
--- 定义技能
------------------------------------------------------------------------
+-----------
+-- Skill --
+-----------
 frmSkill = UI_CreateForm( "frmSkill", FALSE, 198, 394, 396, 160, FALSE, FALSE )
 UI_FormSetHotKey( frmSkill, ALT_KEY, HOTKEY_S ) 
 UI_ShowForm( frmSkill, TRUE )
@@ -321,177 +321,160 @@ UI_SetIsDrag( frmSkill, TRUE )
 --UI_SetFormStyle( frmSkill, 0 )
 --UI_SetAlpha( frmSkill, 200 )
 
--- 加载背景图片
-imgSkillBTop = UI_CreateCompent( frmSkill, IMAGE_TYPE, "imgSkillBTop", 198, 256, 0, 0 )
-UI_LoadImage( imgSkillBTop, "texture/ui/PublicD.bmp", NORMAL, 198, 256, 0, 0 )
-imgSkillBDown = UI_CreateCompent( frmSkill, IMAGE_TYPE, "imgSkillBDown", 198, 138, 0, 256 )
-UI_LoadImage( imgSkillBDown, "texture/ui/PublicD2.bmp", NORMAL, 198, 138, 0, 0 )
+-- Main image
+imgSkillBTop = UI_CreateCompent( frmSkill, IMAGE_TYPE, "imgSkillBTop", 198, 394, 0, 0 )
+UI_LoadImage( imgSkillBTop, "texture/ui/NUI/frmSkill.png", NORMAL, 198, 394, 0, 0 )
 
-imgSkillTop = UI_CreateCompent( frmSkill, IMAGE_TYPE, "imgSkillTop", 177, 256, 7, 54 )
-UI_LoadImage( imgSkillTop, "texture/ui/Skill.dds", NORMAL, 175, 256, 0, 0 )
-imgSkillDown = UI_CreateCompent( frmSkill, IMAGE_TYPE, "imgSkillDown", 177, 19, 7, 310 )
-UI_LoadImage( imgSkillDown, "texture/ui/ShipBuild2.tga", NORMAL, 175, 18, 80, 233 )
+-- Skill points textbox
+imgSkillP = UI_CreateCompent( frmSkill, IMAGE_TYPE, "imgSkillP", 58, 20, 120, 286 )
+UI_LoadImage( imgSkillP, "texture/ui/NUI/frmSkill.png", NORMAL, 58, 20, 2, 405 )
 
-imgSkillD = UI_CreateCompent( frmSkill, IMAGE_TYPE, "imgSkillD", 184, 43, 7, 330 )
-UI_LoadImage( imgSkillD, "texture/ui/TalkM.dds", NORMAL, 184, 43, 0, 213 )
-
-imgSkillDL = UI_CreateCompent( frmSkill, IMAGE_TYPE, "imgSkillDL", 36, 36, 15, 334 )
-UI_LoadImage( imgSkillDL, "texture/ui/PublicC.tga", NORMAL, 36, 36, 167, 59 )
-
-
------------------------------------------------------------------------------------------------------------------------------------------------
---创建剩余技能点信息
-imgSkillP = UI_CreateCompent( frmSkill, IMAGE_TYPE, "imgSkillP", 39, 18, 132, 296 )
-UI_LoadImage( imgSkillP, "texture/ui/SysBotton4.tga", NORMAL, 39, 18, 106, 99 )
-
-labFront = UI_CreateCompent( frmSkill, LABELEX_TYPE, "labFront", 59, 11, 69, 299 )
+labFront = UI_CreateCompent( frmSkill, LABELEX_TYPE, "labFront", 59, 11, 65, 290 )
 UI_SetCaption( labFront, "Skill Pts" )
-UI_SetTextColor( labFront, COLOR_BLACK )
-UI_SetLabelExFont( labFront, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labFront, COLOR_WHITE )
+UI_SetLabelExFont( labFront, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---战斗技能点
-labPoint = UI_CreateCompent( frmSkill, LABELEX_TYPE, "labPoint", 19, 11, 143, 299 )
+-- Skill points
+labPoint = UI_CreateCompent( frmSkill, LABELEX_TYPE, "labPoint", 19, 11, 135, 290 )
 UI_SetCaption( labPoint, "100" )
-UI_SetTextColor( labPoint, COLOR_BLACK )
-UI_SetLabelExFont( labPoint, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labPoint, COLOR_WHITE )
+UI_SetLabelExFont( labPoint, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---生活技能点
-labPoint1 = UI_CreateCompent( frmSkill, LABELEX_TYPE, "labPoint1", 19, 11, 143, 299 )
+-- Life skill points
+labPoint1 = UI_CreateCompent( frmSkill, LABELEX_TYPE, "labPoint1", 19, 11, 135, 290 )
 UI_SetCaption( labPoint1, "100" )
-UI_SetTextColor( labPoint1, COLOR_BLACK )
-UI_SetLabelExFont( labPoint1, DEFAULT_FONT, TRUE, COLOR_WHITE )
------------------------------------------------------------------------------------------------------------------------------------------------
+UI_SetTextColor( labPoint1, COLOR_WHITE )
+UI_SetLabelExFont( labPoint1, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmSkill, BUTTON_TYPE, "btnClose", 14, 14, 177, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+--Close button
+btnClose = UI_CreateCompent( frmSkill, BUTTON_TYPE, "btnClose", 19, 20, 185, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmSkill.png", 19, 20, 1, 429, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
--- 加载界面title
+-- Title
 labTitle = UI_CreateCompent( frmSkill, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
 UI_SetCaption( labTitle, "Skill")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK)
 
---创建战斗技能列表
-lstSkill = UI_CreateCompent( frmSkill, SKILL_LIST_TYPE, "lstSkill", 183, 275, 5, -20 )
-UI_SetMargin( lstSkill, 1, 4, 3, 5 )
+-- Skill grid
+lstSkill = UI_CreateCompent( frmSkill, SKILL_LIST_TYPE, "lstSkill", 183, 275, 5, -28 )
+UI_SetMargin( lstSkill, 1, 4, 3, 3 )
 UI_SetListRowHeight( lstSkill, 38 )
 --UI_ListLoadSelectImage( lstSkill, "texture/ui/button.dds", 148, 32, 38, 175 )
-
 UI_LoadSkillListButtonImage( lstSkill, "texture/ui/Quest1.tga", 17, 17, 4, 198, 17, 17 )
 
---获得滚动条
-scrollid = UI_GetScroll( lstSkill)
-UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+-- Scroll background
+scrollid = UI_GetScroll( lstSkill )
+UI_SetSize( scrollid, 11, 2 )
+UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---创建生活技能列表
-lstSkillW = UI_CreateCompent( frmSkill, SKILL_LIST_TYPE, "lstSkillW", 183, 275, 5, -20 )
-UI_SetMargin( lstSkillW, 1, 4, 3, 5 )
+-- Life skill grid
+lstSkillW = UI_CreateCompent( frmSkill, SKILL_LIST_TYPE, "lstSkillW", 183, 275, 5, -28 )
+UI_SetMargin( lstSkillW, 1, 4, 3, 3 )
 UI_SetListRowHeight( lstSkillW, 38 )
 --UI_ListLoadSelectImage( lstSkillW, "texture/ui/button.dds", 148, 32, 38, 175 )
 UI_LoadSkillListButtonImage( lstSkillW, "texture/ui/Quest1.tga", 17, 17, 4, 198, 17, 17 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( lstSkillW )
-UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_SetSize( scrollid, 11, 2 )
+UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 
---创建海上技能列表
-lstSkillS = UI_CreateCompent( frmSkill, SKILL_LIST_TYPE, "lstSkillS", 183, 275, 5, -20 )
-UI_SetMargin( lstSkillS, 1, 4, 3, 5 )
+-- pet skill grid
+lstSkillS = UI_CreateCompent( frmSkill, SKILL_LIST_TYPE, "lstSkillS", 183, 275, 5, -28 )
+UI_SetMargin( lstSkillS, 1, 4, 3, 3 )
 UI_SetListRowHeight( lstSkillS, 38 )
 --UI_ListLoadSelectImage( lstSkillS, "texture/ui/button.dds", 148, 32, 38, 175 )
 
 UI_LoadSkillListButtonImage( lstSkillS, "texture/ui/Quest1.tga", 17, 17, 4, 198, 17, 17 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( lstSkillS )
-UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_SetSize( scrollid, 11, 2 )
+UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---创建页面
+--′′?¨ò3??
 pgeSkill = UI_CreateCompent( frmSkill, PAGE_TYPE, "pgeSkill", 211, 233, 11, 79 )
 UI_SetPageButton( pgeSkill, PAGE_BUTTON_CUSTOM, 48, 16 )
 
---战斗技能
+-- Skill tab
 skillid = UI_CreatePageItem( pgeSkill )
 ttlBattle = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlBattle, "texture/ui/player2.tga", PAGE_ITEM_TITLE_NORMAL, 49, 35, 103, 113 )
-UI_LoadImage( ttlBattle, "texture/ui/player2.tga", PAGE_ITEM_TITLE_ACTIVE, 49, 35, 48, 113 )
-UI_SetPos( ttlBattle, 12, -54 )
-UI_SetSize( ttlBattle, 49, 35 )
+UI_LoadImage( ttlBattle, "texture/ui/NUI/frmSkill.png", PAGE_ITEM_TITLE_NORMAL, 48, 17, 118, 412 )
+UI_LoadImage( ttlBattle, "texture/ui/NUI/frmSkill.png", PAGE_ITEM_TITLE_ACTIVE, 48, 17, 118, 432 )
+UI_SetPos( ttlBattle, 10, -50 )
+UI_SetSize( ttlBattle, 48, 17 )
 UI_AddCompent( skillid, lstSkill )
 UI_AddCompent( skillid, imgSkillP )
 UI_AddCompent( skillid, labFront )
 UI_AddCompent( skillid, labPoint )
 
---生活技能
+-- Life skill tab
 skillid = UI_CreatePageItem( pgeSkill )
 ttlLive = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlLive, "texture/ui/player2.tga", PAGE_ITEM_TITLE_NORMAL, 49, 35, 100, 154 )
-UI_LoadImage( ttlLive, "texture/ui/player2.tga", PAGE_ITEM_TITLE_ACTIVE, 49, 35, 45, 154 )
-UI_SetPos( ttlLive, 61, -54 )
-UI_SetSize( ttlLive, 49, 35 )
+UI_LoadImage( ttlLive, "texture/ui/NUI/frmSkill.png", PAGE_ITEM_TITLE_NORMAL, 48, 17, 171, 412 )
+UI_LoadImage( ttlLive, "texture/ui/NUI/frmSkill.png", PAGE_ITEM_TITLE_ACTIVE, 48, 17, 171, 432 )
+UI_SetPos( ttlLive, 62, -50 )
+UI_SetSize( ttlLive, 48, 17 )
 UI_AddCompent( skillid, lstSkillW )
 UI_AddCompent( skillid, imgSkillP )
 UI_AddCompent( skillid, labFront )
 UI_AddCompent( skillid, labPoint1 )
 
---海上技能
+-- Pet skill tab
 skillid = UI_CreatePageItem( pgeSkill )
 ttlSail = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlSail, "texture/ui/player2.tga", PAGE_ITEM_TITLE_NORMAL, 49, 35, 103, 70 )
-UI_LoadImage( ttlSail, "texture/ui/player2.tga", PAGE_ITEM_TITLE_ACTIVE, 49, 35, 48, 70 )
-UI_SetPos( ttlSail, 110, -54 )
-UI_SetSize( ttlSail, 49, 35 )
+UI_LoadImage( ttlSail, "texture/ui/NUI/frmSkill.png", PAGE_ITEM_TITLE_NORMAL, 48, 17, 224, 412 )
+UI_LoadImage( ttlSail, "texture/ui/NUI/frmSkill.png", PAGE_ITEM_TITLE_ACTIVE, 48, 17, 224, 432 )
+UI_SetPos( ttlSail, 115, -50 )
+UI_SetSize( ttlSail, 48, 17 )
 UI_AddCompent( skillid, lstSkillS )
 
 
