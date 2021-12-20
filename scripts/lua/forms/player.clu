@@ -578,10 +578,9 @@ btnNo = UI_CreateCompent( frmTime, BUTTON_TYPE, "btnNo", 41, 19, 74, 78 )
 UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 
 
------------------------------------------------------------------------
--- 定义玩家摆摊
------------------------------------------------------------------------	
--- 创建玩家摆摊表单
+---------------
+-- Set Stall --
+---------------
 frmBooth = UI_CreateForm( "frmBooth", FALSE, 288, 298, 100, 100, TRUE, FALSE )
 UI_ShowForm( frmBooth, FALSE )
 UI_AddFormToTemplete( frmBooth, FORM_MAIN )
@@ -589,71 +588,63 @@ UI_AddFormToTemplete( frmBooth, FORM_MAIN )
 UI_SetIsDrag( frmBooth, TRUE )
 UI_FormSetIsEscClose( frmFound, FALSE )
 
+-- Main image
+imgBak = UI_CreateCompent( frmBooth, IMAGE_TYPE, "imgBak", 288, 290, 0, 0 )
+UI_LoadImage( imgBak, "texture/ui/NUI/frmBooth.png", NORMAL, 288, 290, 0, 0 )
 
--- 加载图片
-imgBak = UI_CreateCompent( frmBooth, IMAGE_TYPE, "imgBak", 256, 256, 0, 0 )
-UI_LoadImage( imgBak, "texture/ui/baitan1.tga", NORMAL, 256, 256, 0, 0 )
-
-imgBak1 = UI_CreateCompent( frmBooth, IMAGE_TYPE, "imgBak1", 32, 256, 256, 0 )
-UI_LoadImage( imgBak1, "texture/ui/baitan2.tga", NORMAL, 32, 256, 0, 0 )
-
-imgBak2 = UI_CreateCompent( frmBooth, IMAGE_TYPE, "imgBak2", 256, 34, 0, 256 )
-UI_LoadImage( imgBak2, "texture/ui/baitan3.tga", NORMAL, 256, 34, 0, 0 )
-
-imgBak3 = UI_CreateCompent( frmBooth, IMAGE_TYPE, "imgBak3", 32, 34, 256, 256 )
-UI_LoadImage( imgBak3, "texture/ui/baitan2.tga", NORMAL, 32, 34, 41, 0 )
-
---创建关闭按钮
-btnClose = UI_CreateCompent( frmBooth, BUTTON_TYPE, "btnClose", 14, 14, 271, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmBooth, BUTTON_TYPE, "btnClose", 19, 20, 275, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmBooth.png", 19, 20, 9, 348, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
-
---加载摆主名称
-lblOwnerName = UI_CreateCompent( frmBooth, LABELEX_TYPE, "lblOwnerName", 94, 31, 111, 23 )
+-- Stall owner
+lblOwnerName = UI_CreateCompent( frmBooth, LABELEX_TYPE, "lblOwnerName", 94, 31, 120, 5 )
 UI_SetCaption( lblOwnerName, "就就就就就就就就" )
-UI_SetTextColor( lblOwnerName, COLOR_BLACK )
-UI_SetLabelExFont( lblOwnerName, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( lblOwnerName, COLOR_WHITE )
+UI_SetLabelExFont( lblOwnerName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---摊位名
+-- Stall name
 edtBoothName = UI_CreateCompent( frmBooth, EDIT_TYPE, "edtBoothName", 264, 13, 54, 44 )
 UI_SetEditMaxNum( edtBoothName, 32 )
+UI_SetTextColor( edtBoothName, COLOR_WHITE)
+UI_SetLabelExFont( edtBoothName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建物品表格
-grdBoothItem = UI_CreateCompent( frmBooth, GOODS_GRID_TYPE, "grdBoothItem", 267, 178, 11, 75 ) 
+-- Item grid
+grdBoothItem = UI_CreateCompent( frmBooth, GOODS_GRID_TYPE, "grdBoothItem", 267, 178, 11, 74 ) 
 UI_SetGridSpace( grdBoothItem, 1, 1 )
 UI_SetGridContent( grdBoothItem, 4, 3 )
 UI_SetGridUnitSize( grdBoothItem, 87, 84 )
-UI_SetMargin( grdBoothItem, 0, 0, 0, 0 )
-UI_GoodGridLoadUnitImage( grdBoothItem, "texture/ui/baitan2.tga", 87, 84, 172, 173 )
+UI_SetMargin( grdBoothItem, 0, -1, 0, 0 )
+--UI_GoodGridLoadUnitImage( grdBoothItem, "texture/ui/baitan2.tga", 87, 84, 172, 173 )
 
---获得滚动条
-scrollid = UI_GetScroll( grdBoothItem)
+-- Scroll background
+scrollid = UI_GetScroll( grdBoothItem )
 UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 1, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+--Scroll bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 
---加载确定，取消按钮
-btnSetupBooth = UI_CreateCompent( frmBooth, BUTTON_TYPE, "btnSetupBooth", 41, 19, 119, 269 )
-UI_LoadButtonImage( btnSetupBooth, "texture/ui/SystemBotton3.tga", 41, 19, 0, 38, TRUE )
+-- Set shop button
+btnSetupBooth = UI_CreateCompent( frmBooth, BUTTON_TYPE, "btnSetupBooth", 52, 17, 119, 263 )
+UI_LoadButtonImage( btnSetupBooth, "texture/ui/NUI/frmBooth.png", 52, 17, 6, 300, TRUE )
 
-btnPullStakes = UI_CreateCompent( frmBooth, BUTTON_TYPE, "btnPullStakes", 41, 19, 119, 269 )
-UI_LoadButtonImage( btnPullStakes, "texture/ui/SystemBotton3.tga", 41, 19, 0, 57, TRUE )
+-- Packup button
+btnPullStakes = UI_CreateCompent( frmBooth, BUTTON_TYPE, "btnPullStakes", 52, 17, 119, 263 )
+UI_LoadButtonImage( btnPullStakes, "texture/ui/NUI/frmBooth.png", 52, 17, 6, 319, TRUE )
 
 
 -----------------------------------------------------------------------
