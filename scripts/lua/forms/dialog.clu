@@ -134,26 +134,26 @@ btnNo = UI_CreateCompent( frmNumber, BUTTON_TYPE, "btnNo", 41, 19, 122, 78 )
 UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 UI_SetButtonModalResult( btnNo, BUTTON_NO )
 
------------------------------------------------------------------------
--- 定义信息提示
------------------------------------------------------------------------
+-----------
+-- Error --
+-----------
 frmError = UI_CreateForm( "frmError",  TRUE, 185, 101, 397, 500, FALSE, TRUE )
-UI_LoadFormImage( frmError, "texture/ui/system/error.tga", 32, 32, 64, 64, "texture/ui/system/error.tga", 32, 32 )
+UI_LoadFormImage( frmError, "texture/ui/NUI/frmError.png", 32, 32, 64, 64, "texture/ui/NUI/frmError.png", 32, 32 )
 
 UI_SetFormStyle( frmError, 1 )
 UI_ShowForm( frmError, FALSE )
 UI_AddFormToTemplete( frmError, FORM_DIALOG )
 UI_SetIsDrag( frmError, TRUE )
 
---创建询问内容
+-- Error Note
 labError = UI_CreateCompent( frmError, LABELEX_TYPE, "labError", 59, 11, 35, 40 )
 UI_SetCaption( labError, "" )
-UI_SetTextColor( labError, COLOR_BLACK )
-UI_SetLabelExFont( labError, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labError, COLOR_WHITE)
+UI_SetLabelExFont( labError, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载确定按钮
-btnYes = UI_CreateCompent( frmError, BUTTON_TYPE, "btnYes", 41, 19, 80, 78 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+--Confirm button
+btnYes = UI_CreateCompent( frmError, BUTTON_TYPE, "btnYes", 52, 17, 80, 73 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/surenew.png", 52, 17, 8, 149, TRUE )
 UI_SetButtonModalResult( btnYes, BUTTON_YES )
 UI_SetAlign( btnYes, caWidthCenter )
 UI_FormSetEnterButton( frmError, btnYes )
