@@ -287,64 +287,61 @@ UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 40, TRUE )
 btnNo = UI_CreateCompent( frmNPCTradeNumber, BUTTON_TYPE, "btnNo", 41, 19, 130, 78 )
 UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, FALSE )
 
------------------------------------------------------------------------
--- 定义银行
------------------------------------------------------------------------	
--- 创建NPC保管表单
-frmNPCstorage = UI_CreateForm( "frmNPCstorage", FALSE, 198, 394, 100, 100, TRUE, FALSE )
+--------------
+-- Bank Npc --
+--------------
+frmNPCstorage = UI_CreateForm( "frmNPCstorage", FALSE, 198, 413, 100, 100, TRUE, FALSE )
 --UI_FormSetHotKey( frmNPCstorage, ALT_KEY, HOTKEY_V ) 
 UI_ShowForm( frmNPCstorage, TRUE )
 UI_AddFormToTemplete( frmNPCstorage, FORM_MAIN )
 UI_SetIsDrag( frmNPCstorage, TRUE )
 
--- 加载背景图片
-imgBakTop = UI_CreateCompent( frmNPCstorage, IMAGE_TYPE, "imgBakTop", 198, 256, 0, 0 )
-UI_LoadImage( imgBakTop, "texture/ui/save1.tga", NORMAL, 198, 256, 0, 0 )
-imgBakDown = UI_CreateCompent( frmNPCstorage, IMAGE_TYPE, "imgBakDown", 198, 138, 0, 256 )
-UI_LoadImage( imgBakDown, "texture/ui/save2.tga", NORMAL, 198, 138, 0, 0 )
+-- Main image
+imgBakTop = UI_CreateCompent( frmNPCstorage, IMAGE_TYPE, "imgBakTop", 198, 413, 0, 0 )
+UI_LoadImage( imgBakTop, "texture/ui/NUI/frmNPCstorage.png", NORMAL, 198, 413, 0, 0 )
 
---title
-labTitle = UI_CreateCompent( frmNPCstorage, LABELEX_TYPE, "labTitle", 400, 150, 10, 4 )
+-- Title
+labTitle = UI_CreateCompent( frmNPCstorage, LABELEX_TYPE, "labTitle", 400, 150, 90, 4 )
 UI_SetCaption( labTitle, "Bank")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmNPCstorage, BUTTON_TYPE, "btnClose", 14, 14, 178, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmNPCstorage, BUTTON_TYPE, "btnClose", 19, 20, 185, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmNPCstorage.png", 19, 20, 1, 429, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
---加载仓库主人名称显示
-labOwnerName = UI_CreateCompent( frmNPCstorage, LABELEX_TYPE, "labOwnerName", 119, 12, 54, 42 )
+-- Banker name
+labOwnerName = UI_CreateCompent( frmNPCstorage, LABELEX_TYPE, "labOwnerName", 119, 12, 35, 48 )
 UI_SetCaption( labOwnerName, "就就就就就就就就专用" )
-UI_SetTextColor( labOwnerName, COLOR_BLACK )
-UI_SetLabelExFont( labOwnerName, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labOwnerName, COLOR_WHITE )
+UI_SetLabelExFont( labOwnerName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建物品表格
-grdNPCstorage = UI_CreateCompent( frmNPCstorage, GOODS_GRID_TYPE, "grdNPCstorage", 184, 305, 7, 71 ) 
+-- Item grid
+grdNPCstorage = UI_CreateCompent( frmNPCstorage, GOODS_GRID_TYPE, "grdNPCstorage", 184, 305, 5, 71 ) 
 UI_SetGridSpace( grdNPCstorage, 4, 4 )
 UI_SetGridContent( grdNPCstorage, 8, 4 )
 UI_SetGridUnitSize( grdNPCstorage, 32, 32 )
-UI_SetMargin( grdNPCstorage, 21, 4, 0, 0 )
+UI_SetMargin( grdNPCstorage, 18, 10, 0, 0 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( grdNPCstorage )
 UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 1, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+--Scroll bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -----------------------------------------------------------------------
