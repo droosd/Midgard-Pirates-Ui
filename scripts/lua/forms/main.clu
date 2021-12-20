@@ -569,76 +569,43 @@ UI_SetHint( btnOpenGuild , "Guild(Alt+C)" )
 -- UI_LoadButtonImage( btnOpenTeam, "texture/ui/new6.tga", 23, 22, 69, 22, TRUE )
 -- UI_SetHint( btnOpenTeam , "Party Volunteer" )
 
------------------------------------------------------------------------
--- 定义大地图
------------------------------------------------------------------------	
--- 创建大地图表单
-frmBigmap = UI_CreateForm( "frmBigmap", FALSE, 569, 430, 30, 80, TRUE, FALSE )
+---------------
+-- World Map --
+---------------
+frmBigmap = UI_CreateForm( "frmBigmap", FALSE, 591, 434, 100, 80, TRUE, FALSE )
 UI_ShowForm( frmBigmap, TRUE )
 UI_AddFormToTemplete( frmBigmap, FORM_MAIN )
 UI_FormSetIsEscClose( frmBigmap, FALSE )
 UI_FormSetHotKey( frmBigmap, ALT_KEY, HOTKEY_W )
 UI_FormSetIsEscClose( frmBigmap, FALSE )
 
--- 加载图片
-imgBigmap1 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap1", 256, 256, 0, 0 )
-UI_LoadImage( imgBigmap1, "texture/ui/bigmap1.tga", NORMAL, 256, 256, 0, 0 )
+-- Main image
+imgBigmap1 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap1", 591, 434, 0, 0 )
+UI_LoadImage( imgBigmap1, "texture/ui/NUI/frmBigmap.png", NORMAL, 591, 434, 0, 0 )
 
-imgBigmap2 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap2", 256, 256, 256, 0 )
-UI_LoadImage( imgBigmap2, "texture/ui/bigmap2.tga", NORMAL, 256, 256, 0, 0 )
-
-imgBigmap3 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap3", 256, 256, 512, 0 )
-UI_LoadImage( imgBigmap3, "texture/ui/bigmap3.tga", NORMAL, 256, 256, 0, 0 )
-
-imgBigmap4 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap4", 256, 256, 0, 256 )
-UI_LoadImage( imgBigmap4, "texture/ui/bigmap4.tga", NORMAL, 256, 256, 0, 0 )
-
-imgBigmap5 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap5", 256, 256, 256, 256 )
-UI_LoadImage( imgBigmap5, "texture/ui/bigmap5.tga", NORMAL, 256, 256, 0, 0 )
-
-imgBigmap6 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap6", 256, 256, 512, 256 )
-UI_LoadImage( imgBigmap6, "texture/ui/bigmap6.tga", NORMAL, 256, 256, 0, 0 )
-
--- 程序用于显示大地图，大小，位置无所谓
-UI_CreateCompent( frmBigmap, UI3D_COMPENT_TYPE, "d3dCompent", 530, 390, 140, 52 )
+-- Map
+UI_CreateCompent( frmBigmap, UI3D_COMPENT_TYPE, "d3dCompent", 534, 327, 28, 64 )
 
 
-imgBigmap11 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap11", 256, 256, 0, 0 )
-UI_LoadImage( imgBigmap11, "texture/ui/bigmap8.tga", NORMAL, 256, 256, 0, 0 )
+-- Button left
+btnLeft = UI_CreateCompent( frmBigmap, BUTTON_TYPE, "btnLeft", 36, 36, 526, 222 )
+UI_LoadButtonImage( btnLeft, "texture/ui/NUI/frmBigmap.png", 36, 36, 622, 286, TRUE )
 
-imgBigmap21 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap21", 256, 97, 256, 10 )
-UI_LoadImage( imgBigmap21, "texture/ui/bigmap9.tga", NORMAL, 256, 97, 0, 0 )
+-- Button right
+btnRight = UI_CreateCompent( frmBigmap, BUTTON_TYPE, "btnRight", 36, 36, 28, 222 )
+UI_LoadButtonImage( btnRight, "texture/ui/NUI/frmBigmap.png", 36, 36, 622, 336, TRUE )
 
-imgBigmap31 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap31", 256, 256, 512, 0 )
-UI_LoadImage( imgBigmap31, "texture/ui/bigmap10.tga", NORMAL, 256, 256, 0, 0 )
+-- Button top
+btnTop = UI_CreateCompent( frmBigmap, BUTTON_TYPE, "btnTop", 36, 36, 277, 64 )
+UI_LoadButtonImage( btnTop, "texture/ui/NUI/frmBigmap.png", 36, 36, 625, 13, FALSE )
 
-imgBigmap41 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap41", 256, 256, 0, 256 )
-UI_LoadImage( imgBigmap41, "texture/ui/bigmap11.tga", NORMAL, 256, 256, 0, 0 )
+-- Button bottom
+btnDown = UI_CreateCompent( frmBigmap, BUTTON_TYPE, "btnDown", 36, 36, 277, 355 )
+UI_LoadButtonImage( btnDown, "texture/ui/NUI/frmBigmap.png", 36, 36, 679, 14, FALSE )
 
-imgBigmap51 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap51", 256, 97, 256, 373 )
-UI_LoadImage( imgBigmap51, "texture/ui/bigmap9.tga", NORMAL, 256, 97, 0, 159 )
-
-imgBigmap61 = UI_CreateCompent( frmBigmap, IMAGE_TYPE, "imgBigmap61", 256, 256, 512, 256 )
-UI_LoadImage( imgBigmap61, "texture/ui/bigmap12.tga", NORMAL, 256, 256, 0, 0 )
-
-
-----箭头
-btnLeft = UI_CreateCompent( frmBigmap, BUTTON_TYPE, "btnLeft", 15, 39, 160, 230 )
-UI_LoadButtonImage( btnLeft, "texture/ui/SysBotton4.tga", 15, 39, 165, 39, TRUE )
-
-btnRight = UI_CreateCompent( frmBigmap, BUTTON_TYPE, "btnRight", 15, 39, 640, 230 )
-UI_LoadButtonImage( btnRight, "texture/ui/SysBotton4.tga", 15, 39, 165, 0, TRUE )
-
-btnTop = UI_CreateCompent( frmBigmap, BUTTON_TYPE, "btnTop", 39, 15, 387, 60 )
-UI_LoadButtonImage( btnTop, "texture/ui/ShipBuildT.tga", 39, 15, 132, 185, FALSE )
-
-btnDown = UI_CreateCompent( frmBigmap, BUTTON_TYPE, "btnDown", 39, 15, 387, 420 )
-UI_LoadButtonImage( btnDown, "texture/ui/ShipBuildT.tga", 39, 15, 132, 123, FALSE )
-
-
-
-btnNo = UI_CreateCompent( frmBigmap, BUTTON_TYPE, "btnNo", 111, 36, 615, 415 )
-UI_LoadButtonImage( btnNo, "texture/ui/Close.tga", 111, 36, 0, 0, FALSE )
+-- Close button
+btnNo = UI_CreateCompent( frmBigmap, BUTTON_TYPE, "btnNo", 52, 17, 277, 400 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmBigmap.png", 52, 17, 770, 114, FALSE )
 UI_SetButtonModalResult( btnNo, BUTTON_CLOSE )
 
 -----------------------------------------------------------------------
