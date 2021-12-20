@@ -437,66 +437,67 @@ btnFastDown 	= UI_CreateCompent( frmFast, BUTTON_TYPE, "btnFastDown", 10, 6, 417
 UI_LoadButtonImage( btnFastDown, "texture/UI/NUI/frmFast.png", 10, 6, 4, 122, TRUE )
 UI_SetHint( btnFastDown, "[<<]" )
 
------------------------------------------------------------------------
--- 定义功能区
------------------------------------------------------------------------	
--- 创建功能表单
-frmMainFun = UI_CreateForm( "frmMainFun", FALSE, 215,  30, 585, 570, TRUE, FALSE )
+---------------
+-- Quickslot --
+---------------
+frmMainFun = UI_CreateForm( "frmMainFun", FALSE, 30, 223, 585, 570, TRUE, FALSE )
 --UI_FormSetHotKey( frmMainFun, ALT_KEY, HOTKEY_D ) 
 UI_ShowForm( frmMainFun, TRUE )
 UI_AddFormToTemplete( frmMainFun, FORM_MAIN )
 UI_FormSetIsEscClose( frmMainFun, FALSE )
 UI_SetFormStyle( frmMainFun, 11 )---右下
 
---加载背景图片
-imgMainFun1 = UI_CreateCompent( frmMainFun, IMAGE_TYPE, "imgMainFun1", 183, 30, 0, 0 )
-UI_LoadImage( imgMainFun1, "texture/ui/new.tga", NORMAL, 183, 30, 73, 92 )
+--Main Image
+imgMainFun1 = UI_CreateCompent( frmMainFun, IMAGE_TYPE, "imgMainFun1", 30, 223, 0, 0 )
+UI_LoadImage( imgMainFun1, "texture/ui/NUI/frmMainFun.png", NORMAL, 30, 223, 148, 15 )
 
-imgMainFun2 = UI_CreateCompent( frmMainFun, IMAGE_TYPE, "imgMainFun2", 32, 30, 183, 0 )
-UI_LoadImage( imgMainFun2, "texture/ui/new.tga", NORMAL, 32, 30, 0, 132 )
-
-btnRanking = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnRanking", 23, 22, -24, 4 )
-UI_LoadButtonImage( btnRanking, "texture/ui/new6.tga", 23, 22, 0, 0,TRUE )
+-- Ranking
+btnRanking = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnRanking", 20, 20, 5, 3 )
+UI_LoadButtonImage( btnRanking, "texture/ui/NUI/frmMainFun.png", 20, 20, 17, 4,TRUE )
 UI_SetHint( btnRanking , "Ranking" )
 
---加载按钮图片
-btnState = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnState", 23, 22, 7, 4 )
-UI_LoadButtonImage( btnState, "texture/ui/new6.tga", 23, 22, 0, 0,TRUE )
+-- ALt + A
+btnState = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnState", 20, 20, 5, 27 )
+UI_LoadButtonImage( btnState, "texture/ui/NUI/frmMainFun.png", 20, 20, 17, 39,TRUE )
 UI_SetHint( btnState , "Stats (Alt+A)" )
 
-btnOpenBag = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnOpenBag", 23, 22, 31, 4 )
-UI_LoadButtonImage( btnOpenBag, "texture/ui/new6.tga", 23, 22, 0, 22,TRUE )
-UI_SetHint( btnOpenBag , "Item (Alt+E)" )
+-- ALT + E
+btnOpenBag = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnOpenBag", 20, 20, 5, 52 )
+UI_LoadButtonImage( btnOpenBag, "texture/ui/NUI/frmMainFun.png", 20, 20, 18, 69,TRUE )
+UI_SetHint( btnOpenBag , "Item" )
 
-btnSkill = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnSkill", 23, 22, 55, 4  )
-UI_LoadButtonImage( btnSkill, "texture/ui/new6.tga", 23, 22, 0, 44,TRUE )
-UI_SetHint( btnSkill , "Skill (Alt+S)" )
+-- Alt + S
+btnSkill = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnSkill", 20, 20, 5, 76  )
+UI_LoadButtonImage( btnSkill, "texture/ui/NUI/frmMainFun.png", 20, 20, 19, 98,TRUE )
+UI_SetHint( btnSkill , "Skill(Alt+S)" )
 
+-- Alt + Q
+btnMission = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnMission", 20, 20, 5, 100  )
+UI_LoadButtonImage( btnMission, "texture/ui/NUI/frmMainFun.png", 20, 20, 19, 155,TRUE )
+UI_SetHint( btnMission , "Quest(Alt+Q)" )
 
-btnMission = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnMission", 23, 22, 79, 4  )
-UI_LoadButtonImage( btnMission, "texture/ui/new6.tga", 23, 22, 0, 66,TRUE )
-UI_SetHint( btnMission , "Quest (Alt+Q)" )
-
-
-btnGuild = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnGuild", 23, 22, 103, 4  )
-UI_LoadButtonImage( btnGuild, "texture/ui/new6.tga", 23, 22, 0, 88,TRUE )
-UI_SetHint( btnGuild , "Guild (Alt+C)" )
+-- Alt + C
+btnGuild = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnGuild", 20, 20, 5, 125  )
+UI_LoadButtonImage( btnGuild, "texture/ui/NUI/frmMainFun.png", 20, 20, 18, 128,TRUE )
+UI_SetHint( btnGuild , "Guild(Alt+C)" )
 
 btnOpenSociliaty = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnOpenSociliaty", 23, 22, 103, 4  )
 UI_LoadButtonImage( btnOpenSociliaty, "texture/ui/new6.tga", 23, 22, 69, 0, TRUE )
 UI_SetHint( btnOpenSociliaty , "Social Skill" )
 
-btnShip = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnShip", 23, 22, 127, 4  )
-UI_LoadButtonImage( btnShip, "texture/ui/new6.tga",  23, 22, 0, 110,TRUE )
+-- ALt + H
+btnShip = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnShip", 20, 20, 5, 148  )
+UI_LoadButtonImage( btnShip, "texture/ui/NUI/frmMainFun.png",  20, 20, 20, 182,TRUE )
 UI_SetHint( btnShip , "Help(Alt+H)" )
 
-
-btnSystem = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnSystem", 23, 22, 151, 4  )
-UI_LoadButtonImage( btnSystem, "texture/ui/new6.tga",  23, 22, 0, 132, TRUE )
+-- Alt + O
+btnSystem = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnSystem", 20, 20, 5, 171  )
+UI_LoadButtonImage( btnSystem, "texture/ui/NUI/frmMainFun.png",  20, 20, 21, 208, TRUE )
 UI_SetHint( btnSystem , "Setting(Alt+O)" )
 
-btnQQ = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnQQ", 37, 22, 175, 4 )
-UI_LoadButtonImage( btnQQ, "texture/ui/new6.tga", 37, 22, 0, 154, TRUE )
+-- Alt + F
+btnQQ = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnQQ", 20, 20, 5, 196 )
+UI_LoadButtonImage( btnQQ, "texture/ui/NUI/frmMainFun.png", 20, 20, 21, 235, TRUE )
 UI_SetHint( btnQQ , "Friend (Alt+F)" )
 
 --定义升级帮助系统
