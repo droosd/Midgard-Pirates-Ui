@@ -1,7 +1,6 @@
------------------------------------------------------------------------
--- Guild Form
------------------------------------------------------------------------
---创建公会面板
+----------------
+-- Guild Form --
+----------------
 frmManage = UI_CreateForm( "frmManage", FALSE, 455, 373, 350, 200, TRUE, FALSE )
 UI_FormSetHotKey( frmManage, ALT_KEY, HOTKEY_C )
 UI_ShowForm( frmManage, FALSE )
@@ -9,23 +8,23 @@ UI_AddFormToTemplete( frmManage, 1 )
 UI_SetIsDrag( frmManage, TRUE )
 UI_SetFormStyleEx( frmManage, FORM_BOTTOM, 0, 45)
 
--- 加载背景图片
+-- Main image
 imgTradeTop = UI_CreateCompent( frmManage, IMAGE_TYPE, "imgTradeTop", 455, 373, 0, 0 )
-UI_LoadImage( imgTradeTop, "texture/ui/corsairs/guild.png", NORMAL, 455, 373, 0, 0 )
+UI_LoadImage( imgTradeTop, "texture/ui/NUI/frmManage.png", NORMAL, 455, 373, 0, 0 )
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnClose", 14, 14, 436, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnClose", 19, 20, 440, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmManage.png", 19, 20, 7, 429, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
 -- Title Bar (Guild Name)
-labTitleBar = UI_CreateCompent( frmManage, LABELEX_TYPE, "labTitleBar", 95, 13, 6, 4 )
+labTitleBar = UI_CreateCompent( frmManage, LABELEX_TYPE, "labTitleBar", 95, 13, 190, 4 )
 UI_SetCaption( labTitleBar, "Guild Interface" )
-UI_SetTextColor( labTitleBar, COLOR_BLACK )
-UI_SetLabelExFont( labTitleBar, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitleBar, COLOR_WHITE )
+UI_SetLabelExFont( labTitleBar, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建公会成员
-lstNum = UI_CreateListView( frmManage, "lstNum", 322, 254, 123, 10, 6, 2 )
+-- Guild member list
+lstNum = UI_CreateListView( frmManage, "lstNum", 322, 254, 136, 10, 6, 2 )
 UI_ListViewSetTitle( lstNum, 0, 103, "", 0, 0, 0, 0 )
 UI_ListViewSetTitle( lstNum, 1, 81, "", 0, 0, 0, 0 )
 UI_ListViewSetTitle( lstNum, 2, 30, "", 0, 0, 0, 0 )
@@ -35,75 +34,75 @@ UI_ListViewSetTitle( lstNum, 6, 30, "", 0, 0, 0, 0 )
 UI_SetListRowHeight( lstNum, 18 )
 
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( lstNum )
-UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_SetSize( scrollid, 11, 3 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---创建申请成员列表
-lstAsk = UI_CreateListView( frmManage, "lstAsk", 322, 254, 123, 10, 3, 2 )
+-- Guild member apply
+lstAsk = UI_CreateListView( frmManage, "lstAsk", 322, 254, 136, 10, 3, 2 )
 UI_ListViewSetTitle( lstAsk, 0, 103, "", 0, 0, 0, 0 )
 UI_ListViewSetTitle( lstAsk, 1, 81, "", 0, 0, 0, 0 )
 UI_ListViewSetTitle( lstAsk, 2, 30, "", 0, 0, 0, 0 )
 UI_SetListRowHeight( lstAsk, 18 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( lstAsk )
-UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_SetSize( scrollid, 11, 2 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---创建页面
+--′′?¨ò3??
 pgePublic = UI_CreateCompent( frmManage, PAGE_TYPE, "pgePublic", 185, 275, 11, 79 )
 UI_SetPageButton( pgePublic, PAGE_BUTTON_CUSTOM, 48, 16 )
 
--- Guild Members
+-- Guild Members Tab --
 skillid = UI_CreatePageItem( pgePublic )
 ttlNum = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlNum, "texture/ui/corsairs/SysBotton4.png", PAGE_ITEM_TITLE_NORMAL, 49, 31, 152, 120 )
-UI_LoadImage( ttlNum, "texture/ui/corsairs/SysBotton4.png", PAGE_ITEM_TITLE_ACTIVE, 49, 31, 103, 120 )
-UI_SetPos( ttlNum, 133, -48 )
-UI_SetSize( ttlNum, 49, 30 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/frmManage.png", PAGE_ITEM_TITLE_NORMAL, 57, 20, 110, 420 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/frmManage.png", PAGE_ITEM_TITLE_ACTIVE, 57, 20, 110, 396 )
+UI_SetPos( ttlNum, 136, -45 )
+UI_SetSize( ttlNum, 57, 20 )
 UI_AddCompent( skillid, lstNum )
 
-chkSortName = UI_CreateCompent(frmManage, CHECK_TYPE, "chkSortName", 10, 10, 148, -5)
+chkSortName = UI_CreateCompent(frmManage, CHECK_TYPE, "chkSortName", 10, 10, 155, -5)
 UI_LoadImage(chkSortName, "texture/ui/corsairs/sort-arrows.tga", UNCHECKED, 15, 15, 0, 0)
 UI_LoadImage(chkSortName, "texture/ui/corsairs/sort-arrows.tga", CHECKED, 15, 15, 0, 15)
 
-chkSortClass = UI_CreateCompent(frmManage, CHECK_TYPE, "chkSortClass", 10, 10, 237, -5)
+chkSortClass = UI_CreateCompent(frmManage, CHECK_TYPE, "chkSortClass", 10, 10, 245, -5)
 UI_LoadImage(chkSortClass, "texture/ui/corsairs/sort-arrows.tga", UNCHECKED, 15, 15, 0, 0)
 UI_LoadImage(chkSortClass, "texture/ui/corsairs/sort-arrows.tga", CHECKED, 15, 15, 0, 15)
 
-chkSortLevel = UI_CreateCompent(frmManage, CHECK_TYPE, "chkSortLevel", 10, 10, 295, -5)
+chkSortLevel = UI_CreateCompent(frmManage, CHECK_TYPE, "chkSortLevel", 10, 10, 305, -5)
 UI_LoadImage(chkSortLevel, "texture/ui/corsairs/sort-arrows.tga", UNCHECKED, 15, 15, 0, 15)
 UI_LoadImage(chkSortLevel, "texture/ui/corsairs/sort-arrows.tga", CHECKED, 15, 15, 0, 0)
 
@@ -115,10 +114,10 @@ UI_AddCompent( skillid, chkSortLevel )
 -- Apply Tab
 skillid = UI_CreatePageItem( pgePublic )
 ttlLive = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlAsk, "texture/ui/botton2.tga", PAGE_ITEM_TITLE_NORMAL, 49, 35, 156, 0 )
-UI_LoadImage( ttlLive, "texture/ui/botton2.tga", PAGE_ITEM_TITLE_ACTIVE, 49, 35, 105, 0 )
-UI_SetPos( ttlLive, 349, -47 )
-UI_SetSize( ttlLive, 49, 35 )
+UI_LoadImage( ttlLive, "texture/ui/NUI/frmManage.png", PAGE_ITEM_TITLE_NORMAL, 57, 20, 173, 473 )
+UI_LoadImage( ttlLive, "texture/ui/NUI/frmManage.png", PAGE_ITEM_TITLE_ACTIVE, 57, 20, 173, 449 )
+UI_SetPos( ttlLive, 370, -45 )
+UI_SetSize( ttlLive, 57, 20 )
 
 --[[ 
 -- (Comment out, don't need this grid)
@@ -143,46 +142,43 @@ UI_AddCompent( skillid, id4 )
 
 UI_AddCompent( skillid, lstAsk )
 
--- Guild Bank
+-- Guild Bank tab --
 skillid = UI_CreatePageItem( pgePublic )
 ttlNum = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )   --159 - 219
-UI_LoadImage( ttlNum, "texture/ui/corsairs/SysBotton4.png", PAGE_ITEM_TITLE_NORMAL, 49, 31, 152+56, 219 )
-UI_LoadImage( ttlNum, "texture/ui/corsairs/SysBotton4.png", PAGE_ITEM_TITLE_ACTIVE, 49, 31, 159, 219 )
-UI_SetPos( ttlNum, 187, -48 )
-UI_SetSize( ttlNum, 49, 30 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/frmManage.png", PAGE_ITEM_TITLE_NORMAL, 57, 20, 171, 420 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/frmManage.png", PAGE_ITEM_TITLE_ACTIVE, 57, 20, 171, 396 )
+UI_SetPos( ttlNum, 195, -45 )
+UI_SetSize( ttlNum, 57, 20 )
 
-guildBank = UI_CreateCompent( frmManage, GOODS_GRID_TYPE, "guildBank", 291, 265, 130, -11 ) 
-
-id1 = UI_CreateCompent( frmManage, IMAGE_TYPE, "id1", 291, 265, 127, -15 )
-UI_LoadImage( id1, "texture/ui/Corsairs/guildbank.png", NORMAL, 291, 265, 0, 0 )
+-- Main image
+guildBank = UI_CreateCompent( frmManage, GOODS_GRID_TYPE, "guildBank", 291, 265, 138, -14 ) 
+id1 = UI_CreateCompent( frmManage, IMAGE_TYPE, "id1", 291, 265, 135, -18 )
+UI_LoadImage( id1, "texture/new/guildbank.png", NORMAL, 291, 265, 0, 0 )
 UI_AddCompent( skillid, id1 )
 
+-- Guild Bank grid
 UI_SetGridSpace( guildBank, 4, 4)
 UI_SetGridContent( guildBank, 4, 8 )
 UI_SetGridUnitSize( guildBank, 32, 32 )
 --UI_SetMargin( guildBank, 21, 4, 0, 0 )
 
 -- Guild Deposit
-btngoldput = UI_CreateCompent( frmManage, BUTTON_TYPE, "btngoldput", 41, 19, 367, 206 )
-UI_LoadButtonImage( btngoldput, "texture/ui/corsairs/SysBotton4.png", 41, 19, 0, 276, TRUE )
+btngoldput = UI_CreateCompent( frmManage, BUTTON_TYPE, "btngoldput", 52, 17, 367, 206 )
+UI_LoadButtonImage( btngoldput, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 131, TRUE )
 
 -- Guild Withdraw
-btngoldtake = UI_CreateCompent( frmManage, BUTTON_TYPE, "btngoldtake", 41, 19, 367, 226 )
-UI_LoadButtonImage( btngoldtake, "texture/ui/corsairs/SysBotton4.png", 41, 19, 0, 295, TRUE )
+btngoldtake = UI_CreateCompent( frmManage, BUTTON_TYPE, "btngoldtake", 52, 17, 367, 226 )
+UI_LoadButtonImage( btngoldtake, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 151, TRUE )
 
 -- Guild Money Box
-imgGuildMoney = UI_CreateCompent( frmManage, IMAGE_TYPE, "imgGuildMoney", 193, 18, 161, 217 )
-UI_LoadImage( imgGuildMoney, "texture/ui/ShipBuild4.tga", NORMAL, 193, 18, 4, 202 )
+imgGuildMoney = UI_CreateCompent( frmManage, IMAGE_TYPE, "imgGuildMoney", 191, 22, 161, 217 )
+UI_LoadImage( imgGuildMoney, "texture/ui/NUI/guildbuttons.png", NORMAL, 191, 22, 5, 172 )
 
 -- Guild Money Label
-labGuildMoney = UI_CreateCompent( frmManage, LABELEX_TYPE, "labGuildMoney", 95, 13, 180, 221 )
+labGuildMoney = UI_CreateCompent( frmManage, LABELEX_TYPE, "labGuildMoney", 95, 13, 180, 220 )
 UI_SetCaption( labGuildMoney, "0" )
-UI_SetTextColor( labGuildMoney, COLOR_BLACK )
-UI_SetLabelExFont( labGuildMoney, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
--- Guild Money Box
-imgMoneyLogo = UI_CreateCompent( frmManage, IMAGE_TYPE, "imgMoneyLogo", 20, 28, 136, 211 )
-UI_LoadImage( imgMoneyLogo, "texture/ui/PublicC.tga", NORMAL, 20, 28, 228, 110 )
+UI_SetTextColor( labGuildMoney, COLOR_WHITE )
+UI_SetLabelExFont( labGuildMoney, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 UI_AddCompent( skillid, btngoldtake )
 UI_AddCompent( skillid, btngoldput )
@@ -191,21 +187,20 @@ UI_AddCompent( skillid, labGuildMoney )
 UI_AddCompent( skillid, imgMoneyLogo )
 UI_AddCompent( skillid, guildBank )
 
-bankLocked = UI_CreateCompent( frmManage, IMAGE_TYPE, "bankLocked", 291, 265, 127, -15 )
-UI_LoadImage( bankLocked, "texture/ui/Corsairs/guildbankLocked.png", NORMAL, 291, 265, 0, 0 )
+bankLocked = UI_CreateCompent( frmManage, IMAGE_TYPE, "bankLocked", 291, 265, 135, -18 )
+UI_LoadImage( bankLocked, "texture/new/guildbankLocked.png", NORMAL, 291, 265, 0, 0 )
 UI_AddCompent( skillid, bankLocked )
 
--- Guild Stats form
-
+-- Guild Stats tab --
 skillid = UI_CreatePageItem( pgePublic )
 ttlNum = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )   --159 - 219
-UI_LoadImage( ttlNum, "texture/ui/corsairs/SysBotton4.png", PAGE_ITEM_TITLE_NORMAL, 49, 31, 152+56, 219+104 )
-UI_LoadImage( ttlNum, "texture/ui/corsairs/SysBotton4.png", PAGE_ITEM_TITLE_ACTIVE, 49, 31, 159, 219+104 )
-UI_SetPos( ttlNum, 187+60, -48 )
-UI_SetSize( ttlNum, 49, 30 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/frmManage.png", PAGE_ITEM_TITLE_NORMAL, 57, 20, 233, 420 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/frmManage.png", PAGE_ITEM_TITLE_ACTIVE, 57, 20, 233, 396 )
+UI_SetPos( ttlNum, 187+65, -45 )
+UI_SetSize( ttlNum, 57, 20 )
 
-id1 = UI_CreateCompent( frmManage, IMAGE_TYPE, "id1", 291, 265, 127, -15 )
-UI_LoadImage( id1, "texture/ui/Corsairs/guildattr.png", NORMAL, 291, 265, 0, 0 )
+id1 = UI_CreateCompent( frmManage, IMAGE_TYPE, "id1", 291, 265, 132, -18 )
+UI_LoadImage( id1, "texture/new/guildattr.png", NORMAL, 291, 265, 0, 0 )
 UI_AddCompent( skillid, id1 )
 
 function addStat(skillid,attr,x,y,index)
@@ -234,7 +229,7 @@ function addStat(skillid,attr,x,y,index)
 	--UI_SetHint(statVal,string.format("+%d %s per level",interval,attrname))
 	
 	local statBtn = UI_CreateCompent( frmManage, BUTTON_TYPE, formname.."Btn", 10,11,x+220,y )
-	UI_LoadButtonImage( statBtn, "texture/ui/PublicC.tga", 10, 11, 195, 238, TRUE )
+	UI_LoadButtonImage( statBtn, "texture/ui/NUI/guildbuttons.png", 10, 11, 6, 202, TRUE )
 	--UI_SetHint( statBtn,string.format("+%d %s per level",interval,attrname) )
 	
 	local statMax = UI_CreateCompent( frmManage, LABELEX_TYPE, "Max"..index, 95,13,x+220,y )
@@ -264,7 +259,7 @@ local attr = {
 }
 
 for i,v in ipairs(attr) do
-	addStat(skillid,v,150, 22*(i-1) +12,i)
+	addStat(skillid,v,150, 22*(i-1) +8,i)
 end
 
 --guildExpBar = UI_CreateCompent( frmManage, PROGRESS_TYPE, "guildExpBar", 111, 8, 150, 230 )
@@ -275,15 +270,14 @@ end
 
 --Guild Quests UI.
 skillid = UI_CreatePageItem( pgePublic )
-ttlNum = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )   --159 - 219
-UI_LoadImage( ttlNum, "texture/ui/corsairs/SysBotton4.png", PAGE_ITEM_TITLE_ACTIVE, 49, 31, 62,323 )
+ttlNum = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )   
+UI_LoadImage( ttlNum, "texture/ui/NUI/frmManage.png", PAGE_ITEM_TITLE_NORMAL, 57, 20, 110,473 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/frmManage.png", PAGE_ITEM_TITLE_ACTIVE, 57, 20, 110, 449 )
+UI_SetPos( ttlNum, 187+125, -45 )
+UI_SetSize( ttlNum, 57, 20 )
 
-
-UI_SetPos( ttlNum, 187+110, -48 )
-UI_SetSize( ttlNum, 49, 30 )
-
-id1 = UI_CreateCompent( frmManage, IMAGE_TYPE, "id1", 291, 265, 127, -15 )
-UI_LoadImage( id1, "texture/ui/Corsairs/guildQuest.png", NORMAL, 291, 265, 0, 0 )
+id1 = UI_CreateCompent( frmManage, IMAGE_TYPE, "id1", 291, 265, 134, -18 )
+UI_LoadImage( id1, "texture/ui/NUI/guildQuest.png", NORMAL, 291, 265, 0, 0 )
 UI_AddCompent( skillid, id1 )
 
 function makeLabel(name,default,x,y)
@@ -295,11 +289,11 @@ function makeLabel(name,default,x,y)
 end
 
 function makeQuest(index)
-	local y = (index-1)*87
-	local x = 207
+	local y = (index-1)*85
+	local x = 215
 	makeLabel("labQuest"..index.."Title","Quest Name",x,2+y)
-	makeLabel("labQuest"..index.."Desc","Quest Description",x,24+y)
-	makeLabel("labQuest"..index.."Reward","Quest Reward",x,46+y)
+	makeLabel("labQuest"..index.."Desc","Quest Description",x,22+y)
+	makeLabel("labQuest"..index.."Reward","Quest Reward",x,44+y)
 
 	d3dQuest = UI_CreateCompent( frmManage, UI3D_COMPENT_TYPE, "d3dQuest"..index, 60, 60, 141, y-2 )
 	UI_AddCompent( skillid, d3dQuest )
@@ -316,14 +310,13 @@ makeQuest(3)
 --UI_SetLabelExFont( labLevel, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 -- Guild Name
-labName = UI_CreateCompent( frmManage, LABELEX_TYPE, "labName", 95, 13, 20, 85 )
+labName = UI_CreateCompent( frmManage, LABELEX_TYPE, "labName", 95, 13, 25, 80 )
 UI_SetCaption( labName, "Forbidden words" )
 UI_SetTextColor( labName, COLOR_BLACK )
 UI_SetLabelExFont( labName, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-
 -- Founder
-labPeople = UI_CreateCompent( frmManage, LABELEX_TYPE, "labPeople", 95, 13, 20, 85 + 35 )
+labPeople = UI_CreateCompent( frmManage, LABELEX_TYPE, "labPeople", 95, 13, 25, 90 + 35 )
 UI_SetCaption( labPeople, "Forbidden words" )
 UI_SetTextColor( labPeople, COLOR_BLACK )
 UI_SetLabelExFont( labPeople, DEFAULT_FONT, TRUE, COLOR_WHITE )
@@ -347,51 +340,50 @@ UI_SetTextColor( labMen, COLOR_BLACK )
 UI_SetLabelExFont( labMen, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 -- Guild Level
-labLevel = UI_CreateCompent( frmManage, LABELEX_TYPE, "labLevel", 50, 13, 52, 85 + (35 * 5) )
+labLevel = UI_CreateCompent( frmManage, LABELEX_TYPE, "labLevel", 50, 13, 57, 80 + (35 * 5) )
 UI_SetCaption( labLevel, "Lv.????" )
 UI_SetTextColor( labLevel, COLOR_BLACK )
 UI_SetLabelExFont( labLevel, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 -- Recruit Button
-btnYes = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnYes", 41, 19, 21, 289 )
-UI_LoadButtonImage( btnYes, "texture/ui/corsairs/SysBotton4.png", 41, 19, 0, 19, TRUE )
+btnYes = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnYes", 52, 17, 13, 289 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 5, TRUE )
 
 -- Reject Button
-btnNo = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnNo", 41, 19, 21, 316 )
-UI_LoadButtonImage( btnNo, "texture/ui/corsairs/SysBotton4.png", 41, 19, 0, 57, TRUE )
+btnNo = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnNo", 52, 17, 13, 316 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 41, TRUE )
 
 -- Remove / Kick Button
-btnkick = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnkick", 41, 19, 71, 289 )
-UI_LoadButtonImage( btnkick, "texture/ui/corsairs/SysBotton4.png", 41, 19, 0, 38, TRUE )
+btnkick = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnkick", 52, 17, 71, 289 )
+UI_LoadButtonImage( btnkick, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 23, TRUE )
 
 -- Disband Button
-btnSan = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnSan", 41, 19, 71, 316 )
-UI_LoadButtonImage( btnSan, "texture/ui/corsairs/SysBotton4.png", 41, 19, 0, 76, TRUE )
+btnSan = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnSan", 52, 17, 71, 316 )
+UI_LoadButtonImage( btnSan, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 59, TRUE )
 
 -- Permissions Button
-btnperm = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnperm", 56, 19, 362, 343 )
-UI_LoadButtonImage( btnperm, "texture/ui/corsairs/SysBotton4.png", 56, 19, 0, 256, TRUE )
+btnperm = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnperm", 52, 17, 383, 343 )
+UI_LoadButtonImage( btnperm, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 113, TRUE )
 
 -- Motto Button
-btnMaxim = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnMaxim", 41, 19, 270, 343 )
--- UI_LoadButtonImage( btnMaxim, "texture/ui/ShipBuildD.tga", 53, 19, 0, 159, TRUE )
-UI_LoadButtonImage( btnMaxim, "texture/ui/corsairs/coButtons.png", 41, 19, 0, 95, TRUE )
+btnMaxim = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnMaxim", 52, 17, 270, 343 )
+UI_LoadButtonImage( btnMaxim, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 77, TRUE )
 
 -- Colour Button
-btnColour = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnColour", 41, 19, 316, 343 )
-UI_LoadButtonImage( btnColour, "texture/ui/corsairs/coButtons.png", 41, 19, 0, 19, TRUE )
+btnColour = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnColour", 52, 17, 326, 343 )
+UI_LoadButtonImage( btnColour, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 95, TRUE )
 
 -- Motto
-labMaxim = UI_CreateCompent( frmManage, LABELEX_TYPE, "labMaxim", 244, 19, 15, 347 )
+labMaxim = UI_CreateCompent( frmManage, LABELEX_TYPE, "labMaxim", 244, 19, 15, 343 )
 UI_SetCaption( labMaxim, "Forbidden words" )
-UI_SetTextColor( labMaxim, COLOR_BLACK )
-UI_SetLabelExFont( labMaxim, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labMaxim, COLOR_WHITE )
+UI_SetLabelExFont( labMaxim, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 -- Guild House Button
-btnHouse = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnHouse", 21, 21, 10, 260 )
-UI_LoadImage( btnHouse, "texture/ui/corsairs/coButtons.png", 0, 21, 21, 169, 119 )
-UI_LoadImage( btnHouse, "texture/ui/corsairs/coButtons.png", 1, 21, 21, 190, 119 )
-UI_LoadImage( btnHouse, "texture/ui/corsairs/coButtons.png", 2, 21, 21, 190, 119 )
+btnHouse = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnHouse", 24, 19, 20, 260 )
+UI_LoadImage( btnHouse, "texture/ui/NUI/frmManage.png", 0, 24, 19, 266, 463 )
+UI_LoadImage( btnHouse, "texture/ui/NUI/frmManage.png", 1, 24, 19, 292, 463 )
+UI_LoadImage( btnHouse, "texture/ui/NUI/frmManage.png", 2, 24, 19, 292, 463 )
 UI_SetHint( btnHouse, "Go to Guild House" )
 
 -----------------------------------------------------------------------
