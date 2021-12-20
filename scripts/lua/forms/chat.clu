@@ -600,7 +600,7 @@ UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 -- Close button
 btnClose = UI_CreateCompent( frmEdit, BUTTON_TYPE, "btnClose", 19, 20, 240, -2 )
-UI_LoadButtonImage( btnClose, "texture/new/frmFriendList.png", 19, 20, 1, 462, TRUE )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmFriendList.png", 19, 20, 1, 462, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
 -- Text
@@ -635,11 +635,11 @@ UI_SetLabelExFont( labName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 imgMhead = UI_CreateCompent( frmEdit, IMAGE_TYPE, "imgMhead", 32, 32, 20, 35 )
 UI_LoadImage( imgMhead, "texture/ui/main800.tga", NORMAL, 32, 32, 37, 201 )
 
------------------------------------------------------------------------
--- 定义详细资料
------------------------------------------------------------------------
+--------------------
+-- Friend Details --
+--------------------
 frmdetails = UI_CreateForm( "frmdetails",  FALSE, 212, 229, 397, 500, TRUE, FALSE )
-UI_LoadFormImage( frmdetails, "texture/ui/Friend.dds", 212, 229, 0, 0, "", 0, 0 )
+UI_LoadFormImage( frmdetails, "texture/ui/NUI/frmFriendList.png", 212, 229, 256, 0, "", 0, 0 )
 UI_ShowForm( frmdetails, FALSE )
 UI_AddFormToTemplete( frmdetails, FORM_MAIN )
 UI_SetFormStyle( frmdetails, 0 )
@@ -649,42 +649,43 @@ UI_SetIsDrag( frmdetails, TRUE )
 
 --加载刷新按钮
 btnRefurbish = UI_CreateCompent( frmdetails, BUTTON_TYPE, "btnRefurbish", 41, 19, 70, 200 )
-UI_LoadButtonImage( btnRefurbish, "texture/ui/SystemBotton3.tga", 41, 19, 215, 39, FALSE )
+--UI_LoadButtonImage( btnRefurbish, "texture/ui/SystemBotton3.tga", 41, 19, 215, 39, FALSE )
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmdetails, BUTTON_TYPE, "btnNo", 41, 19, 122, 200 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
-
+-- Close button
+btnNo = UI_CreateCompent( frmdetails, BUTTON_TYPE, "btnNo", 52, 17, 122, 200 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmFriendList.png", 52, 17, 240, 282, TRUE )
 UI_SetButtonModalResult( btnNo, BUTTON_CLOSE )
 
---创建Title
-imgDeTitle = UI_CreateCompent( frmdetails, IMAGE_TYPE, "imgDeTitle", 49, 13, 8, 3 )
-UI_LoadImage( imgDeTitle, "texture/ui/Word.dds", NORMAL, 49, 13, 120, 58 )
+--Title
+labDeTitle = UI_CreateCompent( frmdetails, LABELEX_TYPE, "labDeTitle", 96, 11, 65, 5 )
+UI_SetCaption( labDeTitle, "Friend Details" )
+UI_SetTextColor( labDeTitle, COLOR_WHITE)
+UI_SetLabelExFont( labDeTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建角色名称
+-- Name
 labDeName = UI_CreateCompent( frmdetails, LABELEX_TYPE, "labDeName", 96, 11, 40, 40 )
 --UI_SetCaption( labDeName, "Child of Demon what is that" )
-UI_SetTextColor( labDeName, COLOR_BLACK )
-UI_SetLabelExFont( labDeName, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labDeName, COLOR_WHITE )
+UI_SetLabelExFont( labDeName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
--- 加载角色头像
-imgDeHead = UI_CreateCompent( frmdetails, IMAGE_TYPE, "imgDeHead", 32, 32, 4, 24 )
-UI_LoadImage( imgDeHead, "texture/ui/main800.tga", NORMAL, 32, 32, 37, 201 )
+-- Head
+imgDeHead = UI_CreateCompent( frmdetails, IMAGE_TYPE, "imgDeHead", 28, 28, 8, 30 )
+UI_LoadImage( imgDeHead, "texture/ui/main800.tga", NORMAL, 28, 28, 37, 201 )
 
---创建职业
-labJob = UI_CreateCompent( frmdetails, LABELEX_TYPE, "labJob", 96, 11, 82, 68 )
+-- Class
+labJob = UI_CreateCompent( frmdetails, LABELEX_TYPE, "labJob", 96, 11, 82, 67 )
 --UI_SetCaption( labJob, "Swordsman" )
 UI_SetTextColor( labJob, COLOR_BLACK )
 UI_SetLabelExFont( labJob, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---创建等级
-labLv = UI_CreateCompent( frmdetails, LABELEX_TYPE, "labLv", 96, 11, 82, 86 )
+-- Level
+labLv = UI_CreateCompent( frmdetails, LABELEX_TYPE, "labLv", 96, 11, 82, 85 )
 --UI_SetCaption( labLv, "100" )
 UI_SetTextColor( labLv, COLOR_BLACK )
 UI_SetLabelExFont( labLv, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---创建公会
-labConsortia = UI_CreateCompent( frmdetails, LABELEX_TYPE, "labConsortia", 96, 11, 82, 104 )
+-- Guild
+labConsortia = UI_CreateCompent( frmdetails, LABELEX_TYPE, "labConsortia", 96, 11, 82, 103 )
 --UI_SetCaption( labConsortia, "AhAhAh" )
 UI_SetTextColor( labConsortia, COLOR_BLACK )
 UI_SetLabelExFont( labConsortia, DEFAULT_FONT, TRUE, COLOR_WHITE )
