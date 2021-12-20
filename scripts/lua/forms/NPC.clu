@@ -71,10 +71,9 @@ btnNo = UI_CreateCompent( frmNPCchat, BUTTON_TYPE, "btnNo",52, 17, 138, 258 + 25
 UI_LoadButtonImage( btnNo, "texture/ui/NUI/npc.png", 52, 17, 1, 366, TRUE )
 
 
------------------------------------------------------------------------
--- 定义NPC交易
------------------------------------------------------------------------	
--- 创建NPC交易表单
+---------------
+-- Trade NPC --
+---------------
 frmNPCtrade = UI_CreateForm( "frmNPCtrade", FALSE, 198, 394, 240, 168, TRUE, FALSE )
 --UI_FormSetHotKey( frmNPCtrade, ALT_KEY, HOTKEY_V )
 --UI_LoadFormImage( frmNPCtrade, "texture/ui/Npctrade.dds", 233, 357, 0, 0, "", 0, 0 )
@@ -83,111 +82,101 @@ UI_AddFormToTemplete( frmNPCtrade, FORM_MAIN )
 UI_SetIsDrag( frmNPCtrade, TRUE )
 --UI_SetFormStyle( frmNPCtrade, 2 )---左右居中
 
+-- Main image
+imgBakTop = UI_CreateCompent( frmNPCtrade, IMAGE_TYPE, "imgBakTop", 198, 394, 0, 0 )
+UI_LoadImage( imgBakTop, "texture/ui/NUI/frmNPCtrade.png", NORMAL, 198, 394, 0, 0 )
 
-
--- 加载背景图片
-imgBakTop = UI_CreateCompent( frmNPCtrade, IMAGE_TYPE, "imgBakTop", 198, 256, 0, 0 )
-UI_LoadImage( imgBakTop, "texture/ui/PublicD.bmp", NORMAL, 198, 256, 0, 0 )
-imgBakDown = UI_CreateCompent( frmNPCtrade, IMAGE_TYPE, "imgBakDown", 198, 138, 0, 256 )
-UI_LoadImage( imgBakDown, "texture/ui/PublicD2.bmp", NORMAL, 198, 138, 0, 0 )
-
---创建关闭按钮
-btnClose = UI_CreateCompent( frmNPCtrade, BUTTON_TYPE, "btnClose", 14, 14, 177, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
-
+-- Button close
+btnClose = UI_CreateCompent( frmNPCtrade, BUTTON_TYPE, "btnClose", 19, 20, 185, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmNPCtrade.png", 19, 20, 1, 429, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
--- 加载界面title
-labTitle = UI_CreateCompent( frmNPCtrade, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
+-- Title
+labTitle = UI_CreateCompent( frmNPCtrade, LABELEX_TYPE, "labTitle", 400, 150, 80, 3 )
 UI_SetCaption( labTitle, "Item Trade")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK)
 
--- 加载表格图片
-imgBakTop1 = UI_CreateCompent( frmNPCtrade, IMAGE_TYPE, "imgBakTop1", 177, 256, 7, 55 )
-UI_LoadImage( imgBakTop1, "texture/ui/PublicD3.dds", NORMAL, 177, 256, 0, 0 )
-imgBakDown1 = UI_CreateCompent( frmNPCtrade, IMAGE_TYPE, "imgBakDown1", 177, 57, 7, 311 )
-UI_LoadImage( imgBakDown1, "texture/ui/PublicD2.bmp", NORMAL, 177, 57, 0, 138 )
 
---创建武器物品表格
+-- Weapon Grid
 grdNPCtradeWeapon = UI_CreateCompent( frmNPCtrade, GOODS_GRID_TYPE, "grdNPCtradeWeapon", 189, 313, 0, 0 ) 
 UI_SetGridSpace( grdNPCtradeWeapon, 4, 4 )
 UI_SetGridContent( grdNPCtradeWeapon, 30, 4 )
 UI_SetGridUnitSize( grdNPCtradeWeapon, 32, 32 )
 UI_SetMargin( grdNPCtradeWeapon, 17, 6, 0, 4 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( grdNPCtradeWeapon )
-UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_SetSize( scrollid, 11, 2 )
+UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---创建放具物品表格
+-- Defends grid
 grdNPCtradeEquip = UI_CreateCompent( frmNPCtrade, GOODS_GRID_TYPE, "grdNPCtradeEquip", 189, 313, 0, 0 ) 
 UI_SetGridSpace( grdNPCtradeEquip, 4, 4 )
 UI_SetGridContent( grdNPCtradeEquip, 30, 4 )
 UI_SetGridUnitSize( grdNPCtradeEquip, 32, 32 )
-UI_SetMargin( grdNPCtradeEquip, 17, 6, 0, 4 )
+UI_SetMargin( grdNPCtradeEquip, 21, 8, 0, 4 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( grdNPCtradeEquip )
-UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_SetSize( scrollid, 11, 2 )
+UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---创建杂项物品表格
+-- Mics grid
 grdNPCtradeOther = UI_CreateCompent( frmNPCtrade, GOODS_GRID_TYPE, "grdNPCtradeOther", 189, 313, 0, 0) 
 UI_SetGridSpace( grdNPCtradeOther, 4, 4 )
 UI_SetGridContent( grdNPCtradeOther, 30, 4 )
 UI_SetGridUnitSize( grdNPCtradeOther, 32, 32 )
-UI_SetMargin( grdNPCtradeOther, 17, 6, 0, 4 )
+UI_SetMargin( grdNPCtradeOther, 21, 8, 0, 4 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( grdNPCtradeOther )
-UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_SetSize( scrollid, 11, 2 )
+UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 
@@ -195,33 +184,33 @@ UI_SetSize( id, 11, 9 )
 pgeNPCtrade = UI_CreateCompent( frmNPCtrade, PAGE_TYPE, "pgeNPCtrade", 187, 313, 7, 56 )
 UI_SetPageButton( pgeNPCtrade, PAGE_BUTTON_CUSTOM, 39, 19 )
 
---武器
+-- Weapon tab
 itemid = UI_CreatePageItem( pgeNPCtrade )
 ttlWeapon = UI_GetPageItemObj( itemid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlWeapon, "texture/ui/PublicC.tga", PAGE_ITEM_TITLE_NORMAL, 55, 35, 58, 105 )
-UI_LoadImage( ttlWeapon, "texture/ui/PublicC.tga", PAGE_ITEM_TITLE_ACTIVE, 55, 35, 0, 105 )
-UI_SetPos( ttlWeapon, 13, -30 )
-UI_SetSize( ttlWeapon, 55, 35 )
+UI_LoadImage( ttlWeapon, "texture/ui/NUI/frmNPCtrade.png", PAGE_ITEM_TITLE_NORMAL, 45, 16, 115, 434 )
+UI_LoadImage( ttlWeapon, "texture/ui/NUI/frmNPCtrade.png", PAGE_ITEM_TITLE_ACTIVE, 45, 16, 115, 414 )
+UI_SetPos( ttlWeapon, 17, -17 )
+UI_SetSize( ttlWeapon, 45, 16 )
 UI_AddCompent( itemid, grdNPCtradeWeapon )
 
 
---防具
+-- Armor grid
 itemid = UI_CreatePageItem( pgeNPCtrade )
 ttlEquip = UI_GetPageItemObj( itemid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlEquip, "texture/ui/PublicC.tga", PAGE_ITEM_TITLE_NORMAL, 55, 35, 57, 140 )
-UI_LoadImage( ttlEquip, "texture/ui/PublicC.tga", PAGE_ITEM_TITLE_ACTIVE, 55, 35, 0, 140 )
-UI_SetPos( ttlEquip, 65, -30 )
-UI_SetSize( ttlEquip, 55, 35 )
+UI_LoadImage( ttlEquip, "texture/ui/NUI/frmNPCtrade.png", PAGE_ITEM_TITLE_NORMAL, 45, 16, 165, 434 )
+UI_LoadImage( ttlEquip, "texture/ui/NUI/frmNPCtrade.png", PAGE_ITEM_TITLE_ACTIVE, 45, 16, 165, 414 )
+UI_SetPos( ttlEquip, 68, -17 )
+UI_SetSize( ttlEquip, 45, 16 )
 UI_AddCompent( itemid, grdNPCtradeEquip )
 
 
---杂项
+-- Misc tab
 itemid = UI_CreatePageItem( pgeNPCtrade )
 ttlOther = UI_GetPageItemObj( itemid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlOther, "texture/ui/PublicC.tga", PAGE_ITEM_TITLE_NORMAL, 55, 35, 57, 175 )
-UI_LoadImage( ttlOther, "texture/ui/PublicC.tga", PAGE_ITEM_TITLE_ACTIVE, 55, 35, 0, 175)
-UI_SetPos( ttlOther, 111, -30 )
-UI_SetSize( ttlOther, 55, 35 )
+UI_LoadImage( ttlOther, "texture/ui/NUI/frmNPCtrade.png", PAGE_ITEM_TITLE_NORMAL, 45, 16, 215, 434)
+UI_LoadImage( ttlOther, "texture/ui/NUI/frmNPCtrade.png", PAGE_ITEM_TITLE_ACTIVE, 45, 16, 215, 414)
+UI_SetPos( ttlOther, 116, -17 )
+UI_SetSize( ttlOther, 45, 16 )
 UI_AddCompent( itemid, grdNPCtradeOther )
 
 -----------------------------------------------------------------------
@@ -392,21 +381,21 @@ UI_SetMemoRowHeight( memMission, 16 )
 -- Scroll background
 scrollid = UI_GetScroll( memMission )
 UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/new/guildPerms.png", COMPENT_BACK, 11, 1, 232, 428 )
+UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 1, 232, 428 )
 
 -- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/new/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 --Scroll bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/new/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
+UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
 -- Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/new/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Accept button
