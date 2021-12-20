@@ -647,92 +647,83 @@ btnPullStakes = UI_CreateCompent( frmBooth, BUTTON_TYPE, "btnPullStakes", 52, 17
 UI_LoadButtonImage( btnPullStakes, "texture/ui/NUI/frmBooth.png", 52, 17, 6, 319, TRUE )
 
 
------------------------------------------------------------------------
--- 定义理发界面
------------------------------------------------------------------------	
--- 创建玩家理发表单
-frmHead = UI_CreateForm( "frmHead", FALSE, 454, 373, 100, 100, TRUE, FALSE )
+--------------
+-- Hair Npc --
+--------------
+frmHead = UI_CreateForm( "frmHead", FALSE, 447, 373, 100, 100, TRUE, FALSE )
 UI_ShowForm( frmHead, FALSE )
 UI_AddFormToTemplete( frmHead, FORM_MAIN )
 --UI_FormSetHotKey( frmHead, ALT_KEY, HOTKEY_T )
 UI_FormSetIsEscClose( frmHead, FALSE )
 
--- 加载图片
-imgFoundTop = UI_CreateCompent( frmHead, IMAGE_TYPE, "imgFoundTop", 256, 256, 0, 0 )
-UI_LoadImage( imgFoundTop, "texture/ui/head1.tga", NORMAL, 256, 256, 0, 0 )
+-- Main image
+imgFoundTop = UI_CreateCompent( frmHead, IMAGE_TYPE, "imgFoundTop", 447, 373, 0, 0 )
+UI_LoadImage( imgFoundTop, "texture/ui/NUI/frmHead.png", NORMAL, 447, 373, 0, 0 )
 
-imgFoundDown = UI_CreateCompent( frmHead, IMAGE_TYPE, "imgFoundDown", 256, 117, 0, 256 )
-UI_LoadImage( imgFoundDown, "texture/ui/head3.tga", NORMAL, 256, 117, 0, 0 )
-
-imgFoundTopR = UI_CreateCompent( frmHead, IMAGE_TYPE, "imgFoundTopR", 198, 256, 256, 0 )
-UI_LoadImage( imgFoundTopR, "texture/ui/head2.tga", NORMAL, 198, 256, 0, 0 )
-
-imgFoundDownR = UI_CreateCompent( frmHead, IMAGE_TYPE, "imgFoundDownR", 198, 117, 256, 256 )
-UI_LoadImage( imgFoundDownR, "texture/ui/head3.tga", NORMAL, 198, 117, 0, 117 )
-
---创建发型
-labHairColor = UI_CreateCompent( frmHead, LABELEX_TYPE, "labHairColor", 61, 12, 330, 200 )
+-- Hair color
+labHairColor = UI_CreateCompent( frmHead, LABELEX_TYPE, "labHairColor", 61, 12, 330, 197 )
 UI_SetCaption( labHairColor, "Long Hair" )
-UI_SetTextColor( labHairColor, COLOR_BLACK )
-UI_SetLabelExFont( labHairColor, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHairColor, COLOR_WHITE )
+UI_SetLabelExFont( labHairColor, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建发色
-labHair = UI_CreateCompent( frmHead, LABELEX_TYPE, "labHair", 61, 12, 330, 243 )
+-- Hair
+labHair = UI_CreateCompent( frmHead, LABELEX_TYPE, "labHair", 61, 12, 330, 240 )
 UI_SetCaption( labHair, "1 1 Golden" )
-UI_SetTextColor( labHair, COLOR_BLACK )
-UI_SetLabelExFont( labHair, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHair, COLOR_WHITE )
+UI_SetLabelExFont( labHair, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载向左按钮
-btnLeftColor = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnLeftColor", 40, 24, 283, 191 )
-UI_LoadButtonImage( btnLeftColor, "texture/ui/select4.tga", 40, 24, 110, 24, TRUE )
+-- Left button
+btnLeftColor = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnLeftColor", 15, 15, 299, 196 )
+UI_LoadButtonImage( btnLeftColor, "texture/ui/NUI/frmHead.png", 15, 15, 8, 499, TRUE )
 
-btnLeftHair = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnLeftHair", 40, 24, 283, 234 )
-UI_LoadButtonImage( btnLeftHair, "texture/ui/select4.tga", 40, 24, 110, 24, TRUE )
+btnLeftHair = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnLeftHair", 15, 15, 299, 239 )
+UI_LoadButtonImage( btnLeftHair, "texture/ui/NUI/frmHead.png", 15, 15, 8, 499, TRUE )
 
---加载向右按钮
-btnRightColor = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnRightColor", 40, 24, 392, 191 )
-UI_LoadButtonImage( btnRightColor, "texture/ui/select4.tga", 40, 24, 110, 0, TRUE )
+-- Right button
+btnRightColor = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnRightColor", 15, 15, 401, 196 )
+UI_LoadButtonImage( btnRightColor, "texture/ui/NUI/frmHead.png", 15, 15, 8, 477, TRUE )
 
-btnRightHair = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnRightHair", 40, 24, 392, 234 )
-UI_LoadButtonImage( btnRightHair, "texture/ui/select4.tga", 40, 24, 110, 0, TRUE )
+btnRightHair = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnRightHair", 15, 15, 401, 239 )
+UI_LoadButtonImage( btnRightHair, "texture/ui/NUI/frmHead.png", 15, 15, 8, 477, TRUE )
 
---创建3D角色
-ui3dCreateCha = UI_CreateCompent( frmHead, UI3D_COMPENT, "ui3dCreateCha", 160, 300, 52, 35 )
+-- 3D character
+ui3dCreateCha = UI_CreateCompent( frmHead, UI3D_COMPENT, "ui3dCreateCha", 160, 300, 60, 35 )
 
 btnLeft3d = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnLeft3d", 32, 38, 28, 291 )
 UI_LoadButtonImage( btnLeft3d, "texture/ui/select4.tga", 32, 38, 0, 38, TRUE )
 
-btnRight3d = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnRight3d", 32, 38, 204, 291 )
+btnRight3d = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnRight3d", 32, 38, 225, 291 )
 UI_LoadButtonImage( btnRight3d, "texture/ui/select4.tga",  32, 38, 0, 0, TRUE )
 
---创建金钱
-labHairMoney = UI_CreateCompent( frmHead, LABELEX_TYPE, "labHairMoney", 65, 12, 335, 287 )
+-- Cost
+labHairMoney = UI_CreateCompent( frmHead, LABELEX_TYPE, "labHairMoney", 65, 12, 335, 283 )
 UI_SetCaption( labHairMoney, "99999999" )
-UI_SetTextColor( labHairMoney, COLOR_BLACK )
-UI_SetLabelExFont( labHairMoney, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labHairMoney, COLOR_WHITE)
+UI_SetLabelExFont( labHairMoney, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载接受按钮
-btnYes = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnYes", 41, 19, 293, 321 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+-- Confirm button
+btnYes = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnYes", 52, 17, 293, 321 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/frmHead.png", 52, 17, 9, 434, TRUE )
 UI_SetButtonModalResult( btnYes, BUTTON_YES )
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnNo", 41, 19, 379, 321 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+-- Cancel button
+btnNo = UI_CreateCompent( frmHead, BUTTON_TYPE, "btnNo", 52, 17, 379, 321 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmHead.png", 52, 17, 9, 453, TRUE )
 UI_SetButtonModalResult( btnNo, BUTTON_NO )
 
 -- 理发道具(程序显示)
 cmdHead1 = UI_CreateCompent( frmHead, COMMAND_ONE_TYPE, "cmdHead1", 32, 32, 0, 0 )
 UI_SetIsShow( cmdHead1, FALSE )
 
+-- Item slot
 UI_CreateCompent( frmHead, COMMAND_ONE_TYPE, "cmdHead2", 32, 32, 298, 78 )
 UI_CreateCompent( frmHead, COMMAND_ONE_TYPE, "cmdHead3", 32, 32, 344, 78 )
 UI_CreateCompent( frmHead, COMMAND_ONE_TYPE, "cmdHead4", 32, 32, 390, 78 )
 
 labTicket = UI_CreateCompent( frmHead, LABELEX_TYPE, "labTicket", 65, 12, 298, 138 )
 UI_SetCaption( labTicket, "Hairstyling Voucher required" )
-UI_SetTextColor( labTicket, COLOR_BLACK )
-UI_SetLabelExFont( labTicket, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTicket, COLOR_WHITE )
+UI_SetLabelExFont( labTicket, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 -----------------------------------------------------------------------
 -- 定义玩家间PK申请
