@@ -284,10 +284,9 @@ UI_SetSize( id, 11, 9 )
 
 
 
------------------------------------------------------------------------
--- 出海表单
------------------------------------------------------------------------	
---- 创建NPC对话表单
+--------------
+-- Ship npc --
+--------------
 frmNPCShip = UI_CreateForm( "frmNPCShip", FALSE, 320, 241, 240, 70, TRUE, FALSE )
 UI_ShowForm( frmNPCShip, TRUE )
 UI_AddFormToTemplete( frmNPCShip, FORM_MAIN )
@@ -295,26 +294,19 @@ UI_AddFormToTemplete( frmNPCShip, FORM_MAIN )
 UI_SetFormStyle( frmNPCShip, 2 )---左右居中
 UI_SetIsDrag( frmNPCShip, TRUE )
 
--- 加载背景图片
+-- Main image
 imgBakLeft = UI_CreateCompent( frmNPCShip, IMAGE_TYPE, "imgBakLeft", 320, 241, 0, 0 )
-UI_LoadImage( imgBakLeft, "texture/ui/corsairs/NPCchat.png", NORMAL, 320, 241, 0, 0 )
-
---imgBakRight = UI_CreateCompent( frmNPCShip, IMAGE_TYPE, "imgBakRight", 64, 241, 256, 0 )
---UI_LoadImage( imgBakRight, "texture/ui/shipbuild3.dds", NORMAL, 64, 241, 189, 0 )
-
--- 加载界面title
---imgchatTitle = UI_CreateCompent( frmNPCShip, IMAGE_TYPE, "imgchatTitle", 45, 15, 10, 4 )
---UI_LoadImage( imgchatTitle, "texture/ui/Word.dds", NORMAL, 45, 15, 0, 0 )
+UI_LoadImage( imgBakLeft, "texture/ui/NUI/frmNPCShip.png", NORMAL, 320, 241, 0, 0 )
 
 -- Dialog Label
-labTitle = UI_CreateCompent( frmNPCShip, LABELEX_TYPE, "labTitle", 400, 150, 10, 4 )
+labTitle = UI_CreateCompent( frmNPCShip, LABELEX_TYPE, "labTitle", 400, 150, 90, 4 )
 UI_SetCaption( labTitle, "Dialog")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
--- Exit Button
-btnClose = UI_CreateCompent( frmNPCShip, BUTTON_TYPE, "btnClose", 14, 14, 299, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmNPCShip, BUTTON_TYPE, "btnClose", 19, 20, 305, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmNPCShip.png", 19, 20, 5, 258, TRUE )
 
 --创建NPC所在城市
 labNPCCity = UI_CreateCompent( frmNPCShip, LABELEX_TYPE, "labNPCCity", 34, 11, 53, 29 )
@@ -328,7 +320,7 @@ UI_SetCaption( labNPCName, "" )
 UI_SetTextColor( labNPCName, COLOR_WHITE )
 UI_SetLabelExFont( labNPCName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载聊天对话
+-- NPC dialog
 memCtrl = UI_CreateCompent( frmNPCShip, MEMO_TYPE, "memCtrl", 280, 134, 33, 68 )
 UI_SetTextColor( memCtrl, COLOR_BLACK )
 UI_SetCaption( memCtrl, "" ) 
@@ -336,30 +328,30 @@ UI_SetMemoMaxNumPerRow(memCtrl, 42 )
 UI_SetMemoPageShowNum(memCtrl, 6 )
 UI_SetMemoRowHeight( memCtrl , 21 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( memCtrl )
 UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 1, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+--Scroll bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmNPCShip, BUTTON_TYPE, "btnNo", 41, 19, 257, 208 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 214, TRUE )
+-- Exit button
+btnNo = UI_CreateCompent( frmNPCShip, BUTTON_TYPE, "btnNo", 52, 17, 257, 208 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmNPCShip.png", 52, 17, 4, 284, TRUE )
 
 -----------------------------------------------------------------------
 -- 定义船只航行界面
