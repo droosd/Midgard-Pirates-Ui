@@ -344,10 +344,9 @@ id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
 UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
------------------------------------------------------------------------
--- 定义NPC任务对话
------------------------------------------------------------------------
--- 创建任务对话表单
+---------------
+-- Quest Npc --
+---------------
 frmNPCMission = UI_CreateForm( "frmNPCMission", FALSE, 235, 394, 235, 150, TRUE, FALSE )
 --UI_FormSetHotKey( frmNPCMission, ALT_KEY, HOTKEY_V ) 
 UI_ShowForm( frmNPCMission, FALSE )
@@ -356,21 +355,19 @@ UI_SetIsDrag( frmNPCMission, TRUE )
 --UI_SetFormStyle( frmNPCMission, 0 )
 --UI_SetAlpha( frmNPCMission, 200 )
 
--- 加载背景图片
-imgBakTop = UI_CreateCompent( frmNPCMission, IMAGE_TYPE, "imgBakTop", 235, 256, 0, 0 )
-UI_LoadImage( imgBakTop, "texture/ui/QuestT.tga", NORMAL, 235, 256, 0, 0 )
-imgBakDown = UI_CreateCompent( frmNPCMission, IMAGE_TYPE, "imgBakDown", 235, 138, 0, 256 )
-UI_LoadImage( imgBakDown, "texture/ui/QuestNew.tga", NORMAL, 235, 138, 0, 0 )
+-- Main image
+imgBakTop = UI_CreateCompent( frmNPCMission, IMAGE_TYPE, "imgBakTop", 235, 394, 0, 0 )
+UI_LoadImage( imgBakTop, "texture/ui/NUI/frmNPCMission.png", NORMAL, 235, 394, 0, 0 )
 
--- 加载界面title
-labTitle = UI_CreateCompent( frmNPCMission, LABELEX_TYPE, "labTitle", 400, 150, 10, 4 )
+-- Title
+labTitle = UI_CreateCompent( frmNPCMission, LABELEX_TYPE, "labTitle", 400, 150, 100, 4 )
 UI_SetCaption( labTitle, "Quest")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmNPCMission, BUTTON_TYPE, "btnClose", 14, 14, 214, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmNPCMission, BUTTON_TYPE, "btnClose", 19, 20, 220, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmNPCMission.png", 19, 20, 10, 408, TRUE )
 
 --创建NPC所在城市
 labNPCCity = UI_CreateCompent( frmNPCMission, LABELEX_TYPE, "labNPCCity", 34, 11, 53, 29 )
@@ -384,7 +381,7 @@ UI_SetCaption( labNPCName, "" )
 UI_SetTextColor( labNPCName, COLOR_WHITE )
 UI_SetLabelExFont( labNPCName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载聊天对话
+-- Quest discription
 memMission = UI_CreateCompent( frmNPCMission, MEMOEX_TYPE, "memMission", 215, 326, 17, 40 )
 UI_SetTextColor( memMission, COLOR_BLACK )
 UI_SetCaption( memMission, "" ) 
@@ -392,37 +389,37 @@ UI_SetMemoMaxNumPerRow(memMission, 30 )
 UI_SetMemoPageShowNum(memMission, 17 )
 UI_SetMemoRowHeight( memMission, 16 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( memMission )
 UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_LoadImage( scrollid, "texture/new/guildPerms.png", COMPENT_BACK, 11, 1, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/new/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+--Scroll bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/new/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/new/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载接受按钮
-btnYes = UI_CreateCompent( frmNPCMission, BUTTON_TYPE, "btnYes", 41, 19, 91, 370 )
-UI_LoadButtonImage( btnYes, "texture/ui/SystemBotton3.tga", 41, 19, 0, 0, TRUE )
+-- Accept button
+btnYes = UI_CreateCompent( frmNPCMission, BUTTON_TYPE, "btnYes", 52, 17, 80, 367 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/frmNPCMission.png", 52, 17, 9, 472, TRUE )
 
---加载完成按钮
-btnComplete = UI_CreateCompent( frmNPCMission, BUTTON_TYPE, "btnComplete", 41, 19, 91, 370 )
-UI_LoadButtonImage( btnComplete, "texture/ui/SystemBotton3.tga", 41, 19, 0, 76, TRUE )
+-- Complete button
+btnComplete = UI_CreateCompent( frmNPCMission, BUTTON_TYPE, "btnComplete", 52, 17, 80, 367 )
+UI_LoadButtonImage( btnComplete, "texture/ui/NUI/frmNPCMission.png", 52, 17, 9, 453, TRUE )
 
---加载关闭按钮
-btnNo = UI_CreateCompent( frmNPCMission, BUTTON_TYPE, "btnNo", 41, 19, 139, 370 )
-UI_LoadButtonImage( btnNo, "texture/ui/Quest1.tga", 41, 19, 82, 199, TRUE )
+-- Close button
+btnNo = UI_CreateCompent( frmNPCMission, BUTTON_TYPE, "btnNo", 52, 17, 139, 367 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmNPCMission.png", 52, 17, 9, 434, TRUE )
 
 --加载接受按钮
 labYes = UI_CreateCompent( frmNPCMission, LABELEX_TYPE, "labYes", 42, 10, 29, 409 )
