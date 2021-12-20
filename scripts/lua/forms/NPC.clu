@@ -1,44 +1,30 @@
------------------------------------------------------------------------
--- 定义NPC对话
------------------------------------------------------------------------	
---- 创建NPC对话表单
-frmNPCchat = UI_CreateForm( "frmNPCchat", FALSE, 320, 285, 240, 70, TRUE, FALSE )
+---------
+-- NPC --
+---------
+frmNPCchat = UI_CreateForm( "frmNPCchat", FALSE, 320, 304, 240, 70, TRUE, FALSE )
 UI_ShowForm( frmNPCchat, TRUE )
 UI_AddFormToTemplete( frmNPCchat, FORM_MAIN )
 --UI_FormSetHotKey( frmNPCchat, ALT_KEY, HOTKEY_V )
 UI_SetFormStyle( frmNPCchat, 2 )---左右居中
 UI_SetIsDrag( frmNPCchat, TRUE )
 
+-- Main image
+imgBakLeft = UI_CreateCompent( frmNPCchat, IMAGE_TYPE, "imgBakLeft", 320, 304, 0, 0 )
+UI_LoadImage( imgBakLeft, "texture/ui/NUI/npc.png", NORMAL, 320, 304, 0, 0 )
 
-
-
--- 加载背景图片
-imgBakLeft = UI_CreateCompent( frmNPCchat, IMAGE_TYPE, "imgBakLeft", 256, 275, 0, 0 )
-UI_LoadImage( imgBakLeft, "texture/ui/Corsairs/npc1.png", NORMAL, 256, 275, 0, 0 )
-
-imgBakRight = UI_CreateCompent( frmNPCchat, IMAGE_TYPE, "imgBakRight", 64, 275, 256, 0 )
-UI_LoadImage( imgBakRight, "texture/ui/Corsairs/npc2.png", NORMAL, 64, 275, 0, 0 )
-
-imgBakLeftD = UI_CreateCompent( frmNPCchat, IMAGE_TYPE, "imgBakLeftD", 256, 29, 0, 275 )
-UI_LoadImage( imgBakLeftD, "texture/ui/Corsairs/npc3.png", NORMAL, 256, 29, 0, 0 )
-
-imgBakRightD = UI_CreateCompent( frmNPCchat, IMAGE_TYPE, "imgBakRightD", 64, 29, 256, 275 )
-UI_LoadImage( imgBakRightD, "texture/ui/Corsairs/npc2.png", NORMAL, 64, 29, 64, 0 )
-
-
-imgNpcBackDrop = UI_CreateCompent( frmNPCchat, IMAGE_TYPE, "imgNpcBackDrop", 55, 44, 11, 21 )
+imgNpcBackDrop = UI_CreateCompent( frmNPCchat, IMAGE_TYPE, "imgNpcBackDrop", 55, 44, 11, 31 )
 UI_LoadImage( imgNpcBackDrop, "texture/ui/Corsairs/npcBackDrop/0.tga", NORMAL, 55, 44, 0, 0 )
 
-d3dNpc = UI_CreateCompent( frmNPCchat, UI3D_COMPENT_TYPE, "d3dNpc", 44, 44, 11, 21 )
+d3dNpc = UI_CreateCompent( frmNPCchat, UI3D_COMPENT_TYPE, "d3dNpc", 44, 44, 11, 30 )
 
-npcName = UI_CreateCompent( frmNPCchat, LABELEX_TYPE, "npcName", 400, 150, 78, 35 )
-UI_SetTextColor( npcName, COLOR_BLACK )
-UI_SetLabelExFont( npcName, DEFAULT_FONT, TRUE, COLOR_WHITE )
+-- NPC name
+npcName = UI_CreateCompent( frmNPCchat, LABELEX_TYPE, "npcName", 400, 150, 78, 45 )
+UI_SetTextColor( npcName, COLOR_WHITE )
+UI_SetLabelExFont( npcName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
-
---创建关闭按钮
-btnClose = UI_CreateCompent( frmNPCchat, BUTTON_TYPE, "btnClose", 14, 14, 299, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmNPCchat, BUTTON_TYPE, "btnClose", 19, 20, 305, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/npc.png", 19, 20, 1, 334, TRUE )
 
 --创建NPC所在城市
 labNPCCity = UI_CreateCompent( frmNPCchat, LABELEX_TYPE, "labNPCCity", 34, 11, 53, 29 )
@@ -52,37 +38,38 @@ UI_SetCaption( labNPCName, "" )
 UI_SetTextColor( labNPCName, COLOR_WHITE )
 UI_SetLabelExFont( labNPCName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载聊天对话
-memCtrl = UI_CreateCompent( frmNPCchat, MEMO_TYPE, "memCtrl", 287, 210, 27, 53+19 ) 
+-- NPC discription
+memCtrl = UI_CreateCompent( frmNPCchat, MEMO_TYPE, "memCtrl", 289, 212, 20, 53+30 ) 
 UI_SetTextColor( memCtrl, COLOR_BLACK )
 UI_SetCaption( memCtrl, "" ) 
 UI_SetMemoMaxNumPerRow(memCtrl, 42 )
 UI_SetMemoPageShowNum(memCtrl, 8 )
 UI_SetMemoRowHeight( memCtrl , 22 )
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( memCtrl )
-UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_SetSize( scrollid, 11, 2 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+-- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmNPCchat, BUTTON_TYPE, "btnNo", 41, 19, 138, 258 + 19)
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 214, TRUE )
+-- Exit Button
+btnNo = UI_CreateCompent( frmNPCchat, BUTTON_TYPE, "btnNo",52, 17, 138, 258 + 25)
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/npc.png", 52, 17, 1, 366, TRUE )
+
 
 -----------------------------------------------------------------------
 -- 定义NPC交易
