@@ -1,7 +1,6 @@
-
 function addEquip(x,y,name,form,skillid)
 	_G["img"..name] = UI_CreateCompent( form, IMAGE_TYPE, "img"..name, 36,36, x-2 ,y -2 )
-	UI_LoadImage( _G["img"..name], "texture/ui/corsairs/eqform/"..name..".png", NORMAL, 36,36, 0, 0 )
+	UI_LoadImage( _G["img"..name], "texture/new/eqform/"..name..".png", NORMAL, 36,36, 0, 0 )
 	_G[name] = UI_CreateCompent( form, COMMAND_ONE_TYPE, name, 32, 32, x ,y )
 	if skillid then
 		UI_AddCompent( skillid, _G["img"..name] )
@@ -16,65 +15,70 @@ function addEquipGroup(X,Y,Xoff,Yoff,names,form,skillid)
 end
 
 
-frmInv = UI_CreateForm( "frmInv", FALSE, 560, 380, 198, 160, TRUE, FALSE )
+------------------------
+--Main inventory image--
+------------------------
+frmInv = UI_CreateForm( "frmInv", FALSE, 445, 403, 198, 160, TRUE, FALSE )
 UI_FormSetHotKey( frmInv, ALT_KEY, HOTKEY_E ) --'E'
 UI_ShowForm( frmInv, FALSE )
 UI_AddFormToTemplete( frmInv, FORM_MAIN )
 UI_SetIsDrag( frmInv, TRUE )
 
-imgfrmInv = UI_CreateCompent( frmInv, IMAGE_TYPE, "imgfrmInv", 560, 380, 0, 0 )
-UI_LoadImage( imgfrmInv, "texture/ui/corsairs/INV/invform.png", NORMAL, 825, 600, 0, 0 )
+imgfrmInv = UI_CreateCompent( frmInv, IMAGE_TYPE, "imgfrmInv", 445, 403, 0, 0 )
+UI_LoadImage( imgfrmInv, "texture/ui/NUI/INV/inventory.png", NORMAL, 445, 403, 0, 0 )
 
 -- Close Button
-btnClose = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnClose", 15, 15, 540, 3)
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+btnClose = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnClose", 19, 20, 430, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/INV/inventory.png", 19, 20, 6, 410, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
 -- Title Bar
---labTitle = UI_CreateCompent( frmInv, LABELEX_TYPE, "labTitle", 400, 150, 10, 2 )
---UI_SetCaption( labTitle, "Inventory")
---UI_SetTextColor( labTitle, COLOR_BLACK )
---UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+labTitle = UI_CreateCompent( frmInv, LABELEX_TYPE, "labTitle", 400, 150, 230, 10 )
+UI_SetCaption( labTitle, "Inventory")
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 pgePublic = UI_CreateCompent( frmInv, PAGE_TYPE, "pgePublic", 192, 325, 8, 16 )
 UI_SetPageButton( pgePublic, PAGE_BUTTON_CUSTOM, 48, 16 )
 
-local tabX = 14
-local tabXoff= 56
-local tabY = 2
+-- positionn of all tabs
 
-local tabsX = 55
+local tabX = 21
+local tabXoff= 45
+local tabY = -5
+
+local tabsX = 39
 local tabsY = 35
 
 --Equip Tab
 skillid = UI_CreatePageItem( pgePublic )
 ttlNum = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlNum, "texture/ui/corsairs/INV/tabs.png", PAGE_ITEM_TITLE_ACTIVE, 100, 97, 0, 0 )
-UI_LoadImage( ttlNum, "texture/ui/corsairs/INV/tabs.png", PAGE_ITEM_TITLE_NORMAL, 100, 97, 185, 0 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/INV/tab.png", PAGE_ITEM_TITLE_ACTIVE, 39, 35, 21, 13 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/INV/tab.png", PAGE_ITEM_TITLE_NORMAL, 39, 35, 63, 13 )
 UI_SetPos( ttlNum, tabX, tabY )
 UI_SetSize( ttlNum, tabsX, tabsY )
 
 
 --left col
-addEquipGroup(8,40,0,49,{"cmdArmet","cmdWing","cmdNecklace","cmdRightHand","cmdJewelry4","cmdCloak"},frmInv,skillid)
+addEquipGroup(15,39,0,49,{"cmdArmet","cmdWing","cmdNecklace","cmdRightHand","cmdJewelry4","cmdCloak"},frmInv,skillid)
 --2nd col
-addEquipGroup(56,187,0,49,{"cmdCirclet1","cmdJewelry1","cmdRearPet"},frmInv,skillid)
+addEquipGroup(60,186,0,49,{"cmdCirclet1","cmdJewelry1","cmdRearPet"},frmInv,skillid)
 --3rd col
-addEquipGroup(104,187,0,49,{"cmdCirclet2","cmdJewelry2","cmdPet"},frmInv,skillid)
+addEquipGroup(105,186,0,49,{"cmdCirclet2","cmdJewelry2","cmdPet"},frmInv,skillid)
 --right col
-addEquipGroup(152,40,0,49,{"cmdBody","cmdGlove","cmdShoes","cmdLeftHand","cmdJewelry3","cmdMount"},frmInv,skillid)
+addEquipGroup(150,39,0,49,{"cmdBody","cmdGlove","cmdShoes","cmdLeftHand","cmdJewelry3","cmdMount"},frmInv,skillid)
 
 
+--character
+ui3dCha = UI_CreateCompent( frmInv, UI3D_COMPENT, "ui3dCha", 0, 0, 96, 180 )
 
---ui3dCha = UI_CreateCompent( frmInv, UI3D_COMPENT, "ui3dCha", 0, 0, 120, 150 )
 
+-- rotate button
+btnChaLeft3d = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnChaLeft3d", 16, 16, 55,160 )
+UI_LoadButtonImage( btnChaLeft3d, "texture/ui/NUI/INV/invicons.png", 16, 16, 38, 16, TRUE )
 
-
-btnChaLeft3d = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnChaLeft3d", 32, 38, 55,335 )
-UI_LoadButtonImage( btnChaLeft3d, "texture/ui/corsairs/coButtons.png", 32, 32, 217, 87, TRUE )
-
-btnChaRight3d = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnChaRight3d", 32, 38, 109,335 )
-UI_LoadButtonImage( btnChaRight3d, "texture/ui/corsairs/coButtons.png",  32, 32, 217, 119, TRUE )
+btnChaRight3d = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnChaRight3d", 16, 16, 123,160 )
+UI_LoadButtonImage( btnChaRight3d, "texture/ui/NUI/INV/invicons.png",  16, 16, 38, 32, TRUE )
 
 UI_AddCompent( skillid, btnChaLeft3d )
 UI_AddCompent( skillid, btnChaRight3d )
@@ -85,31 +89,32 @@ UI_AddCompent( skillid, ui3dCha )
 --Apparel Tab
 skillid = UI_CreatePageItem( pgePublic )
 ttlNum = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlNum, "texture/ui/corsairs/INV/tabs.png", PAGE_ITEM_TITLE_ACTIVE, 99, 99, 2, 107 )
-UI_LoadImage( ttlNum, "texture/ui/corsairs/INV/tabs.png", PAGE_ITEM_TITLE_NORMAL, 99, 99, 178, 107 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/INV/tab.png", PAGE_ITEM_TITLE_ACTIVE, 39, 35, 21, 52 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/INV/tab.png", PAGE_ITEM_TITLE_NORMAL, 39, 35, 63, 52 )
 
 UI_SetPos( ttlNum, tabX+tabXoff , tabY )
 UI_SetSize( ttlNum, tabsX, tabsY )
 UI_AddCompent( skillid, lstNum )
 
 
+
 addEquipGroup(22,48,0,55,{"cmdPetApp","cmdDaggerApp","cmdGunApp","cmdSword1App","cmdGreatSwordApp"},frmInv,skillid)
 addEquipGroup(82,48,0,55,{"cmdArmetApp","cmdFaceApp","cmdBodyApp","cmdGloveApp","cmdShoesApp",},frmInv,skillid)
 addEquipGroup(142,48,0,55,{"cmdGlowApp","cmdStaffApp","cmdBowApp","cmdSword2App","cmdShieldApp",},frmInv,skillid)
-																																																					 
+
 
 --Temp Tab
 skillid = UI_CreatePageItem( pgePublic )
 ttlNum = UI_GetPageItemObj( skillid, PAGE_ITEM_TITLE )
-UI_LoadImage( ttlNum, "texture/ui/corsairs/INV/tabs.png", PAGE_ITEM_TITLE_ACTIVE, 99, 99, 2, 220 )
-UI_LoadImage( ttlNum, "texture/ui/corsairs/INV/tabs.png", PAGE_ITEM_TITLE_NORMAL, 99, 99, 176, 220 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/INV/tab.png", PAGE_ITEM_TITLE_ACTIVE, 39, 35, 21, 91 )
+UI_LoadImage( ttlNum, "texture/ui/NUI/INV/tab.png", PAGE_ITEM_TITLE_NORMAL, 39, 35, 63, 91 )
 
 UI_SetPos( ttlNum, tabX+tabXoff+tabXoff, tabY )
 UI_SetSize( ttlNum, tabsX, tabsY )
 
-
-grid = UI_CreateCompent( frmInv, IMAGE_TYPE, "grid", 143,283, 26,38 )
-UI_LoadImage( grid, "texture/ui/corsairs/INV/temp_grid.png", NORMAL, 143,283, 0, 0 )
+-- temporary item slot
+grid = UI_CreateCompent( frmInv, IMAGE_TYPE, "grid", 143,283, 26,33 )
+UI_LoadImage( grid, "texture/ui/NUI/INV/temp_g.png", NORMAL, 143,283, 0, 0 )
 UI_AddCompent( skillid, grid )
 
 
@@ -117,96 +122,97 @@ grdTempBag = UI_CreateCompent( frmInv, GOODS_GRID_TYPE, "grdTempBag", 184, 305, 
 UI_SetGridSpace( grdTempBag, 3, 3 )
 UI_SetGridContent( grdTempBag, 4, 4 )
 UI_SetGridUnitSize( grdTempBag, 32, 32 )
-UI_SetMargin( grdTempBag, 21, 4, 0, 0 )
+UI_SetMargin( grdTempBag, 21, -1, 0, 0 )
 
 UI_AddCompent( skillid, grdTempBag )
 
 
+-- inventory item slot
+grdItem = UI_CreateCompent( frmInv, GOODS_GRID_TYPE, "grdItem", 208, 280, 214,53 ) 
+UI_SetGridSpace( grdItem, 3, 3 )
+UI_SetGridContent( grdItem, 8, 6 )
+UI_SetGridUnitSize( grdItem, 32, 32 )
+UI_SetMargin( grdItem, 0, 0, 0, 0 )
 
-grdItem = UI_CreateCompent( frmInv, GOODS_GRID_TYPE, "grdItem", 340, 240, 202,50) 
-UI_SetGridSpace( grdItem, 12, 8)
-UI_SetGridContent( grdItem, 6, 8 )
-UI_SetGridUnitSize( grdItem, 30, 30 )
-UI_SetMargin( grdItem, 4, 2, 0, 0 )
+local impgoldplacementX = 228
+local impgoldplacementY = 384
 
-local impgoldplacementX = 215
-local impgoldplacementY = 295
+-- gold and crystal text
+imgimpgold = UI_CreateCompent( frmInv, IMAGE_TYPE, "imgimpgold", 145,46, impgoldplacementX, impgoldplacementY )
+--UI_LoadImage( imgimpgold, "texture/new/INV/goldimp.png", NORMAL, 145,46, 0, 0 )
 
-imgimpgold = UI_CreateCompent( frmInv, IMAGE_TYPE, "imgimpgold", 150,53, impgoldplacementX, impgoldplacementY )
-UI_LoadImage( imgimpgold, "texture/ui/corsairs/INV/goldimp.png", NORMAL, 454,151, 0, 0 )
+labItemgoldnumber = UI_CreateCompent( frmInv, LABELEX_TYPE, "labItemgoldnumber", 91, 8, 230, 343 )
+UI_SetTextColor( labItemgoldnumber, COLOR_WHITE )
+UI_SetLabelExFont( labItemgoldnumber, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
-
-labItemgoldnumber = UI_CreateCompent( frmInv, LABELEX_TYPE, "labItemgoldnumber", 91, 8, impgoldplacementX+24, impgoldplacementY+8 )
-UI_SetTextColor( labItemgoldnumber, COLOR_BLACK )
-UI_SetLabelExFont( labItemgoldnumber, DEFAULT_FONT, TRUE, 4289901234 )
-
-labItemIMPnumber = UI_CreateCompent( frmInv, LABELEX_TYPE, "labItemIMPnumber", 91, 8, impgoldplacementX+24, impgoldplacementY+34 )
-UI_SetTextColor( labItemIMPnumber, COLOR_BLACK )
-UI_SetLabelExFont( labItemIMPnumber, DEFAULT_FONT, TRUE, 4289901234 )
+labItemIMPnumber = UI_CreateCompent( frmInv, LABELEX_TYPE, "labItemIMPnumber", 91, 8, 336, 343 )
+UI_SetTextColor( labItemIMPnumber, COLOR_WHITE )
+UI_SetLabelExFont( labItemIMPnumber, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 --sort dir (which is upper left)
-local startX = 460
-local startY = 290
+local startX = 355
+local startY = 348
 
-local lockX = startX + 30
-local lockY = startY + 40
+local lockX = startX + 26
+local lockY = startY + 37
 
-local lockitemX = startX+52
-local lockitemY = lockY + -4
+local lockitemX = startX + 47
+local lockitemY = lockY + 0
 
 
-local trashX = startX + 4
+local trashX = startX + 6
 local trashY = startY + 37
 
 local sortX = startX + 26
-local sortY = startY + 8
+local sortY = startY + 22
 
-local sortdirX = startX
-local sortdirY = startY + 8
+local sortdirX = startX + 6
+local sortdirY = startY + 22
 
-local goldX = startX + 52
-local goldY = startY + 8
+local goldX = startX + 47
+local goldY = startY + 22
 
-btnLock = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnLock", 12, 15, lockX, lockY )
+-- lock inventory button
+btnLock = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnLock", 15, 15, lockX, lockY )
 UI_FormSetHotKey( btnLock, ALT_KEY, HOTKEY_B )
-imgLock = UI_CreateCompent( frmInv, IMAGE_TYPE, "imgLock", 12, 15, lockX, lockY )
-UI_LoadImage( imgLock, "texture/ui/a001.tga",NORMAL, 12, 15, 72, 165, TRUE )
-imgUnLock = UI_CreateCompent( frmInv, IMAGE_TYPE, "imgUnLock", 12, 15, lockX, lockY)
-UI_LoadImage( imgUnLock, "texture/ui/a001.tga",NORMAL, 12, 15, 84, 165, TRUE )
+imgLock = UI_CreateCompent( frmInv, IMAGE_TYPE, "imgLock", 15, 15, lockX, lockY )
+UI_LoadImage( imgLock, "texture/ui/NUI/INV/invicons.png",NORMAL, 15, 15, 19, 2, TRUE )
+imgUnLock = UI_CreateCompent( frmInv, IMAGE_TYPE, "imgUnLock", 15, 15, lockX, lockY)
+UI_LoadImage( imgUnLock, "texture/ui/NUI/INV/invicons.png",NORMAL, 15, 15, 4, 2, TRUE )
 UI_SetHint( imgUnLock, "Lock Inventory" )
 
-btnbrush = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnbrush", 16, 19, trashX, trashY )
-UI_LoadButtonImage( btnbrush, "texture/ui/SystemBotton3.tga", 16, 19, 151, 226, TRUE ) 
+-- Inventory Sorting
+chkSortInv = UI_CreateCompent( frmInv, CHECK_TYPE, "chkSortInv", 15, 15, sortX, sortY )
+UI_LoadImage( chkSortInv, "texture/ui/NUI/INV/invicons.png", UNCHECKED, 15, 15, 4, 35 )
+UI_LoadImage( chkSortInv, "texture/ui/NUI/INV/invicons.png", CHECKED, 15, 15, 19, 35 )
+UI_SetHint( chkSortInv , "Sort Inventory" )
+
+-- delete button
+btnbrush = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnbrush", 15, 15, trashX, trashY )
+UI_LoadButtonImage( btnbrush, "texture/ui/NUI/INV/invicons.png", 15, 15, 4, 18, TRUE ) 
 cmdLost = UI_CreateCompent( frmInv, COMMAND_ONE_TYPE, "cmdLost", 16, 19,trashX, trashY )
 UI_SetTag( cmdLost, 999 )
 UI_SetHint( cmdLost, "Delete" )
 
--- Inventory Sorting
-chkSortInv = UI_CreateCompent( frmInv, CHECK_TYPE, "chkSortInv", 21, 20, sortX, sortY )
-UI_LoadImage( chkSortInv, "texture/ui/corsairs/coButtons.png", UNCHECKED, 21, 20, 169, 24 )
-UI_LoadImage( chkSortInv, "texture/ui/corsairs/coButtons.png", CHECKED, 21, 20, 190, 24 )
-UI_SetHint( chkSortInv , "Sort Inventory" )
-
-chkSortDir = UI_CreateCompent( frmInv, CHECK_TYPE, "chkSortDir", 21, 20, sortdirX, sortdirY )
-UI_LoadImage( chkSortDir, "texture/ui/corsairs/coButtons.png", UNCHECKED, 21, 20, 169, 44 )
-UI_LoadImage( chkSortDir, "texture/ui/corsairs/coButtons.png", CHECKED, 21, 20, 190, 44 )
+-- sort button
+chkSortDir = UI_CreateCompent( frmInv, CHECK_TYPE, "chkSortDir", 15, 15, sortdirX, sortdirY )
+UI_LoadImage( chkSortDir, "texture/ui/NUI/INV/invicons.png", UNCHECKED, 15, 15, 4, 52 )
+UI_LoadImage( chkSortDir, "texture/ui/NUI/INV/invicons.png", CHECKED, 15, 15, 19, 52 )
 UI_SetHint(chkSortDir,"Sort Direction")
 
 --Gold Store Button
-btnGoldStore = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnGoldStore", 20, 20, goldX,goldY )
-UI_LoadImage( btnGoldStore, "texture/ui/corsairs/coButtons.png", 0, 21, 20, 169, 95 )
-UI_LoadImage( btnGoldStore, "texture/ui/corsairs/coButtons.png", 1, 21, 20, 190, 95 )
-UI_LoadImage( btnGoldStore, "texture/ui/corsairs/coButtons.png", 2, 21, 20, 190, 95 )
+btnGoldStore = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnGoldStore", 15, 15, goldX,goldY )
+UI_LoadImage( btnGoldStore, "texture/ui/NUI/INV/invicons.png", 0, 15, 15,  4, 69 )
+UI_LoadImage( btnGoldStore, "texture/ui/NUI/INV/invicons.png", 1, 15, 15, 19, 69 )
+UI_LoadImage( btnGoldStore, "texture/ui/NUI/INV/invicons.png", 2, 15, 15, 19, 69 )
 UI_SetHint( btnGoldStore, "Convert Gold to an Item" )
 
-
-btnLockItem = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnLockItem", 20, 20, lockitemX,lockitemY )
-UI_LoadImage( btnLockItem, "texture/ui/corsairs/coButtons.png", 0, 21, 20, 169, 146 )
-UI_LoadImage( btnLockItem, "texture/ui/corsairs/coButtons.png", 1, 21, 20, 190, 146 )
-UI_LoadImage( btnLockItem, "texture/ui/corsairs/coButtons.png", 2, 21, 20, 190, 146 )
+-- lock item
+btnLockItem = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnLockItem", 15, 15, lockitemX,lockitemY )
+UI_LoadImage( btnLockItem, "texture/ui/NUI/INV/invicons.png", 0, 15, 15, 4, 86 )
+UI_LoadImage( btnLockItem, "texture/ui/NUI/INV/invicons.png", 1, 15, 15, 19, 86 )
+UI_LoadImage( btnLockItem, "texture/ui/NUI/INV/invicons.png", 2, 15, 15, 19, 86 )
 UI_SetHint( btnLockItem, "Lock Item" )
-
-
 
 
 
@@ -214,31 +220,28 @@ local sortBaseX = sortX-5
 local sortBaseY = sortY
 
 
-
-
-
 btnSortPrice = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortPrice", 33, 16, sortBaseX, sortBaseY-17 )
-UI_LoadImage( btnSortPrice, "texture/ui/corsairs/coButtons.png", 0, 33, 16, 217, 0 )
-UI_LoadImage( btnSortPrice, "texture/ui/corsairs/coButtons.png", 1, 33, 16, 217, 16 )
-UI_LoadImage( btnSortPrice, "texture/ui/corsairs/coButtons.png", 2, 33, 16, 217, 32 )
+UI_LoadImage( btnSortPrice, "texture/ui/NUI/INV/invicons.png", 0, 33, 16, 4, 111 )
+UI_LoadImage( btnSortPrice, "texture/ui/NUI/INV/invicons.png", 1, 33, 16, 4, 127 )
+UI_LoadImage( btnSortPrice, "texture/ui/NUI/INV/invicons.png", 2, 33, 16, 4, 143 )
 UI_SetIsShow(btnSortPrice,0)
 
 btnSortAlpha = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortAlpha", 33, 16, sortBaseX, sortBaseY-34 )
-UI_LoadImage( btnSortAlpha, "texture/ui/corsairs/coButtons.png", 0, 33, 16, 250, 0 )
-UI_LoadImage( btnSortAlpha, "texture/ui/corsairs/coButtons.png", 1, 33, 16, 250, 16 )
-UI_LoadImage( btnSortAlpha, "texture/ui/corsairs/coButtons.png", 2, 33, 16, 250, 32 )
+UI_LoadImage( btnSortAlpha, "texture/ui/NUI/INV/invicons.png", 0, 33, 16, 37, 111 )
+UI_LoadImage( btnSortAlpha, "texture/ui/NUI/INV/invicons.png", 1, 33, 16, 37, 127 )
+UI_LoadImage( btnSortAlpha, "texture/ui/NUI/INV/invicons.png", 2, 33, 16, 37, 143 )
 UI_SetIsShow(btnSortAlpha,0)
 
 btnSortType = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortType", 33, 16, sortBaseX, sortBaseY-51 )
-UI_LoadImage( btnSortType, "texture/ui/corsairs/coButtons.png", 0, 33, 16, 283, 0 )
-UI_LoadImage( btnSortType, "texture/ui/corsairs/coButtons.png", 1, 33, 16, 283, 16 )
-UI_LoadImage( btnSortType, "texture/ui/corsairs/coButtons.png", 2, 33, 16, 283, 32 )
+UI_LoadImage( btnSortType, "texture/ui/NUI/INV/invicons.png", 0, 33, 16, 70, 111 )
+UI_LoadImage( btnSortType, "texture/ui/NUI/INV/invicons.png", 1, 33, 16, 70, 127 )
+UI_LoadImage( btnSortType, "texture/ui/NUI/INV/invicons.png", 2, 33, 16, 70, 143 )
 UI_SetIsShow(btnSortType,0)
 
 btnSortID = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortID", 33, 16, sortBaseX, sortBaseY-68  )
-UI_LoadImage( btnSortID, "texture/ui/corsairs/coButtons.png", 0, 33, 16, 316, 0 )
-UI_LoadImage( btnSortID, "texture/ui/corsairs/coButtons.png", 1, 33, 16, 316, 16 )
-UI_LoadImage( btnSortID, "texture/ui/corsairs/coButtons.png", 2, 33, 16, 316, 32 )
+UI_LoadImage( btnSortID, "texture/ui/NUI/INV/invicons.png", 0, 33, 16, 103, 111 )
+UI_LoadImage( btnSortID, "texture/ui/NUI/INV/invicons.png", 1, 33, 16, 103, 127 )
+UI_LoadImage( btnSortID, "texture/ui/NUI/INV/invicons.png", 2, 33, 16, 103, 143 )
 UI_SetIsShow(btnSortID,0)
 
 
