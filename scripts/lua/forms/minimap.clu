@@ -1,47 +1,42 @@
------------------------------------------------------------------------
--- 定义小地图
------------------------------------------------------------------------	
--- 创建小地图表单  
-frmMinimap = UI_CreateForm( "frmMinimap", FALSE, 140, 155, 656, 15, TRUE, FALSE )
+-------------
+-- Minimap --
+-------------
+frmMinimap = UI_CreateForm( "frmMinimap", FALSE, 141, 141, 656, 15, TRUE, FALSE )
 UI_ShowForm( frmMinimap, TRUE )
 UI_AddFormToTemplete( frmMinimap, FORM_MAIN )
 UI_SetFormStyle( frmMinimap, 9 )---右上
 UI_FormSetIsEscClose( frmMinimap, FALSE )
 
--- 加载图片
-imgMinimapT = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapT", 140, 9, 0, 0 )
-UI_LoadImage( imgMinimapT, "texture/ui/ShipBuild4.dds", NORMAL, 140, 9, 0, 191 )
+-- Main image
+imgMinimapT = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapT", 141, 141, 0, 0 )
+UI_LoadImage( imgMinimapT, "texture/new/minimap.png", NORMAL, 141, 141, 29, 5 )
 
-imgMinimapN = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapN", 13, 15, 65, 2 )
-UI_LoadImage( imgMinimapN, "texture/ui/main800.tga", NORMAL, 13, 15, 6, 184 )
+-- map display
+imgMinimapRect = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapRect", 127, 118, 7, 11 )
 
-imgMinimapD = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapD", 140, 22, 0, 133 )
-UI_LoadImage( imgMinimapD, "texture/ui/ShipBuild4.dds", NORMAL, 140, 22, 0, 223 )
+-- server time if any
+imgTime = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgTime", 69, 27, -80, 5 )
+UI_LoadImage( imgTime, "texture/ui/corsairs/timeLabel.png", NORMAL, 69, 27, 0, 0 )
 
-imgMinimapL = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapL", 8, 156, 0, 0 )
-UI_LoadImage( imgMinimapL, "texture/ui/ShipBuild4.dds", NORMAL, 8, 156, 220, 88 )
+labServerTime = UI_CreateCompent( frmMinimap, LABELEX_TYPE, "labServerTime", 65, 23, -82, 10 )
+UI_SetCaption( labServerTime, "------" )
+UI_SetTextColor( labServerTime, COLOR_BLACK )
+UI_SetLabelExFont( labServerTime, FONT18, TRUE, COLOR_WHITE )
 
-imgMinimapR = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapR", 8, 156, 132, 0 )
-UI_LoadImage( imgMinimapR, "texture/ui/ShipBuild4.dds", NORMAL, 8, 156, 245, 88 )
-
--- 加载显示区域
-imgMinimapRect = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapRect", 128, 128, 6, 8 )
-
-
---加载地图名称显示
-labMapName = UI_CreateCompent( frmMinimap, LABELEX_TYPE, "labMapName", 51, 12, 2, 137 )
+-- Map name
+labMapName = UI_CreateCompent( frmMinimap, LABELEX_TYPE, "labMapName", 51, 12, 5, 124 )
 UI_SetCaption( labMapName, "了了了了了了了" )
-UI_SetTextColor( labMapName, COLOR_BLACK )
-UI_SetLabelExFont( labMapName, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labMapName, COLOR_WHITE)
+UI_SetLabelExFont( labMapName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载地图坐标显示 by lh此处定义了多个显示坐标的label，程序进行随机使用一个label显示，用于防止简单的外挂，如挂船脚本
+-- Coordinates
 n  = 0
 while 1 do
 	local name = "labMapPos"..n
-	labMapPos = UI_CreateCompent( frmMinimap, LABELEX_TYPE, name, 79, 12, 2, 157 )
+	labMapPos = UI_CreateCompent( frmMinimap, LABELEX_TYPE, name, 79, 12, 45, 113 )
 	UI_SetCaption( labMapPos, "2200, 2200" )
-	UI_SetTextColor( labMapPos, COLOR_BLACK )
-	UI_SetLabelExFont( labMapPos, DEFAULT_FONT, TRUE, COLOR_WHITE )
+	UI_SetTextColor( labMapPos, COLOR_WHITE )
+	UI_SetLabelExFont( labMapPos, DEFAULT_FONT, TRUE, COLOR_BLACK )
 	
 	if n~=0  then UI_SetIsShow( labMapPos, FALSE ) end
 	
@@ -49,31 +44,34 @@ while 1 do
 	if n==10 then break end	
 end
 
---创建打开大地图按钮
-btnOpen = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnOpen", 20, 20, 115, 115 )
-UI_LoadButtonImage( btnOpen, "texture/ui/corsairs/botton3.png", 20, 20, 0, 84, FALSE )
+-- Word Map
+btnOpen = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnOpen", 20, 20, 118, 145 )
+UI_LoadButtonImage( btnOpen, "texture/new/minimap.png", 20, 20, 3, 190, FALSE )
 UI_SetHint( btnOpen, "World Map" )
 
---创建打开了雷达按钮
-btnSearch = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnSearch", 20, 20, 95, 115 )
-UI_LoadButtonImage( btnSearch, "texture/ui/corsairs/botton3.png", 20, 20, 26, 84, FALSE )
+-- Radar
+btnSearch = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnSearch", 20, 20, 95, 145 )
+UI_LoadButtonImage( btnSearch, "texture/new/minimap.png", 20, 20, 24, 190, FALSE )
 UI_SetHint( btnSearch, "Radar" )
 
-btnStall = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnStall", 20, 20, 75, 115 )
-UI_LoadButtonImage( btnStall, "texture/ui/corsairs/botton3.png", 20, 20, 74, 84, FALSE )
+-- Search stall
+btnStall = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnStall", 20, 20, 72, 145 )
+UI_LoadButtonImage( btnStall, "texture/new/minimap.png", 20, 20, 45, 190, FALSE )
 UI_SetHint( btnStall, "Search Stalls" )
 
-btnRank = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnRank", 20, 20, 54, 115 )
-UI_LoadButtonImage( btnRank, "texture/ui/corsairs/botton3.png", 20, 20, 50, 84, FALSE )
+-- Ranking
+btnRank = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnRank", 20, 20, 49, 145 )
+UI_LoadButtonImage( btnRank, "texture/new/minimap.png", 20, 20, 66, 190, FALSE )
 UI_SetHint( btnRank, "Player Ranking" )
 
-btnDiscord = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnDiscord", 30, 30, 55, 155 )
-UI_LoadButtonImage( btnDiscord, "texture/ui/corsairs/discordIcon.png", 40, 40, 0, 0, FALSE )
+-- Discord
+btnDiscord = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnDiscord", 20, 20, 26, 145 )
+UI_LoadButtonImage( btnDiscord, "texture/new/minimap.png", 20, 20, 87, 190, FALSE )
 UI_SetHint( btnDiscord, "Enter Discord" )
 
---打开商城button
-btnOpenStore = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnOpenStore", 41, 19, 87, 158 )
-UI_LoadButtonImage( btnOpenStore, "texture/ui/storenewbutton.tga", 41, 19, 0, 0, TRUE )
+-- Mall
+btnOpenStore = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnOpenStore", 20, 20, 3, 145 )
+UI_LoadButtonImage( btnOpenStore, "texture/new/minimap.png", 20, 20, 108, 191, TRUE )
 UI_SetHint( btnOpenStore, "Accessing Item Mall" )
 
 --打开临时背包button
