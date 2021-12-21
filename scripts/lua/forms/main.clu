@@ -99,48 +99,48 @@ UI_LoadImage( tlField, "texture/ui/Field.tga", 1, 1, 72, 127, 0 )
 UI_LoadImage( tlField, "texture/ui/Field.tga", 2, 124, 115, 132, 0 )
 UI_SetTitleFont( tlField, BIGFONT, COLOR_BLACK, 15 )
 
-imgMain1 = UI_CreateCompent( frmMain800, IMAGE_TYPE, "imgMain1", 256, 30, 0, 0 )
-UI_LoadImage( imgMain1, "texture/ui/new.tga", NORMAL, 256, 30, 0, 0 )
-imgMain2 = UI_CreateCompent( frmMain800, IMAGE_TYPE, "imgMain2", 32, 30, 256, 0 )
-UI_LoadImage( imgMain2, "texture/ui/new4.tga", NORMAL, 32, 30, 0, 0 )
+----------
+-- chat --
+----------
 
+imgMain1 = UI_CreateCompent( frmMain800, IMAGE_TYPE, "imgMain1", 288, 30, 0, 0 )
+UI_LoadImage( imgMain1, "texture/new/chat.png", NORMAL, 288, 30, 1, 315 )
 
--- 聊天输入
+-- Chat Box
 edtSay = UI_CreateCompent( frmMain800, EDIT_TYPE, "edtSay", 150, 20, 64, 9 )
-UI_SetTextColor( edtSay, COLOR_BLACK )
+UI_SetTextColor( edtSay, COLOR_WHITE )
 UI_SetEditMaxNum( edtSay, 64)
 UI_SetEditMaxNumVisible( edtSay, 24)
-UI_SetEditCursorColor( edtSay, COLOR_BLACK )
+UI_SetEditCursorColor( edtSay, COLOR_WHITE )
 
 -- Chat Background
 lstOnSay = UI_CreateCompent( frmMain800, LIST_TYPE, "lstOnSay", 288, 100, 0, -98 )
 UI_LoadImage( lstOnSay, "texture/ui/Nbotton.tga", COMPENT_BACK, 1, 1, 100, 171 ) -- The file color W,H,X,Y.
-UI_SetImageAlpha( lstOnSay, 450 ) -- Transparent value
+UI_SetImageAlpha( lstOnSay, 400 ) -- Transparent value (default 450)
 UI_SetMargin( lstOnSay, 5, 3, 0, 0 )
 
-
--- 设置拖动条 
+-- Chat drag
 drpTitle = UI_CreateCompent( frmMain800, DRAG_TITLE_TYPE, "drpTitle", 43, 7, 0, -100 )
-UI_LoadImage( drpTitle, "texture/ui/SysBotton4.tga", NORMAL, 43, 7, 158, 100 )
+UI_LoadImage( drpTitle, "texture/new/chat.png", NORMAL, 43, 7, 61, 2 )
 
---获得滚动条
+-- Chat scroll
 scrollid = UI_GetScroll( lstOnSay)
 UI_SetSize( scrollid, 18, 18 )
---UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 18, 18, 194, 13 )
+--UI_LoadImage( scrollid, "texture/new/chat.png", COMPENT_BACK, 18, 18, 194, 13 )
 
---加载向上按钮
+-- Scroll Up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/Nbotton.tga", 18, 18, 138, 4, TRUE )
+UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 3, TRUE )
 UI_SetSize( id, 18, 18 )
 
---加载滚动条
+--  Scroll
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/Nbotton.tga", COMPENT_BACK, 18, 27, 195, 10 )
-UI_SetSize( id, 18, 27 )
+UI_LoadImage( id, "texture/new/chat.png", COMPENT_BACK, 18, 18, 61, 14 )
+UI_SetSize( id, 18, 18 )
 
---加载向下按钮
+-- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/Nbotton.tga", 18, 18, 138, 25, TRUE )
+UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 21, TRUE )
 UI_SetSize( id, 18, 18 )
 
 
@@ -151,66 +151,69 @@ UI_SetImageAlpha( lstOnSayDiscord, 450 )
 UI_SetMargin( lstOnSayDiscord, 5, 3, 0, 0 )
 
 drpTitleDiscord = UI_CreateCompent( frmMain800, DRAG_TITLE_TYPE, "drpTitleDiscord", 43, 7, 0, -160 )--43, 7, 0, -220 )
-UI_LoadImage( drpTitleDiscord, "texture/ui/SysBotton4.tga", NORMAL, 43, 7, 158, 100 )
+UI_LoadImage( drpTitleDiscord, "texture/new/chat.png", NORMAL, 43, 7, 61, 2 )
 
 
-scrollid = UI_GetScroll( lstOnSayDiscord )
+scrollid = UI_GetScroll( lstOnSayDiscord)
 UI_SetSize( scrollid, 18, 18 )
+--UI_LoadImage( scrollid, "texture/new/chat.png", COMPENT_BACK, 18, 18, 194, 13 )
 
-id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/Nbotton.tga", 18, 18, 138, 4, TRUE )
+-- Scroll Up
+id = UI_GetScrollObj( lstOnSayDiscord, SCROLL_UP )
+UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 3, TRUE )
 UI_SetSize( id, 18, 18 )
 
-id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/Nbotton.tga", COMPENT_BACK, 18, 27, 195, 10 )
-UI_SetSize( id, 18, 27 )
+--  Scroll
+id = UI_GetScrollObj( lstOnSayDiscord, SCROLL_SCROLL )
+UI_LoadImage( id, "texture/new/chat.png", COMPENT_BACK, 18, 18, 61, 14 )
+UI_SetSize( id, 18, 18 )
 
-id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/Nbotton.tga", 18, 18, 138, 25, TRUE )
+-- Scroll Down
+id = UI_GetScrollObj( lstOnSayDiscord, SCROLL_DOWN )
+UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 21, TRUE )
 UI_SetSize( id, 18, 18 )
 
 
 -- System Chat Background
-lstOnSaySystem = UI_CreateCompent( frmMain800, LIST_TYPE, "lstOnSaySystem", 288, 60, 0, -218 )--288, 60, 0, -158 )
+lstOnSaySystem = UI_CreateCompent( frmMain800, LIST_TYPE, "lstOnSaySystem", 288, 60, 0, -158 )--288, 60, 0, -218 )
 UI_LoadImage( lstOnSaySystem, "texture/ui/Nbotton.tga", COMPENT_BACK, 1, 1, 100, 171 )
-UI_SetImageAlpha( lstOnSaySystem, 450 )
+UI_SetImageAlpha( lstOnSaySystem, 400 ) -- Transparent value (default 450)
 UI_SetMargin( lstOnSaySystem, 5, 3, 0, 0 )
 
+-- System drag 
+drpTitleSystem = UI_CreateCompent( frmMain800, DRAG_TITLE_TYPE, "drpTitleSystem", 43, 7, 0, -160 )--43, 7, 0, -220 )
+UI_LoadImage( drpTitleSystem, "texture/new/chat.png", NORMAL, 43, 7, 61, 2 )
 
--- 设置拖动条 
-drpTitleSystem = UI_CreateCompent( frmMain800, DRAG_TITLE_TYPE, "drpTitleSystem", 43, 7, 0, -220 )--43, 7, 0, -160 )
-UI_LoadImage( drpTitleSystem, "texture/ui/SysBotton4.tga", NORMAL, 43, 7, 158, 100 )
-
---获得滚动条
+-- System Scroll
 scrollid = UI_GetScroll( lstOnSaySystem )
 UI_SetSize( scrollid, 18, 18 )
 --UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 18, 18, 194, 13 )
 
---加载向上按钮
+-- Scroll Up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/Nbotton.tga", 18, 18, 138, 4, TRUE )
+UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 3, TRUE )
 UI_SetSize( id, 18, 18 )
 
---加载滚动条
+-- Scroll
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/Nbotton.tga", COMPENT_BACK, 18, 27, 195, 10 )
-UI_SetSize( id, 18, 27 )
-
---加载向下按钮
-id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/Nbotton.tga", 18, 18, 138, 25, TRUE )
+UI_LoadImage( id, "texture/new/chat.png", COMPENT_BACK, 18, 18, 61, 14 )
 UI_SetSize( id, 18, 18 )
 
-----------创建密语     开   关
-chkChatOn = UI_CreateCompent( frmMain800, CHECK_TYPE, "chkChatOn", 21, 20, 35, 5 )
-UI_LoadImage( chkChatOn, "texture/ui/forge3.tga", UNCHECKED, 21, 20, 121, 133 )
-UI_LoadImage( chkChatOn, "texture/ui/forge3.tga", CHECKED, 21, 20, 142, 133 )
+-- Scrol Down
+id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
+UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 21, TRUE )
+UI_SetSize( id, 18, 18 )
+
+-- Channel button
+chkChatOn = UI_CreateCompent( frmMain800, CHECK_TYPE, "chkChatOn", 19, 9, 41, 5 )
+UI_LoadImage( chkChatOn, "texture/new/chat.png", UNCHECKED, 19, 9, 237, 115 )
+UI_LoadImage( chkChatOn, "texture/new/chat.png", CHECKED, 19, 9, 256, 115 )
 UI_SetHint( chkChatOn , "Channel Display Button" )
 
-----------名片按钮
-btnCard = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnCard", 6, 22, 56, 4 )
-UI_LoadButtonImage( btnCard, "texture/ui/main800.tga", 6,22,135,139, TRUE )
---UI_LoadImage( btnCard, "texture/ui/chat/card.bmp", UNCHECKED, 7, 21, 0, 0 )
+-- clear chat
+btnCard = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnCard", 19,	9, 41, 16 )
+UI_LoadButtonImage( btnCard, "texture/new/chat.png", 19, 9, 237, 105, TRUE )
+--UI_LoadImage( btnCard, "texture/new/chat.png", UNCHECKED, 7, 21, 0, 0 )
 UI_SetHint( btnCard , "Whisper list" )
 
 ----------名片列表
@@ -240,18 +243,19 @@ UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
 UI_SetSize( id, 11, 9 )
 
 
---创建频道选择
+-- Channel list
 cboChannel  = UI_CreateCompent( frmMain800, COMBO_TYPE, "cboChannel", 45, 26, 2, 5 )
 UI_ComboSetStyle( cboChannel, FALSE )
 UI_LoadComboImage( cboChannel, "", 33, 26, 0, 0, "texture/ui/Quest1.tga", 1, 1, 30, 195, TRUE )
-UI_ComboSetTextColor( cboChannel, COLOR_BLACK )
+UI_ComboSetTextColor( cboChannel, COLOR_WHITE )
 lstChannel = UI_GetList( cboChannel )
 UI_SetListRowHeight( lstChannel, 14 )
-UI_SetListFontColor( lstChannel, COLOR_BLACK, COLOR_BLACK )
+UI_SetListFontColor( lstChannel, COLOR_WHITE, COLOR_WHITE )
 UI_SetSize( lstChannel, 35, 160 )
 UI_SetMargin( lstChannel, 5,8,5,4 )
 UI_SetListRowHeight( lstChannel, 18 )
-UI_LoadImage( lstChannel, "texture/ui/QQ.dds", COMPENT_BACK, 35, 100, 212, 57 )
+
+UI_LoadImage( lstChannel, "texture/new/chat.png", COMPENT_BACK, 74, 108, 150, 80 )
 
 UI_AddListText( lstChannel, "Local" )
 UI_AddListText( lstChannel, "Party" )
@@ -259,10 +263,7 @@ UI_AddListText( lstChannel, "Guild" )
 UI_AddListText( lstChannel, "Trade" )
 UI_AddListText( lstChannel, "World" )
 UI_AddListText( lstChannel, "Camp" )
-
 UI_AddListText( lstChannel, "VIP" )
-UI_AddListText( lstChannel, "Discord" )
-
 UI_SetListIsMouseFollow( lstChannel, TRUE)
 UI_ListLoadSelectImage( lstChannel, "texture/ui/SystemBotton3.tga", 79, 18, 0, 227  )
 UI_ComboSetTextColor( lstChannel, COLOR_WHITE )
@@ -292,25 +293,24 @@ UI_AddListText( lstChannel, "Party" )
 UI_AddListText( lstChannel, "Guild" )
 UI_AddListText( lstChannel, "Trade" )
 
-
--- 聊天表情按钮
-btnChatFace = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnChatFace", 23, 23, 217, 3 )
-UI_LoadButtonImage( btnChatFace, "texture/ui/Nbotton.tga", 23, 23, 0, 48, TRUE )
+-- Emoticons
+btnChatFace = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnChatFace", 23, 22, 217, 5 )
+UI_LoadButtonImage( btnChatFace, "texture/new/Chat.png", 23, 22, 151, 2, TRUE )
 UI_SetHint( btnChatFace , "Emoticon" )
 
--- 创建动作按钮
-btnAction = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnAction", 23, 23, 240, 3 )
-UI_LoadButtonImage( btnAction, "texture/ui/Nbotton.tga", 23, 23, 0, 23, TRUE )
+-- Action
+btnAction = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnAction", 23, 22, 240, 5 )
+UI_LoadButtonImage( btnAction, "texture/new/Chat.png", 23, 22, 151, 52, TRUE )
 UI_SetHint( btnAction, "Action" )
 
--- 创建心情按钮
-btnBrow = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnBrow", 23, 23, 263, 3 )
-UI_LoadButtonImage( btnBrow, "texture/ui/Nbotton.tga", 23, 23, 0, 73, TRUE )
+-- Mood
+btnBrow = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnBrow", 23, 22, 263, 5 )
+UI_LoadButtonImage( btnBrow, "texture/new/Chat.png", 23, 22, 151, 27, TRUE )
 UI_SetHint( btnBrow, "Mood" )
 
--- 表情表格
-grdFace = UI_CreateCompent( frmMain800, GRID_TYPE, "grdFace", 142, 170, 243, -168 ) 
-UI_LoadImage( grdFace,  "texture/ui/QQ.dds", NORMAL, 142, 170, 0, 0 )
+-- Emoticon form
+grdFace = UI_CreateCompent( frmMain800, GRID_TYPE, "grdFace", 151, 178, 243, -168 ) 
+UI_LoadImage( grdFace,  "texture/new/chat.png", NORMAL, 151, 178, 0, 39 )
 UI_SetGridUnitSize( grdFace, 20, 20 )
 UI_SetIsShow( grdFace, FALSE )
 UI_SetMargin( grdFace, 11, 5, 5, 5 )
@@ -326,11 +326,9 @@ while 1 do
 end
 UI_GridLoadSelectImage( grdFace, "texture/ui/StartF.dds", 32, 32, 123, 99 )
 
-
-
--- 动作表格
-grdAction = UI_CreateCompent( frmMain800, GRID_TYPE, "grdAction", 142, 170, 263, -168 ) 
-UI_LoadImage( grdAction,  "texture/ui/QQ.dds", NORMAL, 142, 170, 0, 0 )
+-- Action form
+grdAction = UI_CreateCompent( frmMain800, GRID_TYPE, "grdAction", 151, 178, 263, -168 ) 
+UI_LoadImage( grdAction,  "texture/new/chat.png", NORMAL, 151, 178, 0, 39 )
 UI_SetGridUnitSize( grdAction, 32, 32 )
 UI_SetIsShow( grdAction, FALSE )
 UI_SetMargin( grdAction, 5, 4, 0, 0 )
@@ -353,10 +351,9 @@ while 1 do
 end
 UI_GridLoadSelectImage( grdAction, "texture/ui/StartF.dds", 32, 32, 157, 99 )
 
-
--- 心情表格
-grdHeart = UI_CreateCompent( frmMain800, GRID_TYPE, "grdHeart", 142, 170, 283, -168 ) 
-UI_LoadImage( grdHeart,  "texture/ui/QQ.dds", NORMAL, 142, 170, 0, 0 )
+-- Mood Form
+grdHeart = UI_CreateCompent( frmMain800, GRID_TYPE, "grdHeart", 151, 178, 283, -168 ) 
+UI_LoadImage( grdHeart,  "texture/new/chat.png", NORMAL, 151, 178, 0, 39 )
 UI_SetGridUnitSize( grdHeart, 32, 32 )
 UI_SetIsShow( grdHeart, FALSE )
 UI_SetMargin( grdHeart, 5, 4, 0, 0 )
