@@ -358,8 +358,8 @@ btnkick = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnkick", 52, 17, 71, 289 )
 UI_LoadButtonImage( btnkick, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 23, TRUE )
 
 -- Disband Button
-btnSan = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnSan", 52, 17, 71, 316 )
-UI_LoadButtonImage( btnSan, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 59, TRUE )
+btnDisband = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnDisband", 52, 17, 71, 316 )
+UI_LoadButtonImage( btnDisband, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 59, TRUE )
 
 -- Permissions Button
 btnperm = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnperm", 52, 17, 383, 343 )
