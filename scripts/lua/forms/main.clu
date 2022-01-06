@@ -255,7 +255,7 @@ UI_SetSize( lstChannel, 35, 160 )
 UI_SetMargin( lstChannel, 5,8,5,4 )
 UI_SetListRowHeight( lstChannel, 18 )
 
-UI_LoadImage( lstChannel, "texture/new/chat.png", COMPENT_BACK, 74, 108, 150, 80 )
+UI_LoadImage( lstChannel, "texture/ui/NUI/chat.png", COMPENT_BACK, 74, 108, 150, 80 )
 
 UI_AddListText( lstChannel, "Local" )
 UI_AddListText( lstChannel, "Party" )
@@ -694,39 +694,38 @@ UI_LoadImage( chkDiscord, "texture/ui/corsairs/forge3.png", UNCHECKED, 33, 16, 1
 UI_LoadImage( chkDiscord, "texture/ui/corsairs/forge3.png", CHECKED, 33, 16, 198, 149 )
 
 
------------------------------------------------------------------------
--- 定义宠物界面
------------------------------------------------------------------------	
--- 创建频道屏蔽界面表单
-frmMainPet = UI_CreateForm( "frmMainPet", FALSE, 171, 31, 4, 53, FALSE, FALSE )
+----------------
+-- Player Pet --
+----------------
+frmMainPet = UI_CreateForm( "frmMainPet", FALSE, 171, 40, 4, 53, FALSE, FALSE )
 UI_ShowForm( frmMainPet, FALSE )
 UI_AddFormToTemplete( frmMainPet, FORM_MAIN )
 UI_FormSetIsEscClose( frmMainPet, FALSE )
 --UI_FormSetHotKey( frmMainPet, ALT_KEY, HOTKEY_V )
 
 
---加载背景
-imgMainPet = UI_CreateCompent( frmMainPet, IMAGE_TYPE, "imgMainPet", 171, 31, 0, 0 )
-UI_LoadImage( imgMainPet, "texture/ui/corsairs/new3.tga", NORMAL, 171, 31, 0, 52 )
+--Main image
+imgMainPet = UI_CreateCompent( frmMainPet, IMAGE_TYPE, "imgMainPet", 171, 40, 25, 4 )
+UI_LoadImage( imgMainPet, "texture/ui/NUI/frmDetail.png", NORMAL, 171, 40, 25, 68 )
 
---加载头像
-imgPetHead = UI_CreateCompent( frmMainPet, IMAGE_TYPE, "imgPetHead", 23, 23, 33, 4 )
+-- Pet image
+imgPetHead = UI_CreateCompent( frmMainPet, IMAGE_TYPE, "imgPetHead", 23, 23, 30, 10 )
 
---加载宠物等级
-labPetLv = UI_CreateCompent( frmMainPet, LABELEX_TYPE, "labPetLv", 14, 9, 64, 5 )
+-- Pet level
+labPetLv = UI_CreateCompent( frmMainPet, LABELEX_TYPE, "labPetLv", 14, 9, 51, 24 )
 UI_SetTextColor( labPetLv, COLOR_WHITE )
 UI_SetLabelExFont( labPetLv, DEFAULT_FONT, TRUE, COLOR_BLACK )
 UI_SetCaption( labPetLv, "99" )
 
---创建宠物HP及进度
-proPetHP = UI_CreateCompent( frmMainPet, PROGRESS_TYPE, "proPetHP", 64, 8, 102, 2 )
-UI_LoadScaleImage( proPetHP, "texture/ui/corsairs/new3.tga", PROGRESS_PROGRESS, 64, 8, 0, 120, 1.0, 1.0 )
+-- Pet stamina
+proPetHP = UI_CreateCompent( frmMainPet, PROGRESS_TYPE, "proPetHP", 77, 5, 65, 11 )
+UI_LoadScaleImage( proPetHP, "texture/ui/NUI/frmDetail.png", PROGRESS_PROGRESS, 77, 5, 40, 204, 1.0, 1.0 )
 UI_SetHint( proPetHP, "Stamina" )
 UI_SetProgressHintStyle( proPetHP, PROGRESS_HINT_NUM )
 
---创建宠物EXP及进度
-proPetSP = UI_CreateCompent( frmMainPet, PROGRESS_TYPE, "proPetSP", 64, 8, 102, 12 )
-UI_LoadScaleImage( proPetSP, "texture/ui/corsairs/new3.tga", PROGRESS_PROGRESS, 64, 8, 66, 120, 1.0, 1.0 )
+-- Pet Growth
+proPetSP = UI_CreateCompent( frmMainPet, PROGRESS_TYPE, "proPetSP", 77, 5, 64, 23 )
+UI_LoadScaleImage( proPetSP, "texture/ui/NUI/frmDetail.png", PROGRESS_PROGRESS, 77, 5, 40, 211, 1.0, 1.0 )
 UI_SetHint( proPetSP, "Growth" )
 UI_SetProgressHintStyle( proPetSP, PROGRESS_HINT_NUM )
 
@@ -1464,11 +1463,15 @@ UI_AddFormToTemplete( frmSpiritMarry, FORM_MAIN )
 UI_FormSetIsEscClose( frmSpiritMarry, TRUE )
 UI_SetIsDrag( frmSpiritMarry,TRUE)
 UI_SetFormStyle( frmSpiritMarry,1)
+
 --UI_FormSetHotKey( frmSpiritMarry, ALT_KEY, HOTKEY_Z )
 
 -- Main image
-imgBakTop = UI_CreateCompent( frmSpiritMarry, IMAGE_TYPE, "imgBakTop",226, 426, 0, 0 )
+imgBakTop = UI_CreateCompent( frmSpiritMarry, IMAGE_TYPE, "imgBakTop", 226, 426, 0, 0 )
 UI_LoadImage( imgBakTop, "texture/ui/NUI/frmSpiritMarry.png", NORMAL, 226, 426, 0, 0 )
+
+imgBakButtom = UI_CreateCompent( frmSpiritMarry, IMAGE_TYPE, "imgBakButtom", 226, 170, 0, 256 )
+--UI_LoadImage( imgBakButtom, "texture/ui/marry2.tga", NORMAL, 226, 170, 0, 0 )
 
 -- Title
 labTitle = UI_CreateCompent( frmSpiritMarry, LABELEX_TYPE, "labTitle", 49, 14, 70, 4 )
@@ -1478,11 +1481,13 @@ UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 -- Fairy slot
 cmdSpiritOne = UI_CreateCompent( frmSpiritMarry, COMMAND_ONE_TYPE, "cmdSpiritOne", 32, 32, 98, 196 )	-- 结婚精灵一
---cmdSpiritTwo = UI_CreateCompent( frmSpiritMarry, COMMAND_ONE_TYPE, "cmdSpiritTwo", 32, 32, 198, 196 )	-- 结婚精灵二
+cmdSpiritTwo = UI_CreateCompent( frmSpiritMarry, COMMAND_ONE_TYPE, "cmdSpiritTwo", 32, 32, 198, 196 )	-- 结婚精灵二
 cmdSpiritItem = UI_CreateCompent( frmSpiritMarry, COMMAND_ONE_TYPE, "cmdSpiritItem", 32, 32, 96, 264 )	-- 产出精灵
 
+
+--设置tag供程序调用
 UI_SetTag( cmdSpiritOne, enumSPIRIT_ONE )
---UI_SetTag( cmdSpiritTwo, enumSPIRIT_TWO )
+UI_SetTag( cmdSpiritTwo, enumSPIRIT_TWO )
 UI_SetTag( cmdSpiritItem, enumSPIRIT_OUT )
 
 -- Label
