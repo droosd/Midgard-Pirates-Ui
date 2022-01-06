@@ -361,10 +361,6 @@ UI_LoadButtonImage( btnkick, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 23, T
 btnDisband = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnDisband", 52, 17, 71, 316 )
 UI_LoadButtonImage( btnDisband, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 59, TRUE )
 
--- Leave Button
-btnLeave = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnLeave", 54, 16, 45, 210 )
-UI_LoadButtonImage( btnLeave, "texture/ui/new/guild.png", 54, 16, 148, 375, TRUE )
-
 -- Permissions Button
 btnperm = UI_CreateCompent( frmManage, BUTTON_TYPE, "btnperm", 52, 17, 383, 343 )
 UI_LoadButtonImage( btnperm, "texture/ui/NUI/guildbuttons.png", 52, 17, 5, 113, TRUE )
