@@ -1,6 +1,6 @@
 function addEquip(x,y,name,form,skillid)
 	_G["img"..name] = UI_CreateCompent( form, IMAGE_TYPE, "img"..name, 36,36, x-2 ,y -2 )
-	UI_LoadImage( _G["img"..name], "texture/new/eqform/"..name..".png", NORMAL, 36,36, 0, 0 )
+	UI_LoadImage( _G["img"..name], "texture/ui/NUI/eqform/"..name..".png", NORMAL, 36,36, 0, 0 )
 	_G[name] = UI_CreateCompent( form, COMMAND_ONE_TYPE, name, 32, 32, x ,y )
 	if skillid then
 		UI_AddCompent( skillid, _G["img"..name] )

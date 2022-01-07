@@ -97,42 +97,41 @@ UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 UI_SetButtonModalResult( btnNo, BUTTON_NO )
 
 
------------------------------------------------------------------------
--- 定义输入数量对话框
------------------------------------------------------------------------
-frmNumber = UI_CreateForm( "frmNumber",  FALSE, 185, 101, 397, 500, FALSE, FALSE )
-UI_LoadFormImage( frmNumber, "texture/ui/sure.dds", 185, 101, 0, 0, "", 0, 0 )
+--------------
+-- Drop etc --
+--------------
+frmNumber = UI_CreateForm( "frmNumber",  FALSE, 191, 106, 397, 500, FALSE, FALSE )
+UI_LoadFormImage( frmNumber, "texture/ui/NUI/guildPerms.png",  191, 106, 395, 298, "", 0, 0 )
 UI_ShowForm( frmNumber, FALSE )
 UI_AddFormToTemplete( frmNumber, FORM_DIALOG )
 UI_SetFormStyle( frmNumber, 0 )
 UI_SetIsDrag( frmNumber, TRUE )
 
---创建请输入交易数量
-labInfo = UI_CreateCompent( frmNumber, LABELEX_TYPE, "labInfo", 23, 11, 50, 30 )
+-- Title
+labInfo = UI_CreateCompent( frmNumber, LABELEX_TYPE, "labInfo", 23, 11, 40, 25 )
 UI_SetCaption( labInfo, "Please Input Quantity" )
-UI_SetTextColor( labInfo, COLOR_BLACK )
-UI_SetLabelExFont( labInfo, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labInfo, COLOR_WHITE )
+UI_SetLabelExFont( labInfo, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
--- 加载输入区背景
-imgNumber = UI_CreateCompent( frmNumber, IMAGE_TYPE, "imgNumber", 87, 18, 50, 50 )
-UI_LoadImage( imgNumber, "texture/ui/PublicC.tga", NORMAL, 87, 18, 99, 235 )
+-- Textbox
+imgNumber = UI_CreateCompent( frmNumber, IMAGE_TYPE, "imgNumber", 172, 22, 8, 40 )
+UI_LoadImage( imgNumber, "texture/ui/NUI/guildPerms.png", NORMAL, 172, 22, 1, 425 )
 
---加载金币输入框
-edtNumber = UI_CreateCompent( frmNumber, EDIT_TYPE, "edtNumber", 71, 11, 58, 54 )
-UI_SetTextColor( edtNumber, COLOR_BLACK )
+--Number text
+edtNumber = UI_CreateCompent( frmNumber, EDIT_TYPE, "edtNumber", 71, 11, 15, 44 )
+UI_SetTextColor( edtNumber, COLOR_WHITE )
 UI_SetEditMaxNum( edtNumber, 32 )
 UI_SetEditMaxNumVisible( edtNumber, 32 )
 
---加载确定按钮
-btnYes = UI_CreateCompent( frmNumber, BUTTON_TYPE, "btnYes", 41, 19, 74, 78 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
-UI_SetButtonModalResult( btnYes, BUTTON_YES )
-UI_SetEditEnterButton( edtNumber, btnYes )
+-- Confirm button
+btnYes = UI_CreateCompent( frmNumber, BUTTON_TYPE, "btnYes", 52, 17, 40, 70 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/guildPerms.png", 52, 17, 2, 451, TRUE )
+UI_SetEditEnterButton( edtTradeGold, btnYes )
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmNumber, BUTTON_TYPE, "btnNo", 41, 19, 122, 78 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
-UI_SetButtonModalResult( btnNo, BUTTON_NO )
+-- Cancel Button
+btnNo = UI_CreateCompent( frmNumber, BUTTON_TYPE, "btnNo", 52, 17, 110, 70 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/guildPerms.png", 52, 17, 2, 471, TRUE )
+UI_SetButtonModalResult( btnNo, BUTTON_CLOSE )
 
 -----------
 -- Error --

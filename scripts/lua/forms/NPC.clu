@@ -103,26 +103,26 @@ grdNPCtradeWeapon = UI_CreateCompent( frmNPCtrade, GOODS_GRID_TYPE, "grdNPCtrade
 UI_SetGridSpace( grdNPCtradeWeapon, 4, 4 )
 UI_SetGridContent( grdNPCtradeWeapon, 30, 4 )
 UI_SetGridUnitSize( grdNPCtradeWeapon, 32, 32 )
-UI_SetMargin( grdNPCtradeWeapon, 17, 6, 0, 4 )
+UI_SetMargin( grdNPCtradeWeapon, 21, 8, 0, 4 )
 
 -- Scroll background
 scrollid = UI_GetScroll( grdNPCtradeWeapon )
 UI_SetSize( scrollid, 11, 2 )
-UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
 -- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
 -- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Defends grid
@@ -135,21 +135,21 @@ UI_SetMargin( grdNPCtradeEquip, 21, 8, 0, 4 )
 -- Scroll background
 scrollid = UI_GetScroll( grdNPCtradeEquip )
 UI_SetSize( scrollid, 11, 2 )
-UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
 -- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
 -- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Mics grid
@@ -162,21 +162,21 @@ UI_SetMargin( grdNPCtradeOther, 21, 8, 0, 4 )
 -- Scroll background
 scrollid = UI_GetScroll( grdNPCtradeOther )
 UI_SetSize( scrollid, 11, 2 )
-UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
 -- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
 -- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 
@@ -381,21 +381,21 @@ UI_SetMemoRowHeight( memMission, 16 )
 -- Scroll background
 scrollid = UI_GetScroll( memMission )
 UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 1, 232, 428 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 1, 232, 428 )
 
 -- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 --Scroll bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
 -- Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Accept button

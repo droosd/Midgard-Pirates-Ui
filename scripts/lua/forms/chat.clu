@@ -30,7 +30,10 @@ UI_SetTextColor( labTitle, COLOR_BLACK )
 UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 
---创建QQ面板
+-----------------
+-- Friend List --
+-----------------
+
 frmQQ = UI_CreateForm( "frmQQ", FALSE, 148, 354, 652, 200, TRUE, FALSE )
 UI_FormSetHotKey( frmQQ, ALT_KEY, HOTKEY_F )
 UI_ShowForm( frmQQ, FALSE )
@@ -38,34 +41,29 @@ UI_AddFormToTemplete( frmQQ, 1 )
 UI_SetIsDrag( frmQQ, TRUE )
 UI_SetFormStyleEx( frmQQ, FORM_BOTTOM, 0, 45)
 
+-- Main image
+imgQQTop = UI_CreateCompent( frmQQ, IMAGE_TYPE, "imgQQTop", 148, 354, 0, 0 )
+UI_LoadImage( imgQQTop, "texture/ui/NUI/frmFriendList.png", NORMAL, 148, 354, 0, 0 )
 
--- 加载背景图片
-imgQQTop = UI_CreateCompent( frmQQ, IMAGE_TYPE, "imgQQTop", 148, 256, 0, 0 )
-UI_LoadImage( imgQQTop, "texture/ui/Speak.dds", NORMAL, 148, 256, 0, 0 )
-imgQQDown = UI_CreateCompent( frmQQ, IMAGE_TYPE, "imgQQDown", 148, 98, 0, 256 )
-UI_LoadImage( imgQQDown, "texture/ui/QQ2.tga", NORMAL, 148, 98, 82, 78 )
-
-
-
--- 加载界面title
-labTitle = UI_CreateCompent( frmQQ, LABELEX_TYPE, "labTitle", 400, 150, 10, 4 )
+-- Title
+labTitle = UI_CreateCompent( frmQQ, LABELEX_TYPE, "labTitle", 400, 150, 60, 5 )
 UI_SetCaption( labTitle, "Chat")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建角色名称
-labMineName = UI_CreateCompent( frmQQ, LABELEX_TYPE, "labMineName", 96, 11, 40, 29 )
+-- Name
+labMineName = UI_CreateCompent( frmQQ, LABELEX_TYPE, "labMineName", 96, 11, 40, 33 )
 UI_SetCaption( labMineName, "Child of Demon what is that" )
-UI_SetTextColor( labMineName, COLOR_BLACK )
-UI_SetLabelExFont( labMineName, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labMineName, COLOR_WHITE )
+UI_SetLabelExFont( labMineName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
--- 加载角色头像
-imgHead = UI_CreateCompent( frmQQ, IMAGE_TYPE, "imgHead", 32, 32, 1, 20 )
-UI_LoadImage( imgHead, "texture/ui/main800.tga", NORMAL, 32, 32, 37, 201 )
+-- Head
+imgHead = UI_CreateCompent( frmQQ, IMAGE_TYPE, "imgHead", 28, 28, 6, 25 )
+UI_LoadImage( imgHead, "texture/ui/main800.tga", NORMAL, 28, 28, 37, 201 )
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmQQ, BUTTON_TYPE, "btnClose", 14, 14, 127, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmQQ, BUTTON_TYPE, "btnClose", 19, 20, 135, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmFriendList.png", 19, 20, 1, 462, TRUE )
 
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
@@ -87,58 +85,58 @@ btnBlock = UI_CreateCompent( frmQQ, BUTTON_TYPE, "btnBlock", 14, 14, 70, 332 )
 UI_LoadButtonImage( btnBlock, "texture/ui/corsairs/coButtons.png", 14, 14, 276, 51, TRUE )
 UI_SetHint( btnBlock, "Block" )
 
---创建树型结构
-trvEditor = UI_CreateCompent( frmQQ, TREE_TYPE, "trvEditor", 142, 265, 5, 62 )
-itemid = UI_CreateNoteGraphItem( "texture/ui/QQ2.tga", 87,16,105,222, 0, "Chat", 5,2 )
+-- List
+trvEditor = UI_CreateCompent( frmQQ, TREE_TYPE, "trvEditor", 142, 265, 4, 67 )
+itemid = UI_CreateNoteGraphItem( "texture/ui/NUI/frmFriendList.png", 85, 20, 40, 397, 0, "Chat", 3,3 )
 gridid = UI_CreateGridNode( trvEditor, itemid, 1, 32, 32, -1 )
 	
-itemid = UI_CreateNoteGraphItem( "texture/ui/QQ2.tga", 87,16,105,222, 0, "Friend", 5,2 )
+itemid = UI_CreateNoteGraphItem( "texture/ui/NUI/frmFriendList.png", 85, 20, 40, 397, 0, "Friend", 3,3 )
 gridid = UI_CreateGridNode( trvEditor, itemid, 1, 32, 32, -1 )
 	
-itemid = UI_CreateNoteGraphItem( "texture/ui/QQ2.tga", 87,16,105,222, 0, "Party", 5,2 )
+itemid = UI_CreateNoteGraphItem( "texture/ui/NUI/frmFriendList.png", 85, 20, 40, 397, 0, "Party", 3,3 )
 gridid = UI_CreateGridNode( trvEditor, itemid, 1, 32, 32, -1 )
 	
-itemid = UI_CreateNoteGraphItem( "texture/ui/QQ2.tga", 87,16,105,222, 0, "Guild", 5,2 )
+itemid = UI_CreateNoteGraphItem( "texture/ui/NUI/frmFriendList.png", 85, 20, 40, 397, 0, "Guild", 3,3 )
 gridid = UI_CreateGridNode( trvEditor, itemid, 1, 32, 32, -1 )
 
---itemid = UI_CreateNoteGraphItem( "texture/ui/QQ2.tga", 87,16,105,222, 0, "Passer-by", 5,2 )
+--itemid = UI_CreateNoteGraphItem( "texture/ui/QQ2.tga", 87,16,105,222, 0, "Passer-by", 5,3 )
 --gridid = UI_CreateGridNode( trvEditor, itemid, 1, 32, 32, -1 )
 
-itemid = UI_CreateNoteGraphItem( "texture/ui/QQ2.tga", 87,16,105,222, 0, "Mentor", 5,2 )
+itemid = UI_CreateNoteGraphItem( "texture/ui/NUI/frmFriendList.png", 85, 20, 40, 397, 0, "Mentor", 3,3 )
 gridid = UI_CreateGridNode( trvEditor, itemid, 1, 32, 32, -1 )
 
-itemid = UI_CreateNoteGraphItem( "texture/ui/QQ2.tga", 87,16,105,222, 0, "Disciple", 5,2 )
+itemid = UI_CreateNoteGraphItem( "texture/ui/NUI/frmFriendList.png", 85, 20, 40, 397, 0, "Disciple", 3,3 )
 gridid = UI_CreateGridNode( trvEditor, itemid, 1, 32, 32, -1 )
 
-itemid = UI_CreateNoteGraphItem( "texture/ui/QQ2.tga", 87,16,105,222, 0, "GM", 5,2 )
+itemid = UI_CreateNoteGraphItem( "texture/ui/NUI/frmFriendList.png", 85, 20, 40, 397, 0, "GM", 3,3 )
 gridid = UI_CreateGridNode( trvEditor, itemid, 1, 32, 32, -1 )
 
-itemid = UI_CreateNoteGraphItem( "texture/ui/QQ2.tga", 87,16,105,222, 0, "Blocked", 5,2 )
+itemid = UI_CreateNoteGraphItem( "texture/ui/NUI/frmFriendList.png", 85, 20, 40, 397, 0, "Blocked", 3,3 )
 gridid = UI_CreateGridNode( trvEditor, itemid, 1, 32, 32, -1 )
 
 UI_SetIsDrag( trvEditor, TRUE )
 
-UI_TreeLoadImage( trvEditor, enumTreeAddImage, "texture/ui/QQ2.tga", 20,16,85,222, 20, 16)
-UI_TreeLoadImage( trvEditor, enumTreeSubImage, "texture/ui/QQ2.tga", 20,16,85,240, 20, 16)
+UI_TreeLoadImage( trvEditor, enumTreeAddImage, "texture/ui/NUI/frmFriendList.png", 18, 20, 0, 397, 20, 20)
+UI_TreeLoadImage( trvEditor, enumTreeSubImage, "texture/ui/NUI/frmFriendList.png", 18, 20, 0, 418, 20, 20)
 
---获得滚动条
+-- Scroll background
 scrollid = UI_GetScroll( trvEditor )
 UI_SetSize( scrollid, 11, 1 )
-UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
+UI_LoadImage( scrollid, "texture/ui/NUI/frmFriendList.png", COMPENT_BACK, 11, 2, 110, 468 )
 
---加载向上按钮
+-- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/frmFriendList.png", 11, 9, 122, 479, TRUE )
 UI_SetSize( id, 11, 9 )
 
---加载滚动条
+-- Scroll
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
+UI_LoadImage( id, "texture/ui/NUI/frmFriendList.png", COMPENT_BACK, 11, 43, 99, 457 )
 UI_SetSize( id, 11, 43 )
 
---加载向下按钮
+--Scroll down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/frmFriendList.png", 11, 9, 122, 479, TRUE )
 UI_SetSize( id, 11, 9 )
 
 
