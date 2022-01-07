@@ -104,7 +104,7 @@ UI_SetTitleFont( tlField, BIGFONT, COLOR_BLACK, 15 )
 ----------
 
 imgMain1 = UI_CreateCompent( frmMain800, IMAGE_TYPE, "imgMain1", 288, 30, 0, 0 )
-UI_LoadImage( imgMain1, "texture/new/chat.png", NORMAL, 288, 30, 1, 315 )
+UI_LoadImage( imgMain1, "texture/ui/NUI/chat.png", NORMAL, 288, 30, 1, 315 )
 
 -- Chat Box
 edtSay = UI_CreateCompent( frmMain800, EDIT_TYPE, "edtSay", 150, 20, 64, 9 )
@@ -121,26 +121,26 @@ UI_SetMargin( lstOnSay, 5, 3, 0, 0 )
 
 -- Chat drag
 drpTitle = UI_CreateCompent( frmMain800, DRAG_TITLE_TYPE, "drpTitle", 43, 7, 0, -100 )
-UI_LoadImage( drpTitle, "texture/new/chat.png", NORMAL, 43, 7, 61, 2 )
+UI_LoadImage( drpTitle, "texture/ui/NUI/chat.png", NORMAL, 43, 7, 61, 2 )
 
 -- Chat scroll
 scrollid = UI_GetScroll( lstOnSay)
 UI_SetSize( scrollid, 18, 18 )
---UI_LoadImage( scrollid, "texture/new/chat.png", COMPENT_BACK, 18, 18, 194, 13 )
+--UI_LoadImage( scrollid, "texture/ui/NUI/chat.png", COMPENT_BACK, 18, 18, 194, 13 )
 
 -- Scroll Up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 3, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/chat.png", 18, 18, 3, 3, TRUE )
 UI_SetSize( id, 18, 18 )
 
 --  Scroll
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/new/chat.png", COMPENT_BACK, 18, 18, 61, 14 )
+UI_LoadImage( id, "texture/ui/NUI/chat.png", COMPENT_BACK, 18, 18, 61, 14 )
 UI_SetSize( id, 18, 18 )
 
 -- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 21, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/chat.png", 18, 18, 3, 21, TRUE )
 UI_SetSize( id, 18, 18 )
 
 
@@ -151,26 +151,26 @@ UI_SetImageAlpha( lstOnSayDiscord, 450 )
 UI_SetMargin( lstOnSayDiscord, 5, 3, 0, 0 )
 
 drpTitleDiscord = UI_CreateCompent( frmMain800, DRAG_TITLE_TYPE, "drpTitleDiscord", 43, 7, 0, -160 )--43, 7, 0, -220 )
-UI_LoadImage( drpTitleDiscord, "texture/new/chat.png", NORMAL, 43, 7, 61, 2 )
+UI_LoadImage( drpTitleDiscord, "texture/ui/NUI/chat.png", NORMAL, 43, 7, 61, 2 )
 
 
 scrollid = UI_GetScroll( lstOnSayDiscord)
 UI_SetSize( scrollid, 18, 18 )
---UI_LoadImage( scrollid, "texture/new/chat.png", COMPENT_BACK, 18, 18, 194, 13 )
+--UI_LoadImage( scrollid, "texture/ui/NUI/chat.png", COMPENT_BACK, 18, 18, 194, 13 )
 
 -- Scroll Up
 id = UI_GetScrollObj( lstOnSayDiscord, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 3, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/chat.png", 18, 18, 3, 3, TRUE )
 UI_SetSize( id, 18, 18 )
 
 --  Scroll
 id = UI_GetScrollObj( lstOnSayDiscord, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/new/chat.png", COMPENT_BACK, 18, 18, 61, 14 )
+UI_LoadImage( id, "texture/ui/NUI/chat.png", COMPENT_BACK, 18, 18, 61, 14 )
 UI_SetSize( id, 18, 18 )
 
 -- Scroll Down
 id = UI_GetScrollObj( lstOnSayDiscord, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 21, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/chat.png", 18, 18, 3, 21, TRUE )
 UI_SetSize( id, 18, 18 )
 
 
@@ -182,7 +182,7 @@ UI_SetMargin( lstOnSaySystem, 5, 3, 0, 0 )
 
 -- System drag 
 drpTitleSystem = UI_CreateCompent( frmMain800, DRAG_TITLE_TYPE, "drpTitleSystem", 43, 7, 0, -160 )--43, 7, 0, -220 )
-UI_LoadImage( drpTitleSystem, "texture/new/chat.png", NORMAL, 43, 7, 61, 2 )
+UI_LoadImage( drpTitleSystem, "texture/ui/NUI/chat.png", NORMAL, 43, 7, 61, 2 )
 
 -- System Scroll
 scrollid = UI_GetScroll( lstOnSaySystem )
@@ -191,29 +191,29 @@ UI_SetSize( scrollid, 18, 18 )
 
 -- Scroll Up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 3, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/chat.png", 18, 18, 3, 3, TRUE )
 UI_SetSize( id, 18, 18 )
 
 -- Scroll
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/new/chat.png", COMPENT_BACK, 18, 18, 61, 14 )
+UI_LoadImage( id, "texture/ui/NUI/chat.png", COMPENT_BACK, 18, 18, 61, 14 )
 UI_SetSize( id, 18, 18 )
 
 -- Scrol Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/new/chat.png", 18, 18, 3, 21, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/chat.png", 18, 18, 3, 21, TRUE )
 UI_SetSize( id, 18, 18 )
 
 -- Channel button
 chkChatOn = UI_CreateCompent( frmMain800, CHECK_TYPE, "chkChatOn", 19, 9, 41, 5 )
-UI_LoadImage( chkChatOn, "texture/new/chat.png", UNCHECKED, 19, 9, 237, 115 )
-UI_LoadImage( chkChatOn, "texture/new/chat.png", CHECKED, 19, 9, 256, 115 )
+UI_LoadImage( chkChatOn, "texture/ui/NUI/chat.png", UNCHECKED, 19, 9, 237, 115 )
+UI_LoadImage( chkChatOn, "texture/ui/NUI/chat.png", CHECKED, 19, 9, 256, 115 )
 UI_SetHint( chkChatOn , "Channel Display Button" )
 
 -- clear chat
 btnCard = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnCard", 19,	9, 41, 16 )
-UI_LoadButtonImage( btnCard, "texture/new/chat.png", 19, 9, 237, 105, TRUE )
---UI_LoadImage( btnCard, "texture/new/chat.png", UNCHECKED, 7, 21, 0, 0 )
+UI_LoadButtonImage( btnCard, "texture/ui/NUI/chat.png", 19, 9, 237, 105, TRUE )
+--UI_LoadImage( btnCard, "texture/ui/NUI/chat.png", UNCHECKED, 7, 21, 0, 0 )
 UI_SetHint( btnCard , "Whisper list" )
 
 ----------ÃûÆ¬ÁÐ±í
@@ -310,7 +310,7 @@ UI_SetHint( btnBrow, "Mood" )
 
 -- Emoticon form
 grdFace = UI_CreateCompent( frmMain800, GRID_TYPE, "grdFace", 151, 178, 243, -168 ) 
-UI_LoadImage( grdFace,  "texture/new/chat.png", NORMAL, 151, 178, 0, 39 )
+UI_LoadImage( grdFace,  "texture/ui/NUI/chat.png", NORMAL, 151, 178, 0, 39 )
 UI_SetGridUnitSize( grdFace, 20, 20 )
 UI_SetIsShow( grdFace, FALSE )
 UI_SetMargin( grdFace, 11, 5, 5, 5 )
@@ -328,7 +328,7 @@ UI_GridLoadSelectImage( grdFace, "texture/ui/StartF.dds", 32, 32, 123, 99 )
 
 -- Action form
 grdAction = UI_CreateCompent( frmMain800, GRID_TYPE, "grdAction", 151, 178, 263, -168 ) 
-UI_LoadImage( grdAction,  "texture/new/chat.png", NORMAL, 151, 178, 0, 39 )
+UI_LoadImage( grdAction,  "texture/ui/NUI/chat.png", NORMAL, 151, 178, 0, 39 )
 UI_SetGridUnitSize( grdAction, 32, 32 )
 UI_SetIsShow( grdAction, FALSE )
 UI_SetMargin( grdAction, 5, 4, 0, 0 )
@@ -353,7 +353,7 @@ UI_GridLoadSelectImage( grdAction, "texture/ui/StartF.dds", 32, 32, 157, 99 )
 
 -- Mood Form
 grdHeart = UI_CreateCompent( frmMain800, GRID_TYPE, "grdHeart", 151, 178, 283, -168 ) 
-UI_LoadImage( grdHeart,  "texture/new/chat.png", NORMAL, 151, 178, 0, 39 )
+UI_LoadImage( grdHeart,  "texture/ui/NUI/chat.png", NORMAL, 151, 178, 0, 39 )
 UI_SetGridUnitSize( grdHeart, 32, 32 )
 UI_SetIsShow( grdHeart, FALSE )
 UI_SetMargin( grdHeart, 5, 4, 0, 0 )

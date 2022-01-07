@@ -9,7 +9,7 @@ UI_FormSetIsEscClose( frmMinimap, FALSE )
 
 -- Main image
 imgMinimapT = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapT", 141, 141, 0, 0 )
-UI_LoadImage( imgMinimapT, "texture/new/minimap.png", NORMAL, 141, 141, 29, 5 )
+UI_LoadImage( imgMinimapT, "texture/ui/NUI/minimap.png", NORMAL, 141, 141, 29, 5 )
 
 -- map display
 imgMinimapRect = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapRect", 127, 118, 7, 11 )
@@ -46,32 +46,32 @@ end
 
 -- Word Map
 btnOpen = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnOpen", 20, 20, 118, 145 )
-UI_LoadButtonImage( btnOpen, "texture/new/minimap.png", 20, 20, 3, 190, FALSE )
+UI_LoadButtonImage( btnOpen, "texture/ui/NUI/minimap.png", 20, 20, 3, 190, FALSE )
 UI_SetHint( btnOpen, "World Map" )
 
 -- Radar
 btnSearch = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnSearch", 20, 20, 95, 145 )
-UI_LoadButtonImage( btnSearch, "texture/new/minimap.png", 20, 20, 24, 190, FALSE )
+UI_LoadButtonImage( btnSearch, "texture/ui/NUI/minimap.png", 20, 20, 24, 190, FALSE )
 UI_SetHint( btnSearch, "Radar" )
 
 -- Search stall
 btnStall = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnStall", 20, 20, 72, 145 )
-UI_LoadButtonImage( btnStall, "texture/new/minimap.png", 20, 20, 45, 190, FALSE )
+UI_LoadButtonImage( btnStall, "texture/ui/NUI/minimap.png", 20, 20, 45, 190, FALSE )
 UI_SetHint( btnStall, "Search Stalls" )
 
 -- Ranking
 btnRank = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnRank", 20, 20, 49, 145 )
-UI_LoadButtonImage( btnRank, "texture/new/minimap.png", 20, 20, 66, 190, FALSE )
+UI_LoadButtonImage( btnRank, "texture/ui/NUI/minimap.png", 20, 20, 66, 190, FALSE )
 UI_SetHint( btnRank, "Player Ranking" )
 
 -- Discord
 btnDiscord = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnDiscord", 20, 20, 26, 145 )
-UI_LoadButtonImage( btnDiscord, "texture/new/minimap.png", 20, 20, 87, 190, FALSE )
+UI_LoadButtonImage( btnDiscord, "texture/ui/NUI/minimap.png", 20, 20, 87, 190, FALSE )
 UI_SetHint( btnDiscord, "Enter Discord" )
 
 -- Mall
 btnOpenStore = UI_CreateCompent( frmMinimap, BUTTON_TYPE, "btnOpenStore", 20, 20, 3, 145 )
-UI_LoadButtonImage( btnOpenStore, "texture/new/minimap.png", 20, 20, 108, 191, TRUE )
+UI_LoadButtonImage( btnOpenStore, "texture/ui/NUI/minimap.png", 20, 20, 108, 191, TRUE )
 UI_SetHint( btnOpenStore, "Accessing Item Mall" )
 
 --打开临时背包button
