@@ -295,17 +295,17 @@ UI_AddListText( lstChannel, "Trade" )
 
 -- Emoticons
 btnChatFace = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnChatFace", 23, 22, 217, 5 )
-UI_LoadButtonImage( btnChatFace, "texture/new/Chat.png", 23, 22, 151, 2, TRUE )
+UI_LoadButtonImage( btnChatFace, "texture/ui/NUI/Chat.png", 23, 22, 151, 2, TRUE )
 UI_SetHint( btnChatFace , "Emoticon" )
 
 -- Action
 btnAction = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnAction", 23, 22, 240, 5 )
-UI_LoadButtonImage( btnAction, "texture/new/Chat.png", 23, 22, 151, 52, TRUE )
+UI_LoadButtonImage( btnAction, "texture/ui/NUI/Chat.png", 23, 22, 151, 52, TRUE )
 UI_SetHint( btnAction, "Action" )
 
 -- Mood
 btnBrow = UI_CreateCompent( frmMain800, BUTTON_TYPE, "btnBrow", 23, 22, 263, 5 )
-UI_LoadButtonImage( btnBrow, "texture/new/Chat.png", 23, 22, 151, 27, TRUE )
+UI_LoadButtonImage( btnBrow, "texture/ui/NUI/Chat.png", 23, 22, 151, 27, TRUE )
 UI_SetHint( btnBrow, "Mood" )
 
 -- Emoticon form
