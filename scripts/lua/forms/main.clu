@@ -147,7 +147,7 @@ UI_SetSize( id, 18, 18 )
 -- discord Chat Background
 lstOnSayDiscord = UI_CreateCompent( frmMain800, LIST_TYPE, "lstOnSayDiscord", 288, 60, 0, -158 )--288, 60, 0, -218 )
 UI_LoadImage( lstOnSayDiscord, "texture/ui/Nbotton.tga", COMPENT_BACK, 1, 1, 100, 171 )
-UI_SetImageAlpha( lstOnSayDiscord, 450 )
+UI_SetImageAlpha( lstOnSayDiscord, 400 ) -- Transparent value (default 450)
 UI_SetMargin( lstOnSayDiscord, 5, 3, 0, 0 )
 
 drpTitleDiscord = UI_CreateCompent( frmMain800, DRAG_TITLE_TYPE, "drpTitleDiscord", 43, 7, 0, -160 )--43, 7, 0, -220 )
