@@ -519,24 +519,24 @@ UI_SetMaxImage( imgobj, 19 )
 imgLeader = UI_CreateCompent( frmTeamMenber1, IMAGE_TYPE, "imgLeader", 9, 9, 7, 5 )
 UI_LoadImage( imgLeader, "texture/ui/corsairs/new3.tga", NORMAL, 9, 9, 0, 161 )
 
------------------------------------------------------------------------
--- 定义复活框
------------------------------------------------------------------------
-frmRelive = UI_CreateForm( "frmRelive",  FALSE, 185, 101, 397, 500, TRUE, FALSE )
-UI_LoadFormImage( frmRelive, "texture/ui/sure.dds", 185, 101, 0, 0, "", 0, 0 )
+-------------------
+-- Player revive --
+-------------------
+frmRelive = UI_CreateForm( "frmRelive",  FALSE, 243, 119, 397, 500, TRUE, FALSE )
+UI_LoadFormImage( frmRelive, "texture/ui/NUI/surenew.png", 243, 119, 0, 0, "", 0, 0 )
 UI_ShowForm( frmRelive, FALSE )
 UI_AddFormToTemplete( frmRelive, FORM_MAIN )
 UI_SetFormStyle( frmRelive, 0 )
 UI_SetIsDrag( frmRelive, TRUE )
- UI_FormSetIsEscClose( frmRelive, FALSE )
+UI_FormSetIsEscClose( frmRelive, FALSE )
 --UI_SetAlpha( frmRelive, 200 )
 --UI_FormSetHotKey( frmRelive, ALT_KEY, HOTKEY_X ) 
 
---创建询问显示
+-- Title
 labReCity = UI_CreateCompent( frmRelive, LABELEX_TYPE, "labReCity", 1, 1, 38, 40 )
 UI_SetCaption( labReCity, "Do you want to Revive in town" )
-UI_SetTextColor( labReCity, COLOR_BLACK)
-UI_SetLabelExFont( labReCity, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labReCity, COLOR_WHITE)
+UI_SetLabelExFont( labReCity, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 -- 加载界面title
 --imgReCity = UI_CreateCompent( frmRelive, IMAGE_TYPE, "imgReCity", 48, 13, 8, 4 )
@@ -544,12 +544,12 @@ UI_SetLabelExFont( labReCity, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 labTitle = UI_CreateCompent( frmRelive, LABELEX_TYPE, "labTitle", 400, 150, 10, 4 )
 UI_SetCaption( labTitle, "Revive")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载回城按钮
-btnReCity = UI_CreateCompent( frmRelive, BUTTON_TYPE, "btnReCity", 41, 19, 74, 78 )
-UI_LoadButtonImage( btnReCity, "texture/ui/SystemBotton3.tga", 41, 19, 169, 39, FALSE )
+-- Confirm button
+btnReCity = UI_CreateCompent( frmRelive, BUTTON_TYPE, "btnReCity", 52, 17, 74, 78 )
+UI_LoadButtonImage( btnReCity, "texture/ui/NUI/surenew.png", 52, 17, 8, 149, FALSE )
 
 -----------------------------------------------------------------------
 -- 定义倒计时框
