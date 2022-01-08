@@ -139,7 +139,7 @@ local impgoldplacementY = 384
 
 -- gold and crystal text
 imgimpgold = UI_CreateCompent( frmInv, IMAGE_TYPE, "imgimpgold", 145,46, impgoldplacementX, impgoldplacementY )
---UI_LoadImage( imgimpgold, "texture/new/INV/goldimp.png", NORMAL, 145,46, 0, 0 )
+--UI_LoadImage( imgimpgold, "texture/ui/NUI/INV/goldimp.png", NORMAL, 145,46, 0, 0 )
 
 labItemgoldnumber = UI_CreateCompent( frmInv, LABELEX_TYPE, "labItemgoldnumber", 91, 8, 230, 343 )
 UI_SetTextColor( labItemgoldnumber, COLOR_WHITE )
