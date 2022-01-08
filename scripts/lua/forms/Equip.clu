@@ -370,21 +370,21 @@ UI_LoadSkillListButtonImage( lstSkill, "texture/ui/Quest1.tga", 17, 17, 4, 198, 
 -- Scroll background
 scrollid = UI_GetScroll( lstSkill )
 UI_SetSize( scrollid, 11, 2 )
-UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
 -- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
 -- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Life skill grid
@@ -397,21 +397,21 @@ UI_LoadSkillListButtonImage( lstSkillW, "texture/ui/Quest1.tga", 17, 17, 4, 198,
 -- Scroll background
 scrollid = UI_GetScroll( lstSkillW )
 UI_SetSize( scrollid, 11, 2 )
-UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
 -- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
 -- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 
@@ -426,21 +426,21 @@ UI_LoadSkillListButtonImage( lstSkillS, "texture/ui/Quest1.tga", 17, 17, 4, 198,
 -- Scroll background
 scrollid = UI_GetScroll( lstSkillS )
 UI_SetSize( scrollid, 11, 2 )
-UI_LoadImage( scrollid, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
+UI_LoadImage( scrollid, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 2, 232, 428 )
 
 -- Scroll up
 id = UI_GetScrollObj( scrollid, SCROLL_UP )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 -- Scroll Bar
 id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
-UI_LoadImage( id, "texture/ui/NIU/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
+UI_LoadImage( id, "texture/ui/NUI/guildPerms.png", COMPENT_BACK, 11, 43, 221, 417 )
 UI_SetSize( id, 11, 43 )
 
 -- Scroll Down
 id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
-UI_LoadButtonImage( id, "texture/ui/NIU/guildPerms.png", 11, 9, 244, 439, TRUE )
+UI_LoadButtonImage( id, "texture/ui/NUI/guildPerms.png", 11, 9, 244, 439, TRUE )
 UI_SetSize( id, 11, 9 )
 
 --¡ä¡ä?¡§¨°3??
