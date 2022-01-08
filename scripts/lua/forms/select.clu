@@ -156,7 +156,7 @@ UI_LoadImage( imgCity03, "", NORMAL, 203, 129, 0, 0 )
 -- Argent City
 imgCity1 = UI_CreateCompent( frmCity, BUTTON_TYPE, "imgCity1", 157, 198, 8, 157 )
 imgCity10 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity10", 464, 395, 0, 0 )
-UI_LoadImage( imgCity10, "texture/ui/NIU/imgCity1.png", NORMAL, 464, 395, 0, 0 )
+UI_LoadImage( imgCity10, "texture/ui/NUI/imgCity1.png", NORMAL, 464, 395, 0, 0 )
 imgCity11 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity11", 203, 256, 256, 0 )
 UI_LoadImage( imgCity11, "", NORMAL, 203, 256, 0, 0 )
 imgCity12 = UI_CreateCompent( frmCity, IMAGE_TYPE, "imgCity12", 256, 129, 0, 256 )

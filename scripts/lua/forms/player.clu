@@ -826,7 +826,7 @@ UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 -----------------
 -- Target info --
 -----------------
-frmTargetInfo = UI_CreateForm( "frmTargetInfo", FALSE, 166, 33 + 17, 200, 4, TRUE, FALSE )
+frmTargetInfo = UI_CreateForm( "frmTargetInfo", FALSE, 146, 40, 200, 4, TRUE, FALSE )
 UI_ShowForm( frmTargetInfo, TRUE )
 UI_SetIsDrag( frmTargetInfo, TRUE )
 UI_AddFormToTemplete( frmTargetInfo, FORM_MAIN )
@@ -846,21 +846,20 @@ frmTargetInfoName = UI_CreateCompent( frmTargetInfo, LABELEX_TYPE, "frmTargetInf
 UI_SetTextColor( frmTargetInfoName, COLOR_WHITE )
 UI_SetLabelExFont( frmTargetInfoName, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
--- Player Level
-labTargetLv = UI_CreateCompent( frmTargetInfo, LABELEX_TYPE, "labTargetLv", 14, 9, 36, 4 )
+-- Target Level
+labTargetLv = UI_CreateCompent( frmTargetInfo, LABELEX_TYPE, "labTargetLv", 14, 9, 40, 6 )
 UI_SetTextColor( labTargetLv, COLOR_WHITE )
 UI_SetLabelExFont( labTargetLv, DEFAULT_FONT, TRUE, COLOR_BLACK )
 UI_SetCaption( labLv, "99" )
 
-d3dTarget = UI_CreateCompent( frmTargetInfo, UI3D_COMPENT_TYPE, "d3dTarget", 30, 30, 6, 6 )
+-- Target Mob Img
+imgTargetIcon = UI_CreateCompent( frmTargetInfo, IMAGE_TYPE, "imgTargetIcon", 28, 28, 5, 5 )
 
+-- Button Drop Info
 btnDropListShow = UI_CreateCompent( frmTargetInfo, BUTTON_TYPE, "btnDropListShow", 52, 17, 93,42 )
-UI_LoadImage( btnDropListShow, "texture/ui/NUI/dopButtons.png", 0, 52, 17, 0, 18 )
-UI_LoadImage( btnDropListShow, "texture/ui/NUI/dopButtons.png", 1, 52, 17, 0, 0 )
-UI_LoadImage( btnDropListShow, "texture/ui/NUI/dopButtons.png", 2, 52, 17, 0, 0 )
-UI_SetHint( btnDropListShow, "Show drop list" )
-UI_SetIsShow(btnDropListShow,FALSE)
-
+UI_LoadButtonImage( btnDropListShow, "texture/ui/NUI/dropInfo.png", 52, 17, 14, 473, TRUE )
+UI_SetHint( btnDropListShow, "Show monster info" )
+UI_SetIsShow(btnDropListShow, TRUE)
 ---------------
 -- Drop Form --
 ---------------
