@@ -102,6 +102,7 @@ UI_SetButtonModalResult( btnNo, BUTTON_NO )
 --------------
 frmNumber = UI_CreateForm( "frmNumber",  FALSE, 191, 106, 397, 500, FALSE, FALSE )
 UI_LoadFormImage( frmNumber, "texture/ui/NUI/guildPerms.png",  191, 106, 395, 298, "", 0, 0 )
+--UI_LoadFormImage( frmNumber, "texture/ui/NUI/guildPerms.png",  191, 106, 395, 298, "", 0, 0 )
 UI_ShowForm( frmNumber, FALSE )
 UI_AddFormToTemplete( frmNumber, FORM_DIALOG )
 UI_SetFormStyle( frmNumber, 0 )

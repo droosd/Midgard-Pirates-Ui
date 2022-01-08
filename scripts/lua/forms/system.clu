@@ -390,73 +390,73 @@ addSystemOption(frmGame,"cbxIs60FPSl","FPS Limit","FPS","30","60",166)
  
  
 
------------------------------------------------------------------------
--- 定义更换角色询问
------------------------------------------------------------------------
-frmAskChange = UI_CreateForm( "frmAskChange", FALSE, 185, 100, 397, 500, FALSE, FALSE )
-UI_LoadFormImage( frmAskChange, "texture/ui/Sure.dds", 185, 100, 0, 0, "", 0, 0 )
+----------------------
+-- Switch Character --
+----------------------
+frmAskChange = UI_CreateForm( "frmAskChange", FALSE, 243, 119, 397, 500, FALSE, FALSE )
+UI_LoadFormImage( frmAskChange, "texture/ui/NUI/surenew.png", 243, 119, 0, 0, "", 0, 0 )
 
 UI_ShowForm( frmAskChange, FALSE )
 UI_AddFormToTemplete( frmAskChange, FORM_MAIN )
 UI_SetFormStyle( frmAskChange, 0 )
 --UI_SetAlpha( frmAskChange, 200 )
 
---创建登陆Title
-labchange = UI_CreateCompent( frmAskChange, LABELEX_TYPE, "labchange", 47, 11, 7, 3 )
+-- Title
+labchange = UI_CreateCompent( frmAskChange, LABELEX_TYPE, "labchange", 47, 11, 7, 5 )
 UI_SetCaption( labchange, "Switch Character" )
-UI_SetTextColor( labchange, COLOR_BLACK )
-UI_SetLabelExFont( labchange, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labchange, COLOR_WHITE )
+UI_SetLabelExFont( labchange, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建询问内容
+-- Description
 labLogin = UI_CreateCompent( frmAskChange, LABELEX_TYPE, "labLogin", 59, 11, 35, 40 )
 UI_SetCaption( labLogin, "Confirm to switch \ncharacter?" )
-UI_SetTextColor( labLogin, COLOR_BLACK )
-UI_SetLabelExFont( labLogin, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labLogin, COLOR_WHITE )
+UI_SetLabelExFont( labLogin, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载确定
-btnYes = UI_CreateCompent( frmAskChange, BUTTON_TYPE, "btnYes", 41, 19, 74, 78 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+-- COnfirm button
+btnYes = UI_CreateCompent( frmAskChange, BUTTON_TYPE, "btnYes", 52, 17, 65, 78 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/surenew.png", 52, 17, 8, 131, TRUE )
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmAskChange, BUTTON_TYPE, "btnNo", 41, 19, 122, 78 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+-- Cancel button
+btnNo = UI_CreateCompent( frmAskChange, BUTTON_TYPE, "btnNo", 52, 17, 122, 78 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/surenew.png", 52, 17, 8, 149, TRUE )
 
------------------------------------------------------------------------
--- 定义重新登陆询问
------------------------------------------------------------------------
-frmAskRelogin = UI_CreateForm( "frmAskRelogin", FALSE, 185, 100, 397, 500, FALSE, FALSE )
-UI_LoadFormImage( frmAskRelogin, "texture/ui/Sure.dds", 185, 100, 0, 0, "", 0, 0 )
+-------------
+-- relogin --
+-------------
+frmAskRelogin = UI_CreateForm( "frmAskRelogin", FALSE, 243, 119, 397, 500, FALSE, FALSE )
+UI_LoadFormImage( frmAskRelogin, "texture/ui/NUI/surenew.png", 243, 119, 0, 0, "", 0, 0 )
 
 UI_ShowForm( frmAskRelogin, FALSE )
 UI_AddFormToTemplete( frmAskRelogin, FORM_MAIN )
 UI_SetFormStyle( frmAskRelogin, 0 )
 --UI_SetAlpha( frmAskRelogin, 200 )
 
---创建登陆Title
-labchange = UI_CreateCompent( frmAskRelogin, LABELEX_TYPE, "labchange", 47, 11, 7, 3 )
+--Title
+labchange = UI_CreateCompent( frmAskRelogin, LABELEX_TYPE, "labchange", 47, 11, 7, 5 )
 UI_SetCaption( labchange, "Logout" )
-UI_SetTextColor( labchange, COLOR_BLACK )
-UI_SetLabelExFont( labchange, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labchange, COLOR_WHITE )
+UI_SetLabelExFont( labchange, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建询问内容
+-- Description
 labLogin = UI_CreateCompent( frmAskRelogin, LABELEX_TYPE, "labLogin", 59, 11, 35, 40 )
 UI_SetCaption( labLogin, "Confirm to log out?" )
-UI_SetTextColor( labLogin, COLOR_BLACK )
-UI_SetLabelExFont( labLogin, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labLogin, COLOR_WHITE )
+UI_SetLabelExFont( labLogin, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载确定
-btnYes = UI_CreateCompent( frmAskRelogin, BUTTON_TYPE, "btnYes", 41, 19, 74, 78 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+-- COnfirm button
+btnYes = UI_CreateCompent( frmAskRelogin, BUTTON_TYPE, "btnYes", 52, 17, 65, 78 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/surenew.png", 52, 17, 8, 131, TRUE )
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmAskRelogin, BUTTON_TYPE, "btnNo", 41, 19, 122, 78 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+-- Cancel button
+btnNo = UI_CreateCompent( frmAskRelogin, BUTTON_TYPE, "btnNo", 52, 17, 122, 78 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/surenew.png", 52, 17, 8, 149, TRUE )
 
------------------------------------------------------------------------
--- 定义退出游戏询问
------------------------------------------------------------------------
-frmAskExit = UI_CreateForm( "frmAskExit",  FALSE, 185, 100, 397, 500, FALSE, FALSE )
-UI_LoadFormImage( frmAskExit, "texture/ui/Sure.dds", 185, 100, 0, 0, "", 0, 0 )
+---------------
+-- Exit game --
+---------------
+frmAskExit = UI_CreateForm( "frmAskExit",  FALSE, 243, 119, 397, 500, FALSE, FALSE )
+UI_LoadFormImage( frmAskExit, "texture/ui/NUI/surenew.png", 243, 119, 0, 0, "", 0, 0 )
 
 UI_ShowForm( frmAskExit, FALSE )
 UI_AddFormToTemplete( frmAskExit, FORM_MAIN )
@@ -464,30 +464,31 @@ UI_AddFormToTemplete( frmAskExit, FORM_MAIN )
 UI_SetFormStyle( frmAskExit, 0 )
 --UI_SetAlpha( frmAskExit, 200 )
 
---创建退出Title
+--Title
 labchange = UI_CreateCompent( frmAskExit, LABELEX_TYPE, "labchange", 47, 11, 7, 3 )
 UI_SetCaption( labchange, "Exit Game" )
-UI_SetTextColor( labchange, COLOR_BLACK )
-UI_SetLabelExFont( labchange, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labchange, COLOR_WHITE )
+UI_SetLabelExFont( labchange, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建询问内容
+-- Description
 labLogin = UI_CreateCompent( frmAskExit, LABELEX_TYPE, "labLogin", 63, 5, 11, 45 )
 UI_SetCaption( labLogin, "Do you wish to exit the game?" )
-UI_SetTextColor( labLogin, COLOR_BLACK )
-UI_SetLabelExFont( labLogin, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labLogin, COLOR_WHITE)
+UI_SetLabelExFont( labLogin, DEFAULT_FONT, TRUE, COLOR_BLACK )
+
+-- COnfirm button
+btnYes = UI_CreateCompent( frmAskExit, BUTTON_TYPE, "btnYes", 52, 17, 65, 78 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/surenew.png", 52, 17, 8, 131, TRUE )
+
+-- Cancel button
+btnNo = UI_CreateCompent( frmAskExit, BUTTON_TYPE, "btnNo", 52, 17, 122, 78 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/surenew.png", 52, 17, 8, 149, TRUE )
 
 
---加载确定
-btnYes = UI_CreateCompent( frmAskExit, BUTTON_TYPE, "btnYes", 41, 19, 74, 78 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
-
---加载取消按钮
-btnNo = UI_CreateCompent( frmAskExit, BUTTON_TYPE, "btnNo", 41, 19, 122, 78 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 ------------------fps---------------
 
-frmAskYesNo = UI_CreateForm("frmAskYesNo", FALSE, 410, 102, 397, 500, FALSE, FALSE)
-UI_LoadFormImage(frmAskYesNo, "texture/ui/surenew2.png", 410, 102, 0, 0, "", 0, 0)
+frmAskYesNo = UI_CreateForm("frmAskYesNo", FALSE, 243, 119, 397, 500, FALSE, FALSE)
+UI_LoadFormImage(frmAskYesNo, "texture/ui/NUI/surenew.png", 243, 119, 0, 0, "", 0, 0)
 
 UI_ShowForm(frmAskYesNo, FALSE)
 UI_AddFormToTemplete(frmAskYesNo, FORM_MAIN)
@@ -498,13 +499,16 @@ UI_SetCaption(captionLabel, "Caption" )
 UI_SetTextColor(captionLabel, COLOR_WHITE )
 UI_SetLabelExFont(captionLabel, DEFAULT_FONT, TRUE, COLOR_BLACK)
 
+-- Description
 messageLabel = UI_CreateCompent(frmAskYesNo, LABELEX_TYPE, "messageLabel", 338, 60, 29, 37 )
 UI_SetCaption(messageLabel, "Message")
 UI_SetTextColor(messageLabel, COLOR_WHITE )
 UI_SetLabelExFont(messageLabel, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
-btnYes = UI_CreateCompent(frmAskYesNo, BUTTON_TYPE, "btnYes", 41, 19, 164, 78 )
-UI_LoadButtonImage(btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE)
+-- COnfirm button
+btnYes = UI_CreateCompent( frmAskYesNo, BUTTON_TYPE, "btnYes", 52, 17, 65, 78 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/surenew.png", 52, 17, 8, 131, TRUE )
 
-btnNo = UI_CreateCompent(frmAskYesNo, BUTTON_TYPE, "btnNo", 41, 19, 214, 78 )
-UI_LoadButtonImage(btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE)
+-- Cancel button
+btnNo = UI_CreateCompent( frmAskYesNo, BUTTON_TYPE, "btnNo", 52, 17, 122, 78 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/surenew.png", 52, 17, 8, 149, TRUE )

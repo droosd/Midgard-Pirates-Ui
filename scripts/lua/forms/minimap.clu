@@ -14,15 +14,6 @@ UI_LoadImage( imgMinimapT, "texture/ui/NUI/minimap.png", NORMAL, 141, 141, 29, 5
 -- map display
 imgMinimapRect = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgMinimapRect", 127, 118, 7, 11 )
 
--- server time if any
-imgTime = UI_CreateCompent( frmMinimap, IMAGE_TYPE, "imgTime", 69, 27, -80, 5 )
-UI_LoadImage( imgTime, "texture/ui/corsairs/timeLabel.png", NORMAL, 69, 27, 0, 0 )
-
-labServerTime = UI_CreateCompent( frmMinimap, LABELEX_TYPE, "labServerTime", 65, 23, -82, 10 )
-UI_SetCaption( labServerTime, "------" )
-UI_SetTextColor( labServerTime, COLOR_BLACK )
-UI_SetLabelExFont( labServerTime, FONT18, TRUE, COLOR_WHITE )
-
 -- Map name
 labMapName = UI_CreateCompent( frmMinimap, LABELEX_TYPE, "labMapName", 51, 12, 5, 124 )
 UI_SetCaption( labMapName, "了了了了了了了" )
