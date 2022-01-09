@@ -141,11 +141,11 @@ btnNo = UI_CreateCompent( frmAcceptFrnd, BUTTON_TYPE, "btnNo", 41, 19, 122, 78 )
 UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 
 
------------------------------------------------------------------------
--- 定义是否组队
------------------------------------------------------------------------
-frmAcceptGroup = UI_CreateForm( "frmAcceptGroup",  FALSE, 185, 101, 0, 0, FALSE, FALSE )
-UI_LoadFormImage( frmAcceptGroup, "texture/ui/sure.dds", 185, 101, 0, 0, "", 0, 0 )
+------------------
+-- Accept trade --
+------------------
+frmAcceptGroup = UI_CreateForm( "frmAcceptGroup",  FALSE, 243, 119, 0, 0, FALSE, FALSE )
+UI_LoadFormImage( frmAcceptGroup, "texture/ui/NUI/surenew.png", 243, 119, 0, 0, "", 0, 0 )
 UI_ShowForm( frmAcceptGroup, FALSE )
 UI_AddFormToTemplete( frmAcceptGroup, FORM_MAIN )
 UI_SetFormStyle( frmAcceptGroup, 0 )
@@ -161,29 +161,29 @@ UI_FormSetIsEscClose( frmAcceptGroup, FALSE )
 --UI_SetTextColor( labTitle, COLOR_WHITE )
 --UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmAcceptGroup, BUTTON_TYPE, "btnClose", 14, 14, 164, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmAcceptGroup, BUTTON_TYPE, "btnClose", 19, 20, 230, -5 )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/surenew.png", 19, 20, 204, 184, TRUE )
 
---创建询问者姓名
+-- Player Name
 labGroupName = UI_CreateCompent( frmAcceptGroup, LABELEX_TYPE, "labGroupName", 23, 11, 44, 32 )
 UI_SetCaption( labGroupName, "" )
-UI_SetTextColor( labGroupName, COLOR_BLACK )
+UI_SetTextColor( labGroupName, COLOR_WHITE)
 UI_SetLabelExFont( labGroupName, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---创建询问内容
+-- Trade details
 labGroup = UI_CreateCompent( frmAcceptGroup, LABELEX_TYPE, "labGroup", 23, 11, 44, 54 )
 UI_SetCaption( labGroup, "" )
 UI_SetTextColor( labGroup, COLOR_BLACK )
-UI_SetLabelExFont( labGroup, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetLabelExFont( labGroup, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
---加载接受按钮
-btnYes = UI_CreateCompent( frmAcceptGroup, BUTTON_TYPE, "btnYes", 41, 19, 74, 78 )
-UI_LoadButtonImage( btnYes, "texture/ui/SystemBotton3.tga", 41, 19, 0, 0, TRUE )
+-- Confirm button
+btnYes = UI_CreateCompent( frmAcceptGroup, BUTTON_TYPE, "btnYes", 52, 17, 60, 78 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/surenew.png", 52, 17, 8, 149, TRUE )
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmAcceptGroup, BUTTON_TYPE, "btnNo", 41, 19, 122, 78 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+-- Cancel Button
+btnNo = UI_CreateCompent( frmAcceptGroup, BUTTON_TYPE, "btnNo", 52, 17, 122, 78 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/surenew.png", 52, 17, 8, 131, TRUE )
 
 
 -----------------------------------------------------------------------

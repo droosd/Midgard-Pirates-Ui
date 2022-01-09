@@ -2,7 +2,7 @@
 -- Trade price and quantity --
 ------------------------------
 frmTrade = UI_CreateForm( "frmTrade", FALSE, 247, 125, 240, 268, TRUE, FALSE )
-UI_LoadFormImage( frmTrade, "texture/new/frmTrade.png", 247, 125, 0, 0, "", 0, 0 )
+UI_LoadFormImage( frmTrade, "texture/ui/NUI/frmTrade.png", 247, 125, 0, 0, "", 0, 0 )
 UI_ShowForm( frmTrade, FALSE )
 UI_AddFormToTemplete( frmTrade, FORM_DIALOG )
 UI_SetIsDrag( frmTrade, TRUE )
@@ -12,7 +12,7 @@ UI_SetAlpha( frmTrade, 255 )
 
 -- Button close
 btnClose = UI_CreateCompent( frmTrade, BUTTON_TYPE, "btnClose", 19, 20, 230, -5 )
-UI_LoadButtonImage( btnClose, "texture/new/frmTrade.png", 19, 20, 0, 196, TRUE )
+UI_LoadButtonImage( btnClose, "texture/ui/NUI/frmTrade.png", 19, 20, 0, 196, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
 -- title
@@ -53,13 +53,13 @@ UI_SetLabelExFont( labPrice, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
 -- Confirm button
 btnYes = UI_CreateCompent( frmTrade, BUTTON_TYPE, "btnYes", 52, 17, 70, 95 )
-UI_LoadButtonImage( btnYes, "texture/new/frmTrade.png", 52, 17, 0, 153, TRUE )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/frmTrade.png", 52, 17, 0, 153, TRUE )
 UI_SetButtonModalResult( btnYes, BUTTON_YES )
 UI_SetEditEnterButton( edtNumber, btnYes )
 
 -- Cancel button
 btnNo = UI_CreateCompent( frmTrade, BUTTON_TYPE, "btnNo", 52, 17, 130, 95 )
-UI_LoadButtonImage( btnNo, "texture/new/frmTrade.png", 52, 17, 0, 173, TRUE )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/frmTrade.png", 52, 17, 0, 173, TRUE )
 UI_SetButtonModalResult( btnNo, BUTTON_NO )
 
 -----------------------------------------------------------------------
