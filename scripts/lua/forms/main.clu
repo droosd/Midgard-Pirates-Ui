@@ -476,7 +476,7 @@ UI_SetHint( btnMission , "Quest(Alt+Q)" )
 -- Alt + C
 btnGuild = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnGuild", 20, 20, 5, 125  )
 UI_LoadButtonImage( btnGuild, "texture/ui/NUI/frmMainFun.png", 20, 20, 18, 128,TRUE )
-UI_SetHint( btnGuild , "Guild(Alt+C)" )
+UI_SetHint( btnGuild , "Guild (Alt+C)" )
 
 btnOpenSociliaty = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnOpenSociliaty", 23, 22, 103, 4  )
 UI_LoadButtonImage( btnOpenSociliaty, "texture/ui/new6.tga", 23, 22, 69, 0, TRUE )
