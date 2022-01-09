@@ -27,7 +27,7 @@ UI_SetLabelExFont(labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK)
 --UI_LoadImage(imgBakName, "texture/ui/SystemBotton3.tga", NORMAL, 129, 13, 0, 227)
 
 -- Player name
-labStateName = UI_CreateCompent(frmState, LABELEX_TYPE, "labStateName", 45, 10, 90, 60)
+labStateName = UI_CreateCompent(frmState, LABELEX_TYPE, "labStateName", 45, 10, 80, 60)
 UI_SetCaption(labStateName, "Child of Demon what is that")
 UI_SetTextColor(labStateName, COLOR_BLACK)
 UI_SetLabelExFont(labStateName, DEFAULT_FONT, TRUE, COLOR_WHITE)
