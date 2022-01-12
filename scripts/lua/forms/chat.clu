@@ -519,11 +519,11 @@ UI_SetTextColor( labName, COLOR_BLACK )
 UI_SetLabelExFont( labName, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
 
------------------------------------------------------------------------
--- 定义添加好友
------------------------------------------------------------------------
-frmAddFriend = UI_CreateForm( "frmAddFriend",  FALSE, 185, 101, 397, 500, FALSE, FALSE )
-UI_LoadFormImage( frmAddFriend, "texture/ui/sure.dds", 185, 101, 0, 0, "", 0, 0 )
+----------------------------
+-- friend list add friend --
+----------------------------
+frmAddFriend = UI_CreateForm( "frmAddFriend",  FALSE, 256, 125, 397, 500, FALSE, FALSE )
+UI_LoadFormImage( frmAddFriend, "texture/ui/NUI/surenew.png", 256, 125, 0, 0, "", 0, 0 )
 UI_ShowForm( frmAddFriend, FALSE )
 UI_AddFormToTemplete( frmAddFriend, FORM_MAIN )
 UI_SetFormStyle( frmAddFriend, 0 )
@@ -531,41 +531,40 @@ UI_SetIsDrag( frmAddFriend, TRUE )
 --UI_SetAlpha( frmAddFriend, 200 )
 --UI_FormSetHotKey( frmAddFriend, ALT_KEY, HOTKEY_K ) 
 
---创建关闭按钮
-btnClose = UI_CreateCompent( frmAddFriend, BUTTON_TYPE, "btnClose", 14, 14, 164, 3 )
-UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
+-- Close button
+btnClose = UI_CreateCompent( frmAddFriend, BUTTON_TYPE, "btnClose", 19, 20, 240, -2 )
+UI_LoadButtonImage( btnClose, "texture/new/frmFriendList.png", 19, 20, 1, 462, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
---创建Title
-labTitle = UI_CreateCompent( frmAddFriend, LABELEX_TYPE, "labTitle", 400, 150, 10, 4 )
+-- Title
+labTitle = UI_CreateCompent( frmAddFriend, LABELEX_TYPE, "labTitle", 400, 150, 100, 4 )
 UI_SetCaption( labTitle, "Add Friend")
-UI_SetTextColor( labTitle, COLOR_BLACK )
-UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTitle, COLOR_WHITE )
+UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
-
---创建添加好友
-labTradeGold = UI_CreateCompent( frmAddFriend, LABELEX_TYPE, "labTradeGold", 23, 11, 50, 30 )
+-- Title Discription
+labTradeGold = UI_CreateCompent( frmAddFriend, LABELEX_TYPE, "labTradeGold", 23, 11, 55, 30 )
 UI_SetCaption( labTradeGold, "Please input player name" )
-UI_SetTextColor( labTradeGold, COLOR_BLACK )
-UI_SetLabelExFont( labTradeGold, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetTextColor( labTradeGold, COLOR_WHITE )
+UI_SetLabelExFont( labTradeGold, DEFAULT_FONT, TRUE, COLOR_BLACK )
 
--- 加载输入区背景
-imgTradeGoldBak = UI_CreateCompent( frmAddFriend, IMAGE_TYPE, "imgTradeGoldBak", 109, 19, 50, 50 )
-UI_LoadImage( imgTradeGoldBak, "texture/ui/PublicC.tga", NORMAL, 109, 19, 47, 68 )
+-- Text box
+imgTradeGoldBak = UI_CreateCompent( frmAddFriend, IMAGE_TYPE, "imgTradeGoldBak", 162, 22, 47, 53 )
+UI_LoadImage( imgTradeGoldBak, "texture/ui/NUI/surenew.png", NORMAL, 162, 22, 2, 196 )
 
---加载格言输入框
-edtTradeGold = UI_CreateCompent( frmAddFriend, EDIT_TYPE, "edtTradeGold", 96, 11, 58, 54 )
-UI_SetTextColor( edtTradeGold, COLOR_BLACK )
+-- Text (inputname)
+edtTradeGold = UI_CreateCompent( frmAddFriend, EDIT_TYPE, "edtTradeGold", 96, 11, 56, 57 )
+UI_SetTextColor( edtTradeGold, COLOR_WHITE )
 UI_SetEditMaxNum( edtTradeGold, 17 )
 UI_SetEditMaxNumVisible( edtTradeGold, 17 )
 
---加载确定按钮
-btnYes = UI_CreateCompent( frmAddFriend, BUTTON_TYPE, "btnYes", 41, 19, 74, 78 )
-UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
+-- Confirm button
+btnYes = UI_CreateCompent( frmAddFriend, BUTTON_TYPE, "btnYes", 52, 17, 73, 83 )
+UI_LoadButtonImage( btnYes, "texture/ui/NUI/surenew.png", 52, 17, 8, 149, TRUE )
 
---加载取消按钮
-btnNo = UI_CreateCompent( frmAddFriend, BUTTON_TYPE, "btnNo", 41, 19, 122, 78 )
-UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
+-- Close button
+btnNo = UI_CreateCompent( frmAddFriend, BUTTON_TYPE, "btnNo", 52, 17, 129, 83 )
+UI_LoadButtonImage( btnNo, "texture/ui/NUI/surenew.png", 52, 17, 8, 131, TRUE )
 UI_SetButtonModalResult( btnNo, BUTTON_CLOSE )
 
 ---创建好友右键表单
