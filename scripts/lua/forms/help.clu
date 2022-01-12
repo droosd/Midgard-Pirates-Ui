@@ -2,7 +2,7 @@
 -- 定义帮助界面
 -----------------------------------------------------------------------	
 -- 创建帮助表单
---[[frmStartHelp = UI_CreateForm( "frmStartHelp", FALSE, 285, 317, 198, 160, TRUE, FALSE )
+frmStartHelp = UI_CreateForm( "frmStartHelp", FALSE, 285, 317, 198, 160, TRUE, FALSE )
 UI_FormSetHotKey( frmStartHelp, ALT_KEY, HOTKEY_H ) 
 UI_ShowForm( frmStartHelp, FALSE )
 UI_AddFormToTemplete( frmStartHelp, FORM_MAIN )
@@ -47,4 +47,4 @@ UI_AddFaceToGrid( grdHelp,"texture/ui/help/chat.bmp" , 256, 256, 0, 0, 1, 9 )
 
 --创建打开界面说明按钮
 btnOpenHelp = UI_CreateCompent( frmStartHelp, BUTTON_TYPE, "btnOpenHelp", 49, 13, 200, 290 )
-UI_LoadButtonImage( btnOpenHelp, "texture/ui/SysBotton4.tga", 49, 13, 202, 86, FALSE )			      ]]
+UI_LoadButtonImage( btnOpenHelp, "texture/ui/SysBotton4.tga", 49, 13, 202, 86, FALSE )
