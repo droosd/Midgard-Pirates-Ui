@@ -54,13 +54,13 @@ UI_LoadScaleImage( proMainEXP, "texture/ui/NUI/frmDetail.png", PROGRESS_PROGRESS
 UI_SetHint( proMainEXP, "EXP" )
 
 -- Player Name
-labMainID = UI_CreateCompent( frmDetail, LABELEX_TYPE, "labMainID", 95, 11, 77, 0 )
+labMainID = UI_CreateCompent( frmDetail, LABELEX_TYPE, "labMainID", 95, 11, 50, 0 )
 UI_SetTextColor( labMainID, COLOR_WHITE )
 UI_SetLabelExFont( labMainID, DEFAULT_FONT, TRUE, COLOR_BLACK )
 --UI_SetCaption( labMainID, "就就就就就就就就" )
 
 -- Player level
-labMainLv = UI_CreateCompent( frmDetail, LABELEX_TYPE, "labMainLv", 14, 9, 51, 0 )
+labMainLv = UI_CreateCompent( frmDetail, LABELEX_TYPE, "labMainLv", 14, 9, 3, 0 )
 UI_SetTextColor( labMainLv, COLOR_WHITE )
 UI_SetLabelExFont( labMainLv, DEFAULT_FONT, TRUE, COLOR_BLACK )
 UI_SetCaption( labMainLv, "99" )
