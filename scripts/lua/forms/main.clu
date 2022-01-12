@@ -474,18 +474,18 @@ UI_LoadButtonImage( btnMission, "texture/ui/NUI/frmMainFun.png", 20, 20, 19, 155
 UI_SetHint( btnMission , "Quest(Alt+Q)" )
 
 -- Alt + C
-btnGuild = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnGuild", 20, 20, 5, 125  )
-UI_LoadButtonImage( btnGuild, "texture/ui/NUI/frmMainFun.png", 20, 20, 18, 128,TRUE )
-UI_SetHint( btnGuild , "Guild (Alt+C)" )
+btnOpenGuild = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnOpenGuild", 20, 20, 5, 125  )
+UI_LoadButtonImage( btnOpenGuild, "texture/ui/NUI/frmMainFun.png", 20, 20, 18, 128,TRUE )
+UI_SetHint( btnOpenGuild , "Guild (Alt+C)" )
 
 btnOpenSociliaty = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnOpenSociliaty", 23, 22, 103, 4  )
 UI_LoadButtonImage( btnOpenSociliaty, "texture/ui/new6.tga", 23, 22, 69, 0, TRUE )
 UI_SetHint( btnOpenSociliaty , "Social Skill" )
 
 -- ALt + H
-btnShip = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnShip", 20, 20, 5, 148  )
-UI_LoadButtonImage( btnShip, "texture/ui/NUI/frmMainFun.png",  20, 20, 20, 182,TRUE )
-UI_SetHint( btnShip , "Help(Alt+H)" )
+btnHelp = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnHelp", 20, 20, 5, 148  )
+UI_LoadButtonImage( btnHelp, "texture/ui/NUI/frmMainFun.png",  20, 20, 20, 182,TRUE )
+UI_SetHint( btnHelp , "Help(Alt+H)" )
 
 -- Alt + O
 btnSystem = UI_CreateCompent( frmMainFun, BUTTON_TYPE, "btnSystem", 20, 20, 5, 171  )
