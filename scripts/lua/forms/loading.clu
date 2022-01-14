@@ -1,7 +1,6 @@
------------------------------------------------------------------------
--- 定义loading表单
------------------------------------------------------------------------	
--- 创建loading表单
+-------------
+-- Loading --
+-------------
 frmLoading = UI_CreateForm( "frmLoading", FALSE, 1198, 768, 0, 0, FALSE, FALSE )
 UI_SetFormStyle( frmLoading , 8 )
 UI_ShowForm( frmLoading, TRUE )
@@ -9,49 +8,49 @@ UI_AddFormToTemplete( frmLoading, FORM_SWITCH_SCENE )
 UI_FormSetIsEscClose( frmLoading, FALSE )
 
 imgLoading1 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading1", 300, 256, 0, 0 )
-UI_LoadImage( imgLoading1, "texture/ui/loading/l1.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading1, "texture/ui/NUI/loading/frmLoading1.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading2 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading2", 300, 256, 300, 0 )
-UI_LoadImage( imgLoading2, "texture/ui/loading/l2.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading2, "texture/ui/NUI/loading/frmLoading2.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading3 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading3", 300, 256, 600, 0 )
-UI_LoadImage( imgLoading3, "texture/ui/loading/l3.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading3, "texture/ui/NUI/loading/frmLoading3.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading4 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading4", 300, 256, 900, 0 )
-UI_LoadImage( imgLoading4, "texture/ui/loading/l4.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading4, "texture/ui/NUI/loading/frmLoading4.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading5 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading5", 300, 256, 0, 256 )
-UI_LoadImage( imgLoading5, "texture/ui/loading/l5.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading5, "texture/ui/NUI/loading/frmLoading5.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading6 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading6", 300, 256, 300, 256  )
-UI_LoadImage( imgLoading6, "texture/ui/loading/l6.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading6, "texture/ui/NUI/loading/frmLoading6.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading7 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading7", 300, 256, 600, 256 )
-UI_LoadImage( imgLoading7, "texture/ui/loading/l7.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading7, "texture/ui/NUI/loading/frmLoading7.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading8 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading8", 300, 256, 900, 256 )
-UI_LoadImage( imgLoading8, "texture/ui/loading/l8.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading8, "texture/ui/NUI/loading/frmLoading8.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading9 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading9", 300, 256, 0, 512 )
-UI_LoadImage( imgLoading9, "texture/ui/loading/l9.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading9, "texture/ui/NUI/loading/frmLoading9.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading10 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading10", 300, 256, 300, 512 )
-UI_LoadImage( imgLoading10, "texture/ui/loading/l10.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading10, "texture/ui/NUI/loading/frmLoading10.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading11 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading11", 300, 256, 600, 512 )
-UI_LoadImage( imgLoading11, "texture/ui/loading/l11.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading11, "texture/ui/NUI/loading/frmLoading11.png", NORMAL, 300, 256, 0, 0 )
 
 imgLoading12 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading12", 300, 256, 900, 512 )
-UI_LoadImage( imgLoading12, "texture/ui/loading/l12.tga", NORMAL, 300, 256, 0, 0 )
+UI_LoadImage( imgLoading12, "texture/ui/NUI/loading/frmLoading12.png", NORMAL, 300, 256, 0, 0 )
 
 --定义进度条
 imgLoading = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading", 120,123, 132, 418)
 UI_LoadImage( imgLoading, "texture/ui/LoadProgress.tga", NORMAL, 120,23, 0, 0 )
 
 --定义说明
-labLoad= UI_CreateCompent( frmLoading, LABELEX_TYPE, "labLoad", 52, 13, 450, 523 )
-UI_SetCaption( labLoad, "Loading..." )
-UI_SetTextColor( labLoad, COLOR_WHITE )
+--labLoad= UI_CreateCompent( frmLoading, LABELEX_TYPE, "labLoad", 52, 13, 450, 523 )
+--UI_SetCaption( labLoad, "Loading..." )
+--UI_SetTextColor( labLoad, COLOR_WHITE )
 --UI_SetLabelExFont( labLoad, DEFAULT_FONT, TRUE, COLOR_WHITE)
 
 -------------------------
