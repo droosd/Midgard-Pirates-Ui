@@ -153,24 +153,24 @@ UI_SetLabelExFont( labItemIMPnumber, DEFAULT_FONT, TRUE, COLOR_BLACK )
 local startX = 355
 local startY = 348
 
-local lockX = startX + 26
-local lockY = startY + 37
+local lockX = startX + 33
+local lockY = startY + 18
 
-local lockitemX = startX + 47
+local lockitemX = startX + 50
 local lockitemY = lockY + 0
 
 
-local trashX = startX + 6
-local trashY = startY + 37
+local trashX = startX + 16
+local trashY = startY + 18
 
-local sortX = startX + 26
-local sortY = startY + 22
+local sortX = startX + -18
+local sortY = startY + 18
 
-local sortdirX = startX + 6
-local sortdirY = startY + 22
+local sortdirX = startX + -35
+local sortdirY = startY + 18
 
-local goldX = startX + 47
-local goldY = startY + 22
+local goldX = startX + -1
+local goldY = startY + 18
 
 -- lock inventory button
 btnLock = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnLock", 15, 15, lockX, lockY )
@@ -220,28 +220,28 @@ local sortBaseX = sortX-5
 local sortBaseY = sortY
 
 
-btnSortPrice = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortPrice", 33, 16, sortBaseX, sortBaseY-17 )
-UI_LoadImage( btnSortPrice, "texture/ui/NUI/INV/invicons.png", 0, 33, 16, 4, 111 )
-UI_LoadImage( btnSortPrice, "texture/ui/NUI/INV/invicons.png", 1, 33, 16, 4, 127 )
-UI_LoadImage( btnSortPrice, "texture/ui/NUI/INV/invicons.png", 2, 33, 16, 4, 143 )
+btnSortPrice = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortPrice", 52, 17, sortBaseX, sortBaseY-15 )
+UI_LoadImage( btnSortPrice, "texture/ui/NUI/INV/invicons.png", 0, 52, 17, 4, 110 )
+UI_LoadImage( btnSortPrice, "texture/ui/NUI/INV/invicons.png", 1, 52, 17, 4, 127 )
+UI_LoadImage( btnSortPrice, "texture/ui/NUI/INV/invicons.png", 2, 52, 17, 4, 144 )
 UI_SetIsShow(btnSortPrice,0)
 
-btnSortAlpha = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortAlpha", 33, 16, sortBaseX, sortBaseY-34 )
-UI_LoadImage( btnSortAlpha, "texture/ui/NUI/INV/invicons.png", 0, 33, 16, 37, 111 )
-UI_LoadImage( btnSortAlpha, "texture/ui/NUI/INV/invicons.png", 1, 33, 16, 37, 127 )
-UI_LoadImage( btnSortAlpha, "texture/ui/NUI/INV/invicons.png", 2, 33, 16, 37, 143 )
+btnSortAlpha = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortAlpha", 52, 17, sortBaseX, sortBaseY-33 )
+UI_LoadImage( btnSortAlpha, "texture/ui/NUI/INV/invicons.png", 0, 52, 17, 56, 110 )
+UI_LoadImage( btnSortAlpha, "texture/ui/NUI/INV/invicons.png", 1, 52, 17, 56, 127 )
+UI_LoadImage( btnSortAlpha, "texture/ui/NUI/INV/invicons.png", 2, 52, 17, 56, 144 )
 UI_SetIsShow(btnSortAlpha,0)
 
-btnSortType = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortType", 33, 16, sortBaseX, sortBaseY-51 )
-UI_LoadImage( btnSortType, "texture/ui/NUI/INV/invicons.png", 0, 33, 16, 70, 111 )
-UI_LoadImage( btnSortType, "texture/ui/NUI/INV/invicons.png", 1, 33, 16, 70, 127 )
-UI_LoadImage( btnSortType, "texture/ui/NUI/INV/invicons.png", 2, 33, 16, 70, 143 )
+btnSortType = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortType", 52, 17, sortBaseX, sortBaseY-53 )
+UI_LoadImage( btnSortType, "texture/ui/NUI/INV/invicons.png", 0, 52, 17, 108, 110 )
+UI_LoadImage( btnSortType, "texture/ui/NUI/INV/invicons.png", 1, 52, 17, 108, 127 )
+UI_LoadImage( btnSortType, "texture/ui/NUI/INV/invicons.png", 2, 52, 17, 108, 144 )
 UI_SetIsShow(btnSortType,0)
 
-btnSortID = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortID", 33, 16, sortBaseX, sortBaseY-68  )
-UI_LoadImage( btnSortID, "texture/ui/NUI/INV/invicons.png", 0, 33, 16, 103, 111 )
-UI_LoadImage( btnSortID, "texture/ui/NUI/INV/invicons.png", 1, 33, 16, 103, 127 )
-UI_LoadImage( btnSortID, "texture/ui/NUI/INV/invicons.png", 2, 33, 16, 103, 143 )
+btnSortID = UI_CreateCompent( frmInv, BUTTON_TYPE, "btnSortID", 52, 17, sortBaseX, sortBaseY-71  )
+UI_LoadImage( btnSortID, "texture/ui/NUI/INV/invicons.png", 0, 52, 17, 160, 110 )
+UI_LoadImage( btnSortID, "texture/ui/NUI/INV/invicons.png", 1, 52, 17, 160, 127 )
+UI_LoadImage( btnSortID, "texture/ui/NUI/INV/invicons.png", 2, 52, 17, 160, 144 )
 UI_SetIsShow(btnSortID,0)
 
 
